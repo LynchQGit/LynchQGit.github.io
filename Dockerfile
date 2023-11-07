@@ -3,11 +3,11 @@ FROM docker.io/squidfunk/mkdocs-material:9.4.7
 WORKDIR /app
 
 # docs
-COPY . /app/docs/handudu.github.io
+COPY . /app/docs/LynchQGit.github.io
 
 RUN \
-    rm -rf /app/docs/handudu.github.io/.assets \
-    && rm -rf /app/docs/handudu.github.io/README.md
+    rm -rf /app/docs/LynchQGit.github.io/.assets \
+    && rm -rf /app/docs/LynchQGit.github.io/README.md
 
 # index
 COPY .assets /app/docs/.assets
