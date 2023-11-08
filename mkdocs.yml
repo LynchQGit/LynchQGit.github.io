@@ -5,7 +5,7 @@ repo_url: https://github.com/LynchQGit/LynchQGit.github.io
 hide:
   - footer
 
-docs_dir: docs
+# docs_dir: docs
 
 theme:
   palette:
