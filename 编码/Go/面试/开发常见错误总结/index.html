@@ -571,7 +571,7 @@
 <li>不允许左大括号单独一行</li>
 <li>不允许出现未使用的变量</li>
 <li>不允许出现未使用的 import
-  a. 2、3 解决方法：使用_作为引入包别名或者变量名
+  a.  2、3 解决方法：使用_作为引入包别名或者变量名
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="p">(</span><span class="w">  </span>
@@ -1049,8 +1049,9 @@ _, err = io.Copy(ioutil.Discard, resp.Body)  </li>
   g. 如果要忽略大小写来比较包含文字数据的字节切片(byte slice)，
   h. 不建议使用bytes包和strings包里的ToUpper()、ToLower()这些函数转换后再用==、byte.Equal()、bytes.Compare()等比较，ToUpper()、ToLower()只能处理英文文字，对其它语言无效。因此建议使用strings.EqualFold()和bytes.EqualFold()
   i. 如果要比较用于验证用户数据密钥信息的字节切片时，使用reflact.DeepEqual()、bytes.Equal()、
-bytes.Compare()会使应用程序遭受计时攻击(Timing Attack)，可使用crypto/subtle.ConstantTimeCompare()避免泄漏时间信息。
-5. 从panic中恢复
+bytes.Compare()会使应用程序遭受计时攻击(Timing Attack)，可使用crypto/subtle.ConstantTimeCompare()避免泄漏时间信息。</p>
+<ol>
+<li>从panic中恢复
   a. recover()函数能够捕获或拦截panic，但必须在defer函数或语句中直接调用，否则无效。
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
 
@@ -1075,8 +1076,8 @@ bytes.Compare()会使应用程序遭受计时攻击(Timing Attack)，可使用cr
 
 <span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;ok&quot;</span><span class="p">)</span>
 <span class="p">}</span>
-</code></pre></div>
-6. 在slice、array、map的for range子句中修改和引用数据项
+</code></pre></div></li>
+<li>在slice、array、map的for range子句中修改和引用数据项
   a. 使用range获取的数据项是从集合元素的复制过来的，并非引用原始数据，但使用索引能访问原始数据。
 <div class="highlight"><pre><span></span><code><span class="nx">data</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
 <span class="k">for</span><span class="w"> </span><span class="nx">_</span><span class="p">,</span><span class="nx">v</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="p">{</span>
@@ -1097,11 +1098,11 @@ bytes.Compare()会使应用程序遭受计时攻击(Timing Attack)，可使用cr
 <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;data:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">)</span><span class="w">              </span><span class="c1">//prints data: [1 2 3]</span>
 <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;data:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">data2</span><span class="p">)</span><span class="w">             </span><span class="c1">//prints data: [10 20 30]</span>
 <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">data3</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="nx">data3</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="nx">data3</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="w">    </span><span class="c1">//prints &amp;{10} &amp;{20} &amp;{30}</span>
-</code></pre></div>
-7. Slice中的隐藏数据
+</code></pre></div></li>
+<li>Slice中的隐藏数据
   a. 从一个slice上再生成一个切片slice，新的slice将直接引用原始slice的那个数组，两个slice对同一数组的操作，会相互影响。
-  b. 可通过为新切片slice重新分配空间，从slice中copy部分的数据来避免相互之间的影响。
-8. Slice超范围数据覆盖
+  b. 可通过为新切片slice重新分配空间，从slice中copy部分的数据来避免相互之间的影响。</li>
+<li>Slice超范围数据覆盖
   a. 从已存在的切片slice中继续切片时，新切片的capicity等于原capicity减去新切片之前部分的数量，新切片与原切片都指向同一数组空间。
   b. 新生成切片之间capicity区域是重叠的，因此在添加数据时易造成数据覆盖问题。
   c. slice使用append添加的内容时超出capicity时，会重新分配空间。
@@ -1122,8 +1123,8 @@ bytes.Compare()会使应用程序遭受计时攻击(Timing Attack)，可使用cr
 <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;dir2 =&gt;&quot;</span><span class="p">,</span><span class="nb">string</span><span class="p">(</span><span class="nx">dir2</span><span class="p">))</span><span class="w"> </span><span class="c1">//prints: dir2 =&gt; uffixBBBB (not ok)</span>
 
 <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;new path =&gt;&quot;</span><span class="p">,</span><span class="nb">string</span><span class="p">(</span><span class="nx">path</span><span class="p">))</span>
-</code></pre></div>
-9. Slice增加元素重新分配内存导致的怪事
+</code></pre></div></li>
+<li>Slice增加元素重新分配内存导致的怪事
   a. slice在添加元素前，与其它切片共享同一数据区域，修改会相互影响；但添加元素导致内存重新分配之后，不再指向原来的数据区域，修改元素，不再影响其它切片。
 <div class="highlight"><pre><span></span><code><span class="nx">s1</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
 <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nx">s1</span><span class="p">),</span><span class="nb">cap</span><span class="p">(</span><span class="nx">s1</span><span class="p">),</span><span class="nx">s1</span><span class="p">)</span><span class="w"> </span><span class="c1">//prints 3 3 [1 2 3]</span>
@@ -1144,8 +1145,8 @@ bytes.Compare()会使应用程序遭受计时攻击(Timing Attack)，可使用cr
 <span class="c1">//s1 is now &quot;stale&quot;</span>
 <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">s1</span><span class="p">)</span><span class="w"> </span><span class="c1">//prints [1 22 23]</span>
 <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">s2</span><span class="p">)</span><span class="w"> </span><span class="c1">//prints [32 33 14]</span>
-</code></pre></div>
-10. 类型重定义与方法继承
+</code></pre></div></li>
+<li>类型重定义与方法继承
   a. 从一个已存在的(non-interface)非接口类型重新定义一个新类型时，不会继承原类型的任何方法。
 可以通过定义一个组合匿名变量的类型，来实现对此匿名变量类型的继承。
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
@@ -1241,12 +1242,12 @@ bytes.Compare()会使应用程序遭受计时攻击(Timing Attack)，可使用cr
 <span class="p">}</span>
 
 <span class="c1">// 在这个例子中，NewInterface 继承了 OriginalInterface 的所有方法，所以 NewType需要实现 Method1 和 Method2。</span>
-</code></pre></div>
-11. 从”for switch”和”for select”代码块中跳出。
+</code></pre></div></li>
+<li>从”for switch”和”for select”代码块中跳出。
   a. 无label的break只会跳出最内层的switch/select代码块。
 如需要从switch/select代码块中跳出外层的for循环，可以在for循环外部定义label，供break跳出。
-  b. return当然也是可以的，如果在这里可以用的话。
-12. 在for语句的闭包中使用迭代变量会有问题
+  b. return当然也是可以的，如果在这里可以用的话。</li>
+<li>在for语句的闭包中使用迭代变量会有问题
   a. 在for迭代过程中，迭代变量会一直保留，只是每次迭代值不一样。
   b. 因此在for循环中在闭包里直接引用迭代变量，在执行时直接取迭代变量的值，而不是闭包所在迭代的变量值。
   c. 如果闭包要取所在迭代变量的值，就需要for中定义一个变量来保存所在迭代的值，或者通过闭包函数传参。
@@ -1327,8 +1328,8 @@ bytes.Compare()会使应用程序遭受计时攻击(Timing Attack)，可使用cr
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="nx">time</span><span class="p">.</span><span class="nx">Sleep</span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span><span class="w">     </span><span class="c1">//goroutines print: one, two, three</span>
 <span class="p">}</span>
-</code></pre></div>
-13. defer函数调用参数
+</code></pre></div></li>
+<li>defer函数调用参数
   a. defer后面必须是函数或方法的调用语句。defer后面不论是函数还是方法，输入参数的值是在defer声明时已计算好，而不是调用开始计算。
   b. 要特别注意的是，defer后面是方法调用语句时，方法的接受者是在defer语句执行时传递的，而不是defer声明时传入的。
 <div class="highlight"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">field</span><span class="w"> </span><span class="kd">struct</span><span class="p">{</span>
@@ -1351,8 +1352,8 @@ bytes.Compare()会使应用程序遭受计时攻击(Timing Attack)，可使用cr
 <span class="w">    </span><span class="c1">// 2 4</span>
 <span class="w">    </span><span class="c1">// result =&gt; 2 (not ok if you expected 4)</span>
 <span class="p">}</span>
-</code></pre></div>
-14. defer语句调用是在当前函数结束之后调用，而不是变量的作用范围。
+</code></pre></div></li>
+<li>defer语句调用是在当前函数结束之后调用，而不是变量的作用范围。
 <div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="nx">_</span><span class="p">,</span><span class="nx">target</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">targets</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">f</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Open</span><span class="p">(</span><span class="nx">target</span><span class="p">)</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
@@ -1366,8 +1367,8 @@ bytes.Compare()会使应用程序遭受计时攻击(Timing Attack)，可使用cr
 <span class="w">    </span><span class="c1">// func () {</span>
 <span class="w">    </span><span class="c1">// }() </span>
 <span class="p">}</span>
-</code></pre></div>
-15. 失败的类型断言
+</code></pre></div></li>
+<li>失败的类型断言
   a. var.(T)类型断言失败时会返回T类型的“0值”，而不是变量原始值。
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="kd">interface</span><span class="p">{}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;great&quot;</span>
 
@@ -1382,8 +1383,8 @@ bytes.Compare()会使应用程序遭受计时攻击(Timing Attack)，可使用cr
 <span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;[not an int] value =&gt;&quot;</span><span class="p">,</span><span class="nx">data</span><span class="p">)</span><span class="w">         </span><span class="c1">//prints: [not an int] value =&gt; great (as expected)</span>
 <span class="w">    </span><span class="p">}</span>
-</code></pre></div>
-16. 阻塞的goroutine与资源泄漏
+</code></pre></div></li>
+<li>阻塞的goroutine与资源泄漏
 <div class="highlight"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">First</span><span class="p">(</span><span class="nx">query</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">replicas</span><span class="w"> </span><span class="o">...</span><span class="nx">Search</span><span class="p">)</span><span class="w"> </span><span class="nx">Result</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
 <span class="w">    </span><span class="nx">c</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">make</span><span class="p">(</span><span class="kd">chan</span><span class="w"> </span><span class="nx">Result</span><span class="p">)</span>
 <span class="w">    </span><span class="c1">// 解决1：使用缓冲的channel： c := make(chan Result,len(replicas))</span>
@@ -1410,8 +1411,9 @@ bytes.Compare()会使应用程序遭受计时攻击(Timing Attack)，可使用cr
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">&lt;-</span><span class="nx">c</span>
 <span class="p">}</span>
-</code></pre></div>
-17. ... ...</p>
+</code></pre></div></li>
+<li>... ...</li>
+</ol>
 <h2 id="_3">三、高级<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>
 <li>用值实例上调用接收者为指针的方法
