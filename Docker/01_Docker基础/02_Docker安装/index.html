@@ -492,8 +492,10 @@
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#253" class="md-nav__link">
+    2.5.3 底层原理
+  </a>
   
 </li>
         
@@ -501,46 +503,9 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    官网要求
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker_1" class="md-nav__link">
-    推荐使用 使用阿里的 docker 镜像仓库，国外的镜像仓库是比较慢的
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#yum" class="md-nav__link">
-    更新yum软件包索引
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    命令
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    启动命令
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    卸载命令
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -917,8 +882,10 @@
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#253" class="md-nav__link">
+    2.5.3 底层原理
+  </a>
   
 </li>
         
@@ -926,46 +893,9 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    官网要求
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker_1" class="md-nav__link">
-    推荐使用 使用阿里的 docker 镜像仓库，国外的镜像仓库是比较慢的
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#yum" class="md-nav__link">
-    更新yum软件包索引
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    命令
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    启动命令
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    卸载命令
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -986,6 +916,8 @@
   
   
 
+
+  <h1>02 Docker安装</h1>
 
 <h2 id="docker">二、Docker安装<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h2>
 <h3 id="21">2.1 前提说明<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
@@ -1095,51 +1027,56 @@ sudo yum-config-manager \
     https://download.docker.com/linux/centos/docker-ce.repo
 </code></pre></div>
 使用存储库安装
-```在新主机上首次安装Docker Engine之前，您需要设置Docker存储库。之后，您可以从存储库安装和更新Docker
+<div class="highlight"><pre><span></span><code>在新主机上首次安装Docker Engine之前，您需要设置Docker存储库。之后，您可以从存储库安装和更新Docker
 设置存储库
-安装 yum-utils 包（提供yum-config-manager 实用程序）并设置稳定的存储库</p>
+安装 yum-utils 包（提供yum-config-manager 实用程序）并设置稳定的存储库
+# 官网要求
+yum install -y yum-utils
+</code></pre></div></p>
 </li>
+<li>
+<p>设置stable镜像仓库
+<img alt="设置stable镜像库" src="../../../image/Docker/%E8%AE%BE%E7%BD%AEstable%E9%95%9C%E5%83%8F%E5%BA%93.png" />
+<div class="highlight"><pre><span></span><code># 推荐使用 使用阿里的 docker 镜像仓库，国外的镜像仓库是比较慢的
+yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+</code></pre></div></p>
+</li>
+<li>
+<p>更新yum软件包索引
+<div class="highlight"><pre><span></span><code># 更新yum软件包索引
+yum makecache fast
+</code></pre></div></p>
+</li>
+<li>安装Docker CE引擎
+<div class="highlight"><pre><span></span><code># 命令
+yum -y install docker-ce docker-ce-cli containerd.io
+</code></pre></div></li>
+<li>启动Docker
+<div class="highlight"><pre><span></span><code># 启动命令
+systemctl start docker
+</code></pre></div></li>
+<li>测试
+<img alt="测试是否安装" src="../../../image/Docker/%E6%B5%8B%E8%AF%95%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85.png" />
+<div class="highlight"><pre><span></span><code>docker version 
+
+docker run hello-world
+</code></pre></div></li>
 </ol>
-<h1 id="_1">官网要求<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>yum install -y yum-utils
-<div class="highlight"><pre><span></span><code>1. 设置stable镜像仓库
-![设置stable镜像库](../../image/Docker/设置stable镜像库.png)
-</code></pre></div></p>
-<h1 id="docker_1">推荐使用 使用阿里的 docker 镜像仓库，国外的镜像仓库是比较慢的<a class="headerlink" href="#docker_1" title="Permanent link">&para;</a></h1>
-<p>yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
-<div class="highlight"><pre><span></span><code>6. 更新yum软件包索引
-</code></pre></div></p>
-<h1 id="yum">更新yum软件包索引<a class="headerlink" href="#yum" title="Permanent link">&para;</a></h1>
-<p>yum makecache fast
-<div class="highlight"><pre><span></span><code>7. 安装Docker CE引擎
-</code></pre></div></p>
-<h1 id="_2">命令<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
-<p>yum -y install docker-ce docker-ce-cli containerd.io
-<div class="highlight"><pre><span></span><code>8. 启动Docker
-</code></pre></div></p>
-<h1 id="_3">启动命令<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h1>
-<p>systemctl start docker
-<div class="highlight"><pre><span></span><code>9. 测试
-![测试是否安装](../../image/Docker/测试是否安装.png)
-</code></pre></div>
-docker version </p>
-<p>docker run hello-world
-<div class="highlight"><pre><span></span><code>输出这段提示以后hello world就会停止运行，容器自动终止。
+<p>输出这段提示以后hello world就会停止运行，容器自动终止。
 10. 卸载
-</code></pre></div></p>
-<h1 id="_4">卸载命令<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h1>
-<p>systemctl stop docker 
+<div class="highlight"><pre><span></span><code># 卸载命令
+systemctl stop docker 
 yum remove docker-ce docker-ce-cli containerd.io
 rm -rf /var/lib/docker
 rm -rf /var/lib/containerd
-<div class="highlight"><pre><span></span><code>#### 2.5.3 底层原理
-为什么Docker会比VM虚拟机快：
-</code></pre></div>
-1. docker有着比虚拟机更少的抽象层 
+</code></pre></div></p>
+<h4 id="253">2.5.3 底层原理<a class="headerlink" href="#253" title="Permanent link">&para;</a></h4>
+<p>为什么Docker会比VM虚拟机快：
+<div class="highlight"><pre><span></span><code>1. docker有着比虚拟机更少的抽象层 
    由于docker不需要Hypervisor(虚拟机)实现硬件资源虚拟化,运行在docker容器上的程序直接使用的都是实际物理机的硬件资源。因此在CPU、内存利用率上docker将会在效率上有明显优势。 
 2. docker利用的是宿主机的内核,而不需要加载操作系统OS内核 
    当新建一个容器时,docker不需要和虚拟机一样重新加载一个操作系统内核。进而避免引寻、加载操作系统内核返回等比较费时费资源的过程,当新建一个虚拟机时,虚拟机软件需要加载OS,返回新建过程是分钟级别的。而docker由于直接利用宿主机的操作系统,则省略了返回过程,因此新建一个docker容器只需要几秒钟。
-```
+</code></pre></div>
 <img alt="底层原理" src="../../../image/Docker/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86.png" /></p>
 
 
