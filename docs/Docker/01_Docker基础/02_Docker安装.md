@@ -103,7 +103,8 @@ sudo yum-config-manager \
     https://download.docker.com/linux/centos/docker-ce.repo
 ```
 使用存储库安装
-```在新主机上首次安装Docker Engine之前，您需要设置Docker存储库。之后，您可以从存储库安装和更新Docker
+```
+在新主机上首次安装Docker Engine之前，您需要设置Docker存储库。之后，您可以从存储库安装和更新Docker
 设置存储库
 安装 yum-utils 包（提供yum-config-manager 实用程序）并设置稳定的存储库
 # 官网要求
