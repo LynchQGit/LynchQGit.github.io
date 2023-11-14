@@ -1,5 +1,5 @@
-# 三、Docker常用命令
-## 3.1 帮助启动类命令
+## 三、Docker常用命令
+### 3.1 帮助启动类命令
 ```shell
 # 启动命令
 systemctl start docker
@@ -19,8 +19,8 @@ docker --help
 docker 具体命令 --help
 ```
 
-## 3.2 镜像命令
-### 3.2.1 列出本地主机上的镜像
+### 3.2 镜像命令
+#### 3.2.1 列出本地主机上的镜像
 ```shell
 # 列出本地主机上的镜像
 docker images
@@ -37,10 +37,10 @@ docker images
 
 同一仓库源可以有多个 TAG版本，代表这个仓库源的不同个版本，我们使用 REPOSITORY:TAG 来定义不同的镜像。<br />如果你不指定一个镜像的版本标签，例如你只使用 ubuntu，docker 将默认使用 ubuntu:latest 镜像
 
-### 3.2.2 OPTIONS 说明
+#### 3.2.2 OPTIONS 说明
 `-a`：列出本地所有镜像（含历史映像层）<br />`-q`：只显示镜像ID
 
-### 3.2.3 docker search 某个镜像名字
+#### 3.2.3 docker search 某个镜像名字
 ```shell
 # 网站
 https://hub.docker.com
@@ -53,7 +53,7 @@ docker search  --limit 5 redis
 案例：
 ![Docker常用命令02](../../image/Docker/Docker常用命令02.png)
 
-### 3.2.4 docker pull 某个镜像名字
+#### 3.2.4 docker pull 某个镜像名字
 
 ```shell
 # 下载镜像
@@ -67,11 +67,11 @@ docker search  --limit 5 redis
 ```
 ![Docker常用命令03](../../image/Docker/Docker常用命令03.png)
 
-### 3.2.5 docker system df 查看镜像/容器/数据卷所占用的空间
+#### 3.2.5 docker system df 查看镜像/容器/数据卷所占用的空间
 
 ![Docker常用命令04](../../image/Docker/Docker常用命令04.png)
 
-### 3.2.6 docker rmi 删除镜像
+#### 3.2.6 docker rmi 删除镜像
 ```shell
 # 删除单个
 docker rmi -f 镜像ID
@@ -83,7 +83,7 @@ docker rmi -f 镜像名1:TAG 镜像名2:TAG
 docker rmi -f $(docker images -qa)
 ```
 
-### 3.2.7 谈谈docker虚悬镜像是什么？
+#### 3.2.7 谈谈docker虚悬镜像是什么？
 
 ```shell
 仓库名称，标签都是<none>的镜像，俗称虚悬镜像dangling image
@@ -91,7 +91,7 @@ docker rmi -f $(docker images -qa)
 后续Dockerfile章节在介绍
 ```
 
-## 3.3 容器命令
+### 3.3 容器命令
 
 有镜像才能创建容器，这是根本前提（下载一个CentOS或者Ubuntu镜像演示）
 
@@ -104,7 +104,7 @@ docker rmi -f $(docker images -qa)
 3. 本次演示用ubuntu演示
 
 ![Docker常用命令06](../../image/Docker/Docker常用命令06.png)
-### 3.3.1 新建+启动容器
+#### 3.3.1 新建+启动容器
 
 ```shell
 docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
@@ -126,7 +126,7 @@ docker run -it centos /bin/bash
 - centos：centos镜像
 - /bin/bash：放在镜像名后的是命令，这里我们希望有个交互式 Shell，因此用的是 /bin/bash。 要退出终端，直接输入 `exit:`
 
-### 3.3.2 列出当前所有正在运行的容器
+#### 3.3.2 列出当前所有正在运行的容器
 
 ```shell
 docker ps [OPTIONS]
@@ -137,7 +137,7 @@ docker ps [OPTIONS]
 -q :静默模式，只显示容器编号。 
 ```
 
-### 3.3.3 退出容器
+#### 3.3.3 退出容器
 
 ```shell
 # 1、run进去容器，exit退出，容器停止
@@ -146,7 +146,7 @@ exit
 ctrl+p+q
 ```
 
-### 3.3.4 启动已停止运行的容器
+#### 3.3.4 启动已停止运行的容器
 
 ```shell
 # 启动已停止运行的容器
@@ -165,8 +165,8 @@ docker rm -rf $(docker ps -a -q)
 docker ps -a -q | xargs docker rm
 ```
 
-### 3.3.5 重要
-### 启动守护式容器（后台服务器）：
+#### 3.3.5 重要
+#### 启动守护式容器（后台服务器）：
 
 ```shell
 有镜像才能创建容器，这是根本前提（下载一个Redis6.0.8镜像演示）
@@ -247,7 +247,7 @@ docker exec -it 容器ID redis-cli
 > cat 文件名.tar | docker import -镜像用户/镜像名:镜像版本号
 > ![Docker常用命令14](../../image/Docker/Docker常用命令14.png)
 
-## 3.4 总结
+### 3.4 总结
 
 ![Docker常用命令15](../../image/Docker/Docker常用命令15.png)
 
