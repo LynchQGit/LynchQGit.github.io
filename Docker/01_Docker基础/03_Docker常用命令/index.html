@@ -1,0 +1,1184 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../02_Docker%E5%AE%89%E8%A3%85/">
+      
+      
+        <link rel="next" href="../../../%E7%BC%96%E7%A0%81/Go/%E6%88%90%E9%95%BF%E8%B7%AF%E7%BA%BF/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.0.13">
+    
+    
+      
+        <title>三、Docker常用命令 - 韩林奇的个人博客</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ffa9267a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#docker" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="韩林奇的个人博客" class="md-header__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            韩林奇的个人博客
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              三、Docker常用命令
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_3" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_3">
+          
+            <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/LynchQGit/LynchQGit.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="韩林奇的个人博客" class="md-nav__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    韩林奇的个人博客
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/LynchQGit/LynchQGit.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Docker
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Docker
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          01 Docker基础
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          01 Docker基础
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_Docker%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+        01 Docker简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_Docker%E5%AE%89%E8%A3%85/" class="md-nav__link">
+        02 Docker安装
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          三、Docker常用命令
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        三、Docker常用命令
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    3.1 帮助启动类命令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    3.2 镜像命令
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 镜像命令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321" class="md-nav__link">
+    3.2.1 列出本地主机上的镜像
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-options" class="md-nav__link">
+    3.2.2 OPTIONS 说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323-docker-search" class="md-nav__link">
+    3.2.3 docker search 某个镜像名字
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#324-docker-pull" class="md-nav__link">
+    3.2.4 docker pull 某个镜像名字
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#325-docker-system-df" class="md-nav__link">
+    3.2.5 docker system df 查看镜像/容器/数据卷所占用的空间
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#326-docker-rmi" class="md-nav__link">
+    3.2.6 docker rmi 删除镜像
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#327-docker" class="md-nav__link">
+    3.2.7 谈谈docker虚悬镜像是什么？
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    3.3 容器命令
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 容器命令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331" class="md-nav__link">
+    3.3.1 新建+启动容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332" class="md-nav__link">
+    3.3.2 列出当前所有正在运行的容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#333" class="md-nav__link">
+    3.3.3 退出容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#334" class="md-nav__link">
+    3.3.4 启动已停止运行的容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#335" class="md-nav__link">
+    3.3.5 重要
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    启动守护式容器（后台服务器）：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    3.4 总结
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          编码
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          编码
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          Go
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Go
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%BC%96%E7%A0%81/Go/%E6%88%90%E9%95%BF%E8%B7%AF%E7%BA%BF/" class="md-nav__link">
+        成长路线
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_2" id="__nav_3_1_2_label" tabindex="0">
+          面试
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          面试
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%BC%96%E7%A0%81/Go/%E9%9D%A2%E8%AF%95/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        开发常见错误总结
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%BC%96%E7%A0%81/Python/GIL/" class="md-nav__link">
+        GIL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%BC%96%E7%A0%81/Python/Pydantic/" class="md-nav__link">
+        Pydantic
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    3.1 帮助启动类命令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    3.2 镜像命令
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 镜像命令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321" class="md-nav__link">
+    3.2.1 列出本地主机上的镜像
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-options" class="md-nav__link">
+    3.2.2 OPTIONS 说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323-docker-search" class="md-nav__link">
+    3.2.3 docker search 某个镜像名字
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#324-docker-pull" class="md-nav__link">
+    3.2.4 docker pull 某个镜像名字
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#325-docker-system-df" class="md-nav__link">
+    3.2.5 docker system df 查看镜像/容器/数据卷所占用的空间
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#326-docker-rmi" class="md-nav__link">
+    3.2.6 docker rmi 删除镜像
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#327-docker" class="md-nav__link">
+    3.2.7 谈谈docker虚悬镜像是什么？
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    3.3 容器命令
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 容器命令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331" class="md-nav__link">
+    3.3.1 新建+启动容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332" class="md-nav__link">
+    3.3.2 列出当前所有正在运行的容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#333" class="md-nav__link">
+    3.3.3 退出容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#334" class="md-nav__link">
+    3.3.4 启动已停止运行的容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#335" class="md-nav__link">
+    3.3.5 重要
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    启动守护式容器（后台服务器）：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    3.4 总结
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="docker">三、Docker常用命令<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
+<h2 id="31">3.1 帮助启动类命令<a class="headerlink" href="#31" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># 启动命令</span>
+systemctl<span class="w"> </span>start<span class="w"> </span>docker
+<span class="c1"># 停止命令</span>
+systemctl<span class="w"> </span>stop<span class="w"> </span>docker
+<span class="c1"># 重启命令</span>
+systemctl<span class="w"> </span>restart<span class="w"> </span>docker
+<span class="c1"># 查看docker状态</span>
+systemctl<span class="w"> </span>status<span class="w"> </span>docker
+<span class="c1"># 开机启动</span>
+systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>docker
+<span class="c1"># 查看 docker 概要信息</span>
+docker<span class="w"> </span>info
+<span class="c1"># 查看docker 总体帮助文档</span>
+docker<span class="w"> </span>--help
+<span class="c1"># 查看docker命令帮助文档：</span>
+docker<span class="w"> </span>具体命令<span class="w"> </span>--help
+</code></pre></div>
+<h2 id="32">3.2 镜像命令<a class="headerlink" href="#32" title="Permanent link">&para;</a></h2>
+<h3 id="321">3.2.1 列出本地主机上的镜像<a class="headerlink" href="#321" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># 列出本地主机上的镜像</span>
+docker<span class="w"> </span>images
+</code></pre></div>
+<p><img alt="Docker常用命令01" src="../../../image/Docker/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A401.png" /></p>
+<p>各个选项说明：
+- REPOSITORY：表示镜像的仓库源
+- TAG：镜像的标签版本号
+- IMAGE ID：镜像ID
+- CREATED：镜像创建时间
+- SIZE：镜像大小</p>
+<p>同一仓库源可以有多个 TAG版本，代表这个仓库源的不同个版本，我们使用 REPOSITORY:TAG 来定义不同的镜像。<br />如果你不指定一个镜像的版本标签，例如你只使用 ubuntu，docker 将默认使用 ubuntu:latest 镜像</p>
+<h3 id="322-options">3.2.2 OPTIONS 说明<a class="headerlink" href="#322-options" title="Permanent link">&para;</a></h3>
+<p><code>-a</code>：列出本地所有镜像（含历史映像层）<br /><code>-q</code>：只显示镜像ID</p>
+<h3 id="323-docker-search">3.2.3 docker search 某个镜像名字<a class="headerlink" href="#323-docker-search" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># 网站</span>
+https://hub.docker.com
+<span class="c1"># 命令</span>
+docker<span class="w"> </span>search<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>镜像名字
+<span class="c1"># OPTIONS说明</span>
+<span class="c1"># --limit ：只列出N个镜像，默认25个</span>
+docker<span class="w"> </span>search<span class="w">  </span>--limit<span class="w"> </span><span class="m">5</span><span class="w"> </span>redis
+</code></pre></div>
+案例：
+<img alt="Docker常用命令02" src="../../../image/Docker/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A402.png" /></p>
+<h3 id="324-docker-pull">3.2.4 docker pull 某个镜像名字<a class="headerlink" href="#324-docker-pull" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># 下载镜像</span>
+<span class="w"> </span>docker<span class="w"> </span>pull<span class="w"> </span>镜像名字<span class="o">[</span>:TAG<span class="o">]</span>
+
+<span class="w"> </span>docker<span class="w"> </span>pull<span class="w">  </span>镜像名字<span class="w"> </span>
+
+<span class="w"> </span><span class="c1"># 没有TAG就是最新版本 等价于</span>
+<span class="w"> </span>docker<span class="w"> </span>pull<span class="w"> </span>镜像名字：latest
+<span class="w"> </span>docker<span class="w"> </span>pull<span class="w"> </span>ubuntu<span class="w"> </span>
+</code></pre></div>
+<img alt="Docker常用命令03" src="../../../image/Docker/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A403.png" /></p>
+<h3 id="325-docker-system-df">3.2.5 docker system df 查看镜像/容器/数据卷所占用的空间<a class="headerlink" href="#325-docker-system-df" title="Permanent link">&para;</a></h3>
+<p><img alt="Docker常用命令04" src="../../../image/Docker/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A404.png" /></p>
+<h3 id="326-docker-rmi">3.2.6 docker rmi 删除镜像<a class="headerlink" href="#326-docker-rmi" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># 删除单个</span>
+docker<span class="w"> </span>rmi<span class="w"> </span>-f<span class="w"> </span>镜像ID
+
+<span class="c1"># 删除多个</span>
+docker<span class="w"> </span>rmi<span class="w"> </span>-f<span class="w"> </span>镜像名1:TAG<span class="w"> </span>镜像名2:TAG
+
+<span class="c1"># 删除全部</span>
+docker<span class="w"> </span>rmi<span class="w"> </span>-f<span class="w"> </span><span class="k">$(</span>docker<span class="w"> </span>images<span class="w"> </span>-qa<span class="k">)</span>
+</code></pre></div>
+<h3 id="327-docker">3.2.7 谈谈docker虚悬镜像是什么？<a class="headerlink" href="#327-docker" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>仓库名称，标签都是&lt;none&gt;的镜像，俗称虚悬镜像dangling<span class="w"> </span>image
+长什么样子
+后续Dockerfile章节在介绍
+</code></pre></div>
+<h2 id="33">3.3 容器命令<a class="headerlink" href="#33" title="Permanent link">&para;</a></h2>
+<p>有镜像才能创建容器，这是根本前提（下载一个CentOS或者Ubuntu镜像演示）</p>
+<ol>
+<li>说明</li>
+</ol>
+<p><img alt="Docker常用命令05" src="../../../image/Docker/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A405.png" /></p>
+<ol>
+<li>docker pull centos</li>
+<li>docker pull ubuntu</li>
+<li>本次演示用ubuntu演示</li>
+</ol>
+<p><img alt="Docker常用命令06" src="../../../image/Docker/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A406.png" /></p>
+<h3 id="331">3.3.1 新建+启动容器<a class="headerlink" href="#331" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>IMAGE<span class="w"> </span><span class="o">[</span>COMMAND<span class="o">]</span><span class="w"> </span><span class="o">[</span>ARG...<span class="o">]</span>
+</code></pre></div>
+<p><br /><strong>OPTIONS说明</strong><br />
+OPTIONS说明（常用）：有些是一个减号，有些是两个减号<br />--name="容器新名字" 为容器指定一个名称； -d: 后台运行容器并返回容器ID，也即启动守护式容器(后台运行)；<br />-i：以交互模式运行容器，通常与 -t 同时使用； -t：为容器重新分配一个伪输入终端，通常与 -i 同时使用； 也即 启动交互式容器(前台有伪终端，等待交互) ；<br />-P: 随机 端口映射，大写P -p: 指定 端口映射，小写p<br /><img alt="Docker常用命令07" src="../../../image/Docker/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A407.png" /></p>
+<p>启动交互式容器（前台命令行）<br /><img alt="Docker常用命令08" src="../../../image/Docker/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A408.png" /><br />使用镜像centos:latest以 交互模式 启动一个容器,在容器内执行/bin/bash命令。</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>centos<span class="w"> </span>/bin/bash
+</code></pre></div>
+<p>参数说明：</p>
+<ul>
+<li>-i：交互式操作</li>
+<li>-t：终端</li>
+<li>centos：centos镜像</li>
+<li>/bin/bash：放在镜像名后的是命令，这里我们希望有个交互式 Shell，因此用的是 /bin/bash。 要退出终端，直接输入 <code>exit:</code></li>
+</ul>
+<h3 id="332">3.3.2 列出当前所有正在运行的容器<a class="headerlink" href="#332" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>ps<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+<span class="c1"># OPTIONS说明</span>
+-a<span class="w"> </span>:<span class="w"> </span>列出当前所有<span class="w"> </span>正在运行<span class="w"> </span>的容器<span class="w"> </span>+<span class="w"> </span>历史上运行过<span class="w"> </span>的<span class="w"> </span>
+-l<span class="w"> </span>:显示最近创建的容器。<span class="w"> </span>
+-n：显示最近n个创建的容器。<span class="w"> </span>
+-q<span class="w"> </span>:静默模式，只显示容器编号。<span class="w"> </span>
+</code></pre></div>
+<h3 id="333">3.3.3 退出容器<a class="headerlink" href="#333" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># 1、run进去容器，exit退出，容器停止</span>
+<span class="nb">exit</span><span class="w"> </span>
+<span class="c1"># 2、run进去容器，ctrl+p+q退出，容器不停止</span>
+ctrl+p+q
+</code></pre></div>
+<h3 id="334">3.3.4 启动已停止运行的容器<a class="headerlink" href="#334" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># 启动已停止运行的容器</span>
+docker<span class="w"> </span>start<span class="w"> </span>容器ID或者容器名
+<span class="c1"># 重启容器</span>
+docker<span class="w"> </span>restart<span class="w"> </span>容器ID或者容器名
+<span class="c1"># 停止容器</span>
+docker<span class="w"> </span>stop<span class="w"> </span>容器ID或者容器名
+<span class="c1"># 强制停止容器</span>
+docker<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>容器ID或容器名
+<span class="c1"># 删除已停止的容器</span>
+docker<span class="w"> </span>rm<span class="w"> </span>容器ID
+<span class="c1"># 一次性删除多个容器实例</span>
+docker<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="k">$(</span>docker<span class="w"> </span>ps<span class="w"> </span>-a<span class="w"> </span>-q<span class="k">)</span>
+
+docker<span class="w"> </span>ps<span class="w"> </span>-a<span class="w"> </span>-q<span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>docker<span class="w"> </span>rm
+</code></pre></div>
+<h3 id="335">3.3.5 重要<a class="headerlink" href="#335" title="Permanent link">&para;</a></h3>
+<h3 id="_1">启动守护式容器（后台服务器）：<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>有镜像才能创建容器，这是根本前提（下载一个Redis6.0.8镜像演示）
+
+在大部分的场景下，我们希望docker的服务是在后台运行的，我们可以通过<span class="w"> </span>-d<span class="w"> </span>指定容器的后台运行模式。
+
+docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>容器名
+<span class="c1"># 使用镜像centos:latest以后台模式启动一个容器 </span>
+docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>centos<span class="w"> </span>
+
+问题：然后docker<span class="w"> </span>ps<span class="w"> </span>-a<span class="w"> </span>进行查看,<span class="w">  </span>会发现容器已经退出<span class="w"> </span>
+很重要的要说明的一点:<span class="w">  </span>Docker容器后台运行,就必须有一个前台进程.<span class="w"> </span>
+容器运行的命令如果不是那些<span class="w"> </span>一直挂起的命令<span class="w"> </span>（比如运行top，tail），就是会自动退出的。<span class="w"> </span>
+
+这个是docker的机制问题,比如你的web容器,我们以nginx为例，正常情况下,<span class="w"> </span>
+我们配置启动服务只需要启动响应的service即可。例如service<span class="w"> </span>nginx<span class="w"> </span>start<span class="w"> </span>
+但是,这样做,nginx为后台进程模式运行,就导致docker前台没有运行的应用,<span class="w"> </span>
+这样的容器后台启动后,会立即自杀因为他觉得他没事可做了.<span class="w"> </span>
+所以，最佳的解决方案是,<span class="w"> </span>将你要运行的程序以前台进程的形式运行，<span class="w"> </span>
+常见就是命令行模式，表示我还有交互操作，别中断，O<span class="o">(</span>∩_∩<span class="o">)</span>O哈哈~<span class="w"> </span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># 前台交互式启动</span>
+docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>redis:6.0.8
+<span class="c1"># 后台交互式启动</span>
+docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>redis:6.0.8
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>logs<span class="w"> </span>容器ID
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>top<span class="w"> </span>容器ID
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>inspect<span class="w"> </span>容器ID
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>容器ID<span class="w"> </span>bashShell
+</code></pre></div>
+<p><img alt="Docker常用命令09" src="../../../image/Docker/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A409.png" /><br />重新进入docker attach 容器ID<br />案例演示，用centos或者unbuntu都可以 上述两个区别：</p>
+<ol>
+<li>attach 直接进入容器启动命令的终端，不会启动新的进程用exit退出，会导致容器的停止。</li>
+</ol>
+<p><img alt="Docker常用命令10" src="../../../image/Docker/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A410.png" /></p>
+<ol>
+<li>exec 是在容器中打开新的终端，并且可以启动新的进程用exit退出，不会导致容器的停止。</li>
+</ol>
+<p><img alt="Docker常用命令11" src="../../../image/Docker/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A411.png" /><br /><strong>推荐大家使用docker exec 命令，因为退出容器终端，不会导致容器的停止。</strong></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>容器ID<span class="w"> </span>/bin/bash
+
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>容器ID<span class="w"> </span>redis-cli
+
+一般用-d后台启动的程序，在用exec进入对应容器实例
+</code></pre></div>
+<p><strong>从容器内拷贝文件到主机上</strong></p>
+<blockquote>
+<p>容器 -&gt; 主机
+docker cp 容器ID:容器内路径 目的主机路径
+<img alt="Docker常用命令12" src="../../../image/Docker/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A412.png" />
+公式： docker cp 容器 ID: 容器内路径 目的主机路径</p>
+</blockquote>
+<p><strong>导入和导出容器</strong></p>
+<blockquote>
+<p>Export 导出容器的内容留作为一个tar归档文件[对应import命令]
+import 从tar 包中的内容创建一个新的文件系统在导入为镜像[对应export]
+【案例】：
+docker export 容器ID &gt; 文件.tar
+<img alt="Docker常用命令13" src="../../../image/Docker/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A413.png" />
+cat 文件名.tar | docker import -镜像用户/镜像名:镜像版本号
+<img alt="Docker常用命令14" src="../../../image/Docker/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A414.png" /></p>
+</blockquote>
+<h2 id="34">3.4 总结<a class="headerlink" href="#34" title="Permanent link">&para;</a></h2>
+<p><img alt="Docker常用命令15" src="../../../image/Docker/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A415.png" /></p>
+<div class="highlight"><pre><span></span><code>attach<span class="w">    </span>Attach<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>running<span class="w"> </span>container<span class="w">                 </span>#<span class="w"> </span>当前<span class="w"> </span>shell<span class="w"> </span>下<span class="w"> </span>attach<span class="w"> </span>连接指定运行镜像<span class="w"> </span>
+build<span class="w">     </span>Build<span class="w"> </span>an<span class="w"> </span>image<span class="w"> </span>from<span class="w"> </span>a<span class="w"> </span>Dockerfile<span class="w">              </span>#<span class="w"> </span>通过<span class="w"> </span>Dockerfile<span class="w"> </span>定制镜像<span class="w"> </span>
+commit<span class="w">    </span>Create<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>image<span class="w"> </span>from<span class="w"> </span>a<span class="w"> </span>container<span class="w"> </span>changes<span class="w">   </span>#<span class="w"> </span>提交当前容器为新的镜像<span class="w"> </span>
+cp<span class="w">        </span>Copy<span class="w"> </span>files/folders<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>containers<span class="w"> </span>filesystem<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>host<span class="w"> </span>path<span class="w">   </span>#从容器中拷贝指定文件或者目录到宿主机中<span class="w"> </span>
+create<span class="w">    </span>Create<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>container<span class="w">                        </span>#<span class="w"> </span>创建一个新的容器，同<span class="w"> </span>run，但不启动容器<span class="w"> </span>
+diff<span class="w">      </span>Inspect<span class="w"> </span>changes<span class="w"> </span>on<span class="w"> </span>a<span class="w"> </span>container<span class="err">&#39;</span>s<span class="w"> </span>filesystem<span class="w">   </span>#<span class="w"> </span>查看<span class="w"> </span>docker<span class="w"> </span>容器变化<span class="w"> </span>
+events<span class="w">    </span>Get<span class="w"> </span>real<span class="w"> </span><span class="nb">time</span><span class="w"> </span>events<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>server<span class="w">          </span>#<span class="w"> </span>从<span class="w"> </span>docker<span class="w"> </span>服务获取容器实时事件<span class="w"> </span>
+<span class="nb">exec</span><span class="w">      </span>Run<span class="w"> </span>a<span class="w"> </span><span class="nb">command</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>an<span class="w"> </span>existing<span class="w"> </span>container<span class="w">        </span>#<span class="w"> </span>在已存在的容器上运行命令<span class="w"> </span>
+<span class="nb">export</span><span class="w">    </span>Stream<span class="w"> </span>the<span class="w"> </span>contents<span class="w"> </span>of<span class="w"> </span>a<span class="w"> </span>container<span class="w"> </span>as<span class="w"> </span>a<span class="w"> </span>tar<span class="w"> </span>archive<span class="w">   </span>#<span class="w"> </span>导出容器的内容流作为一个<span class="w"> </span>tar<span class="w"> </span>归档文件<span class="o">[</span>对应<span class="w"> </span>import<span class="w"> </span><span class="o">]</span><span class="w"> </span>
+<span class="nb">history</span><span class="w">   </span>Show<span class="w"> </span>the<span class="w"> </span><span class="nb">history</span><span class="w"> </span>of<span class="w"> </span>an<span class="w"> </span>image<span class="w">                  </span>#<span class="w"> </span>展示一个镜像形成历史<span class="w"> </span>
+images<span class="w">    </span>List<span class="w"> </span>images<span class="w">                                   </span>#<span class="w"> </span>列出系统当前镜像<span class="w"> </span>
+import<span class="w">    </span>Create<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>filesystem<span class="w"> </span>image<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>contents<span class="w"> </span>of<span class="w"> </span>a<span class="w"> </span>tarball<span class="w"> </span>#<span class="w"> </span>从tar包中的内容创建一个新的文件系统映像<span class="o">[</span>对应export<span class="o">]</span><span class="w"> </span>
+info<span class="w">      </span>Display<span class="w"> </span>system-wide<span class="w"> </span>information<span class="w">               </span>#<span class="w"> </span>显示系统相关信息<span class="w"> </span>
+inspect<span class="w">   </span>Return<span class="w"> </span>low-level<span class="w"> </span>information<span class="w"> </span>on<span class="w"> </span>a<span class="w"> </span>container<span class="w">   </span>#<span class="w"> </span>查看容器详细信息<span class="w"> </span>
+<span class="nb">kill</span><span class="w">      </span>Kill<span class="w"> </span>a<span class="w"> </span>running<span class="w"> </span>container<span class="w">                      </span>#<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>指定<span class="w"> </span>docker<span class="w"> </span>容器<span class="w"> </span>
+load<span class="w">      </span>Load<span class="w"> </span>an<span class="w"> </span>image<span class="w"> </span>from<span class="w"> </span>a<span class="w"> </span>tar<span class="w"> </span>archive<span class="w">              </span>#<span class="w"> </span>从一个<span class="w"> </span>tar<span class="w"> </span>包中加载一个镜像<span class="o">[</span>对应<span class="w"> </span>save<span class="o">]</span><span class="w"> </span>
+login<span class="w">     </span>Register<span class="w"> </span>or<span class="w"> </span>Login<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>docker<span class="w"> </span>registry<span class="w"> </span>server<span class="w">    </span>#<span class="w"> </span>注册或者登陆一个<span class="w"> </span>docker<span class="w"> </span>源服务器<span class="w"> </span>
+<span class="nb">logout</span><span class="w">    </span>Log<span class="w"> </span>out<span class="w"> </span>from<span class="w"> </span>a<span class="w"> </span>Docker<span class="w"> </span>registry<span class="w"> </span>server<span class="w">          </span>#<span class="w"> </span>从当前<span class="w"> </span>Docker<span class="w"> </span>registry<span class="w"> </span>退出<span class="w"> </span>
+logs<span class="w">      </span>Fetch<span class="w"> </span>the<span class="w"> </span>logs<span class="w"> </span>of<span class="w"> </span>a<span class="w"> </span>container<span class="w">                 </span>#<span class="w"> </span>输出当前容器日志信息<span class="w"> </span>
+port<span class="w">      </span>Lookup<span class="w"> </span>the<span class="w"> </span>public-facing<span class="w"> </span>port<span class="w"> </span>which<span class="w"> </span>is<span class="w"> </span>NAT-ed<span class="w"> </span>to<span class="w"> </span>PRIVATE_PORT<span class="w">    </span>#<span class="w"> </span>查看映射端口对应的容器内部源端口<span class="w"> </span>
+pause<span class="w">     </span>Pause<span class="w"> </span>all<span class="w"> </span>processes<span class="w"> </span>within<span class="w"> </span>a<span class="w"> </span>container<span class="w">        </span>#<span class="w"> </span>暂停容器<span class="w"> </span>
+ps<span class="w">        </span>List<span class="w"> </span>containers<span class="w">                               </span>#<span class="w"> </span>列出容器列表<span class="w"> </span>
+pull<span class="w">      </span>Pull<span class="w"> </span>an<span class="w"> </span>image<span class="w"> </span>or<span class="w"> </span>a<span class="w"> </span>repository<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>docker<span class="w"> </span>registry<span class="w"> </span>server<span class="w">   </span>#<span class="w"> </span>从docker镜像源服务器拉取指定镜像或者库镜像<span class="w"> </span>
+push<span class="w">      </span>Push<span class="w"> </span>an<span class="w"> </span>image<span class="w"> </span>or<span class="w"> </span>a<span class="w"> </span>repository<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>docker<span class="w"> </span>registry<span class="w"> </span>server<span class="w">    </span>#<span class="w"> </span>推送指定镜像或者库镜像至docker源服务器<span class="w"> </span>
+restart<span class="w">   </span>Restart<span class="w"> </span>a<span class="w"> </span>running<span class="w"> </span>container<span class="w">                   </span>#<span class="w"> </span>重启运行的容器<span class="w"> </span>
+rm<span class="w">        </span>Remove<span class="w"> </span>one<span class="w"> </span>or<span class="w"> </span>more<span class="w"> </span>containers<span class="w">                 </span>#<span class="w"> </span>移除一个或者多个容器<span class="w"> </span>
+rmi<span class="w">       </span>Remove<span class="w"> </span>one<span class="w"> </span>or<span class="w"> </span>more<span class="w"> </span>images<span class="w">       </span>#<span class="w"> </span>移除一个或多个镜像<span class="o">[</span>无容器使用该镜像才可删除，否则需删除相关容器才可继续或<span class="w"> </span>-f<span class="w"> </span>强制删除<span class="o">]</span><span class="w"> </span>
+<span class="k">run</span><span class="w">       </span><span class="k">Run</span><span class="w"> </span>a<span class="w"> </span><span class="nb">command</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>container<span class="w">              </span>#<span class="w"> </span>创建一个新的容器并运行一个命令<span class="w"> </span>
+save<span class="w">      </span>Save<span class="w"> </span>an<span class="w"> </span>image<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>tar<span class="w"> </span>archive<span class="w">                </span>#<span class="w"> </span>保存一个镜像为一个<span class="w"> </span>tar<span class="w"> </span>包<span class="o">[</span>对应<span class="w"> </span>load<span class="o">]</span><span class="w"> </span>
+search<span class="w">    </span>Search<span class="w"> </span><span class="k">for</span><span class="w"> </span>an<span class="w"> </span>image<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>Docker<span class="w"> </span>Hub<span class="w">         </span>#<span class="w"> </span>在<span class="w"> </span>docker<span class="w"> </span>hub<span class="w"> </span>中搜索镜像<span class="w"> </span>
+start<span class="w">     </span>Start<span class="w"> </span>a<span class="w"> </span>stopped<span class="w"> </span>containers<span class="w">                    </span>#<span class="w"> </span>启动容器<span class="w"> </span>
+stop<span class="w">      </span>Stop<span class="w"> </span>a<span class="w"> </span>running<span class="w"> </span>containers<span class="w">                     </span>#<span class="w"> </span>停止容器<span class="w"> </span>
+tag<span class="w">       </span>Tag<span class="w"> </span>an<span class="w"> </span>image<span class="w"> </span>into<span class="w"> </span>a<span class="w"> </span>repository<span class="w">                </span>#<span class="w"> </span>给源中镜像打标签<span class="w"> </span>
+top<span class="w">       </span>Lookup<span class="w"> </span>the<span class="w"> </span>running<span class="w"> </span>processes<span class="w"> </span>of<span class="w"> </span>a<span class="w"> </span>container<span class="w">   </span>#<span class="w"> </span>查看容器中运行的进程信息<span class="w"> </span>
+unpause<span class="w">   </span>Unpause<span class="w"> </span>a<span class="w"> </span>paused<span class="w"> </span>container<span class="w">                    </span>#<span class="w"> </span>取消暂停容器<span class="w"> </span>
+version<span class="w">   </span>Show<span class="w"> </span>the<span class="w"> </span>docker<span class="w"> </span>version<span class="w"> </span>information<span class="w">           </span>#<span class="w"> </span>查看<span class="w"> </span>docker<span class="w"> </span>版本号<span class="w"> </span>
+<span class="nb">wait</span><span class="w">      </span>Block<span class="w"> </span><span class="k">until</span><span class="w"> </span>a<span class="w"> </span>container<span class="w"> </span>stops,<span class="w"> </span><span class="k">then</span><span class="w"> </span>print<span class="w"> </span>its<span class="w"> </span><span class="nb">exit</span><span class="w"> </span>code<span class="w">   </span>#<span class="w"> </span>截取容器停止时的退出状态值<span class="w"> </span>
+</code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+      
+    
+  </body>
+</html>
