@@ -1,4 +1,3 @@
-https://www.cnblogs.com/alexg2048/p/14679927.html
 ## Get Start
 ### Download Package
 https://github.com/goharbor/harbor/releases
