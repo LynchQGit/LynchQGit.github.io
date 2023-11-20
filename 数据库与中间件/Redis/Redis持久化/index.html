@@ -9,22 +9,24 @@
       
       
       
+        <link rel="prev" href="../RESP%E5%8D%8F%E8%AE%AE/">
       
-        <link rel="next" href="Docker/01_Docker%E5%9F%BA%E7%A1%80/01_Docker%E7%AE%80%E4%BB%8B/">
       
-      <link rel="icon" href="assets/images/favicon.png">
+        <link rel="next" href="../%E8%AF%BB%E5%86%99%E5%86%85%E5%AD%98/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.0.13">
     
     
       
-        <title>韩林奇的个人博客</title>
+        <title>Redis持久化 - 韩林奇的个人博客</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.ffa9267a.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ffa9267a.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
 
@@ -40,7 +42,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -69,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#rdb" class="md-skip">
           跳转至
         </a>
       
@@ -83,7 +85,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="." title="韩林奇的个人博客" class="md-header__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
+    <a href="../../.." title="韩林奇的个人博客" class="md-header__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -102,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Redis持久化
             
           </span>
         </div>
@@ -209,7 +211,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="韩林奇的个人博客" class="md-nav__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
+    <a href="../../.." title="韩林奇的个人博客" class="md-nav__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -238,48 +240,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Home
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    在线访问
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -348,7 +313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Docker/01_Docker%E5%9F%BA%E7%A1%80/01_Docker%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+      <a href="../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/01_Docker%E7%AE%80%E4%BB%8B/" class="md-nav__link">
         01 Docker简介
       </a>
     </li>
@@ -362,7 +327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Docker/01_Docker%E5%9F%BA%E7%A1%80/02_Docker%E5%AE%89%E8%A3%85/" class="md-nav__link">
+      <a href="../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/02_Docker%E5%AE%89%E8%A3%85/" class="md-nav__link">
         02 Docker安装
       </a>
     </li>
@@ -376,7 +341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Docker/01_Docker%E5%9F%BA%E7%A1%80/03_Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/03_Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         03 Docker常用命令
       </a>
     </li>
@@ -434,7 +399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F/" class="md-nav__link">
+      <a href="../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F/" class="md-nav__link">
         常用镜像
       </a>
     </li>
@@ -475,7 +440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Get%20Start/" class="md-nav__link">
+      <a href="../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Get%20Start/" class="md-nav__link">
         Get Start
       </a>
     </li>
@@ -489,7 +454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Harbor%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+      <a href="../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Harbor%E7%AE%80%E4%BB%8B/" class="md-nav__link">
         Harbor简介
       </a>
     </li>
@@ -516,16 +481,18 @@
 
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
       
       
       
@@ -534,7 +501,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           数据库与中间件
@@ -545,14 +512,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
       
       
       
@@ -561,7 +530,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4_1">
           <span class="md-nav__icon md-icon"></span>
           Redis
@@ -574,7 +543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/RESP%E5%8D%8F%E8%AE%AE/" class="md-nav__link">
+      <a href="../RESP%E5%8D%8F%E8%AE%AE/" class="md-nav__link">
         RESP协议
       </a>
     </li>
@@ -586,11 +555,163 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E6%8C%81%E4%B9%85%E5%8C%96/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Redis持久化
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Redis持久化
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rdb" class="md-nav__link">
+    RDB（快照）持久化
+  </a>
+  
+    <nav class="md-nav" aria-label="RDB（快照）持久化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    原理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    触发方式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    优缺点
+  </a>
+  
+    <nav class="md-nav" aria-label="优缺点">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    优点：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    缺点：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aof" class="md-nav__link">
+    AOF（日志）持久化
+  </a>
+  
+    <nav class="md-nav" aria-label="AOF（日志）持久化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    原理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    同步策略有以下几种：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    触发方式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    优缺点
+  </a>
+  
+    <nav class="md-nav" aria-label="优缺点">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    优点：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    缺点：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rdbaof" class="md-nav__link">
+    RDB与AOF的选择
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -602,7 +723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/%E8%AF%BB%E5%86%99%E5%86%85%E5%AD%98/" class="md-nav__link">
+      <a href="../%E8%AF%BB%E5%86%99%E5%86%85%E5%AD%98/" class="md-nav__link">
         读写内存
       </a>
     </li>
@@ -687,7 +808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E7%BC%96%E7%A0%81/Go/%E6%88%90%E9%95%BF%E8%B7%AF%E7%BA%BF/" class="md-nav__link">
+      <a href="../../../%E7%BC%96%E7%A0%81/Go/%E6%88%90%E9%95%BF%E8%B7%AF%E7%BA%BF/" class="md-nav__link">
         成长路线
       </a>
     </li>
@@ -728,7 +849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E7%BC%96%E7%A0%81/Go/%E9%9D%A2%E8%AF%95/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" class="md-nav__link">
+      <a href="../../../%E7%BC%96%E7%A0%81/Go/%E9%9D%A2%E8%AF%95/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" class="md-nav__link">
         开发常见错误总结
       </a>
     </li>
@@ -783,7 +904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E7%BC%96%E7%A0%81/Python/GIL/" class="md-nav__link">
+      <a href="../../../%E7%BC%96%E7%A0%81/Python/GIL/" class="md-nav__link">
         GIL
       </a>
     </li>
@@ -797,7 +918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E7%BC%96%E7%A0%81/Python/Pydantic/" class="md-nav__link">
+      <a href="../../../%E7%BC%96%E7%A0%81/Python/Pydantic/" class="md-nav__link">
         Pydantic
       </a>
     </li>
@@ -843,8 +964,123 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#rdb" class="md-nav__link">
+    RDB（快照）持久化
+  </a>
+  
+    <nav class="md-nav" aria-label="RDB（快照）持久化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    在线访问
+    原理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    触发方式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    优缺点
+  </a>
+  
+    <nav class="md-nav" aria-label="优缺点">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    优点：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    缺点：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aof" class="md-nav__link">
+    AOF（日志）持久化
+  </a>
+  
+    <nav class="md-nav" aria-label="AOF（日志）持久化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    原理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    同步策略有以下几种：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    触发方式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    优缺点
+  </a>
+  
+    <nav class="md-nav" aria-label="优缺点">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    优点：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    缺点：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rdbaof" class="md-nav__link">
+    RDB与AOF的选择
   </a>
   
 </li>
@@ -867,26 +1103,62 @@
   
 
 
-  <h1>Home</h1>
+  <h1>Redis持久化</h1>
 
-<div align="center">
-<img src="image/logo.jpeg" height="90" width="210" />
-<h2 align="center"> 韩林奇的个人博客 </h2>
-<p align="center">
-🏠欢迎访问我的博客！
-</p>
-<p align="center">
-  <img src="https://img.shields.io/badge/Maintainer-hlq_git@163.com-blue.svg">
-  <img src="https://img.shields.io/badge/Language-Markdown-green.svg">
-  <br />
-  <img src="https://img.shields.io/github/stars/LynchQGit/LynchQGit.github.io.svg?style=social&label=Star">
-  <img src="https://img.shields.io/github/forks/LynchQGit/LynchQGit.github.io.svg?style=social&label=Fork">
-  <img src="https://img.shields.io/github/forks/LynchQGit/LynchQGit.github.io.svg?style=social&label=Watch">
-</p>
-</div>
-
-<h3 id="_1">在线访问<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>在线阅读博客: <a href="https://lynchqgit.github.io/">https://lynchqgit.github.io/</a></p>
+<p>Redis的持久化原理主要有两种方式：RDB（快照）持久化和AOF（日志）持久化。两者均可独立使用，也可同时使用，以满足不同场景下的持久化需。</p>
+<h3 id="rdb">RDB（快照）持久化<a class="headerlink" href="#rdb" title="Permanent link">&para;</a></h3>
+<p>RDB持久化是通过定期对Redis内存中的数据生成快照（Snapshot）并且保存在磁盘中的方式实现的。</p>
+<h4 id="_1">原理<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Redis通过fork()创建一个子进程。</li>
+<li>子进程对内存中的数据进行快照，并将快照数据写入一个临时文件。</li>
+<li>当子进程完成快照过程后，将旧的RDB文件替换为新生成的快照文件。</li>
+</ol>
+<h4 id="_2">触发方式<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<ol>
+<li>定时触发：根据配置文件中的save选项设定的规则定时执行（如save 900 1表示900秒内有1次写入操作时触发）。</li>
+<li>手动触发：通过执行SAVE或BGSAVE命令。</li>
+</ol>
+<h4 id="_3">优缺点<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<h5 id="_4">优点：<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h5>
+<ul>
+<li>RDB文件是一个紧凑的单文件，方便备份和传输。</li>
+<li>恢复数据时，读取快照文件即可，性能较好。</li>
+</ul>
+<h5 id="_5">缺点：<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h5>
+<ul>
+<li>无法做到实时或准实时持久化，可能会出现数据丢失。</li>
+</ul>
+<h3 id="aof">AOF（日志）持久化<a class="headerlink" href="#aof" title="Permanent link">&para;</a></h3>
+<p>AOF持久化是通过记录Redis对内存数据的每次修改操作，并将这些操作写入一个日志文件的方式实现的。</p>
+<h4 id="_6">原理<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Redis将每个写入命令追加到AOF缓冲区。</li>
+<li>根据配置的同步策略（appendfsync选项），将AOF缓冲区的数据同步到磁盘。</li>
+</ol>
+<h4 id="_7">同步策略有以下几种：<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<ul>
+<li>always：每次写入命令都同步到磁盘，较安全但性能较差。</li>
+<li>everysec：每秒同步一次，折中方案。</li>
+<li>no：完全由操作系统控制同步时机，性能最好但安全性较差。</li>
+</ul>
+<h4 id="_8">触发方式<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<p>AOF持久化默认关闭，可以通过配置文件中的appendonly选项启用。</p>
+<h4 id="_9">优缺点<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<h5 id="_10">优点：<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h5>
+<ul>
+<li>可以实时或准实时持久化，数据可靠性较高。</li>
+<li>AOF文件可读性较好，方便排查问题。</li>
+</ul>
+<h5 id="_11">缺点：<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h5>
+<ul>
+<li>AOF文件体积较大，恢复数据时可能性能较差。</li>
+</ul>
+<h3 id="rdbaof">RDB与AOF的选择<a class="headerlink" href="#rdbaof" title="Permanent link">&para;</a></h3>
+<ul>
+<li>如果数据可靠性要求较高，建议使用AOF持久化。</li>
+<li>如果对性能和备份要求较高，可以同时使用RDB和AOF持久化，以兼顾数据可靠性和性能要求。</li>
+</ul>
 
 
 
@@ -924,10 +1196,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.sections"], "search": "assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="assets/javascripts/bundle.2a6f1dda.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
     
   </body>
