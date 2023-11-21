@@ -1,4 +1,6 @@
 ## 一、Docker简介
+Docker架构和组件
+![Docker架构流程图.gif](../../image/Docker/Docker架构流程图.gif)
 ### 1.1 Docker是什么
 【问题】为什么会有Docker出现
 Docker的出现，使得Docker得以打破过去「程序即应用」的观念。透过镜像（image）将作业系统核心除外，运作应用程式所需要的系统环境，由下而上打包，达到应用程式跨平台间的无缝接轨运作。
