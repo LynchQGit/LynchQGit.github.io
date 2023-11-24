@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/%E8%AF%BB%E5%86%99%E5%86%85%E5%AD%98/">
+        <link rel="prev" href="../Redis%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB/">
       
       
-        <link rel="next" href="../%E9%9D%A2%E8%AF%95/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/">
+        <link rel="next" href="../%E8%AF%BB%E5%86%99%E5%86%85%E5%AD%98/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.0.13">
     
     
       
-        <title>成长路线 - 韩林奇的个人博客</title>
+        <title>Redis的数据结构 - 韩林奇的个人博客</title>
       
     
     
@@ -70,6 +70,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#string" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -99,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              成长路线
+              Redis的数据结构
             
           </span>
         </div>
@@ -476,16 +481,18 @@
 
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
       
       
       
@@ -494,7 +501,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           数据库与中间件
@@ -505,14 +512,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
       
       
       
@@ -521,7 +530,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4_1">
           <span class="md-nav__icon md-icon"></span>
           Redis
@@ -534,7 +543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/RESP%E5%8D%8F%E8%AE%AE/" class="md-nav__link">
+      <a href="../RESP%E5%8D%8F%E8%AE%AE/" class="md-nav__link">
         RESP协议
       </a>
     </li>
@@ -548,7 +557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E6%8C%81%E4%B9%85%E5%8C%96/" class="md-nav__link">
+      <a href="../Redis%E6%8C%81%E4%B9%85%E5%8C%96/" class="md-nav__link">
         Redis持久化
       </a>
     </li>
@@ -562,7 +571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB/" class="md-nav__link">
+      <a href="../Redis%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB/" class="md-nav__link">
         Redis数据迁移
       </a>
     </li>
@@ -574,11 +583,76 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Redis的数据结构
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Redis的数据结构
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    字符串（String）：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list" class="md-nav__link">
+    列表（List）：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set" class="md-nav__link">
+    集合（Set）：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sorted-set" class="md-nav__link">
+    有序集合（Sorted Set）：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hash" class="md-nav__link">
+    哈希（Hash）：
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -590,7 +664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/%E8%AF%BB%E5%86%99%E5%86%85%E5%AD%98/" class="md-nav__link">
+      <a href="../%E8%AF%BB%E5%86%99%E5%86%85%E5%AD%98/" class="md-nav__link">
         读写内存
       </a>
     </li>
@@ -617,18 +691,16 @@
 
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
       
       
       
@@ -637,7 +709,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           编码
@@ -648,16 +720,14 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
       
       
       
@@ -666,7 +736,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5_1">
           <span class="md-nav__icon md-icon"></span>
           Go
@@ -677,19 +747,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../%E7%BC%96%E7%A0%81/Go/%E6%88%90%E9%95%BF%E8%B7%AF%E7%BA%BF/" class="md-nav__link">
         成长路线
       </a>
-      
     </li>
   
 
@@ -728,7 +790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E9%9D%A2%E8%AF%95/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" class="md-nav__link">
+      <a href="../../../%E7%BC%96%E7%A0%81/Go/%E9%9D%A2%E8%AF%95/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" class="md-nav__link">
         开发常见错误总结
       </a>
     </li>
@@ -783,7 +845,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/GIL/" class="md-nav__link">
+      <a href="../../../%E7%BC%96%E7%A0%81/Python/GIL/" class="md-nav__link">
         GIL
       </a>
     </li>
@@ -797,7 +859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/Pydantic/" class="md-nav__link">
+      <a href="../../../%E7%BC%96%E7%A0%81/Python/Pydantic/" class="md-nav__link">
         Pydantic
       </a>
     </li>
@@ -836,6 +898,49 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    字符串（String）：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list" class="md-nav__link">
+    列表（List）：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set" class="md-nav__link">
+    集合（Set）：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sorted-set" class="md-nav__link">
+    有序集合（Sorted Set）：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hash" class="md-nav__link">
+    哈希（Hash）：
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -852,10 +957,53 @@
   
 
 
-  <h1>成长路线</h1>
+  <h1>Redis的数据结构</h1>
 
-<p>需要完整导图可以联系作者获取
-<img alt="Go web后端成长路线" src="../../../image/%E7%BC%96%E7%A0%81/Go/%E6%88%90%E9%95%BF%E8%B7%AF%E7%BA%BF.jpg" /></p>
+<p>Redis支持多种数据结构，包括字符串（String）、列表（List）、集合（Set）、有序集合（Sorted Set）和哈希（Hash）。以下是这些数据结构的详细介绍以及它们各自的增删查改命令：</p>
+<h3 id="string">字符串（String）：<a class="headerlink" href="#string" title="Permanent link">&para;</a></h3>
+<p>字符串是Redis最简单的数据结构，可以存储文本或二进制数据。字符串值的最大长度为512MB。
+- 增（Set）：<code>SET key value</code>，将字符串值value关联到key。
+- 删（Delete）：<code>DEL key</code>，删除存储的键值对。
+- 查（Get）：<code>GET key</code>，获取与key关联的字符串值。
+- 改（Update）：<code>SET key new_value</code>，将新的字符串值new_value关联到key。</p>
+<h3 id="list">列表（List）：<a class="headerlink" href="#list" title="Permanent link">&para;</a></h3>
+<p>列表是一种简单的字符串链表，按照插入顺序排序。列表的元素可以重复。
+- 增（Push）：
+  - <code>LPUSH key value</code>，将一个或多个值插入到列表头部。
+  - <code>RPUSH key value</code>，将一个或多个值插入到列表尾部。
+- 删（Remove）：
+  - <code>LPOP key</code>，移除并返回列表的第一个元素。
+  - <code>RPOP key</code>，移除并返回列表的最后一个元素。
+- 查（Get）：
+  - <code>LRANGE key start stop</code>，获取列表指定范围内的元素。
+  - <code>LINDEX key index</code>，通过索引获取列表中的元素。
+- 改（Update）：
+  - <code>LSET key index value</code>，通过索引设置列表元素的值。</p>
+<h3 id="set">集合（Set）：<a class="headerlink" href="#set" title="Permanent link">&para;</a></h3>
+<p>集合是一种无序的字符串集合，集合中的元素是唯一的。
+- 增（Add）：<code>SADD key member</code>，将一个或多个成员元素加入到集合中。
+- 删（Remove）：<code>SREM key member</code>，移除集合中一个或多个成员元素。
+- 查（Get）：
+  - <code>SMEMBERS key</code>，返回集合中的所有成员。
+  - <code>SISMEMBER key member</code>，判断成员元素是否是集合的成员。
+- 改（Update）：集合没有直接的更新命令。要更新元素，需要先删除旧元素，然后添加新元素。</p>
+<h3 id="sorted-set">有序集合（Sorted Set）：<a class="headerlink" href="#sorted-set" title="Permanent link">&para;</a></h3>
+<p>有序集合是一种排序的字符串集合，每个元素关联一个分数（浮点数），元素按分数排序。
+- 增（Add）：<code>ZADD key score member</code>，将一个或多个成员元素及其分数加入到有序集合中。
+- 删（Remove）：<code>ZREM key member</code>，移除有序集合中一个或多个成员元素。
+- 查（Get）：
+  - <code>ZRANGE key start stop [WITHSCORES]</code>，返回有序集合指定范围内的成员。
+  - <code>ZRANK key member</code>，返回有序集合中指定成员的排名。
+- 改（Update）：ZADD key new_score member，更新成员元素的分数。</p>
+<h3 id="hash">哈希（Hash）：<a class="headerlink" href="#hash" title="Permanent link">&para;</a></h3>
+<p>哈希是一种键值对集合，适用于存储对象。
+- 增（Set）：<code>HSET key field value</code>，将哈希表key中的字段field的值设为value。
+- 删（Delete）：<code>HDEL key field</code>，删除哈希表key中的一个或多个指定字段。
+- 查（Get）：
+  - <code>HGET key field</code>，获取存储在哈希表中指定字段的值。
+  - <code>HGETALL key</code>，获取哈希表中所有的字段和值。
+- 改（Update）：<code>HSET key field new_value</code>，将哈希表key中的字段field的值设为new_value。</p>
+<p>以上是Redis数据结构及其增删查改的常用命令。实际上，Redis还有许多其他的命令用于操作这些数据结构，可以参考Redis官方文档了解更多信息。</p>
 
 
 
