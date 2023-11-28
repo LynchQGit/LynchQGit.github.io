@@ -14,7 +14,7 @@ jobs: # 工作流的具体内容
       - uses: actions/setup-python@v2 # 再安装Python3和相关环境
         with:
           python-version: 3.x
-      - uses: actions/cache@v2 # 使用缓存加速构建
+      - uses: actions/cache@v3 # 使用缓存加速构建
         with:
           token: ${{ secrets.GITHUB_TOKEN }} # GitHub的token
           key: ${{ github.ref }} # 缓存的key
