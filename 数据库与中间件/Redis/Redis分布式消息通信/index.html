@@ -9,22 +9,24 @@
       
       
       
+        <link rel="prev" href="../Redis%E5%88%86%E5%B8%83%E5%BC%8F/">
       
-        <link rel="next" href="Docker/01_Docker%E5%9F%BA%E7%A1%80/01_Docker%E7%AE%80%E4%BB%8B/">
       
-      <link rel="icon" href="assets/images/favicon.png">
+        <link rel="next" href="../Redis%E6%8C%81%E4%B9%85%E5%8C%96/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.0.13">
     
     
       
-        <title>韩林奇的个人博客</title>
+        <title>Redis分布式消息通信 - 韩林奇的个人博客</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.ffa9267a.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ffa9267a.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
 
@@ -40,7 +42,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -69,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#redis-cluster-bus" class="md-skip">
           跳转至
         </a>
       
@@ -83,7 +85,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="." title="韩林奇的个人博客" class="md-header__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
+    <a href="../../.." title="韩林奇的个人博客" class="md-header__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -102,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Redis分布式消息通信
             
           </span>
         </div>
@@ -209,7 +211,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="韩林奇的个人博客" class="md-nav__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
+    <a href="../../.." title="韩林奇的个人博客" class="md-nav__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -238,48 +240,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Home
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    在线访问
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -348,7 +313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Docker/01_Docker%E5%9F%BA%E7%A1%80/01_Docker%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+      <a href="../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/01_Docker%E7%AE%80%E4%BB%8B/" class="md-nav__link">
         01 Docker简介
       </a>
     </li>
@@ -362,7 +327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Docker/01_Docker%E5%9F%BA%E7%A1%80/02_Docker%E5%AE%89%E8%A3%85/" class="md-nav__link">
+      <a href="../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/02_Docker%E5%AE%89%E8%A3%85/" class="md-nav__link">
         02 Docker安装
       </a>
     </li>
@@ -376,7 +341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Docker/01_Docker%E5%9F%BA%E7%A1%80/03_Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/03_Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         03 Docker常用命令
       </a>
     </li>
@@ -434,7 +399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F/" class="md-nav__link">
+      <a href="../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F/" class="md-nav__link">
         常用镜像
       </a>
     </li>
@@ -475,7 +440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Get%20Start/" class="md-nav__link">
+      <a href="../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Get%20Start/" class="md-nav__link">
         Get Start
       </a>
     </li>
@@ -489,7 +454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Harbor%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+      <a href="../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Harbor%E7%AE%80%E4%BB%8B/" class="md-nav__link">
         Harbor简介
       </a>
     </li>
@@ -516,16 +481,18 @@
 
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
       
       
       
@@ -534,7 +501,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           数据库与中间件
@@ -545,14 +512,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
       
       
       
@@ -561,7 +530,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4_1">
           <span class="md-nav__icon md-icon"></span>
           Redis
@@ -574,7 +543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/RESP%E5%8D%8F%E8%AE%AE/" class="md-nav__link">
+      <a href="../RESP%E5%8D%8F%E8%AE%AE/" class="md-nav__link">
         RESP协议
       </a>
     </li>
@@ -588,7 +557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E4%B8%8D%E5%90%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/" class="md-nav__link">
+      <a href="../Redis%E4%B8%8D%E5%90%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/" class="md-nav__link">
         Redis不同数据结构使用场景
       </a>
     </li>
@@ -602,7 +571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E5%88%86%E5%B8%83%E5%BC%8F/" class="md-nav__link">
+      <a href="../Redis%E5%88%86%E5%B8%83%E5%BC%8F/" class="md-nav__link">
         Redis分布式
       </a>
     </li>
@@ -614,11 +583,82 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E5%88%86%E5%B8%83%E5%BC%8F%E6%B6%88%E6%81%AF%E9%80%9A%E4%BF%A1/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Redis分布式消息通信
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Redis分布式消息通信
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#redis-cluster-bus" class="md-nav__link">
+    Redis Cluster Bus协议
+  </a>
+  
+    <nav class="md-nav" aria-label="Redis Cluster Bus协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    消息结构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    消息类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    通信方式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    示例
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -630,7 +670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E6%8C%81%E4%B9%85%E5%8C%96/" class="md-nav__link">
+      <a href="../Redis%E6%8C%81%E4%B9%85%E5%8C%96/" class="md-nav__link">
         Redis持久化
       </a>
     </li>
@@ -644,7 +684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB/" class="md-nav__link">
+      <a href="../Redis%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB/" class="md-nav__link">
         Redis数据迁移
       </a>
     </li>
@@ -658,7 +698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+      <a href="../Redis%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
         Redis的数据结构
       </a>
     </li>
@@ -672,7 +712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/%E8%AF%BB%E5%86%99%E5%86%85%E5%AD%98/" class="md-nav__link">
+      <a href="../%E8%AF%BB%E5%86%99%E5%86%85%E5%AD%98/" class="md-nav__link">
         读写内存
       </a>
     </li>
@@ -757,7 +797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E7%BC%96%E7%A0%81/Go/%E6%88%90%E9%95%BF%E8%B7%AF%E7%BA%BF/" class="md-nav__link">
+      <a href="../../../%E7%BC%96%E7%A0%81/Go/%E6%88%90%E9%95%BF%E8%B7%AF%E7%BA%BF/" class="md-nav__link">
         成长路线
       </a>
     </li>
@@ -798,7 +838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E7%BC%96%E7%A0%81/Go/%E9%9D%A2%E8%AF%95/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" class="md-nav__link">
+      <a href="../../../%E7%BC%96%E7%A0%81/Go/%E9%9D%A2%E8%AF%95/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" class="md-nav__link">
         开发常见错误总结
       </a>
     </li>
@@ -853,7 +893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E7%BC%96%E7%A0%81/Python/GIL/" class="md-nav__link">
+      <a href="../../../%E7%BC%96%E7%A0%81/Python/GIL/" class="md-nav__link">
         GIL
       </a>
     </li>
@@ -867,7 +907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E7%BC%96%E7%A0%81/Python/Pydantic/" class="md-nav__link">
+      <a href="../../../%E7%BC%96%E7%A0%81/Python/Pydantic/" class="md-nav__link">
         Pydantic
       </a>
     </li>
@@ -913,8 +953,42 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#redis-cluster-bus" class="md-nav__link">
+    Redis Cluster Bus协议
+  </a>
+  
+    <nav class="md-nav" aria-label="Redis Cluster Bus协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    在线访问
+    消息结构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    消息类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    通信方式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    示例
   </a>
   
 </li>
@@ -937,26 +1011,40 @@
   
 
 
-  <h1>Home</h1>
+  <h1>Redis分布式消息通信</h1>
 
-<div align="center">
-<img src="image/logo.jpeg" height="90" width="210" />
-<h2 align="center"> 韩林奇的个人博客 </h2>
-<p align="center">
-🏠欢迎访问我的博客！
-</p>
-<p align="center">
-  <img src="https://img.shields.io/badge/Maintainer-hlq_git@163.com-blue.svg">
-  <img src="https://img.shields.io/badge/Language-Markdown-green.svg">
-  <br />
-  <img src="https://img.shields.io/github/stars/LynchQGit/LynchQGit.github.io.svg?style=social&label=Star">
-  <img src="https://img.shields.io/github/forks/LynchQGit/LynchQGit.github.io.svg?style=social&label=Fork">
-  <img src="https://img.shields.io/github/forks/LynchQGit/LynchQGit.github.io.svg?style=social&label=Watch">
-</p>
-</div>
-
-<h3 id="_1">在线访问<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>在线阅读博客: <a href="https://lynchqgit.github.io/">https://lynchqgit.github.io/</a></p>
+<p>Redis集群间的节点通过Redis Cluster Bus（集群总线）进行消息通信。Redis Cluster Bus主要用于节点间的元数据交换、故障检测和故障恢复等操作。</p>
+<h2 id="redis-cluster-bus">Redis Cluster Bus协议<a class="headerlink" href="#redis-cluster-bus" title="Permanent link">&para;</a></h2>
+<p>Redis Cluster Bus协议是一种二进制协议，它使用了一种紧凑的二进制消息格式，以减少网络带宽消耗和提高处理速度。</p>
+<h3 id="_1">消息结构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>Redis Cluster Bus协议的消息结构如下：
+<div class="highlight"><pre><span></span><code>+---------+-------------+---------+----------+----------------+------+--------+
+|   大小   |    4 字节   |  2 字节  |  2 字节   |   8 字节       | ...  |  1 字节 |
++---------+-------------+---------+----------+----------------+------+--------+
+| 字段名   |   签名       |  版本   |  类型     |    消息长度     | ...  |  校验和 |
++---------+-------------+---------+----------+----------------+------+--------+
+| 示例值   | &quot;RCmb&quot;      |  1      |  CLUSTERMSG_TYPE_...      | ...  |        |
++---------+-------------+---------+----------+----------------+------+--------+
+</code></pre></div>
+- 签名（Signature）：标识该消息为Redis Cluster Bus协议的消息，固定为"RCmb"。
+- 版本（Version）：协议的版本号，当前为1。
+- 类型（Type）：消息类型，如故障检测、配置更新等。
+- 消息长度（Message Length）：消息的长度，包括消息头和消息体。
+- 校验和（Checksum）：对消息内容进行CRC16校验，用于检测消息在传输过程中是否出错。</p>
+<h3 id="_2">消息类型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>Redis Cluster Bus协议支持多种消息类型，用于处理不同的集群操作：
+- PING：节点间发送心跳消息，用于检测其他节点的存活状态。
+- PONG：回应PING消息，通知发送者节点自己的存活状态。
+- MEET：邀请一个新节点加入集群。
+- FAIL：通知集群中的其他节点，某个节点已宕机。
+- UPDATE：通知集群中的其他节点，某个节点的元数据已发生变化。
+- MFSTART：通知集群中的其他节点，开始进行手动故障转移操作。
+- GFAIL：通知集群中的其他节点，某个节点可能已宕机，但尚未确认。</p>
+<h3 id="_3">通信方式<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>Redis集群中的每个节点会为集群总线维护一个独立的TCP连接，这些连接组成了一个全连接网络。通过该网络，节点可以高效地将消息广播到集群中的其他节点。
+每个节点在启动时会分配一个随机生成的48位节点ID，用于在集群总线中标识自己。节点间的通信消息会包含发送者和接收者的节点ID，以指定消息的来源和目的地。</p>
+<h2 id="_4">示例<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>例如，当一个新节点需要加入集群时，它会向集群中的一个已有节点发送MEET消息。收到MEET消息的节点会将新节点的信息添加到自己的节点表，并将MEET消息广播给集群中的其他节点。其他节点收到MEET消息后，也会将新节点的信息添加到自己的节点表，从而完成新节点的加入。</p>
 
 
 
@@ -994,10 +1082,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.sections"], "search": "assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="assets/javascripts/bundle.2a6f1dda.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
     
   </body>
