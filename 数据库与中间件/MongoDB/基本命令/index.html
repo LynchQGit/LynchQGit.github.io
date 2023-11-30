@@ -946,26 +946,36 @@
 
 <p>以下是一些常用的 MongoDB 命令行命令：
 1. 启动 MongoDB:
-mongod
+<div class="highlight"><pre><span></span><code>mongod
+</code></pre></div>
 2. 连接到 MongoDB 数据库:
-mongo
+<div class="highlight"><pre><span></span><code>mongo
+</code></pre></div>
 3. 显示数据库列表:
-show dbs
+<div class="highlight"><pre><span></span><code>show dbs
+</code></pre></div>
 4. 创建或切换到指定的数据库:
-use <database_name>
+<div class="highlight"><pre><span></span><code>use &lt;database_name&gt;
+</code></pre></div>
 5. 显示当前所在的数据库:
-db
+<div class="highlight"><pre><span></span><code>db
+</code></pre></div>
 6. 显示当前数据库的集合列表:
-show collections
+<div class="highlight"><pre><span></span><code>show collections
+</code></pre></div>
 7. 向指定的集合中插入一个文档:
-db.<collection_name>.insertOne({field1: value1, field2: value2, ...})
+<div class="highlight"><pre><span></span><code>db.&lt;collection_name&gt;.insertOne({field1: value1, field2: value2, ...})
+</code></pre></div>
 8. 查询指定集合中的文档:
-db.<collection_name>.find()
+<div class="highlight"><pre><span></span><code>db.&lt;collection_name&gt;.find()
+</code></pre></div>
 9. 更新指定集合中的文档:
-db.<collection_name>.updateOne({<query>}, {<update>})
+<div class="highlight"><pre><span></span><code>db.&lt;collection_name&gt;.updateOne({&lt;query&gt;}, {&lt;update&gt;})
+</code></pre></div>
 10. 删除指定集合中的文档:
-db.<collection_name>.deleteOne({<query>})
-其中，<query>是查询条件，<update> 是更新操作的参数。更多 MongoDB 命令可以在 MongoDB 官方文档中找到。</p>
+<div class="highlight"><pre><span></span><code>db.&lt;collection_name&gt;.deleteOne({&lt;query&gt;})
+</code></pre></div>
+其中，<code>&lt;query&gt;</code>是查询条件，<code>&lt;update&gt;</code> 是更新操作的参数。更多 MongoDB 命令可以在 MongoDB 官方文档中找到。</p>
 
 
 
