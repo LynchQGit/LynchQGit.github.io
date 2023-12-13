@@ -21,8 +21,8 @@ jobs: # 工作流的具体内容
           path: .cache # 缓存的路径
       - run: pip install mkdocs-material # 使用pip包管理工具安装mkdocs-material
       - run: pip install mkdocs-minify-plugin # 使用pip包管理工具安装mkdocs-minify-plugin
-      # - name: Deploy to GitHub Pages
-      #   env:
-      #     GH_PAT: ${{ secrets.GH_PAT }} # 使用密钥作为环境变量
-      #   run: mkdocs gh-deploy --force # 使用mkdocs-material部署gh-pages分支
-      - run: mkdocs gh-deploy --force # 使用mkdocs-material部署gh-pages分支
+      - name: Deploy to GitHub Pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }} # 使用密钥作为环境变量
+        run: mkdocs gh-deploy --force # 使用mkdocs-material部署gh-pages分支
+      # - run: mkdocs gh-deploy --force # 使用mkdocs-material部署gh-pages分支
