@@ -17,11 +17,12 @@ jobs: # 工作流的具体内容
       - uses: actions/cache@v3 # 使用缓存加速构建
         with:
           key: ${{ github.ref }} # 缓存的key
+          token: ${{ secrets.GH_PAT }}
           path: .cache # 缓存的路径
       - run: pip install mkdocs-material # 使用pip包管理工具安装mkdocs-material
       - run: pip install mkdocs-minify-plugin # 使用pip包管理工具安装mkdocs-minify-plugin
-      - name: Deploy to GitHub Pages
-        env:
-          PERSONAL_TOKEN: ${{ secrets.GH_PAT }} # 使用密钥作为环境变量
-        run: mkdocs gh-deploy --force # 使用mkdocs-material部署gh-pages分支
-      # - run: mkdocs gh-deploy --force # 使用mkdocs-material部署gh-pages分支
+      # - name: Deploy to GitHub Pages
+      #   env:
+      #     GH_PAT: ${{ secrets.GH_PAT }} # 使用密钥作为环境变量
+      #   run: mkdocs gh-deploy --force # 使用mkdocs-material部署gh-pages分支
+      - run: mkdocs gh-deploy --force # 使用mkdocs-material部署gh-pages分支
