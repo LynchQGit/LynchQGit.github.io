@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../python%E5%AE%9E%E7%8E%B0demo/">
+        <link rel="prev" href="../../MongoDB/%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/">
       
       
-        <link rel="next" href="../../MySQL/Json%E5%AD%97%E6%AE%B5%E6%93%8D%E4%BD%9C/">
+        <link rel="next" href="../../Redis/RESP%E5%8D%8F%E8%AE%AE/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>基本命令 - 韩林奇的个人博客</title>
+        <title>Json字段操作 - 韩林奇的个人博客</title>
       
     
     
@@ -71,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -103,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              基本命令
+              Json字段操作
             
           </span>
         </div>
@@ -806,21 +811,19 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
         
           
           <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
@@ -834,7 +837,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6_1">
             <span class="md-nav__icon md-icon"></span>
             MongoDB
@@ -848,7 +851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python%E5%AE%9E%E7%8E%B0demo/" class="md-nav__link">
+      <a href="../../MongoDB/python%E5%AE%9E%E7%8E%B0demo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -866,17 +869,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../MongoDB/%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -885,7 +881,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -903,19 +898,21 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
         
           
           <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
@@ -929,7 +926,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6_2">
             <span class="md-nav__icon md-icon"></span>
             MySQL
@@ -940,10 +937,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../MySQL/Json%E5%AD%97%E6%AE%B5%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Json字段操作
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -952,6 +967,42 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      查询
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#or" class="md-nav__link">
+    <span class="md-ellipsis">
+      插入 or 更新
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1469,6 +1520,32 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      查询
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#or" class="md-nav__link">
+    <span class="md-ellipsis">
+      插入 or 更新
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1485,40 +1562,89 @@
   
 
 
-  <h1>基本命令</h1>
+  <h1>Json字段操作</h1>
 
-<p>以下是一些常用的 MongoDB 命令行命令：
-1. 启动 MongoDB:
-<div class="highlight"><pre><span></span><code>mongod
+<p>MySQL 支持查询 JSON 字段内部的 key。从 MySQL 5.7.8 版本开始，MySQL 提供了 JSON 数据类型以及一些 JSON 函数来处理 JSON 数据。您可以使用这些 JSON 函数来查询、修改和操作 JSON 字段中的数据。
+假设有一个名为 users 的表，其中有一个 JSON 类型的字段叫做 user_data。user_data 的 JSON 数据结构如下：
+<div class="highlight"><pre><span></span><code>{
+  &quot;name&quot;: &quot;John Doe&quot;,
+  &quot;age&quot;: 30,
+  &quot;address&quot;: {
+    &quot;city&quot;: &quot;New York&quot;,
+    &quot;state&quot;: &quot;NY&quot;
+  }
+}
+</code></pre></div></p>
+<h3 id="_1">查询<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>如果您想查询 user_data 中的 name key，可以使用 -&gt; 或 -&gt;&gt; 操作符，或者使用 JSON_EXTRACT() 函数。以下是一些示例查询：
+<div class="highlight"><pre><span></span><code>-- 使用 -&gt; 操作符
+SELECT user_data-&gt;&#39;$.name&#39; AS name FROM users;
+
+-- 使用 -&gt;&gt; 操作符（返回 unquoted 的值）
+SELECT user_data-&gt;&gt;&#39;$.name&#39; AS name FROM users;
+
+-- 使用 JSON_EXTRACT() 函数
+SELECT JSON_EXTRACT(user_data, &#39;$.name&#39;) AS name FROM users;
+</code></pre></div></p>
+<p>如果您想查询嵌套的 key，比如 address 对象中的 city，只需提供正确的 JSON 路径即可：
+<div class="highlight"><pre><span></span><code>-- 使用 -&gt; 操作符
+SELECT user_data-&gt;&#39;$.address.city&#39; AS city FROM users;
+
+-- 使用 -&gt;&gt; 操作符（返回 unquoted 的值）
+SELECT user_data-&gt;&gt;&#39;$.address.city&#39; AS city FROM users;
+
+-- 使用 JSON_EXTRACT() 函数
+SELECT JSON_EXTRACT(user_data, &#39;$.address&#39;) AS city FROM users;
+</code></pre></div></p>
+<h3 id="or">插入 or 更新<a class="headerlink" href="#or" title="Permanent link">&para;</a></h3>
+<p>要修改和操作 MySQL 中的 JSON 字段，您可以使用一些专用的 JSON 函数。以下是一些常用的修改和操作 JSON 数据的函数及其用法。
+- JSON_SET(): 在 JSON 文档中插入或更新值。
+<div class="highlight"><pre><span></span><code>UPDATE users
+SET user_data = JSON_SET(user_data, &#39;$.name&#39;, &#39;Jane Doe&#39;)
+WHERE id = 1;
 </code></pre></div>
-2. 连接到 MongoDB 数据库:
-<div class="highlight"><pre><span></span><code>mongo
+这将更新 id 为 1 的用户的 name 值为 "Jane Doe"。
+- JSON_REPLACE(): 在 JSON 文档中替换现有值。
+<div class="highlight"><pre><span></span><code>UPDATE users
+SET user_data = JSON_REPLACE(user_data, &#39;$.age&#39;, 35)
+WHERE id = 1;
 </code></pre></div>
-3. 显示数据库列表:
-<div class="highlight"><pre><span></span><code>show dbs
+这将把 id 为 1 的用户的 age 值替换为 35。</p>
+<p>JSON_REMOVE(): 从 JSON 文档中删除键值对。
+<div class="highlight"><pre><span></span><code>UPDATE users
+SET user_data = JSON_REMOVE(user_data, &#39;$.address.state&#39;)
+WHERE id = 1;
 </code></pre></div>
-4. 创建或切换到指定的数据库:
-<div class="highlight"><pre><span></span><code>use &lt;database_name&gt;
+这将从 id 为 1 的用户的 address 对象中删除 state 键值对。</p>
+<ul>
+<li>
+<p>JSON_INSERT(): 在 JSON 文档中插入新的键值对，如果键已经存在，则不执行任何操作。
+<div class="highlight"><pre><span></span><code>UPDATE users
+SET user_data = JSON_INSERT(user_data, &#39;$.address.country&#39;, &#39;USA&#39;)
+WHERE id = 1;
 </code></pre></div>
-5. 显示当前所在的数据库:
-<div class="highlight"><pre><span></span><code>db
+这将在 id 为 1 的用户的 address 对象中插入新的键值对 country: USA。</p>
+</li>
+<li>
+<p>JSON_ARRAY_APPEND(): 在 JSON 数组中追加一个值。
+<div class="highlight"><pre><span></span><code>{
+  &quot;name&quot;: &quot;John Doe&quot;,
+  &quot;age&quot;: 30,
+  &quot;address&quot;: {
+    &quot;city&quot;: &quot;New York&quot;,
+    &quot;state&quot;: &quot;NY&quot;
+  },
+  &quot;hobbies&quot;: [&quot;reading&quot;, &quot;swimming&quot;]
+}
+</code></pre></div></p>
+</li>
+<li>使用 JSON_ARRAY_APPEND() 函数将新的爱好 "travelling" 追加到 hobbies 数组：
+<div class="highlight"><pre><span></span><code>UPDATE users
+SET user_data = JSON_ARRAY_APPEND(user_data, &#39;$.hobbies&#39;, &#39;travelling&#39;)
+WHERE id = 1;
 </code></pre></div>
-6. 显示当前数据库的集合列表:
-<div class="highlight"><pre><span></span><code>show collections
-</code></pre></div>
-7. 向指定的集合中插入一个文档:
-<div class="highlight"><pre><span></span><code>db.&lt;collection_name&gt;.insertOne({field1: value1, field2: value2, ...})
-</code></pre></div>
-8. 查询指定集合中的文档:
-<div class="highlight"><pre><span></span><code>db.&lt;collection_name&gt;.find()
-</code></pre></div>
-9. 更新指定集合中的文档:
-<div class="highlight"><pre><span></span><code>db.&lt;collection_name&gt;.updateOne({&lt;query&gt;}, {&lt;update&gt;})
-</code></pre></div>
-10. 删除指定集合中的文档:
-<div class="highlight"><pre><span></span><code>db.&lt;collection_name&gt;.deleteOne({&lt;query&gt;})
-</code></pre></div>
-其中，<code>&lt;query&gt;</code>是查询条件，<code>&lt;update&gt;</code> 是更新操作的参数。更多 MongoDB 命令可以在 MongoDB 官方文档中找到。</p>
+这些函数可以帮助我们在 MySQL 中修改和操作 JSON 字段。可以组合使用这些函数对 JSON 数据进行复杂的操作。</li>
+</ul>
 
 
 
