@@ -9,25 +9,25 @@
       
       
       
-        <link rel="prev" href="../Redis%E6%8C%81%E4%B9%85%E5%8C%96/">
+        <link rel="prev" href="../../Docker/01_Docker%E5%9F%BA%E7%A1%80/03_Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
       
       
-        <link rel="next" href="../Redis%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+        <link rel="next" href="../../openai/openai_python_api/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
     
     
       
-        <title>Redis数据迁移 - 韩林奇的个人博客</title>
+        <title>01 Kubernetes介绍 - 韩林奇的个人博客</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#kubernetes" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -83,7 +88,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="韩林奇的个人博客" class="md-header__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
+    <a href="../.." title="韩林奇的个人博客" class="md-header__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -103,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Redis数据迁移
+              01 Kubernetes介绍
             
           </span>
         </div>
@@ -226,7 +231,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="韩林奇的个人博客" class="md-nav__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
+    <a href="../.." title="韩林奇的个人博客" class="md-nav__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -256,7 +261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -353,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/01_Docker%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+      <a href="../../Docker/01_Docker%E5%9F%BA%E7%A1%80/01_Docker%E7%AE%80%E4%BB%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -374,7 +379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/02_Docker%E5%AE%89%E8%A3%85/" class="md-nav__link">
+      <a href="../../Docker/01_Docker%E5%9F%BA%E7%A1%80/02_Docker%E5%AE%89%E8%A3%85/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -395,7 +400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/03_Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../../Docker/01_Docker%E5%9F%BA%E7%A1%80/03_Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -428,8 +433,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -438,12 +445,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -457,7 +464,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Kubernetes
@@ -468,10 +475,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../Kubernetes/01_Kubernetes%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    01 Kubernetes介绍
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -480,6 +505,75 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、Kubernetes介绍
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、Kubernetes介绍">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 应用部署方式演变
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Kubernetes介绍
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Kubernetes组件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 Kubernetes概念
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -539,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../openai/openai_python_api/" class="md-nav__link">
+      <a href="../../openai/openai_python_api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -607,7 +701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F/" class="md-nav__link">
+      <a href="../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -665,7 +759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Get%20Start/" class="md-nav__link">
+      <a href="../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Get%20Start/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -686,7 +780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Harbor%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+      <a href="../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Harbor%E7%AE%80%E4%BB%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -799,7 +893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%8E%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/%E5%9B%BD%E4%BA%A7%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" class="md-nav__link">
+      <a href="../../%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%8E%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/%E5%9B%BD%E4%BA%A7%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -912,7 +1006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/01_%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/01_%E7%AE%80%E4%BB%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -933,7 +1027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/02_Git%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/02_Git%E5%9F%BA%E7%A1%80/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -954,7 +1048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/03_Git%E6%97%A5%E5%B8%B8%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/03_Git%E6%97%A5%E5%B8%B8%E6%93%8D%E4%BD%9C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -975,7 +1069,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/04_%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/04_%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -996,7 +1090,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/05_%E9%AB%98%E7%BA%A7Git%E6%8A%80%E5%B7%A7/" class="md-nav__link">
+      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/05_%E9%AB%98%E7%BA%A7Git%E6%8A%80%E5%B7%A7/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1017,7 +1111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/06_%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E4%B8%8E%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="md-nav__link">
+      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/06_%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E4%B8%8E%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1038,7 +1132,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/07_%E4%BD%BF%E7%94%A8Git%E7%9A%84%E5%B7%A5%E5%85%B7%E5%92%8C%E8%B5%84%E6%BA%90/" class="md-nav__link">
+      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/07_%E4%BD%BF%E7%94%A8Git%E7%9A%84%E5%B7%A5%E5%85%B7%E5%92%8C%E8%B5%84%E6%BA%90/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1059,7 +1153,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/08_%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BC%BA%E7%83%88%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%BC%9A%E4%BD%BF%E7%94%A8Git/" class="md-nav__link">
+      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/08_%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BC%BA%E7%83%88%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%BC%9A%E4%BD%BF%E7%94%A8Git/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1080,7 +1174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/Gitignore/" class="md-nav__link">
+      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/Gitignore/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1113,8 +1207,6 @@
       
   
   
-    
-  
   
   
     
@@ -1125,12 +1217,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
@@ -1144,7 +1236,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             数据库与中间件
@@ -1195,7 +1287,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MongoDB/python%E5%AE%9E%E7%8E%B0demo/" class="md-nav__link">
+      <a href="../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/MongoDB/python%E5%AE%9E%E7%8E%B0demo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1216,7 +1308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MongoDB/%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/MongoDB/%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1282,7 +1374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MySQL/Json%E5%AD%97%E6%AE%B5%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+      <a href="../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/MySQL/Json%E5%AD%97%E6%AE%B5%E6%93%8D%E4%BD%9C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1308,21 +1400,19 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" >
         
           
           <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
@@ -1336,7 +1426,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8_3">
             <span class="md-nav__icon md-icon"></span>
             Redis
@@ -1350,7 +1440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../RESP%E5%8D%8F%E8%AE%AE/" class="md-nav__link">
+      <a href="../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/RESP%E5%8D%8F%E8%AE%AE/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1371,7 +1461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Redis%E4%B8%8D%E5%90%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/" class="md-nav__link">
+      <a href="../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E4%B8%8D%E5%90%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1392,7 +1482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Redis%E5%88%86%E5%B8%83%E5%BC%8F/" class="md-nav__link">
+      <a href="../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E5%88%86%E5%B8%83%E5%BC%8F/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1413,7 +1503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Redis%E5%88%86%E5%B8%83%E5%BC%8F%E6%B6%88%E6%81%AF%E9%80%9A%E4%BF%A1/" class="md-nav__link">
+      <a href="../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E5%88%86%E5%B8%83%E5%BC%8F%E6%B6%88%E6%81%AF%E9%80%9A%E4%BF%A1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1434,7 +1524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Redis%E6%8C%81%E4%B9%85%E5%8C%96/" class="md-nav__link">
+      <a href="../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E6%8C%81%E4%B9%85%E5%8C%96/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1452,17 +1542,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1471,7 +1554,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1484,7 +1566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Redis%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+      <a href="../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1505,7 +1587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E8%AF%BB%E5%86%99%E5%86%85%E5%AD%98/" class="md-nav__link">
+      <a href="../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/%E8%AF%BB%E5%86%99%E5%86%85%E5%AD%98/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1618,7 +1700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Go/%E6%88%90%E9%95%BF%E8%B7%AF%E7%BA%BF/" class="md-nav__link">
+      <a href="../../%E7%BC%96%E7%A0%81/Go/%E6%88%90%E9%95%BF%E8%B7%AF%E7%BA%BF/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1676,7 +1758,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Go/%E9%9D%A2%E8%AF%95/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" class="md-nav__link">
+      <a href="../../%E7%BC%96%E7%A0%81/Go/%E9%9D%A2%E8%AF%95/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1750,7 +1832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/GIL/" class="md-nav__link">
+      <a href="../../%E7%BC%96%E7%A0%81/Python/GIL/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1771,7 +1853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/Pydantic/" class="md-nav__link">
+      <a href="../../%E7%BC%96%E7%A0%81/Python/Pydantic/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1818,6 +1900,65 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、Kubernetes介绍
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、Kubernetes介绍">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 应用部署方式演变
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Kubernetes介绍
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Kubernetes组件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 Kubernetes概念
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1834,27 +1975,75 @@
   
 
 
-  <h1>Redis数据迁移</h1>
+  <h1>01 Kubernetes介绍</h1>
 
-<p>Redis支持使用MIGRATE命令来迁移数据。以下是Redis数据迁移的基本步骤和操作命令：
-1. 选择要迁移的源Redis节点：首先，你需要确定要从哪个Redis节点（源节点）迁移数据。
-2. 选择要迁移的目标Redis节点：确定要将数据迁移到哪个Redis节点（目标节点）。
-3. 检查源节点和目标节点的连接：确保源节点和目标节点之间可以相互访问，无阻碍的网络连接。
-4. 执行MIGRATE命令：在源节点上执行MIGRATE命令进行数据迁移。该命令的基本格式如下：
-<div class="highlight"><pre><span></span><code>MIGRATE target_host target_port key target_database_id timeout [COPY] [REPLACE] [KEYS key [key ...]]
-</code></pre></div>
-参数说明：示例：上述命令将mykey从源节点迁移到目标节点（IP为192.168.1.100，端口为6379）的数据库0，网络操作超时时间为5000毫秒，如果目标节点已存在相同键，则替换目标节点上的数据。
-- target_host：目标节点的主机地址（IP或主机名）。
-- target_port：目标节点的端口号。
-- key：要迁移的键名。如果使用KEYS选项，则此处填""。
-- target_database_id：目标节点的数据库ID，一般为0。
-- timeout：以毫秒为单位的网络操作超时时间。
-- COPY：（可选）复制数据，即在源节点保留数据副本。默认情况下，迁移完成后源节点数据会被删除。
-- REPLACE：（可选）如果目标节点已存在相同键，则替换标节点上的数据。
-- KEYS key [key ...]：（可选）一次迁移多个键。在这种情况下，key参数应该是""。
-5. 检查迁移结果：迁移完成后，在目标节点上执行GET命令或其他查询命令，检查迁移后的数据是否正确。
-6. （可选）迁移其他数据：如果还有其他数据需要迁移，重复步骤4-5。
-注意：在进行数据迁移时，可能会影响Redis的性能。建议在低峰时段或维护期间进行迁移操作。</p>
+<h2 id="kubernetes">一、Kubernetes介绍<a class="headerlink" href="#kubernetes" title="Permanent link">&para;</a></h2>
+<h3 id="11">1.1 应用部署方式演变<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<p>在部署应用程序的方式上，主要经历了三个时代：
+- 传统部署：互联网早期，会直接将应用程序部署在物理机上</p>
+<blockquote>
+<p>优点：简单，不需要其它技术的参与
+缺点：不能为应用程序定义资源使用边界，很难合理地分配计算资源，而且程序之间容易产生影响
+- 虚拟化部署：可以在一台物理机上运行多个虚拟机，每个虚拟机都是独立的一个环境
+优点：程序环境不会相互产生影响，提供了一定程度的安全性
+缺点：增加了操作系统，浪费了部分资源
+- 容器化部署：与虚拟化类似，但是共享了操作系统
+优点：
+可以保证每个容器拥有自己的文件系统、CPU、内存、进程空间等
+运行应用程序所需要的资源都被容器包装，并和底层基础架构解耦
+容器化的应用程序可以跨云服务商、跨Linux操作系统发行版进行部署</p>
+</blockquote>
+<p><img alt="01_1-1-1" src="../../image/Kubernetes/01_1-1-1.png" /></p>
+<p>容器化部署方式给带来很多的便利，但是也会出现一些问题，比如说：
+- 一个容器故障停机了，怎么样让另外一个容器立刻启动去替补停机的容器
+- 当并发访问量变大的时候，怎么样做到横向扩展容器数量</p>
+<p>这些容器管理的问题统称为容器编排问题，为了解决这些容器编排问题，就产生了一些容器编排的软件：
+- Swarm：Docker自己的容器编排工具
+- Mesos：Apache的一个资源统一管控的工具，需要和Marathon结合使用
+- Kubernetes：Google开源的的容器编排工具
+<img alt="01_1-1-2" src="../../image/Kubernetes/01_1-1-2.png" /></p>
+<h3 id="12-kubernetes">1.2 Kubernetes介绍<a class="headerlink" href="#12-kubernetes" title="Permanent link">&para;</a></h3>
+<p><img alt="01_1-2-1" src="../../image/Kubernetes/01_1-2-1.png" />
+kubernetes，是一个全新的基于容器技术的分布式架构领先方案，是谷歌严格保密十几年的秘密武器----Borg系统的一个开源版本，于2014年9月发布第一个版本，2015年7月发布第一个正式版本。
+kubernetes的本质是一组服务器集群，它可以在集群的每个节点上运行特定的程序，来对节点中的容器进行管理。目的是实现资源管理的自动化，主要提供了如下的主要功能：
+- <strong>自我修复</strong>：一旦某一个容器崩溃，能够在1秒中左右迅速启动新的容器
+- <strong>弹性伸缩</strong>：可以根据需要，自动对集群中正在运行的容器数量进行调整
+- <strong>服务发现</strong>：服务可以通过自动发现的形式找到它所依赖的服务
+- <strong>负载均衡</strong>：如果一个服务起动了多个容器，能够自动实现请求的负载均衡
+- <strong>版本回退</strong>：如果发现新发布的程序版本有问题，可以立即回退到原来的版本
+- <strong>存储编排</strong>：可以根据容器自身的需求自动创建存储卷</p>
+<h3 id="13-kubernetes">1.3 Kubernetes组件<a class="headerlink" href="#13-kubernetes" title="Permanent link">&para;</a></h3>
+<p>一个kubernetes集群主要是由控制节点(master)、工作节点(node)构成，每个节点上都会安装不同的组件。
+<strong>master：集群的控制平面，负责集群的决策 ( 管理 )</strong></p>
+<blockquote>
+<p>ApiServer : 资源操作的唯一入口，接收用户输入的命令，提供认证、授权、API注册和发现等机制
+Scheduler : 负责集群资源调度，按照预定的调度策略将Pod调度到相应的node节点上
+ControllerManager : 负责维护集群的状态，比如程序部署安排、故障检测、自动扩展、滚动更新等
+Etcd ：负责存储集群中各种资源对象的信息</p>
+</blockquote>
+<p><strong>node：集群的数据平面，负责为容器提供运行环境 ( 干活 )</strong></p>
+<blockquote>
+<p>Kubelet : 负责维护容器的生命周期，即通过控制docker，来创建、更新、销毁容器
+KubeProxy : 负责提供集群内部的服务发现和负载均衡
+Docker : 负责节点上容器的各种操作</p>
+</blockquote>
+<p><img alt="01_1-2-2" src="../../image/Kubernetes/01_1-2-2.png" />
+下面，以部署一个nginx服务来说明kubernetes系统各个组件调用关系：
+1. 首先要明确，一旦kubernetes环境启动之后，master和node都会将自身的信息存储到etcd数据库中
+2. 一个nginx服务的安装请求会首先被发送到master节点的apiServer组件
+3. apiServer组件会调用scheduler组件来决定到底应该把这个服务安装到哪个node节点上在此时，它会从etcd中读取各个node节点的信息，然后按照一定的算法进行选择，并将结果告知apiServer
+4. apiServer调用controller-manager去调度Node节点安装nginx服务
+5. kubelet接收到指令后，会通知docker，然后由docker来启动一个nginx的podpod是kubernetes的最小操作单元，容器必须跑在pod中至此，
+6. 一个nginx服务就运行了，如果需要访问nginx，就需要通过kube-proxy来对pod产生访问的代理
+这样，外界用户就可以访问集群中的nginx服务了</p>
+<h3 id="14-kubernetes">1.4 Kubernetes概念<a class="headerlink" href="#14-kubernetes" title="Permanent link">&para;</a></h3>
+<p><strong>Master</strong>：集群控制节点，每个集群需要至少一个master节点负责集群的管控
+<strong>Node</strong>：工作负载节点，由master分配容器到这些node工作节点上，然后node节点上的docker负责容器的运行
+<strong>Pod</strong>：kubernetes的最小控制单元，容器都是运行在pod中的，一个pod中可以有1个或者多个容器
+<strong>Controller</strong>：控制器，通过它来实现对pod的管理，比如启动pod、停止pod、伸缩pod的数量等等
+<strong>Service</strong>：pod对外服务的统一入口，下面可以维护者同一类的多个pod
+<strong>Label</strong>：标签，用于对pod进行分类，同一类pod会拥有相同的标签
+<strong>NameSpace</strong>：命名空间，用来隔离pod的运行环境</p>
 
 
 
@@ -1901,10 +2090,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
     
   </body>
