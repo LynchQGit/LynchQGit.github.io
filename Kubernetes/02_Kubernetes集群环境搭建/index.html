@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../../Kubernetes/02_Kubernetes%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+        <link rel="prev" href="../01_Kubernetes%E4%BB%8B%E7%BB%8D/">
       
       
-        <link rel="next" href="../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F/">
+        <link rel="next" href="../../openai/openai_python_api/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.0.13">
     
     
       
-        <title>Openai python api - 韩林奇的个人博客</title>
+        <title>02 Kubernetes集群环境搭建 - 韩林奇的个人博客</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction" class="md-skip">
+        <a href="#kubernetes" class="md-skip">
           跳转至
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Openai python api
+              02 Kubernetes集群环境搭建
             
           </span>
         </div>
@@ -368,16 +368,18 @@
 
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
       
       
       
@@ -386,7 +388,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Kubernetes
@@ -399,7 +401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Kubernetes/01_Kubernetes%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+      <a href="../01_Kubernetes%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
         01 Kubernetes介绍
       </a>
     </li>
@@ -411,11 +413,275 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../Kubernetes/02_Kubernetes%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          02 Kubernetes集群环境搭建
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         02 Kubernetes集群环境搭建
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes" class="md-nav__link">
+    二、Kubernetes集群环境搭建
+  </a>
+  
+    <nav class="md-nav" aria-label="二、Kubernetes集群环境搭建">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    2.1 前置知识点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-kubernetes" class="md-nav__link">
+    2.2 Kubernetes部署方式介绍
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    2.3 安装要求
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    2.4 最终目标
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    2.5 准备环境
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26" class="md-nav__link">
+    2.6 环境初始化
+  </a>
+  
+    <nav class="md-nav" aria-label="2.6 环境初始化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#261" class="md-nav__link">
+    2.6.1 检查操作系统的版本
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#262" class="md-nav__link">
+    2.6.2 主机名解析
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#263" class="md-nav__link">
+    2.6.3 时间同步
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#264-iptablefirewalld" class="md-nav__link">
+    2.6.4  禁用iptable和firewalld服务
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#265-selinux" class="md-nav__link">
+    2.6.5 禁用selinux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#266-swap" class="md-nav__link">
+    2.6.6 禁用swap分区
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#267-linux" class="md-nav__link">
+    2.6.7 修改linux的内核参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#268-ipvs" class="md-nav__link">
+    2.6.8 配置ipvs功能
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#269-docker" class="md-nav__link">
+    2.6.9 安装Docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2610-kubernetes" class="md-nav__link">
+    2.6.10 安装Kubernetes组件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2611" class="md-nav__link">
+    2.6.11 准备集群镜像
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2612" class="md-nav__link">
+    2.6.12 集群初始化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2613-master" class="md-nav__link">
+    2.6.13 安装网络插件，只在master节点操作即可
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flannel-docker-images" class="md-nav__link">
+    拉取flannel网络，三台主机 docker images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    查看仓库是否拉去下来
+  </a>
+  
+    <nav class="md-nav" aria-label="查看仓库是否拉去下来">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2614-kubernetes-reset" class="md-nav__link">
+    2.6.14 使用kubernetes reset重制集群
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2615-kubeletdocker" class="md-nav__link">
+    2.6.15 重启kubelet和docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2616-kuberadm" class="md-nav__link">
+    2.6.16 Kuberadm中的命令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27" class="md-nav__link">
+    2.7 集群测试
+  </a>
+  
+    <nav class="md-nav" aria-label="2.7 集群测试">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#271-nginx" class="md-nav__link">
+    2.7.1 创建一个nginx服务
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#272" class="md-nav__link">
+    2.7.2 暴露端口
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#273" class="md-nav__link">
+    2.7.3 查看服务
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#274-pod" class="md-nav__link">
+    2.7.4 查看Pod
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -433,18 +699,16 @@
 
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
       
       
       
@@ -453,7 +717,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Openai
@@ -464,83 +728,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Openai python api
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../openai/openai_python_api/" class="md-nav__link">
         Openai python api
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    Introduction
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#authentication" class="md-nav__link">
-    Authentication
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#organization-optional" class="md-nav__link">
-    Organization (optional)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#making-requests" class="md-nav__link">
-    Making requests
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#streaming" class="md-nav__link">
-    Streaming
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parsing-server-sent-events" class="md-nav__link">
-    Parsing Server-sent events
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1460,44 +1652,236 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    Introduction
+  <a href="#kubernetes" class="md-nav__link">
+    二、Kubernetes集群环境搭建
+  </a>
+  
+    <nav class="md-nav" aria-label="二、Kubernetes集群环境搭建">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    2.1 前置知识点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-kubernetes" class="md-nav__link">
+    2.2 Kubernetes部署方式介绍
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    2.3 安装要求
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    2.4 最终目标
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    2.5 准备环境
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26" class="md-nav__link">
+    2.6 环境初始化
+  </a>
+  
+    <nav class="md-nav" aria-label="2.6 环境初始化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#261" class="md-nav__link">
+    2.6.1 检查操作系统的版本
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#262" class="md-nav__link">
+    2.6.2 主机名解析
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#263" class="md-nav__link">
+    2.6.3 时间同步
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#264-iptablefirewalld" class="md-nav__link">
+    2.6.4  禁用iptable和firewalld服务
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#265-selinux" class="md-nav__link">
+    2.6.5 禁用selinux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#266-swap" class="md-nav__link">
+    2.6.6 禁用swap分区
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#267-linux" class="md-nav__link">
+    2.6.7 修改linux的内核参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#268-ipvs" class="md-nav__link">
+    2.6.8 配置ipvs功能
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#269-docker" class="md-nav__link">
+    2.6.9 安装Docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2610-kubernetes" class="md-nav__link">
+    2.6.10 安装Kubernetes组件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2611" class="md-nav__link">
+    2.6.11 准备集群镜像
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2612" class="md-nav__link">
+    2.6.12 集群初始化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2613-master" class="md-nav__link">
+    2.6.13 安装网络插件，只在master节点操作即可
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flannel-docker-images" class="md-nav__link">
+    拉取flannel网络，三台主机 docker images
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#authentication" class="md-nav__link">
-    Authentication
+  <a href="#_1" class="md-nav__link">
+    查看仓库是否拉去下来
+  </a>
+  
+    <nav class="md-nav" aria-label="查看仓库是否拉去下来">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2614-kubernetes-reset" class="md-nav__link">
+    2.6.14 使用kubernetes reset重制集群
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#organization-optional" class="md-nav__link">
-    Organization (optional)
+        
+          <li class="md-nav__item">
+  <a href="#2615-kubeletdocker" class="md-nav__link">
+    2.6.15 重启kubelet和docker
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#making-requests" class="md-nav__link">
-    Making requests
+        
+          <li class="md-nav__item">
+  <a href="#2616-kuberadm" class="md-nav__link">
+    2.6.16 Kuberadm中的命令
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#streaming" class="md-nav__link">
-    Streaming
+        
+          <li class="md-nav__item">
+  <a href="#27" class="md-nav__link">
+    2.7 集群测试
+  </a>
+  
+    <nav class="md-nav" aria-label="2.7 集群测试">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#271-nginx" class="md-nav__link">
+    2.7.1 创建一个nginx服务
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#parsing-server-sent-events" class="md-nav__link">
-    Parsing Server-sent events
+        
+          <li class="md-nav__item">
+  <a href="#272" class="md-nav__link">
+    2.7.2 暴露端口
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#273" class="md-nav__link">
+    2.7.3 查看服务
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#274-pod" class="md-nav__link">
+    2.7.4 查看Pod
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1519,115 +1903,286 @@
   
 
 
-  <h1>Openai python api</h1>
-
-<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
-<p>You can interact with the API through HTTP requests from any language, via our official Python bindings, our official Node.js library, or a <code>community-maintained library</code>.</p>
-<p>To install the official Python bindings, run the following command:</p>
-<p><div class="highlight"><pre><span></span><code>pip install openai
+<h2 id="kubernetes">二、Kubernetes集群环境搭建<a class="headerlink" href="#kubernetes" title="Permanent link">&para;</a></h2>
+<h3 id="21">2.1 前置知识点<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
+<p>目前生产部署Kubernetes 集群主要有两种方式：
+- kubeadm</p>
+<blockquote>
+<p>Kubeadm 是一个K8s 部署工具，提供kubeadm init 和kubeadm join，用于快速部署Kubernetes 集群。
+官方地址：https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm/
+- 二进制包
+从github 下载发行版的二进制包，手动部署每个组件，组成Kubernetes 集群。
+Kubeadm 降低部署门槛，但屏蔽了很多细节，遇到问题很难排查。如果想更容易可控，推荐使用二进制包部署Kubernetes 集群，虽然手动部署麻烦点，期间可以学习很多工作原理，也利于后期维护。
+<img alt="02_2-1-1" src="../../image/Kubernetes/02_2-1-1.png" /></p>
+</blockquote>
+<h3 id="22-kubernetes">2.2 Kubernetes部署方式介绍<a class="headerlink" href="#22-kubernetes" title="Permanent link">&para;</a></h3>
+<p><strong>kubeadm</strong> 是官方社区推出的一个用于快速部署kubernetes 集群的工具，这个工具能通过两条指令完成一个kubernetes 集群的部署：
+- 创建一个Master 节点kubeadm init
+- 将Node 节点加入到当前集群中$ kubeadm join <Master 节点的IP 和端口></p>
+<h3 id="23">2.3 安装要求<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
+<p>在开始之前，部署Kubernetes 集群机器需要满足以下几个条件：
+- 一台或多台机器，操作系统CentOS7.x-86_x64
+- 硬件配置：2GB 或更多RAM，2 个CPU 或更多CPU，硬盘30GB 或更多
+- 集群中所有机器之间网络互通
+- 可以访问外网，需要拉取镜像
+- 禁止swap 分区</p>
+<h3 id="24">2.4 最终目标<a class="headerlink" href="#24" title="Permanent link">&para;</a></h3>
+<ul>
+<li>在所有节点上安装Docker 和kubeadm</li>
+<li>部署Kubernetes Master</li>
+<li>部署容器网络插件</li>
+<li>部署Kubernetes Node，将节点加入Kubernetes 集群中</li>
+<li>部署Dashboard Web 页面，可视化查看Kubernetes 资源</li>
+</ul>
+<h3 id="25">2.5 准备环境<a class="headerlink" href="#25" title="Permanent link">&para;</a></h3>
+<p><img alt="02_2-5-1" src="../../image/Kubernetes/02_2-5-1.png" />
+|   角色   |   IP地址    |               组件                |
+| :------: | :---------: | :-------------------------------: |
+| master01 | 192.168.5.3 | docker，kubectl，kubeadm，kubelet |
+|  node01  | 192.168.5.4 | docker，kubectl，kubeadm，kubelet |
+|  node02  | 192.168.5.5 | docker，kubectl，kubeadm，kubelet |</p>
+<h3 id="26">2.6 环境初始化<a class="headerlink" href="#26" title="Permanent link">&para;</a></h3>
+<h4 id="261">2.6.1 检查操作系统的版本<a class="headerlink" href="#261" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># 此方式下安装kubernetes集群要求Centos版本要在7.5或之上</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># cat /etc/redhat-release</span>
+Centos<span class="w"> </span>Linux<span class="w"> </span><span class="m">7</span>.5.1804<span class="w"> </span><span class="o">(</span>Core<span class="o">)</span>
 </code></pre></div>
-To install the official Node.js library, run the following command in your Node.js project directory:
-<div class="highlight"><pre><span></span><code>npm install openai@^4.0.0
+<h4 id="262">2.6.2 主机名解析<a class="headerlink" href="#262" title="Permanent link">&para;</a></h4>
+<p>为了方便集群节点间的直接调用，在这个配置一下主机名解析，企业中推荐使用内部DNS服务器
+<div class="highlight"><pre><span></span><code><span class="c1"># 主机名成解析 编辑三台服务器的/etc/hosts文件，添加下面内容</span>
+<span class="m">192</span>.168.90.100<span class="w"> </span>master
+<span class="m">192</span>.168.90.106<span class="w"> </span>node1
+<span class="m">192</span>.168.90.107<span class="w"> </span>node2
 </code></pre></div></p>
-<h2 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h2>
-<p>The OpenAI API uses API keys for authentication. Visit your API Keys page to retrieve the API key you'll use in your requests.</p>
-<p>Remember that your API key is a secret! Do not share it with others or expose it in any client-side code (browsers, apps). Production requests must be routed through your own backend server where your API key can be securely loaded from an environment variable or key management service.</p>
-<p>All API requests should include your API key in an Authorization HTTP header as follows:
-<div class="highlight"><pre><span></span><code>Authorization: Bearer OPENAI_API_KEY
+<h4 id="263">2.6.3 时间同步<a class="headerlink" href="#263" title="Permanent link">&para;</a></h4>
+<p>kubernetes要求集群中的节点时间必须精确一直，这里使用chronyd服务从网络同步时间
+企业中建议配置内部的会见同步服务器
+<div class="highlight"><pre><span></span><code><span class="c1"># 启动chronyd服务</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># systemctl start chronyd</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># systemctl enable chronyd</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># date</span>
 </code></pre></div></p>
-<h2 id="organization-optional">Organization (optional)<a class="headerlink" href="#organization-optional" title="Permanent link">&para;</a></h2>
-<p>For users who belong to multiple organizations, you can pass a header to specify which organization is used for an API request. Usage from these API requests will count as usage for the specified organization.</p>
-<p>Example curl command:
-<div class="highlight"><pre><span></span><code>curl https://api.openai.com/v1/models \
-  -H &quot;Authorization: Bearer $OPENAI_API_KEY&quot; \
-  -H &quot;OpenAI-Organization: YOUR_ORG_ID&quot;
-</code></pre></div>
-Example with the openai Python package:
-<div class="highlight"><pre><span></span><code>from openai import OpenAI
-
-client = OpenAI(
-  organization=&#39;YOUR_ORG_ID&#39;,
-)
-</code></pre></div>
-Example with the openai Node.js package:
-<div class="highlight"><pre><span></span><code>import OpenAI from &quot;openai&quot;;
-
-const openai = new OpenAI({
-  organization: &#39;YOUR_ORG_ID&#39;,
-});
-</code></pre></div>
-Organization IDs can be found on your Organization settings page.</p>
-<h2 id="making-requests">Making requests<a class="headerlink" href="#making-requests" title="Permanent link">&para;</a></h2>
-<p>You can paste the command below into your terminal to run your first API request. Make sure to replace $OPENAI_API_KEY with your secret API key.
-<div class="highlight"><pre><span></span><code>curl https://api.openai.com/v1/chat/completions \
-  -H &quot;Content-Type: application/json&quot; \
-  -H &quot;Authorization: Bearer $OPENAI_API_KEY&quot; \
-  -d &#39;{
-     &quot;model&quot;: &quot;gpt-3.5-turbo&quot;,
-     &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Say this is a test!&quot;}],
-     &quot;temperature&quot;: 0.7
-   }&#39;
-</code></pre></div>
-This request queries the gpt-3.5-turbo model (which under the hood points to the latest gpt-3.5-turbo model variant) to complete the text starting with a prompt of "Say this is a test". You should get a response back that resembles the following:
-<div class="highlight"><pre><span></span><code>{
-    &quot;id&quot;: &quot;chatcmpl-abc123&quot;,
-    &quot;object&quot;: &quot;chat.completion&quot;,
-    &quot;created&quot;: 1677858242,
-    &quot;model&quot;: &quot;gpt-3.5-turbo-1106&quot;,
-    &quot;usage&quot;: {
-        &quot;prompt_tokens&quot;: 13,
-        &quot;completion_tokens&quot;: 7,
-        &quot;total_tokens&quot;: 20
-    },
-    &quot;choices&quot;: [
-        {
-            &quot;message&quot;: {
-                &quot;role&quot;: &quot;assistant&quot;,
-                &quot;content&quot;: &quot;\n\nThis is a test!&quot;
-            },
-            &quot;finish_reason&quot;: &quot;stop&quot;,
-            &quot;index&quot;: 0
-        }
-    ]
-}
-</code></pre></div>
-Now that you've generated your first chat completion, let's break down the response object. We can see the finish_reason is stop which means the API returned the full chat completion generated by the model without running into any limits. In the choices list, we only generated a single message but you can set the n parameter to generate multiple messages choices.</p>
-<h2 id="streaming">Streaming<a class="headerlink" href="#streaming" title="Permanent link">&para;</a></h2>
-<p>The OpenAI API provides the ability to stream responses back to a client in order to allow partial results for certain requests. To achieve this, we follow the Server-sent events standard.</p>
-<p>Our official Node and Python libraries handle Server-sent events for you. In Python, a streaming request looks like:
-<div class="highlight"><pre><span></span><code>from openai import OpenAI
-
-client = OpenAI()
-
-stream = client.chat.completions.create(
-    model=&quot;gpt-4&quot;,
-    messages=[{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Say this is a test&quot;}],
-    stream=True,
-)
-for chunk in stream:
-    if chunk.choices[0].delta.content is not None:
-        print(chunk.choices[0].delta.content, end=&quot;&quot;)
-</code></pre></div>
-In Node / Typescript, a streaming request looks like:
-<div class="highlight"><pre><span></span><code>import OpenAI from &quot;openai&quot;;
-
-const openai = new OpenAI();
-
-async function main() {
-    const stream = await openai.chat.completions.create({
-        model: &quot;gpt-4&quot;,
-        messages: [{ role: &quot;user&quot;, content: &quot;Say this is a test&quot; }],
-        stream: true,
-    });
-    for await (const chunk of stream) {
-        process.stdout.write(chunk.choices[0]?.delta?.content || &quot;&quot;);
-    }
-}
-
-main();
+<h4 id="264-iptablefirewalld">2.6.4  禁用iptable和firewalld服务<a class="headerlink" href="#264-iptablefirewalld" title="Permanent link">&para;</a></h4>
+<p>Kubernetes 和 Docker 在运行的中会产生大量的 iptables 规则，为了不让系统规则跟它们混淆，直接关闭系统的规则
+<div class="highlight"><pre><span></span><code><span class="c1"># 1 关闭firewalld服务</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># systemctl stop firewalld</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># systemctl disable firewalld</span>
+<span class="c1"># 2 关闭iptables服务</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># systemctl stop iptables</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># systemctl disable iptables</span>
 </code></pre></div></p>
-<h2 id="parsing-server-sent-events">Parsing Server-sent events<a class="headerlink" href="#parsing-server-sent-events" title="Permanent link">&para;</a></h2>
-<p>Parsing Server-sent events is non-trivial and should be done with caution. Simple strategies like splitting by a new line may result in parsing errors. We recommend using existing client libraries when possible.</p>
+<h4 id="265-selinux">2.6.5 禁用selinux<a class="headerlink" href="#265-selinux" title="Permanent link">&para;</a></h4>
+<p>selinux 是 Linux 系统下的一个安全服务，如果不关闭它，在安装集群中会产生各种各样的奇葩问题。
+<div class="highlight"><pre><span></span><code><span class="c1"># 编辑 /etc/selinux/config 文件，修改SELINUX的值为disable</span>
+<span class="c1"># 注意修改完毕之后需要重启linux服务</span>
+<span class="nv">SELINUX</span><span class="o">=</span>disabled
+</code></pre></div></p>
+<h4 id="266-swap">2.6.6 禁用swap分区<a class="headerlink" href="#266-swap" title="Permanent link">&para;</a></h4>
+<p><strong>swap</strong> 分区指的是虚拟内存分区，它的作用是物理内存使用完，之后将磁盘空间虚拟成内存来使用，启用 <strong>swap</strong> 设备会对系统的性能产生非常负面的影响，因此 Kubernetes 要求每个节点都要禁用 <strong>swap</strong> 设备，但是如果因为某些原因确实不能关闭 <strong>swap</strong> 分区，就需要在集群安装过程中通过明确的参数进行配置说明。
+<div class="highlight"><pre><span></span><code><span class="c1"># 编辑分区配置文件/etc/fstab，注释掉swap分区一行</span>
+<span class="c1"># 注意修改完毕之后需要重启linux服务</span>
+vim<span class="w"> </span>/etc/fstab
+注释掉<span class="w"> </span>/dev/mapper/centos-swap<span class="w"> </span>swap
+<span class="c1"># /dev/mapper/centos-swap swap</span>
+</code></pre></div></p>
+<h4 id="267-linux">2.6.7 修改linux的内核参数<a class="headerlink" href="#267-linux" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># 修改linux的内核采纳数，添加网桥过滤和地址转发功能</span>
+<span class="c1"># 编辑/etc/sysctl.d/kubernetes.conf文件，添加如下配置：</span>
+net.bridge.bridge-nf-call-ip6tables<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
+net.bridge.bridge-nf-call-iptables<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
+net.ipv4.ip_forward<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
+
+<span class="c1"># 重新加载配置</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># sysctl -p</span>
+<span class="c1"># 加载网桥过滤模块</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># modprobe br_netfilter</span>
+<span class="c1"># 查看网桥过滤模块是否加载成功</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># lsmod | grep br_netfilter</span>
+</code></pre></div>
+<h4 id="268-ipvs">2.6.8 配置ipvs功能<a class="headerlink" href="#268-ipvs" title="Permanent link">&para;</a></h4>
+<p>在Kubernetes中Service有两种带来模型，一种是基于iptables的，一种是基于ipvs的两者比较的话，ipvs的性能明显要高一些，但是如果要使用它，需要手动载入ipvs模块。
+<div class="highlight"><pre><span></span><code><span class="c1"># 1.安装ipset和ipvsadm</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># yum install ipset ipvsadm -y</span>
+<span class="c1"># 2.添加需要加载的模块写入脚本文件</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># cat &lt;&lt;EOF&gt; /etc/sysconfig/modules/ipvs.modules</span>
+<span class="c1">#!/bin/bash</span>
+modprobe<span class="w"> </span>--<span class="w"> </span>ip_vs
+modprobe<span class="w"> </span>--<span class="w"> </span>ip_vs_rr
+modprobe<span class="w"> </span>--<span class="w"> </span>ip_vs_wrr
+modprobe<span class="w"> </span>--<span class="w"> </span>ip_vs_sh
+modprobe<span class="w"> </span>--<span class="w"> </span>nf_conntrack_ipv4
+EOF
+<span class="c1"># 3.为脚本添加执行权限</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># chmod +x /etc/sysconfig/modules/ipvs.modules</span>
+<span class="c1"># 4.执行脚本文件</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># /bin/bash /etc/sysconfig/modules/ipvs.modules</span>
+<span class="c1"># 5.查看对应的模块是否加载成功</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># lsmod | grep -e ip_vs -e nf_conntrack_ipv4</span>
+</code></pre></div></p>
+<h4 id="269-docker">2.6.9 安装Docker<a class="headerlink" href="#269-docker" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># 1、切换镜像源</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># wget https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo -O /etc/yum.repos.d/docker-ce.repo</span>
+
+<span class="c1"># 2、查看当前镜像源中支持的docker版本</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># yum list docker-ce --showduplicates</span>
+
+<span class="c1"># 3、安装特定版本的docker-ce</span>
+<span class="c1"># 必须制定--setopt=obsoletes=0，否则yum会自动安装更高版本</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># yum install --setopt=obsoletes=0 docker-ce-18.06.3.ce-3.el7 -y</span>
+
+<span class="c1"># 4、添加一个配置文件</span>
+<span class="c1">#Docker 在默认情况下使用Vgroup Driver为cgroupfs，而Kubernetes推荐使用systemd来替代cgroupfs</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># mkdir /etc/docker</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># cat &lt;&lt;EOF&gt; /etc/docker/daemon.json</span>
+<span class="o">{</span>
+<span class="w">    </span><span class="s2">&quot;exec-opts&quot;</span>:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;native.cgroupdriver=systemd&quot;</span><span class="o">]</span>,
+<span class="w">    </span><span class="s2">&quot;registry-mirrors&quot;</span>:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;https://kn0t2bca.mirror.aliyuncs.com&quot;</span><span class="o">]</span>
+<span class="o">}</span>
+EOF
+
+<span class="c1"># 5、启动dokcer</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># systemctl restart docker</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># systemctl enable docker</span>
+</code></pre></div>
+<h4 id="2610-kubernetes">2.6.10 安装Kubernetes组件<a class="headerlink" href="#2610-kubernetes" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># 1、由于kubernetes的镜像在国外，速度比较慢，这里切换成国内的镜像源</span>
+<span class="c1"># 2、编辑/etc/yum.repos.d/kubernetes.repo,添加下面的配置</span>
+<span class="o">[</span>kubernetes<span class="o">]</span>
+<span class="nv">name</span><span class="o">=</span>Kubernetes
+<span class="nv">baseurl</span><span class="o">=</span>http://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64
+<span class="nv">enabled</span><span class="o">=</span><span class="m">1</span>
+<span class="nv">gpgchech</span><span class="o">=</span><span class="m">0</span>
+<span class="nv">repo_gpgcheck</span><span class="o">=</span><span class="m">0</span>
+<span class="nv">gpgkey</span><span class="o">=</span>http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg
+<span class="w">            </span>http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
+
+<span class="c1"># 3、安装kubeadm、kubelet和kubectl</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># yum install --setopt=obsoletes=0 kubeadm-1.17.4-0 kubelet-1.17.4-0 kubectl-1.17.4-0 -y</span>
+
+<span class="c1"># 4、配置kubelet的cgroup</span>
+<span class="c1">#编辑/etc/sysconfig/kubelet, 添加下面的配置</span>
+<span class="nv">KUBELET_CGROUP_ARGS</span><span class="o">=</span><span class="s2">&quot;--cgroup-driver=systemd&quot;</span>
+<span class="nv">KUBE_PROXY_MODE</span><span class="o">=</span><span class="s2">&quot;ipvs&quot;</span>
+
+<span class="c1"># 5、设置kubelet开机自启</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># systemctl enable kubelet</span>
+</code></pre></div>
+<h4 id="2611">2.6.11 准备集群镜像<a class="headerlink" href="#2611" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># 在安装kubernetes集群之前，必须要提前准备好集群需要的镜像，所需镜像可以通过下面命令查看</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubeadm config images list</span>
+
+<span class="c1"># 下载镜像</span>
+<span class="c1"># 此镜像kubernetes的仓库中，由于网络原因，无法连接，下面提供了一种替换方案</span>
+<span class="nv">images</span><span class="o">=(</span>
+<span class="w">    </span>kube-apiserver:v1.17.4
+<span class="w">    </span>kube-controller-manager:v1.17.4
+<span class="w">    </span>kube-scheduler:v1.17.4
+<span class="w">    </span>kube-proxy:v1.17.4
+<span class="w">    </span>pause:3.1
+<span class="w">    </span>etcd:3.4.3-0
+<span class="w">    </span>coredns:1.6.5
+<span class="o">)</span>
+
+<span class="k">for</span><span class="w"> </span>imageName<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="si">${</span><span class="nv">images</span><span class="p">[@]</span><span class="si">}</span><span class="p">;</span><span class="k">do</span>
+<span class="w">    </span>docker<span class="w"> </span>pull<span class="w"> </span>registry.cn-hangzhou.aliyuncs.com/google_containers/<span class="nv">$imageName</span>
+<span class="w">    </span>docker<span class="w"> </span>tag<span class="w"> </span>registry.cn-hangzhou.aliyuncs.com/google_containers/<span class="nv">$imageName</span><span class="w"> </span>k8s.gcr.io/<span class="nv">$imageName</span>
+<span class="w">    </span>docker<span class="w"> </span>rmi<span class="w"> </span>registry.cn-hangzhou.aliyuncs.com/google_containers/<span class="nv">$imageName</span><span class="w"> </span>
+<span class="k">done</span>
+</code></pre></div>
+<h4 id="2612">2.6.12 集群初始化<a class="headerlink" href="#2612" title="Permanent link">&para;</a></h4>
+<p>下面的操作只需要在master节点上执行即可
+<div class="highlight"><pre><span></span><code><span class="c1"># 创建集群</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubeadm init \</span>
+<span class="w">    </span>--apiserver-advertise-address<span class="o">=</span><span class="m">192</span>.168.90.100<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--image-repository<span class="w"> </span>registry.aliyuncs.com/google_containers<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--kubernetes-version<span class="o">=</span>v1.17.4<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--service-cidr<span class="o">=</span><span class="m">10</span>.96.0.0/12<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--pod-network-cidr<span class="o">=</span><span class="m">10</span>.244.0.0/16
+<span class="c1"># 创建必要文件</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># mkdir -p $HOME/.kube</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># sudo chown $(id -u):$(id -g) $HOME/.kube/config</span>
+下面的操作只需要在node节点上执行即可
+kubeadm<span class="w"> </span>join<span class="w"> </span><span class="m">192</span>.168.0.100:6443<span class="w"> </span>--token<span class="w"> </span>awk15p.t6bamck54w69u4s8<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--discovery-token-ca-cert-hash<span class="w"> </span>sha256:a94fa09562466d32d29523ab6cff122186f1127599fa4dcd5fa0152694f17117<span class="w"> </span>
+在master上查看节点信息
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl get nodes</span>
+NAME<span class="w">    </span>STATUS<span class="w">   </span>ROLES<span class="w">     </span>AGE<span class="w">   </span>VERSION
+master<span class="w">  </span>NotReady<span class="w">  </span>master<span class="w">   </span>6m<span class="w">    </span>v1.17.4
+node1<span class="w">   </span>NotReady<span class="w">   </span>&lt;none&gt;<span class="w">  </span>22s<span class="w">   </span>v1.17.4
+node2<span class="w">   </span>NotReady<span class="w">   </span>&lt;none&gt;<span class="w">  </span>19s<span class="w">   </span>v1.17.4
+</code></pre></div></p>
+<h4 id="2613-master">2.6.13 安装网络插件，只在master节点操作即可<a class="headerlink" href="#2613-master" title="Permanent link">&para;</a></h4>
+<p><div class="highlight"><pre><span></span><code>wget<span class="w"> </span>https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+</code></pre></div>
+由于外网不好访问，如果出现无法访问的情况，可以直接用下面的 记得文件名是kube-flannel.yml，
+位置：/root/kube-flannel.yml
+内容：
+<div class="highlight"><pre><span></span><code>https://github.com/flannel-io/flannel/tree/master/Documentation/kube-flannel.yml
+</code></pre></div>
+也可手动拉取指定版本 docker pull quay.io/coreos/flannel:v0.14.0 </p>
+<h1 id="flannel-docker-images">拉取flannel网络，三台主机 docker images<a class="headerlink" href="#flannel-docker-images" title="Permanent link">&para;</a></h1>
+<h1 id="_1">查看仓库是否拉去下来<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>个人笔记 若是集群状态一直是 notready,用下面语句查看原因， journalctl -f -u kubelet.service 若原因是： cni.go:237] Unable to update cni config: no networks found in /etc/cni/net.d mkdir -p /etc/cni/net.d #创建目录给flannel做配置文件 vim /etc/cni/net.d/10-flannel.conf 
+<div class="highlight"><pre><span></span><code><span class="c1">#编写配置文件</span>
+<span class="o">{</span>
+<span class="w">    </span><span class="s2">&quot;name&quot;</span>:<span class="s2">&quot;cbr0&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;cniVersion&quot;</span>:<span class="s2">&quot;0.3.1&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;type&quot;</span>:<span class="s2">&quot;flannel&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;deledate&quot;</span>:<span class="o">{</span>
+<span class="w">        </span><span class="s2">&quot;hairpinMode&quot;</span>:true,
+<span class="w">        </span><span class="s2">&quot;isDefaultGateway&quot;</span>:true
+<span class="w">        </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></p>
+<h4 id="2614-kubernetes-reset">2.6.14 使用kubernetes reset重制集群<a class="headerlink" href="#2614-kubernetes-reset" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1">#在master节点之外的节点进行操作</span>
+kubeadm<span class="w"> </span>reset
+systemctl<span class="w"> </span>stop<span class="w"> </span>kubelet
+systemctl<span class="w"> </span>stop<span class="w"> </span>docker
+rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/cni/
+rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/kubelet/*
+rm<span class="w"> </span>-rf<span class="w"> </span>/etc/cni/
+ifconfig<span class="w"> </span>cni0<span class="w"> </span>down
+ifconfig<span class="w"> </span>flannel.1<span class="w"> </span>down
+ifconfig<span class="w"> </span>docker0<span class="w"> </span>down
+ip<span class="w"> </span>link<span class="w"> </span>delete<span class="w"> </span>cni0
+ip<span class="w"> </span>link<span class="w"> </span>delete<span class="w"> </span>flannel.1
+<span class="c1">##重启kubelet</span>
+systemctl<span class="w"> </span>restart<span class="w"> </span>kubelet
+<span class="c1">##重启docker</span>
+systemctl<span class="w"> </span>restart<span class="w"> </span>docker
+</code></pre></div>
+<h4 id="2615-kubeletdocker">2.6.15 重启kubelet和docker<a class="headerlink" href="#2615-kubeletdocker" title="Permanent link">&para;</a></h4>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># 重启kubelet</span>
+systemctl<span class="w"> </span>restart<span class="w"> </span>kubelet
+<span class="c1"># 重启docker</span>
+systemctl<span class="w"> </span>restart<span class="w"> </span>docker
+使用配置文件启动fannel
+kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>kube-flannel.yml
+等待它安装完毕，集群的状态已经是Ready。
+</code></pre></div>
+<img alt="02_2-6-15-1" src="../../image/Kubernetes/02_2-6-15-1.png" /></p>
+<h4 id="2616-kuberadm">2.6.16 Kuberadm中的命令<a class="headerlink" href="#2616-kuberadm" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># 生成 新的token</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubeadm token create --print-join-command</span>
+</code></pre></div>
+<h3 id="27">2.7 集群测试<a class="headerlink" href="#27" title="Permanent link">&para;</a></h3>
+<h4 id="271-nginx">2.7.1 创建一个nginx服务<a class="headerlink" href="#271-nginx" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>deployment<span class="w"> </span>nginx<span class="w">  </span>--image<span class="o">=</span>nginx:1.14-alpine
+</code></pre></div>
+<h4 id="272">2.7.2 暴露端口<a class="headerlink" href="#272" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>expose<span class="w"> </span>deploy<span class="w"> </span>nginx<span class="w">  </span>--port<span class="o">=</span><span class="m">80</span><span class="w"> </span>--target-port<span class="o">=</span><span class="m">80</span><span class="w">  </span>--type<span class="o">=</span>NodePort
+</code></pre></div>
+<h4 id="273">2.7.3 查看服务<a class="headerlink" href="#273" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pod,svc
+</code></pre></div>
+<h4 id="274-pod">2.7.4 查看Pod<a class="headerlink" href="#274-pod" title="Permanent link">&para;</a></h4>
+<p><div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pod
+</code></pre></div>
+<img alt="02_2-7-4-1" src="../../image/Kubernetes/02_2-7-4-1.png" />
+浏览器测试效果：
+<img alt="02_2-7-4-2" src="../../image/Kubernetes/02_2-7-4-2.png" /></p>
 
 
 
