@@ -2213,27 +2213,127 @@ kubernetes中所有的内容都抽象为资源，可以通过下面的命令进�
 <blockquote>
 <p>kubectl api-resources</p>
 </blockquote>
-<p>经常使用的资源有下面这些
-|资源分类   |资源名称   |缩写 |资源作用|
-|:---:  |:---:  |:---:  |:---:|
-|集群级别资源 |nodes| no  |集群组成部分|
-|namespaces |ns|    隔离Pod   |
-|pod资源  |pods   |po |装载容器|
-|pod资源控制器   |replicationcontrollers |rc|    控制pod资源|
-|   |replicasets|   rs| 控制pod资源|
-|   |deployments|   deploy| 控制pod资源|
-|   |daemonsets|    ds| 控制pod资源|
-|   |jobs|      |控制pod资源|
-|   |cronjobs|  cj  |控制pod资源|
-|   |horizontalpodautoscalers|  hpa|    控制pod资源|
-|   |statefulsets   |sts    |控制pod资源|
-|服务发现资源 |services   |svc|   统一pod对外接口|
-|   |ingress    |ing    |统一pod对外接口|
-|存储资源   |volumeattachments|     |存储|
-|   |persistentvolumes  |pv |存储|
-|   |persistentvolumeclaims |pvc|   存储|
-|配置资源|  |configmaps |cm |配置|
-|   |secrets|       |配置|</p>
+<p>经常使用的资源有下面这些</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">资源分类</th>
+<th style="text-align: center;">资源名称</th>
+<th style="text-align: center;">缩写</th>
+<th style="text-align: center;">资源作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">集群级别资源</td>
+<td style="text-align: center;">nodes</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">集群组成部分</td>
+</tr>
+<tr>
+<td style="text-align: center;">namespaces</td>
+<td style="text-align: center;">ns</td>
+<td style="text-align: center;">隔离Pod</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">pod资源</td>
+<td style="text-align: center;">pods</td>
+<td style="text-align: center;">po</td>
+<td style="text-align: center;">装载容器</td>
+</tr>
+<tr>
+<td style="text-align: center;">pod资源控制器</td>
+<td style="text-align: center;">replicationcontrollers</td>
+<td style="text-align: center;">rc</td>
+<td style="text-align: center;">控制pod资源</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">replicasets</td>
+<td style="text-align: center;">rs</td>
+<td style="text-align: center;">控制pod资源</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">deployments</td>
+<td style="text-align: center;">deploy</td>
+<td style="text-align: center;">控制pod资源</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">daemonsets</td>
+<td style="text-align: center;">ds</td>
+<td style="text-align: center;">控制pod资源</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">jobs</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">控制pod资源</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">cronjobs</td>
+<td style="text-align: center;">cj</td>
+<td style="text-align: center;">控制pod资源</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">horizontalpodautoscalers</td>
+<td style="text-align: center;">hpa</td>
+<td style="text-align: center;">控制pod资源</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">statefulsets</td>
+<td style="text-align: center;">sts</td>
+<td style="text-align: center;">控制pod资源</td>
+</tr>
+<tr>
+<td style="text-align: center;">服务发现资源</td>
+<td style="text-align: center;">services</td>
+<td style="text-align: center;">svc</td>
+<td style="text-align: center;">统一pod对外接口</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">ingress</td>
+<td style="text-align: center;">ing</td>
+<td style="text-align: center;">统一pod对外接口</td>
+</tr>
+<tr>
+<td style="text-align: center;">存储资源</td>
+<td style="text-align: center;">volumeattachments</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">存储</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">persistentvolumes</td>
+<td style="text-align: center;">pv</td>
+<td style="text-align: center;">存储</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">persistentvolumeclaims</td>
+<td style="text-align: center;">pvc</td>
+<td style="text-align: center;">存储</td>
+</tr>
+<tr>
+<td style="text-align: center;">配置资源</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">configmaps</td>
+<td style="text-align: center;">cm</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">secrets</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">配置</td>
+</tr>
+</tbody>
+</table>
 <ul>
 <li>操作（comand）
 kubernetes允许对资源进行多种操作，可以通过--help查看详细的操作命令
