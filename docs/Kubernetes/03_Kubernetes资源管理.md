@@ -92,6 +92,7 @@ address: [顺义,昌平]
 - kubectl命令
 kubectl是kubernetes集群的命令行工具，通过它能够对集群本身进行管理，并能够在集群上进行容器化应用的安装部署。kubectl命令的语法如下：
 > kubectl [command] [type] [name] [flags]
+
 **comand**：指定要对资源执行的操作，例如create、get、delete
 **type**：指定资源类型，比如deployment、pod、service
 **name**：指定资源的名称，名称大小写敏感
