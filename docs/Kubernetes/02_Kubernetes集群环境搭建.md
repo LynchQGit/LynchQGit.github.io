@@ -7,11 +7,13 @@
 - 二进制包
 >从github 下载发行版的二进制包，手动部署每个组件，组成Kubernetes 集群。
 >Kubeadm 降低部署门槛，但屏蔽了很多细节，遇到问题很难排查。如果想更容易可控，推荐使用二进制包部署Kubernetes 集群，虽然手动部署麻烦点，期间可以学习很多工作原理，也利于后期维护。
+
 ![02_2-1-1](../image/Kubernetes/02_2-1-1.png)
 ### 2.2 Kubernetes部署方式介绍
 **kubeadm** 是官方社区推出的一个用于快速部署kubernetes 集群的工具，这个工具能通过两条指令完成一个kubernetes 集群的部署：
 - 创建一个Master 节点kubeadm init
 - 将Node 节点加入到当前集群中$ kubeadm join <Master 节点的IP 和端口>
+
 ### 2.3 安装要求
 在开始之前，部署Kubernetes 集群机器需要满足以下几个条件：
 - 一台或多台机器，操作系统CentOS7.x-86_x64
@@ -19,14 +21,17 @@
 - 集群中所有机器之间网络互通
 - 可以访问外网，需要拉取镜像
 - 禁止swap 分区
+
 ### 2.4 最终目标
 - 在所有节点上安装Docker 和kubeadm
 - 部署Kubernetes Master
 - 部署容器网络插件
 - 部署Kubernetes Node，将节点加入Kubernetes 集群中
 - 部署Dashboard Web 页面，可视化查看Kubernetes 资源
+
 ### 2.5 准备环境
 ![02_2-5-1](../image/Kubernetes/02_2-5-1.png)
+
 |   角色   |   IP地址    |               组件                |
 | :------: | :---------: | :-------------------------------: |
 | master01 | 192.168.5.3 | docker，kubectl，kubeadm，kubelet |
@@ -49,6 +54,7 @@ Centos Linux 7.5.1804 (Core)
 192.168.90.106 node1
 192.168.90.107 node2
 ```
+
 #### 2.6.3 时间同步
 kubernetes要求集群中的节点时间必须精确一直，这里使用chronyd服务从网络同步时间
 企业中建议配置内部的会见同步服务器
@@ -58,6 +64,7 @@ kubernetes要求集群中的节点时间必须精确一直，这里使用chronyd
 [root@master ~]# systemctl enable chronyd
 [root@master ~]# date
 ```
+
 #### 2.6.4  禁用iptable和firewalld服务
 Kubernetes 和 Docker 在运行的中会产生大量的 iptables 规则，为了不让系统规则跟它们混淆，直接关闭系统的规则
 ```bash
@@ -283,12 +290,15 @@ systemctl restart docker
 kubectl apply -f kube-flannel.yml
 等待它安装完毕，集群的状态已经是Ready。
 ```
+
 ![02_2-6-15-1](../image/Kubernetes/02_2-6-15-1.png)
+
 #### 2.6.16 Kuberadm中的命令
 ```bash
 # 生成 新的token
 [root@master ~]# kubeadm token create --print-join-command
 ```
+
 ### 2.7 集群测试
 #### 2.7.1 创建一个nginx服务
 ```bash
@@ -299,6 +309,7 @@ kubectl create deployment nginx  --image=nginx:1.14-alpine
 ```bash
 kubectl expose deploy nginx  --port=80 --target-port=80  --type=NodePort
 ```
+
 #### 2.7.3 查看服务
 ```bash
 kubectl get pod,svc

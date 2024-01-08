@@ -113,26 +113,26 @@ kubernetes中所有的内容都抽象为资源，可以通过下面的命令进�
 
 经常使用的资源有下面这些
 
-|资源分类	|资源名称	|缩写	|资源作用|
-|:---:	|:---:	|:---:	|:---:|
-|集群级别资源	|nodes|	no	|集群组成部分|
-|namespaces	|ns|	隔离Pod	|
-|pod资源	|pods	|po	|装载容器|
-|pod资源控制器	|replicationcontrollers	|rc|	控制pod资源|
-|	|replicasets|	rs|	控制pod资源|
-|	|deployments|	deploy|	控制pod资源|
-|	|daemonsets|	ds|	控制pod资源|
-|	|jobs|		|控制pod资源|
-|	|cronjobs|	cj	|控制pod资源|
-|	|horizontalpodautoscalers|	hpa|	控制pod资源|
-|	|statefulsets	|sts	|控制pod资源|
-|服务发现资源	|services	|svc|	统一pod对外接口|
-|	|ingress	|ing	|统一pod对外接口|
-|存储资源	|volumeattachments|		|存储|
-|	|persistentvolumes	|pv	|存储|
-|	|persistentvolumeclaims	|pvc|	存储|
-|配置资源|	|configmaps	|cm	|配置|
-|	|secrets|		|配置|
+|   资源分类    |         资源名称         |    缩写    |    资源作用     |
+| :-----------: | :----------------------: | :--------: | :-------------: |
+| 集群级别资源  |          nodes           |     no     |  集群组成部分   |
+|  namespaces   |            ns            |  隔离Pod   |
+|    pod资源    |           pods           |     po     |    装载容器     |
+| pod资源控制器 |  replicationcontrollers  |     rc     |   控制pod资源   |
+|               |       replicasets        |     rs     |   控制pod资源   |
+|               |       deployments        |   deploy   |   控制pod资源   |
+|               |        daemonsets        |     ds     |   控制pod资源   |
+|               |           jobs           |            |   控制pod资源   |
+|               |         cronjobs         |     cj     |   控制pod资源   |
+|               | horizontalpodautoscalers |    hpa     |   控制pod资源   |
+|               |       statefulsets       |    sts     |   控制pod资源   |
+| 服务发现资源  |         services         |    svc     | 统一pod对外接口 |
+|               |         ingress          |    ing     | 统一pod对外接口 |
+|   存储资源    |    volumeattachments     |            |      存储       |
+|               |    persistentvolumes     |     pv     |      存储       |
+|               |  persistentvolumeclaims  |    pvc     |      存储       |
+|   配置资源    |                          | configmaps |       cm        | 配置 |
+|               |         secrets          |            |      配置       |
 
 - 操作（comand）
 kubernetes允许对资源进行多种操作，可以通过--help查看详细的操作命令
@@ -142,39 +142,39 @@ kubectl --help
 
 经常使用的操作有下面这些：
 
-|操作	|命令	|翻译	|作用|
-|:---:	|:---:	|:---:	|:---:|
-|基本命令	|create	|创建	|创建一个资源|
-| |edit	|编辑	|编辑一个资源|
-| |get	|获取	|获取一个资源|
-| |patch	|更新	|更新一个资源|
-| |delete	|删除	|删除一个资源|
-| |explain	|解释	|展示资源文档|
-|运行和调试	|run	|运行	|在集群中运行一个指定的镜像|
-| |expose	|暴露	|暴露资源为Service|
-| |desribe	|描述	|显示资源内部信息|
-| |logs	|日志输出	|输出容器在pod中的日志|
-| |attach	|附着	|进入运行中的容器|
-| |exec	|执行	|在容器中执行命令|
-| |cp	|复制	|在pod内外复制文件|
-| |rollout	|发布	|管理资源的发布|
-| |scale	|扩缩容	|扩缩容资源|
-| |autoscale	|自动扩缩容	|自动扩缩容资源|
-|高级命令	|apply	|应用	|通过文件对资源进行配置|
-| |labe	|标签	|更新资源上的标签|
-| |annotate	|注释	|更新资源上的注解|
-| |convert	|转换	|将资源转换为最新版本|
-| |taint	|污点	|更新资源上的污点|
-| |top	|统计	|统计资源使用情况|
-| |cordon	|排障	|标记节点为不可调度|
-| |uncordon	|恢复	|标记节点为可调度|
-| |drain	|驱逐	|将节点设置为不可调度|
-|其他命令	|cluster-info	|集群信息	|显示集群信息|
-| |api-versions	|API版本	|显示API版本|
-| |version	|版本	|显示Server和Client的版本|
-| |config	|配置	|修改kubeconfig文件|
-| |plugin	|插件	|调用外部插件|
-| |help	|帮助	|显示命令或子命令的帮助|
+|    操作    |     命令     |    翻译    |            作用            |
+| :--------: | :----------: | :--------: | :------------------------: |
+|  基本命令  |    create    |    创建    |        创建一个资源        |
+|            |     edit     |    编辑    |        编辑一个资源        |
+|            |     get      |    获取    |        获取一个资源        |
+|            |    patch     |    更新    |        更新一个资源        |
+|            |    delete    |    删除    |        删除一个资源        |
+|            |   explain    |    解释    |        展示资源文档        |
+| 运行和调试 |     run      |    运行    | 在集群中运行一个指定的镜像 |
+|            |    expose    |    暴露    |     暴露资源为Service      |
+|            |   desribe    |    描述    |      显示资源内部信息      |
+|            |     logs     |  日志输出  |   输出容器在pod中的日志    |
+|            |    attach    |    附着    |      进入运行中的容器      |
+|            |     exec     |    执行    |      在容器中执行命令      |
+|            |      cp      |    复制    |     在pod内外复制文件      |
+|            |   rollout    |    发布    |       管理资源的发布       |
+|            |    scale     |   扩缩容   |         扩缩容资源         |
+|            |  autoscale   | 自动扩缩容 |       自动扩缩容资源       |
+|  高级命令  |    apply     |    应用    |   通过文件对资源进行配置   |
+|            |     labe     |    标签    |      更新资源上的标签      |
+|            |   annotate   |    注释    |      更新资源上的注解      |
+|            |   convert    |    转换    |    将资源转换为最新版本    |
+|            |    taint     |    污点    |      更新资源上的污点      |
+|            |     top      |    统计    |      统计资源使用情况      |
+|            |    cordon    |    排障    |     标记节点为不可调度     |
+|            |   uncordon   |    恢复    |      标记节点为可调度      |
+|            |    drain     |    驱逐    |    将节点设置为不可调度    |
+|  其他命令  | cluster-info |  集群信息  |        显示集群信息        |
+|            | api-versions |  API版本   |        显示API版本         |
+|            |   version    |    版本    |  显示Server和Client的版本  |
+|            |    config    |    配置    |     修改kubeconfig文件     |
+|            |    plugin    |    插件    |        调用外部插件        |
+|            |     help     |    帮助    |   显示命令或子命令的帮助   |
 
 下面以一个namespace / pod的创建和删除简单演示下命令的使用：
 ```bash
