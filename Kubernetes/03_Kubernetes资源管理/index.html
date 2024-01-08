@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../01_Kubernetes%E4%BB%8B%E7%BB%8D/">
+        <link rel="prev" href="../02_Kubernetes%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
       
       
-        <link rel="next" href="../03_Kubernetes%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/">
+        <link rel="next" href="../../openai/openai_python_api/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>02 Kubernetes集群环境搭建 - 韩林奇的个人博客</title>
+        <title>03 Kubernetes资源管理 - 韩林奇的个人博客</title>
       
     
     
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              02 Kubernetes集群环境搭建
+              03 Kubernetes资源管理
             
           </span>
         </div>
@@ -496,6 +496,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_Kubernetes%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02 Kubernetes集群环境搭建
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -510,7 +531,7 @@
           
   
   <span class="md-ellipsis">
-    02 Kubernetes集群环境搭建
+    03 Kubernetes资源管理
   </span>
   
 
@@ -521,7 +542,7 @@
         
   
   <span class="md-ellipsis">
-    02 Kubernetes集群环境搭建
+    03 Kubernetes资源管理
   </span>
   
 
@@ -543,282 +564,54 @@
         <li class="md-nav__item">
   <a href="#kubernetes" class="md-nav__link">
     <span class="md-ellipsis">
-      二、Kubernetes集群环境搭建
+      三、Kubernetes资源管理
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="二、Kubernetes集群环境搭建">
+    <nav class="md-nav" aria-label="三、Kubernetes资源管理">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21" class="md-nav__link">
+  <a href="#31" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1 前置知识点
+      3.1 资源管理介绍
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#22-kubernetes" class="md-nav__link">
+  <a href="#32-yaml" class="md-nav__link">
     <span class="md-ellipsis">
-      2.2 Kubernetes部署方式介绍
+      3.2 YAML语言介绍
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#23" class="md-nav__link">
+  <a href="#33" class="md-nav__link">
     <span class="md-ellipsis">
-      2.3 安装要求
+      3.3 资源管理方式
     </span>
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#24" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.4 最终目标
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#25" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.5 准备环境
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#26" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6 环境初始化
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2.6 环境初始化">
+    <nav class="md-nav" aria-label="3.3 资源管理方式">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#261" class="md-nav__link">
+  <a href="#332" class="md-nav__link">
     <span class="md-ellipsis">
-      2.6.1 检查操作系统的版本
+      3.3.2 命令式对象配置
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#262" class="md-nav__link">
+  <a href="#333" class="md-nav__link">
     <span class="md-ellipsis">
-      2.6.2 主机名解析
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#263" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6.3 时间同步
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#264-iptablefirewalld" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6.4  禁用iptable和firewalld服务
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#265-selinux" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6.5 禁用selinux
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#266-swap" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6.6 禁用swap分区
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#267-linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6.7 修改linux的内核参数
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#268-ipvs" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6.8 配置ipvs功能
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#269-docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6.9 安装Docker
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2610-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6.10 安装Kubernetes组件
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2611" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6.11 准备集群镜像
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2612" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6.12 集群初始化
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2613-master" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6.13 安装网络插件，只在master节点操作即可
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#flannel-docker-images" class="md-nav__link">
-    <span class="md-ellipsis">
-      拉取flannel网络，三台主机 docker images
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      查看仓库是否拉去下来
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="查看仓库是否拉去下来">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#2614-kubernetes-reset" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6.14 使用kubernetes reset重制集群
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2615-kubeletdocker" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6.15 重启kubelet和docker
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2616-kuberadm" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6.16 Kuberadm中的命令
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#27" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.7 集群测试
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2.7 集群测试">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#271-nginx" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.7.1 创建一个nginx服务
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#272" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.7.2 暴露端口
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#273" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.7.3 查看服务
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#274-pod" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.7.4 查看Pod
+      3.3.3 声明式对象配置
     </span>
   </a>
   
@@ -838,27 +631,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03_Kubernetes%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    03 Kubernetes资源管理
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -2194,282 +1966,54 @@
         <li class="md-nav__item">
   <a href="#kubernetes" class="md-nav__link">
     <span class="md-ellipsis">
-      二、Kubernetes集群环境搭建
+      三、Kubernetes资源管理
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="二、Kubernetes集群环境搭建">
+    <nav class="md-nav" aria-label="三、Kubernetes资源管理">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21" class="md-nav__link">
+  <a href="#31" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1 前置知识点
+      3.1 资源管理介绍
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#22-kubernetes" class="md-nav__link">
+  <a href="#32-yaml" class="md-nav__link">
     <span class="md-ellipsis">
-      2.2 Kubernetes部署方式介绍
+      3.2 YAML语言介绍
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#23" class="md-nav__link">
+  <a href="#33" class="md-nav__link">
     <span class="md-ellipsis">
-      2.3 安装要求
+      3.3 资源管理方式
     </span>
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#24" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.4 最终目标
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#25" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.5 准备环境
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#26" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6 环境初始化
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2.6 环境初始化">
+    <nav class="md-nav" aria-label="3.3 资源管理方式">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#261" class="md-nav__link">
+  <a href="#332" class="md-nav__link">
     <span class="md-ellipsis">
-      2.6.1 检查操作系统的版本
+      3.3.2 命令式对象配置
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#262" class="md-nav__link">
+  <a href="#333" class="md-nav__link">
     <span class="md-ellipsis">
-      2.6.2 主机名解析
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#263" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6.3 时间同步
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#264-iptablefirewalld" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6.4  禁用iptable和firewalld服务
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#265-selinux" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6.5 禁用selinux
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#266-swap" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6.6 禁用swap分区
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#267-linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6.7 修改linux的内核参数
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#268-ipvs" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6.8 配置ipvs功能
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#269-docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6.9 安装Docker
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2610-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6.10 安装Kubernetes组件
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2611" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6.11 准备集群镜像
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2612" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6.12 集群初始化
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2613-master" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6.13 安装网络插件，只在master节点操作即可
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#flannel-docker-images" class="md-nav__link">
-    <span class="md-ellipsis">
-      拉取flannel网络，三台主机 docker images
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      查看仓库是否拉去下来
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="查看仓库是否拉去下来">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#2614-kubernetes-reset" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6.14 使用kubernetes reset重制集群
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2615-kubeletdocker" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6.15 重启kubelet和docker
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2616-kuberadm" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6.16 Kuberadm中的命令
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#27" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.7 集群测试
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2.7 集群测试">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#271-nginx" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.7.1 创建一个nginx服务
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#272" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.7.2 暴露端口
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#273" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.7.3 查看服务
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#274-pod" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.7.4 查看Pod
+      3.3.3 声明式对象配置
     </span>
   </a>
   
@@ -2503,286 +2047,382 @@
   
 
 
-<h2 id="kubernetes">二、Kubernetes集群环境搭建<a class="headerlink" href="#kubernetes" title="Permanent link">&para;</a></h2>
-<h3 id="21">2.1 前置知识点<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
-<p>目前生产部署Kubernetes 集群主要有两种方式：
-- kubeadm</p>
+  <h1>03 Kubernetes资源管理</h1>
+
+<h2 id="kubernetes">三、Kubernetes资源管理<a class="headerlink" href="#kubernetes" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1 资源管理介绍<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<p>在kubernetes中，所有的内容都抽象为资源，用户需要通过操作资源来管理kubernetes。
+kubernetes的本质上就是一个集群系统，用户可以在集群中部署各种服务，所谓的部署服务，其实就是在kubernetes集群中运行一个个的容器，并将指定的程序跑在容器中。
+kubernetes的最小管理单元是pod而不是容器，所以只能将容器放在Pod中，而kubernetes一般也不会直接管理Pod，而是通过Pod控制器来管理Pod的。
+Pod可以提供服务之后，就要考虑如何访问Pod中服务，kubernetes提供了Service资源实现这个功能。
+当然，如果Pod中程序的数据需要持久化，kubernetes还提供了各种存储系统。
+<img alt="03_3-1-1" src="../../image/Kubernetes/03_3-1-1.png" />
+学习kubernetes的核心，就是学习如何对集群上的Pod、Pod控制器、Service、存储等各种资源进行操作。</p>
+<h3 id="32-yaml">3.2 YAML语言介绍<a class="headerlink" href="#32-yaml" title="Permanent link">&para;</a></h3>
+<p>YAML是一个类似 XML、JSON 的标记性语言。它强调以数据为中心，并不是以标识语言为重点。因而YAML本身的定义比较简单，号称"一种人性化的数据格式语言"。
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">&lt;lynch&gt;</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">&lt;age&gt;15&lt;/age&gt;</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">&lt;address&gt;Beijing&lt;/address&gt;</span>
+<span class="l l-Scalar l-Scalar-Plain">&lt;/lynch&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">lynch</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">age</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">15</span>
+<span class="w">  </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Beijing</span>
+</code></pre></div>
+YAML的语法比较简单，主要有下面几个：
+- 大小写敏感
+- 使用缩进表示层级关系
+- 缩进不允许使用tab，只允许空格( 低版本限制 )
+- 缩进的空格数不重要，只要相同层级的元素左对齐即可
+- '#'表示注释
+YAML支持以下几种数据类型：
+- 纯量：单个的、不可再分的值
+- 对象：键值对的集合，又称为映射（mapping）/ 哈希（hash） / 字典（dictionary）
+- 数组：一组按次序排列的值，又称为序列（sequence） / 列表（list）</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># 纯量, 就是指的一个简单的值，字符串、布尔值、整数、浮点数、Null、时间、日期</span>
+<span class="c1"># 1 布尔类型</span>
+<span class="nt">c1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true (或者True)</span>
+<span class="c1"># 2 整型</span>
+<span class="nt">c2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">234</span>
+<span class="c1"># 3 浮点型</span>
+<span class="nt">c3</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.14</span>
+<span class="c1"># 4 null类型 </span>
+<span class="nt">c4</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~</span><span class="w">  </span><span class="c1"># 使用~表示null</span>
+<span class="c1"># 5 日期类型</span>
+<span class="nt">c5</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2018-02-17</span><span class="w">    </span><span class="c1"># 日期必须使用ISO 8601格式，即yyyy-MM-dd</span>
+<span class="c1"># 6 时间类型</span>
+<span class="nt">c6</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2018-02-17T15:02:31+08:00</span><span class="w">  </span><span class="c1"># 时间使用ISO 8601格式，时间和日期之间使用T连接，最后使用+代表时区</span>
+<span class="c1"># 7 字符串类型</span>
+<span class="nt">c7</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lynch</span><span class="w">     </span><span class="c1"># 简单写法，直接写值 , 如果字符串中间有特殊字符，必须使用双引号或者单引号包裹 </span>
+<span class="nt">c8</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">line1</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">line2</span><span class="w">     </span><span class="c1"># 字符串过多的情况可以拆成多行，每一行会被转化成一个空格</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># 对象</span>
+<span class="c1"># 形式一(推荐):</span>
+<span class="nt">lynch</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">age</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">15</span>
+<span class="w">  </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Beijing</span>
+<span class="c1"># 形式二(了解):</span>
+<span class="nt">lynch</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">age</span><span class="p">:</span><span class="w"> </span><span class="nv">15</span><span class="p p-Indicator">,</span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="nv">Beijing</span><span class="p p-Indicator">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># 数组</span>
+<span class="c1"># 形式一(推荐):</span>
+<span class="nt">address</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">顺义</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">昌平</span><span class="w">  </span>
+<span class="c1"># 形式二(了解):</span>
+<span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">顺义</span><span class="p p-Indicator">,</span><span class="nv">昌平</span><span class="p p-Indicator">]</span>
+</code></pre></div></p>
 <blockquote>
-<p>Kubeadm 是一个K8s 部署工具，提供kubeadm init 和kubeadm join，用于快速部署Kubernetes 集群。
-官方地址：https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm/
-- 二进制包
-从github 下载发行版的二进制包，手动部署每个组件，组成Kubernetes 集群。
-Kubeadm 降低部署门槛，但屏蔽了很多细节，遇到问题很难排查。如果想更容易可控，推荐使用二进制包部署Kubernetes 集群，虽然手动部署麻烦点，期间可以学习很多工作原理，也利于后期维护。
-<img alt="02_2-1-1" src="../../image/Kubernetes/02_2-1-1.png" /></p>
+<p>小提示：
+1 书写yaml切记: 后面要加一个空格
+2 如果需要将多段yaml配置放在一个文件中，中间要使用---分隔
+3 下面是一个yaml转json的网站，可以通过它验证yaml是否书写正确
+https://www.json2yaml.com/convert-yaml-to-json</p>
 </blockquote>
-<h3 id="22-kubernetes">2.2 Kubernetes部署方式介绍<a class="headerlink" href="#22-kubernetes" title="Permanent link">&para;</a></h3>
-<p><strong>kubeadm</strong> 是官方社区推出的一个用于快速部署kubernetes 集群的工具，这个工具能通过两条指令完成一个kubernetes 集群的部署：
-- 创建一个Master 节点kubeadm init
-- 将Node 节点加入到当前集群中$ kubeadm join <Master 节点的IP 和端口></p>
-<h3 id="23">2.3 安装要求<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
-<p>在开始之前，部署Kubernetes 集群机器需要满足以下几个条件：
-- 一台或多台机器，操作系统CentOS7.x-86_x64
-- 硬件配置：2GB 或更多RAM，2 个CPU 或更多CPU，硬盘30GB 或更多
-- 集群中所有机器之间网络互通
-- 可以访问外网，需要拉取镜像
-- 禁止swap 分区</p>
-<h3 id="24">2.4 最终目标<a class="headerlink" href="#24" title="Permanent link">&para;</a></h3>
+<h3 id="33">3.3 资源管理方式<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
 <ul>
-<li>在所有节点上安装Docker 和kubeadm</li>
-<li>部署Kubernetes Master</li>
-<li>部署容器网络插件</li>
-<li>部署Kubernetes Node，将节点加入Kubernetes 集群中</li>
-<li>部署Dashboard Web 页面，可视化查看Kubernetes 资源</li>
+<li>命令式对象管理：直接使用命令去操作kubernetes资源<blockquote>
+<p>kubectl run nginx-pod --image=nginx:1.17.1 --port=80</p>
+</blockquote>
+</li>
+<li>命令式对象配置：通过命令配置和配置文件去操作kubernetes资源<blockquote>
+<p>kubectl create/patch -f nginx-pod.yaml</p>
+</blockquote>
+</li>
+<li>声明式对象配置：通过apply命令和配置文件去操作kubernetes资源<blockquote>
+<p>kubectl apply -f nginx-pod.yaml</p>
+</blockquote>
+</li>
 </ul>
-<h3 id="25">2.5 准备环境<a class="headerlink" href="#25" title="Permanent link">&para;</a></h3>
-<p><img alt="02_2-5-1" src="../../image/Kubernetes/02_2-5-1.png" />
-|   角色   |   IP地址    |               组件                |
-| :------: | :---------: | :-------------------------------: |
-| master01 | 192.168.5.3 | docker，kubectl，kubeadm，kubelet |
-|  node01  | 192.168.5.4 | docker，kubectl，kubeadm，kubelet |
-|  node02  | 192.168.5.5 | docker，kubectl，kubeadm，kubelet |</p>
-<h3 id="26">2.6 环境初始化<a class="headerlink" href="#26" title="Permanent link">&para;</a></h3>
-<h4 id="261">2.6.1 检查操作系统的版本<a class="headerlink" href="#261" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="c1"># 此方式下安装kubernetes集群要求Centos版本要在7.5或之上</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># cat /etc/redhat-release</span>
-Centos<span class="w"> </span>Linux<span class="w"> </span><span class="m">7</span>.5.1804<span class="w"> </span><span class="o">(</span>Core<span class="o">)</span>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">类型</th>
+<th style="text-align: center;">操作对象</th>
+<th style="text-align: center;">适用环境</th>
+<th style="text-align: center;">优点</th>
+<th style="text-align: center;">缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">命令式对象管理</td>
+<td style="text-align: center;">对象</td>
+<td style="text-align: center;">测试</td>
+<td style="text-align: center;">简单</td>
+<td style="text-align: center;">只能操作活动对象，无法审计、跟踪</td>
+</tr>
+<tr>
+<td style="text-align: center;">命令式对象配置</td>
+<td style="text-align: center;">文件</td>
+<td style="text-align: center;">开发</td>
+<td style="text-align: center;">可以审计、跟踪</td>
+<td style="text-align: center;">项目大时，配置文件多，操作麻烦</td>
+</tr>
+<tr>
+<td style="text-align: center;">声明式对象配置</td>
+<td style="text-align: center;">目录</td>
+<td style="text-align: center;">开发</td>
+<td style="text-align: center;">支持目录操作</td>
+<td style="text-align: center;">意外情况下难以调试</td>
+</tr>
+<tr>
+<td style="text-align: center;">#### 3.3.1 命令式对象管理</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">- kubectl命令</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">kubectl是kubernetes集群的命令行工具，通过它能够对集群本身进行管理，并能够在集群上进行容器化应用的安装部署。kubectl命令的语法如下：</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">&gt; kubectl [command] [type] [name] [flags]</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>comand</strong>：指定要对资源执行的操作，例如create、get、delete</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>type</strong>：指定资源类型，比如deployment、pod、service</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>name</strong>：指定资源的名称，名称大小写敏感</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>flags</strong>：指定额外的可选参数</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"><div class="highlight"><pre><span></span><code><span class="c1"># 查看所有pod</span>
+<span class="l l-Scalar l-Scalar-Plain">kubectl get pod</span><span class="w"> </span>
+
+<span class="l l-Scalar l-Scalar-Plain"># 查看某个pod</span>
+<span class="l l-Scalar l-Scalar-Plain">kubectl get pod pod_name</span>
+
+<span class="l l-Scalar l-Scalar-Plain"># 查看某个pod,以yaml格式展示结果</span>
+<span class="l l-Scalar l-Scalar-Plain">kubectl get pod pod_name -o yaml</span>
+</code></pre></div></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">- 资源类型（type）</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">kubernetes中所有的内容都抽象为资源，可以通过下面的命令进行查看:</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">&gt;kubectl api-resources</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>经常使用的资源有下面这些
+|资源分类   |资源名称   |缩写 |资源作用|
+|:---:  |:---:  |:---:  |:---:|
+|集群级别资源 |nodes| no  |集群组成部分|
+|namespaces |ns|    隔离Pod   |
+|pod资源  |pods   |po |装载容器|
+|pod资源控制器   |replicationcontrollers |rc|    控制pod资源|
+|   |replicasets|   rs| 控制pod资源|
+|   |deployments|   deploy| 控制pod资源|
+|   |daemonsets|    ds| 控制pod资源|
+|   |jobs|      |控制pod资源|
+|   |cronjobs|  cj  |控制pod资源|
+|   |horizontalpodautoscalers|  hpa|    控制pod资源|
+|   |statefulsets   |sts    |控制pod资源|
+|服务发现资源 |services   |svc|   统一pod对外接口|
+|   |ingress    |ing    |统一pod对外接口|
+|存储资源   |volumeattachments|     |存储|
+|   |persistentvolumes  |pv |存储|
+|   |persistentvolumeclaims |pvc|   存储|
+|配置资源|  |configmaps |cm |配置|
+|   |secrets|       |配置|</p>
+<ul>
+<li>操作（comand）
+kubernetes允许对资源进行多种操作，可以通过--help查看详细的操作命令
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>--help
 </code></pre></div>
-<h4 id="262">2.6.2 主机名解析<a class="headerlink" href="#262" title="Permanent link">&para;</a></h4>
-<p>为了方便集群节点间的直接调用，在这个配置一下主机名解析，企业中推荐使用内部DNS服务器
-<div class="highlight"><pre><span></span><code><span class="c1"># 主机名成解析 编辑三台服务器的/etc/hosts文件，添加下面内容</span>
-<span class="m">192</span>.168.90.100<span class="w"> </span>master
-<span class="m">192</span>.168.90.106<span class="w"> </span>node1
-<span class="m">192</span>.168.90.107<span class="w"> </span>node2
+经常使用的操作有下面这些：
+|操作 |命令 |翻译 |作用|
+|:---:  |:---:  |:---:  |:---:|
+|基本命令   |create |创建 |创建一个资源|
+| |edit |编辑 |编辑一个资源|
+| |get  |获取 |获取一个资源|
+| |patch    |更新 |更新一个资源|
+| |delete   |删除 |删除一个资源|
+| |explain  |解释 |展示资源文档|
+|运行和调试  |run    |运行 |在集群中运行一个指定的镜像|
+| |expose   |暴露 |暴露资源为Service|
+| |desribe  |描述 |显示资源内部信息|
+| |logs |日志输出   |输出容器在pod中的日志|
+| |attach   |附着 |进入运行中的容器|
+| |exec |执行 |在容器中执行命令|
+| |cp   |复制 |在pod内外复制文件|
+| |rollout  |发布 |管理资源的发布|
+| |scale    |扩缩容    |扩缩容资源|
+| |autoscale    |自动扩缩容  |自动扩缩容资源|
+|高级命令   |apply  |应用 |通过文件对资源进行配置|
+| |labe |标签 |更新资源上的标签|
+| |annotate |注释 |更新资源上的注解|
+| |convert  |转换 |将资源转换为最新版本|
+| |taint    |污点 |更新资源上的污点|
+| |top  |统计 |统计资源使用情况|
+| |cordon   |排障 |标记节点为不可调度|
+| |uncordon |恢复 |标记节点为可调度|
+| |drain    |驱逐 |将节点设置为不可调度|
+|其他命令   |cluster-info   |集群信息   |显示集群信息|
+| |api-versions |API版本  |显示API版本|
+| |version  |版本 |显示Server和Client的版本|
+| |config   |配置 |修改kubeconfig文件|
+| |plugin   |插件 |调用外部插件|
+| |help |帮助 |显示命令或子命令的帮助|</li>
+</ul>
+<p>下面以一个namespace / pod的创建和删除简单演示下命令的使用：
+<div class="highlight"><pre><span></span><code><span class="c1"># 创建一个namespace</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl create namespace dev</span>
+namespace/dev<span class="w"> </span>created
+
+<span class="c1"># 获取namespace</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl get ns</span>
+NAME<span class="w">              </span>STATUS<span class="w">   </span>AGE
+default<span class="w">           </span>Active<span class="w">   </span>21h
+dev<span class="w">               </span>Active<span class="w">   </span>21s
+kube-node-lease<span class="w">   </span>Active<span class="w">   </span>21h
+kube-public<span class="w">       </span>Active<span class="w">   </span>21h
+kube-system<span class="w">       </span>Active<span class="w">   </span>21h
+
+<span class="c1"># 在此namespace下创建并运行一个nginx的Pod</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl run pod --image=nginx:latest -n dev</span>
+kubectl<span class="w"> </span>run<span class="w"> </span>--generator<span class="o">=</span>deployment/apps.v1<span class="w"> </span>is<span class="w"> </span>DEPRECATED<span class="w"> </span>and<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>removed<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>future<span class="w"> </span>version.<span class="w"> </span>Use<span class="w"> </span>kubectl<span class="w"> </span>run<span class="w"> </span>--generator<span class="o">=</span>run-pod/v1<span class="w"> </span>or<span class="w"> </span>kubectl<span class="w"> </span>create<span class="w"> </span>instead.
+deployment.apps/pod<span class="w"> </span>created
+
+<span class="c1"># 查看新创建的pod</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl get pod -n dev</span>
+NAME<span class="w">  </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">   </span>AGE
+pod<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>21s
+
+<span class="c1"># 删除指定的pod</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl delete pod pod-864f9875b9-pcw7x</span>
+pod<span class="w"> </span><span class="s2">&quot;pod&quot;</span><span class="w"> </span>deleted
+
+<span class="c1"># 删除指定的namespace</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl delete ns dev</span>
+namespace<span class="w"> </span><span class="s2">&quot;dev&quot;</span><span class="w"> </span>deleted
 </code></pre></div></p>
-<h4 id="263">2.6.3 时间同步<a class="headerlink" href="#263" title="Permanent link">&para;</a></h4>
-<p>kubernetes要求集群中的节点时间必须精确一直，这里使用chronyd服务从网络同步时间
-企业中建议配置内部的会见同步服务器
-<div class="highlight"><pre><span></span><code><span class="c1"># 启动chronyd服务</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># systemctl start chronyd</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># systemctl enable chronyd</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># date</span>
+<h4 id="332">3.3.2 命令式对象配置<a class="headerlink" href="#332" title="Permanent link">&para;</a></h4>
+<p>命令式对象配置就是使用命令配合配置文件一起来操作kubernetes资源。
+1. 创建一个nginxpod.yaml，内容如下：
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Namespace</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev</span>
+
+<span class="nn">---</span>
+
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginxpod</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx-containers</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx:latest</span>
+</code></pre></div>
+2. 执行create命令，创建资源：
+<div class="highlight"><pre><span></span><code><span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl create -f nginxpod.yaml</span>
+namespace/dev<span class="w"> </span>created
+pod/nginxpod<span class="w"> </span>created
+</code></pre></div>
+此时发现创建了两个资源对象，分别是namespace和pod
+3. 执行get命令，查看资源：
+<div class="highlight"><pre><span></span><code><span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1">#  kubectl get -f nginxpod.yaml</span>
+NAME<span class="w">            </span>STATUS<span class="w">   </span>AGE
+namespace/dev<span class="w">   </span>Active<span class="w">   </span>18s
+
+NAME<span class="w">            </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">   </span>AGE
+pod/nginxpod<span class="w">    </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>17s
+</code></pre></div>
+这样就显示了两个资源对象的信息
+4. 执行delete命令，删除资源：
+<div class="highlight"><pre><span></span><code><span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl delete -f nginxpod.yaml</span>
+namespace<span class="w"> </span><span class="s2">&quot;dev&quot;</span><span class="w"> </span>deleted
+pod<span class="w"> </span><span class="s2">&quot;nginxpod&quot;</span><span class="w"> </span>deleted
+</code></pre></div>
+此时发现两个资源对象被删除了
+【总结】
+命令式对象配置的方式操作资源，可以简单的认为：命令  +  yaml配置文件（里面是命令需要的各种参数）</p>
+<h4 id="333">3.3.3 声明式对象配置<a class="headerlink" href="#333" title="Permanent link">&para;</a></h4>
+<p>声明式对象配置跟命令式对象配置很相似，但是它只有一个命令apply。
+<div class="highlight"><pre><span></span><code><span class="c1"># 首先执行一次kubectl apply -f yaml文件，发现创建了资源</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1">#  kubectl apply -f nginxpod.yaml</span>
+namespace/dev<span class="w"> </span>created
+pod/nginxpod<span class="w"> </span>created
+
+<span class="c1"># 再次执行一次kubectl apply -f yaml文件，发现说资源没有变动</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1">#  kubectl apply -f nginxpod.yaml</span>
+namespace/dev<span class="w"> </span>unchanged
+pod/nginxpod<span class="w"> </span>unchanged
 </code></pre></div></p>
-<h4 id="264-iptablefirewalld">2.6.4  禁用iptable和firewalld服务<a class="headerlink" href="#264-iptablefirewalld" title="Permanent link">&para;</a></h4>
-<p>Kubernetes 和 Docker 在运行的中会产生大量的 iptables 规则，为了不让系统规则跟它们混淆，直接关闭系统的规则
-<div class="highlight"><pre><span></span><code><span class="c1"># 1 关闭firewalld服务</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># systemctl stop firewalld</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># systemctl disable firewalld</span>
-<span class="c1"># 2 关闭iptables服务</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># systemctl stop iptables</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># systemctl disable iptables</span>
-</code></pre></div></p>
-<h4 id="265-selinux">2.6.5 禁用selinux<a class="headerlink" href="#265-selinux" title="Permanent link">&para;</a></h4>
-<p>selinux 是 Linux 系统下的一个安全服务，如果不关闭它，在安装集群中会产生各种各样的奇葩问题。
-<div class="highlight"><pre><span></span><code><span class="c1"># 编辑 /etc/selinux/config 文件，修改SELINUX的值为disable</span>
-<span class="c1"># 注意修改完毕之后需要重启linux服务</span>
-<span class="nv">SELINUX</span><span class="o">=</span>disabled
-</code></pre></div></p>
-<h4 id="266-swap">2.6.6 禁用swap分区<a class="headerlink" href="#266-swap" title="Permanent link">&para;</a></h4>
-<p><strong>swap</strong> 分区指的是虚拟内存分区，它的作用是物理内存使用完，之后将磁盘空间虚拟成内存来使用，启用 <strong>swap</strong> 设备会对系统的性能产生非常负面的影响，因此 Kubernetes 要求每个节点都要禁用 <strong>swap</strong> 设备，但是如果因为某些原因确实不能关闭 <strong>swap</strong> 分区，就需要在集群安装过程中通过明确的参数进行配置说明。
-<div class="highlight"><pre><span></span><code><span class="c1"># 编辑分区配置文件/etc/fstab，注释掉swap分区一行</span>
-<span class="c1"># 注意修改完毕之后需要重启linux服务</span>
-vim<span class="w"> </span>/etc/fstab
-注释掉<span class="w"> </span>/dev/mapper/centos-swap<span class="w"> </span>swap
-<span class="c1"># /dev/mapper/centos-swap swap</span>
-</code></pre></div></p>
-<h4 id="267-linux">2.6.7 修改linux的内核参数<a class="headerlink" href="#267-linux" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="c1"># 修改linux的内核采纳数，添加网桥过滤和地址转发功能</span>
-<span class="c1"># 编辑/etc/sysctl.d/kubernetes.conf文件，添加如下配置：</span>
-net.bridge.bridge-nf-call-ip6tables<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
-net.bridge.bridge-nf-call-iptables<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
-net.ipv4.ip_forward<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
-
-<span class="c1"># 重新加载配置</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># sysctl -p</span>
-<span class="c1"># 加载网桥过滤模块</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># modprobe br_netfilter</span>
-<span class="c1"># 查看网桥过滤模块是否加载成功</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># lsmod | grep br_netfilter</span>
-</code></pre></div>
-<h4 id="268-ipvs">2.6.8 配置ipvs功能<a class="headerlink" href="#268-ipvs" title="Permanent link">&para;</a></h4>
-<p>在Kubernetes中Service有两种带来模型，一种是基于iptables的，一种是基于ipvs的两者比较的话，ipvs的性能明显要高一些，但是如果要使用它，需要手动载入ipvs模块。
-<div class="highlight"><pre><span></span><code><span class="c1"># 1.安装ipset和ipvsadm</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># yum install ipset ipvsadm -y</span>
-<span class="c1"># 2.添加需要加载的模块写入脚本文件</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># cat &lt;&lt;EOF&gt; /etc/sysconfig/modules/ipvs.modules</span>
-<span class="c1">#!/bin/bash</span>
-modprobe<span class="w"> </span>--<span class="w"> </span>ip_vs
-modprobe<span class="w"> </span>--<span class="w"> </span>ip_vs_rr
-modprobe<span class="w"> </span>--<span class="w"> </span>ip_vs_wrr
-modprobe<span class="w"> </span>--<span class="w"> </span>ip_vs_sh
-modprobe<span class="w"> </span>--<span class="w"> </span>nf_conntrack_ipv4
-EOF
-<span class="c1"># 3.为脚本添加执行权限</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># chmod +x /etc/sysconfig/modules/ipvs.modules</span>
-<span class="c1"># 4.执行脚本文件</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># /bin/bash /etc/sysconfig/modules/ipvs.modules</span>
-<span class="c1"># 5.查看对应的模块是否加载成功</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># lsmod | grep -e ip_vs -e nf_conntrack_ipv4</span>
-</code></pre></div></p>
-<h4 id="269-docker">2.6.9 安装Docker<a class="headerlink" href="#269-docker" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="c1"># 1、切换镜像源</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># wget https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo -O /etc/yum.repos.d/docker-ce.repo</span>
-
-<span class="c1"># 2、查看当前镜像源中支持的docker版本</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># yum list docker-ce --showduplicates</span>
-
-<span class="c1"># 3、安装特定版本的docker-ce</span>
-<span class="c1"># 必须制定--setopt=obsoletes=0，否则yum会自动安装更高版本</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># yum install --setopt=obsoletes=0 docker-ce-18.06.3.ce-3.el7 -y</span>
-
-<span class="c1"># 4、添加一个配置文件</span>
-<span class="c1">#Docker 在默认情况下使用Vgroup Driver为cgroupfs，而Kubernetes推荐使用systemd来替代cgroupfs</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># mkdir /etc/docker</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># cat &lt;&lt;EOF&gt; /etc/docker/daemon.json</span>
-<span class="o">{</span>
-<span class="w">    </span><span class="s2">&quot;exec-opts&quot;</span>:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;native.cgroupdriver=systemd&quot;</span><span class="o">]</span>,
-<span class="w">    </span><span class="s2">&quot;registry-mirrors&quot;</span>:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;https://kn0t2bca.mirror.aliyuncs.com&quot;</span><span class="o">]</span>
-<span class="o">}</span>
-EOF
-
-<span class="c1"># 5、启动dokcer</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># systemctl restart docker</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># systemctl enable docker</span>
-</code></pre></div>
-<h4 id="2610-kubernetes">2.6.10 安装Kubernetes组件<a class="headerlink" href="#2610-kubernetes" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="c1"># 1、由于kubernetes的镜像在国外，速度比较慢，这里切换成国内的镜像源</span>
-<span class="c1"># 2、编辑/etc/yum.repos.d/kubernetes.repo,添加下面的配置</span>
-<span class="o">[</span>kubernetes<span class="o">]</span>
-<span class="nv">name</span><span class="o">=</span>Kubernetes
-<span class="nv">baseurl</span><span class="o">=</span>http://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64
-<span class="nv">enabled</span><span class="o">=</span><span class="m">1</span>
-<span class="nv">gpgchech</span><span class="o">=</span><span class="m">0</span>
-<span class="nv">repo_gpgcheck</span><span class="o">=</span><span class="m">0</span>
-<span class="nv">gpgkey</span><span class="o">=</span>http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg
-<span class="w">            </span>http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
-
-<span class="c1"># 3、安装kubeadm、kubelet和kubectl</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># yum install --setopt=obsoletes=0 kubeadm-1.17.4-0 kubelet-1.17.4-0 kubectl-1.17.4-0 -y</span>
-
-<span class="c1"># 4、配置kubelet的cgroup</span>
-<span class="c1">#编辑/etc/sysconfig/kubelet, 添加下面的配置</span>
-<span class="nv">KUBELET_CGROUP_ARGS</span><span class="o">=</span><span class="s2">&quot;--cgroup-driver=systemd&quot;</span>
-<span class="nv">KUBE_PROXY_MODE</span><span class="o">=</span><span class="s2">&quot;ipvs&quot;</span>
-
-<span class="c1"># 5、设置kubelet开机自启</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># systemctl enable kubelet</span>
-</code></pre></div>
-<h4 id="2611">2.6.11 准备集群镜像<a class="headerlink" href="#2611" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="c1"># 在安装kubernetes集群之前，必须要提前准备好集群需要的镜像，所需镜像可以通过下面命令查看</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubeadm config images list</span>
-
-<span class="c1"># 下载镜像</span>
-<span class="c1"># 此镜像kubernetes的仓库中，由于网络原因，无法连接，下面提供了一种替换方案</span>
-<span class="nv">images</span><span class="o">=(</span>
-<span class="w">    </span>kube-apiserver:v1.17.4
-<span class="w">    </span>kube-controller-manager:v1.17.4
-<span class="w">    </span>kube-scheduler:v1.17.4
-<span class="w">    </span>kube-proxy:v1.17.4
-<span class="w">    </span>pause:3.1
-<span class="w">    </span>etcd:3.4.3-0
-<span class="w">    </span>coredns:1.6.5
-<span class="o">)</span>
-
-<span class="k">for</span><span class="w"> </span>imageName<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="si">${</span><span class="nv">images</span><span class="p">[@]</span><span class="si">}</span><span class="p">;</span><span class="k">do</span>
-<span class="w">    </span>docker<span class="w"> </span>pull<span class="w"> </span>registry.cn-hangzhou.aliyuncs.com/google_containers/<span class="nv">$imageName</span>
-<span class="w">    </span>docker<span class="w"> </span>tag<span class="w"> </span>registry.cn-hangzhou.aliyuncs.com/google_containers/<span class="nv">$imageName</span><span class="w"> </span>k8s.gcr.io/<span class="nv">$imageName</span>
-<span class="w">    </span>docker<span class="w"> </span>rmi<span class="w"> </span>registry.cn-hangzhou.aliyuncs.com/google_containers/<span class="nv">$imageName</span><span class="w"> </span>
-<span class="k">done</span>
-</code></pre></div>
-<h4 id="2612">2.6.12 集群初始化<a class="headerlink" href="#2612" title="Permanent link">&para;</a></h4>
-<p>下面的操作只需要在master节点上执行即可
-<div class="highlight"><pre><span></span><code><span class="c1"># 创建集群</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubeadm init \</span>
-<span class="w">    </span>--apiserver-advertise-address<span class="o">=</span><span class="m">192</span>.168.90.100<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--image-repository<span class="w"> </span>registry.aliyuncs.com/google_containers<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--kubernetes-version<span class="o">=</span>v1.17.4<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--service-cidr<span class="o">=</span><span class="m">10</span>.96.0.0/12<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--pod-network-cidr<span class="o">=</span><span class="m">10</span>.244.0.0/16
-<span class="c1"># 创建必要文件</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># mkdir -p $HOME/.kube</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># sudo chown $(id -u):$(id -g) $HOME/.kube/config</span>
-下面的操作只需要在node节点上执行即可
-kubeadm<span class="w"> </span>join<span class="w"> </span><span class="m">192</span>.168.0.100:6443<span class="w"> </span>--token<span class="w"> </span>awk15p.t6bamck54w69u4s8<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--discovery-token-ca-cert-hash<span class="w"> </span>sha256:a94fa09562466d32d29523ab6cff122186f1127599fa4dcd5fa0152694f17117<span class="w"> </span>
-在master上查看节点信息
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl get nodes</span>
-NAME<span class="w">    </span>STATUS<span class="w">   </span>ROLES<span class="w">     </span>AGE<span class="w">   </span>VERSION
-master<span class="w">  </span>NotReady<span class="w">  </span>master<span class="w">   </span>6m<span class="w">    </span>v1.17.4
-node1<span class="w">   </span>NotReady<span class="w">   </span>&lt;none&gt;<span class="w">  </span>22s<span class="w">   </span>v1.17.4
-node2<span class="w">   </span>NotReady<span class="w">   </span>&lt;none&gt;<span class="w">  </span>19s<span class="w">   </span>v1.17.4
-</code></pre></div></p>
-<h4 id="2613-master">2.6.13 安装网络插件，只在master节点操作即可<a class="headerlink" href="#2613-master" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code>wget<span class="w"> </span>https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
-</code></pre></div>
-由于外网不好访问，如果出现无法访问的情况，可以直接用下面的 记得文件名是kube-flannel.yml，
-位置：/root/kube-flannel.yml
-内容：
-<div class="highlight"><pre><span></span><code>https://github.com/flannel-io/flannel/tree/master/Documentation/kube-flannel.yml
-</code></pre></div>
-也可手动拉取指定版本 docker pull quay.io/coreos/flannel:v0.14.0 </p>
-<h1 id="flannel-docker-images">拉取flannel网络，三台主机 docker images<a class="headerlink" href="#flannel-docker-images" title="Permanent link">&para;</a></h1>
-<h1 id="_1">查看仓库是否拉去下来<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>个人笔记 若是集群状态一直是 notready,用下面语句查看原因， journalctl -f -u kubelet.service 若原因是： cni.go:237] Unable to update cni config: no networks found in /etc/cni/net.d mkdir -p /etc/cni/net.d #创建目录给flannel做配置文件 vim /etc/cni/net.d/10-flannel.conf 
-<div class="highlight"><pre><span></span><code><span class="c1">#编写配置文件</span>
-<span class="o">{</span>
-<span class="w">    </span><span class="s2">&quot;name&quot;</span>:<span class="s2">&quot;cbr0&quot;</span>,
-<span class="w">    </span><span class="s2">&quot;cniVersion&quot;</span>:<span class="s2">&quot;0.3.1&quot;</span>,
-<span class="w">    </span><span class="s2">&quot;type&quot;</span>:<span class="s2">&quot;flannel&quot;</span>,
-<span class="w">    </span><span class="s2">&quot;deledate&quot;</span>:<span class="o">{</span>
-<span class="w">        </span><span class="s2">&quot;hairpinMode&quot;</span>:true,
-<span class="w">        </span><span class="s2">&quot;isDefaultGateway&quot;</span>:true
-<span class="w">        </span><span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></p>
-<h4 id="2614-kubernetes-reset">2.6.14 使用kubernetes reset重制集群<a class="headerlink" href="#2614-kubernetes-reset" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="c1">#在master节点之外的节点进行操作</span>
-kubeadm<span class="w"> </span>reset
-systemctl<span class="w"> </span>stop<span class="w"> </span>kubelet
-systemctl<span class="w"> </span>stop<span class="w"> </span>docker
-rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/cni/
-rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/kubelet/*
-rm<span class="w"> </span>-rf<span class="w"> </span>/etc/cni/
-ifconfig<span class="w"> </span>cni0<span class="w"> </span>down
-ifconfig<span class="w"> </span>flannel.1<span class="w"> </span>down
-ifconfig<span class="w"> </span>docker0<span class="w"> </span>down
-ip<span class="w"> </span>link<span class="w"> </span>delete<span class="w"> </span>cni0
-ip<span class="w"> </span>link<span class="w"> </span>delete<span class="w"> </span>flannel.1
-<span class="c1">##重启kubelet</span>
-systemctl<span class="w"> </span>restart<span class="w"> </span>kubelet
-<span class="c1">##重启docker</span>
-systemctl<span class="w"> </span>restart<span class="w"> </span>docker
-</code></pre></div>
-<h4 id="2615-kubeletdocker">2.6.15 重启kubelet和docker<a class="headerlink" href="#2615-kubeletdocker" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code><span class="c1"># 重启kubelet</span>
-systemctl<span class="w"> </span>restart<span class="w"> </span>kubelet
-<span class="c1"># 重启docker</span>
-systemctl<span class="w"> </span>restart<span class="w"> </span>docker
-使用配置文件启动fannel
-kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>kube-flannel.yml
-等待它安装完毕，集群的状态已经是Ready。
-</code></pre></div>
-<img alt="02_2-6-15-1" src="../../image/Kubernetes/02_2-6-15-1.png" /></p>
-<h4 id="2616-kuberadm">2.6.16 Kuberadm中的命令<a class="headerlink" href="#2616-kuberadm" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="c1"># 生成 新的token</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubeadm token create --print-join-command</span>
-</code></pre></div>
-<h3 id="27">2.7 集群测试<a class="headerlink" href="#27" title="Permanent link">&para;</a></h3>
-<h4 id="271-nginx">2.7.1 创建一个nginx服务<a class="headerlink" href="#271-nginx" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>deployment<span class="w"> </span>nginx<span class="w">  </span>--image<span class="o">=</span>nginx:1.14-alpine
-</code></pre></div>
-<h4 id="272">2.7.2 暴露端口<a class="headerlink" href="#272" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>expose<span class="w"> </span>deploy<span class="w"> </span>nginx<span class="w">  </span>--port<span class="o">=</span><span class="m">80</span><span class="w"> </span>--target-port<span class="o">=</span><span class="m">80</span><span class="w">  </span>--type<span class="o">=</span>NodePort
-</code></pre></div>
-<h4 id="273">2.7.3 查看服务<a class="headerlink" href="#273" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pod,svc
-</code></pre></div>
-<h4 id="274-pod">2.7.4 查看Pod<a class="headerlink" href="#274-pod" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pod
-</code></pre></div>
-<img alt="02_2-7-4-1" src="../../image/Kubernetes/02_2-7-4-1.png" />
-浏览器测试效果：
-<img alt="02_2-7-4-2" src="../../image/Kubernetes/02_2-7-4-2.png" /></p>
+<p><strong>【总结】</strong>
+其实声明式对象配置就是使用apply描述一个资源最终的状态（在yaml中定义状态）
+使用apply操作资源：
+- 如果资源不存在，就创建，相当于 kubectl create
+- 如果资源已存在，就更新，相当于 kubectl patch</p>
+<blockquote>
+<p>扩展：kubectl可以在node节点上运行吗 ?
+kubectl的运行是需要进行配置的，它的配置文件是$HOME/.kube，如果想要在node节点运行此命令，需要将master上的.kube文件复制到node节点上，即在master节点上执行下面操作：
+<code>scp  -r  HOME/.kube   node1: HOME/</code>
+使用推荐: 三种方式应该怎么用 ?
+创建/更新资源 使用声明式对象配置 kubectl apply -f XXX.yaml
+删除资源 使用命令式对象配置 kubectl delete -f XXX.yaml
+查询资源 使用命令式对象管理 kubectl get(describe) 资源名称</p>
+</blockquote>
 
 
 
