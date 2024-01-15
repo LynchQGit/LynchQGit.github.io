@@ -1,0 +1,2388 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../03_Kubernetes%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/">
+      
+      
+        <link rel="next" href="../../openai/openai_python_api/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.0.13">
+    
+    
+      
+        <title>04 Kubernetes实战入门 - 韩林奇的个人博客</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ffa9267a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kubernetes" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="韩林奇的个人博客" class="md-header__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            韩林奇的个人博客
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              04 Kubernetes实战入门
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_3" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_3">
+          
+            <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/LynchQGit/LynchQGit.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="韩林奇的个人博客" class="md-nav__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    韩林奇的个人博客
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/LynchQGit/LynchQGit.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Docker
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Docker
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          01 Docker基础
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          01 Docker基础
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Docker/01_Docker%E5%9F%BA%E7%A1%80/01_Docker%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+        01 Docker简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Docker/01_Docker%E5%9F%BA%E7%A1%80/02_Docker%E5%AE%89%E8%A3%85/" class="md-nav__link">
+        02 Docker安装
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Docker/01_Docker%E5%9F%BA%E7%A1%80/03_Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+        03 Docker常用命令
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Kubernetes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Kubernetes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_Kubernetes%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        01 Kubernetes介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_Kubernetes%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="md-nav__link">
+        02 Kubernetes集群环境搭建
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_Kubernetes%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/" class="md-nav__link">
+        03 Kubernetes资源管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          04 Kubernetes实战入门
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        04 Kubernetes实战入门
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes" class="md-nav__link">
+    四、Kubernetes实战入门
+  </a>
+  
+    <nav class="md-nav" aria-label="四、Kubernetes实战入门">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-namespace" class="md-nav__link">
+    4.1 Namespace
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1 Namespace">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#411" class="md-nav__link">
+    4.1.1 查看
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#412" class="md-nav__link">
+    4.1.2 创建
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#413" class="md-nav__link">
+    4.1.3 删除
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#414" class="md-nav__link">
+    4.1.4 配置方式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-pod" class="md-nav__link">
+    4.2 Pod
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 Pod">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#421" class="md-nav__link">
+    4.2.1 创建并运行
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#422-pod" class="md-nav__link">
+    4.2.2 查看Pod信息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#423-pod" class="md-nav__link">
+    4.2.3 访问Pod
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#424-pod" class="md-nav__link">
+    4.2.4 删除指定Pod
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#425" class="md-nav__link">
+    4.2.5 配置操作
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-label" class="md-nav__link">
+    4.3 Label（标签）
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3 Label（标签）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#431" class="md-nav__link">
+    4.3.1 命令方式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#432" class="md-nav__link">
+    4.3.2 配置方式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-deployment" class="md-nav__link">
+    4.4 Deployment（部署）
+  </a>
+  
+    <nav class="md-nav" aria-label="4.4 Deployment（部署）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#441" class="md-nav__link">
+    4.4.1 操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#442" class="md-nav__link">
+    4.4.2 配置操作
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-service" class="md-nav__link">
+    4.5 Service（服务）
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5 Service（服务）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#451-service" class="md-nav__link">
+    4.5.1 创建集群内部可访问的Service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#452-service" class="md-nav__link">
+    4.5.2 创建集群外部也可以访问的Service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#453-service" class="md-nav__link">
+    4.5.3 删除Service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#454" class="md-nav__link">
+    4.5.4 配置方式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    小结
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Openai
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Openai
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openai/openai_python_api/" class="md-nav__link">
+        Openai python api
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          制品管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          制品管理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F/" class="md-nav__link">
+        常用镜像
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          Harbor
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Harbor
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Get%20Start/" class="md-nav__link">
+        Get Start
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Harbor%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+        Harbor简介
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          密码学与安全技术
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          密码学与安全技术
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+          加密技术
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_1">
+          <span class="md-nav__icon md-icon"></span>
+          加密技术
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%8E%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/%E5%9B%BD%E4%BA%A7%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        国产加密算法
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          开发工具
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          开发工具
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+          Git
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/01_%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+        01 简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/02_Git%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        02 Git基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/03_Git%E6%97%A5%E5%B8%B8%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+        03 Git日常操作
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/04_%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+        04 远程仓库的使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/05_%E9%AB%98%E7%BA%A7Git%E6%8A%80%E5%B7%A7/" class="md-nav__link">
+        05 高级Git技巧
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/06_%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E4%B8%8E%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        06 最佳实践与常见问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/07_%E4%BD%BF%E7%94%A8Git%E7%9A%84%E5%B7%A5%E5%85%B7%E5%92%8C%E8%B5%84%E6%BA%90/" class="md-nav__link">
+        07 使用Git的工具和资源
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/08_%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BC%BA%E7%83%88%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%BC%9A%E4%BD%BF%E7%94%A8Git/" class="md-nav__link">
+        08 为什么强烈建议学会使用Git
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/Gitignore/" class="md-nav__link">
+        Gitignore
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          数据库与中间件
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          数据库与中间件
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+          MongoDB
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_1">
+          <span class="md-nav__icon md-icon"></span>
+          MongoDB
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/MongoDB/python%E5%AE%9E%E7%8E%B0demo/" class="md-nav__link">
+        Python实现demo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/MongoDB/%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+        基本命令
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+          MySQL
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_2">
+          <span class="md-nav__icon md-icon"></span>
+          MySQL
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/MySQL/Json%E5%AD%97%E6%AE%B5%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+        Json字段操作
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+          Redis
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_3">
+          <span class="md-nav__icon md-icon"></span>
+          Redis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/RESP%E5%8D%8F%E8%AE%AE/" class="md-nav__link">
+        RESP协议
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E4%B8%8D%E5%90%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/" class="md-nav__link">
+        Redis不同数据结构使用场景
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E5%88%86%E5%B8%83%E5%BC%8F/" class="md-nav__link">
+        Redis分布式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E5%88%86%E5%B8%83%E5%BC%8F%E6%B6%88%E6%81%AF%E9%80%9A%E4%BF%A1/" class="md-nav__link">
+        Redis分布式消息通信
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E6%8C%81%E4%B9%85%E5%8C%96/" class="md-nav__link">
+        Redis持久化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB/" class="md-nav__link">
+        Redis数据迁移
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        Redis的数据结构
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/%E8%AF%BB%E5%86%99%E5%86%85%E5%AD%98/" class="md-nav__link">
+        读写内存
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          编码
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          编码
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+          Go
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9_1">
+          <span class="md-nav__icon md-icon"></span>
+          Go
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BC%96%E7%A0%81/Go/%E6%88%90%E9%95%BF%E8%B7%AF%E7%BA%BF/" class="md-nav__link">
+        成长路线
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_1_2" id="__nav_9_1_2_label" tabindex="0">
+          面试
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          面试
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BC%96%E7%A0%81/Go/%E9%9D%A2%E8%AF%95/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        开发常见错误总结
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9_2">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BC%96%E7%A0%81/Python/GIL/" class="md-nav__link">
+        GIL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BC%96%E7%A0%81/Python/Pydantic/" class="md-nav__link">
+        Pydantic
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes" class="md-nav__link">
+    四、Kubernetes实战入门
+  </a>
+  
+    <nav class="md-nav" aria-label="四、Kubernetes实战入门">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-namespace" class="md-nav__link">
+    4.1 Namespace
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1 Namespace">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#411" class="md-nav__link">
+    4.1.1 查看
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#412" class="md-nav__link">
+    4.1.2 创建
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#413" class="md-nav__link">
+    4.1.3 删除
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#414" class="md-nav__link">
+    4.1.4 配置方式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-pod" class="md-nav__link">
+    4.2 Pod
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 Pod">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#421" class="md-nav__link">
+    4.2.1 创建并运行
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#422-pod" class="md-nav__link">
+    4.2.2 查看Pod信息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#423-pod" class="md-nav__link">
+    4.2.3 访问Pod
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#424-pod" class="md-nav__link">
+    4.2.4 删除指定Pod
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#425" class="md-nav__link">
+    4.2.5 配置操作
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-label" class="md-nav__link">
+    4.3 Label（标签）
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3 Label（标签）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#431" class="md-nav__link">
+    4.3.1 命令方式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#432" class="md-nav__link">
+    4.3.2 配置方式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-deployment" class="md-nav__link">
+    4.4 Deployment（部署）
+  </a>
+  
+    <nav class="md-nav" aria-label="4.4 Deployment（部署）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#441" class="md-nav__link">
+    4.4.1 操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#442" class="md-nav__link">
+    4.4.2 配置操作
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-service" class="md-nav__link">
+    4.5 Service（服务）
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5 Service（服务）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#451-service" class="md-nav__link">
+    4.5.1 创建集群内部可访问的Service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#452-service" class="md-nav__link">
+    4.5.2 创建集群外部也可以访问的Service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#453-service" class="md-nav__link">
+    4.5.3 删除Service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#454" class="md-nav__link">
+    4.5.4 配置方式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    小结
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>04 Kubernetes实战入门</h1>
+
+<h2 id="kubernetes">四、Kubernetes实战入门<a class="headerlink" href="#kubernetes" title="Permanent link">&para;</a></h2>
+<p>本章节将介绍如何在kubernetes集群中部署一个nginx服务，并且能够对其进行访问。</p>
+<h3 id="41-namespace">4.1 Namespace<a class="headerlink" href="#41-namespace" title="Permanent link">&para;</a></h3>
+<p>Namespace是kubernetes系统中的一种非常重要资源，它的主要作用是用来实现<strong>多套环境的资源隔</strong>离或者<strong>多租户的资源隔离</strong>。
+默认情况下，kubernetes集群中的所有的Pod都是可以相互访问的。但是在实际中，可能不想让两个Pod之间进行互相的访问，那此时就可以将两个Pod划分到不同的namespace下。kubernetes通过将集群内部的资源分配到不同的Namespace中，可以形成逻辑上的"组"，以方便不同的组的资源进行隔离使用和管理。
+可以通过kubernetes的授权机制，将不同的namespace交给不同租户进行管理，这样就实现了多租户的资源隔离。此时还能结合kubernetes的资源配额机制，限定不同租户能占用的资源，例如CPU使用量、内存使用量等等，来实现租户可用资源的管理。
+<img alt="04_4-1-1" src="../../image/Kubernetes/04_4-1-1.png" />
+kubernetes在集群启动之后，会默认创建几个namespace
+<div class="highlight"><pre><span></span><code><span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl  get namespace</span>
+NAME<span class="w">              </span>STATUS<span class="w">   </span>AGE
+default<span class="w">           </span>Active<span class="w">   </span>45h<span class="w">     </span><span class="c1">#  所有未指定Namespace的对象都会被分配在default命名空间</span>
+kube-node-lease<span class="w">   </span>Active<span class="w">   </span>45h<span class="w">     </span><span class="c1">#  集群节点之间的心跳维护，v1.13开始引入</span>
+kube-public<span class="w">       </span>Active<span class="w">   </span>45h<span class="w">     </span><span class="c1">#  此命名空间下的资源可以被所有人访问（包括未认证用户）</span>
+kube-system<span class="w">       </span>Active<span class="w">   </span>45h<span class="w">     </span><span class="c1">#  所有由Kubernetes系统创建的资源都处于这个命名空间</span>
+</code></pre></div>
+下面来看namespace资源的具体操作</p>
+<h4 id="411">4.1.1 查看<a class="headerlink" href="#411" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># 1 查看所有的ns  命令：kubectl get ns</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl get ns</span>
+NAME<span class="w">              </span>STATUS<span class="w">   </span>AGE
+default<span class="w">           </span>Active<span class="w">   </span>45h
+kube-node-lease<span class="w">   </span>Active<span class="w">   </span>45h
+kube-public<span class="w">       </span>Active<span class="w">   </span>45h<span class="w">     </span>
+kube-system<span class="w">       </span>Active<span class="w">   </span>45h<span class="w">     </span>
+
+<span class="c1"># 2 查看指定的ns   命令：kubectl get ns ns名称</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl get ns default</span>
+NAME<span class="w">      </span>STATUS<span class="w">   </span>AGE
+default<span class="w">   </span>Active<span class="w">   </span>45h
+
+<span class="c1"># 3 指定输出格式  命令：kubectl get ns ns名称  -o 格式参数</span>
+<span class="c1"># kubernetes支持的格式有很多，比较常见的是wide、json、yaml</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl get ns default -o yaml</span>
+apiVersion:<span class="w"> </span>v1
+kind:<span class="w"> </span>Namespace
+metadata:
+<span class="w">  </span>creationTimestamp:<span class="w"> </span><span class="s2">&quot;2021-05-08T04:44:16Z&quot;</span>
+<span class="w">  </span>name:<span class="w"> </span>default
+<span class="w">  </span>resourceVersion:<span class="w"> </span><span class="s2">&quot;151&quot;</span>
+<span class="w">  </span>selfLink:<span class="w"> </span>/api/v1/namespaces/default
+<span class="w">  </span>uid:<span class="w"> </span>7405f73a-e486-43d4-9db6-145f1409f090
+spec:
+<span class="w">  </span>finalizers:
+<span class="w">  </span>-<span class="w"> </span>kubernetes
+status:
+<span class="w">  </span>phase:<span class="w"> </span>Active
+
+<span class="c1"># 4 查看ns详情  命令：kubectl describe ns ns名称</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl describe ns default</span>
+Name:<span class="w">         </span>default
+Labels:<span class="w">       </span>&lt;none&gt;
+Annotations:<span class="w">  </span>&lt;none&gt;
+Status:<span class="w">       </span>Active<span class="w">  </span><span class="c1"># Active 命名空间正在使用中  Terminating 正在删除命名空间</span>
+
+<span class="c1"># ResourceQuota 针对namespace做的资源限制</span>
+<span class="c1"># LimitRange针对namespace中的每个组件做的资源限制</span>
+No<span class="w"> </span>resource<span class="w"> </span>quota.
+No<span class="w"> </span>LimitRange<span class="w"> </span>resource.
+</code></pre></div>
+<h4 id="412">4.1.2 创建<a class="headerlink" href="#412" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># 创建namespace</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl create ns dev</span>
+namespace/dev<span class="w"> </span>created
+</code></pre></div>
+<h4 id="413">4.1.3 删除<a class="headerlink" href="#413" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># 删除namespace</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl delete ns dev</span>
+namespace<span class="w"> </span><span class="s2">&quot;dev&quot;</span><span class="w"> </span>deleted
+</code></pre></div>
+<h4 id="414">4.1.4 配置方式<a class="headerlink" href="#414" title="Permanent link">&para;</a></h4>
+<p>首先准备一个yaml文件：ns-dev.yaml
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Namespace</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev</span>
+</code></pre></div></p>
+<h3 id="42-pod">4.2 Pod<a class="headerlink" href="#42-pod" title="Permanent link">&para;</a></h3>
+<p>Pod是kubernetes集群进行管理的最小单元，程序要运行必须部署在容器中，而容器必须存在于Pod中。
+Pod可以认为是容器的封装，一个Pod中可以存在一个或者多个容器。
+<img alt="04_4-2-1" src="../../image/Kubernetes/04_4-2-1.png" />
+kubernetes在集群启动之后，集群中的各个组件也都是以Pod方式运行的。可以通过下面命令查看：
+<div class="highlight"><pre><span></span><code><span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl get pod -n kube-system</span>
+NAMESPACE<span class="w">     </span>NAME<span class="w">                             </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">   </span>AGE
+kube-system<span class="w">   </span>coredns-6955765f44-68g6v<span class="w">         </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>2d1h
+kube-system<span class="w">   </span>coredns-6955765f44-cs5r8<span class="w">         </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>2d1h
+kube-system<span class="w">   </span>etcd-master<span class="w">                      </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>2d1h
+kube-system<span class="w">   </span>kube-apiserver-master<span class="w">            </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>2d1h
+kube-system<span class="w">   </span>kube-controller-manager-master<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>2d1h
+kube-system<span class="w">   </span>kube-flannel-ds-amd64-47r25<span class="w">      </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>2d1h
+kube-system<span class="w">   </span>kube-flannel-ds-amd64-ls5lh<span class="w">      </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>2d1h
+kube-system<span class="w">   </span>kube-proxy-685tk<span class="w">                 </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>2d1h
+kube-system<span class="w">   </span>kube-proxy-87spt<span class="w">                 </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>2d1h
+kube-system<span class="w">   </span>kube-scheduler-master<span class="w">            </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>2d1h
+</code></pre></div></p>
+<h4 id="421">4.2.1 创建并运行<a class="headerlink" href="#421" title="Permanent link">&para;</a></h4>
+<p>kubernetes没有提供单独运行Pod的命令，都是通过Pod控制器来实现的
+<div class="highlight"><pre><span></span><code><span class="c1"># 命令格式： kubectl run (pod控制器名称) [参数] </span>
+<span class="c1"># --image  指定Pod的镜像</span>
+<span class="c1"># --port   指定端口</span>
+<span class="c1"># --namespace  指定namespace</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl run nginx --image=nginx:latest --port=80 --namespace dev </span>
+deployment.apps/nginx<span class="w"> </span>created
+</code></pre></div></p>
+<h4 id="422-pod">4.2.2 查看Pod信息<a class="headerlink" href="#422-pod" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># 查看Pod基本信息</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl get pods -n dev</span>
+NAME<span class="w">    </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">   </span>AGE
+nginx<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>43s
+
+<span class="c1"># 查看Pod的详细信息</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl describe pod nginx -n dev</span>
+Name:<span class="w">         </span>nginx
+Namespace:<span class="w">    </span>dev
+Priority:<span class="w">     </span><span class="m">0</span>
+Node:<span class="w">         </span>node1/192.168.5.4
+Start<span class="w"> </span>Time:<span class="w">   </span>Wed,<span class="w"> </span><span class="m">08</span><span class="w"> </span>May<span class="w"> </span><span class="m">2021</span><span class="w"> </span><span class="m">09</span>:29:24<span class="w"> </span>+0800
+Labels:<span class="w">       </span>pod-template-hash<span class="o">=</span>5ff7956ff6
+<span class="w">              </span><span class="nv">run</span><span class="o">=</span>nginx
+Annotations:<span class="w">  </span>&lt;none&gt;
+Status:<span class="w">       </span>Running
+IP:<span class="w">           </span><span class="m">10</span>.244.1.23
+IPs:
+<span class="w">  </span>IP:<span class="w">           </span><span class="m">10</span>.244.1.23
+Controlled<span class="w"> </span>By:<span class="w">  </span>ReplicaSet/nginx
+Containers:
+<span class="w">  </span>nginx:
+<span class="w">    </span>Container<span class="w"> </span>ID:<span class="w">   </span>docker://4c62b8c0648d2512380f4ffa5da2c99d16e05634979973449c98e9b829f6253c
+<span class="w">    </span>Image:<span class="w">          </span>nginx:latest
+<span class="w">    </span>Image<span class="w"> </span>ID:<span class="w">       </span>docker-pullable://nginx@sha256:485b610fefec7ff6c463ced9623314a04ed67e3945b9c08d7e53a47f6d108dc7
+<span class="w">    </span>Port:<span class="w">           </span><span class="m">80</span>/TCP
+<span class="w">    </span>Host<span class="w"> </span>Port:<span class="w">      </span><span class="m">0</span>/TCP
+<span class="w">    </span>State:<span class="w">          </span>Running
+<span class="w">      </span>Started:<span class="w">      </span>Wed,<span class="w"> </span><span class="m">08</span><span class="w"> </span>May<span class="w"> </span><span class="m">2021</span><span class="w"> </span><span class="m">09</span>:30:01<span class="w"> </span>+0800
+<span class="w">    </span>Ready:<span class="w">          </span>True
+<span class="w">    </span>Restart<span class="w"> </span>Count:<span class="w">  </span><span class="m">0</span>
+<span class="w">    </span>Environment:<span class="w">    </span>&lt;none&gt;
+<span class="w">    </span>Mounts:
+<span class="w">      </span>/var/run/secrets/kubernetes.io/serviceaccount<span class="w"> </span>from<span class="w"> </span>default-token-hwvvw<span class="w"> </span><span class="o">(</span>ro<span class="o">)</span>
+Conditions:
+<span class="w">  </span>Type<span class="w">              </span>Status
+<span class="w">  </span>Initialized<span class="w">       </span>True
+<span class="w">  </span>Ready<span class="w">             </span>True
+<span class="w">  </span>ContainersReady<span class="w">   </span>True
+<span class="w">  </span>PodScheduled<span class="w">      </span>True
+Volumes:
+<span class="w">  </span>default-token-hwvvw:
+<span class="w">    </span>Type:<span class="w">        </span>Secret<span class="w"> </span><span class="o">(</span>a<span class="w"> </span>volume<span class="w"> </span>populated<span class="w"> </span>by<span class="w"> </span>a<span class="w"> </span>Secret<span class="o">)</span>
+<span class="w">    </span>SecretName:<span class="w">  </span>default-token-hwvvw
+<span class="w">    </span>Optional:<span class="w">    </span><span class="nb">false</span>
+QoS<span class="w"> </span>Class:<span class="w">       </span>BestEffort
+Node-Selectors:<span class="w">  </span>&lt;none&gt;
+Tolerations:<span class="w">     </span>node.kubernetes.io/not-ready:NoExecute<span class="w"> </span><span class="k">for</span><span class="w"> </span>300s
+<span class="w">                 </span>node.kubernetes.io/unreachable:NoExecute<span class="w"> </span><span class="k">for</span><span class="w"> </span>300s
+Events:
+<span class="w">  </span>Type<span class="w">    </span>Reason<span class="w">     </span>Age<span class="w">        </span>From<span class="w">               </span>Message
+<span class="w">  </span>----<span class="w">    </span>------<span class="w">     </span>----<span class="w">       </span>----<span class="w">               </span>-------
+<span class="w">  </span>Normal<span class="w">  </span>Scheduled<span class="w">  </span>&lt;unknown&gt;<span class="w">  </span>default-scheduler<span class="w">  </span>Successfully<span class="w"> </span>assigned<span class="w"> </span>dev/nginx-5ff7956ff6-fg2db<span class="w"> </span>to<span class="w"> </span>node1
+<span class="w">  </span>Normal<span class="w">  </span>Pulling<span class="w">    </span>4m11s<span class="w">      </span>kubelet,<span class="w"> </span>node1<span class="w">     </span>Pulling<span class="w"> </span>image<span class="w"> </span><span class="s2">&quot;nginx:latest&quot;</span>
+<span class="w">  </span>Normal<span class="w">  </span>Pulled<span class="w">     </span>3m36s<span class="w">      </span>kubelet,<span class="w"> </span>node1<span class="w">     </span>Successfully<span class="w"> </span>pulled<span class="w"> </span>image<span class="w"> </span><span class="s2">&quot;nginx:latest&quot;</span>
+<span class="w">  </span>Normal<span class="w">  </span>Created<span class="w">    </span>3m36s<span class="w">      </span>kubelet,<span class="w"> </span>node1<span class="w">     </span>Created<span class="w"> </span>container<span class="w"> </span>nginx
+<span class="w">  </span>Normal<span class="w">  </span>Started<span class="w">    </span>3m36s<span class="w">      </span>kubelet,<span class="w"> </span>node1<span class="w">     </span>Started<span class="w"> </span>container<span class="w"> </span>nginx
+</code></pre></div>
+<h4 id="423-pod">4.2.3 访问Pod<a class="headerlink" href="#423-pod" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># 获取podIP</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl get pods -n dev -o wide</span>
+NAME<span class="w">    </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">   </span>AGE<span class="w">    </span>IP<span class="w">             </span>NODE<span class="w">    </span>...<span class="w"> </span>
+nginx<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>190s<span class="w">   </span><span class="m">10</span>.244.1.23<span class="w">   </span>node1<span class="w">   </span>...
+
+<span class="c1">#访问POD</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># curl http://10.244.1.23:80</span>
+&lt;!DOCTYPE<span class="w"> </span>html&gt;
+&lt;html&gt;
+<span class="w">    </span>&lt;head&gt;
+<span class="w">        </span>&lt;title&gt;Welcome<span class="w"> </span>to<span class="w"> </span>nginx!&lt;/title&gt;
+<span class="w">    </span>&lt;/head&gt;
+<span class="w">    </span>&lt;body&gt;
+<span class="w">        </span>&lt;p&gt;&lt;em&gt;Thank<span class="w"> </span>you<span class="w"> </span><span class="k">for</span><span class="w"> </span>using<span class="w"> </span>nginx.&lt;/em&gt;&lt;/p&gt;
+<span class="w">    </span>&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+<h4 id="424-pod">4.2.4 删除指定Pod<a class="headerlink" href="#424-pod" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># 删除指定Pod</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl delete pod nginx -n dev</span>
+pod<span class="w"> </span><span class="s2">&quot;nginx&quot;</span><span class="w"> </span>deleted
+
+<span class="c1"># 此时，显示删除Pod成功，但是再查询，发现又新产生了一个 </span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl get pods -n dev</span>
+NAME<span class="w">    </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">   </span>AGE
+nginx<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>21s
+
+<span class="c1"># 这是因为当前Pod是由Pod控制器创建的，控制器会监控Pod状况，一旦发现Pod死亡，会立即重建</span>
+<span class="c1"># 此时要想删除Pod，必须删除Pod控制器</span>
+
+<span class="c1"># 先来查询一下当前namespace下的Pod控制器</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl get deploy -n  dev</span>
+NAME<span class="w">    </span>READY<span class="w">   </span>UP-TO-DATE<span class="w">   </span>AVAILABLE<span class="w">   </span>AGE
+nginx<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>9m7s
+
+<span class="c1"># 接下来，删除此PodPod控制器</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl delete deploy nginx -n dev</span>
+deployment.apps<span class="w"> </span><span class="s2">&quot;nginx&quot;</span><span class="w"> </span>deleted
+
+<span class="c1"># 稍等片刻，再查询Pod，发现Pod被删除了</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl get pods -n dev</span>
+No<span class="w"> </span>resources<span class="w"> </span>found<span class="w"> </span><span class="k">in</span><span class="w"> </span>dev<span class="w"> </span>namespace.
+</code></pre></div>
+<h4 id="425">4.2.5 配置操作<a class="headerlink" href="#425" title="Permanent link">&para;</a></h4>
+<p>创建一个pod-nginx.yaml，内容如下：
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx:latest</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pod</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx-port</span>
+<span class="w">      </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<span class="w">      </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TCP</span>
+</code></pre></div>
+然后就可以执行对应的创建和删除命令了：</p>
+<blockquote>
+<p>创建：kubectl create -f pod-nginx.yaml
+删除：kubectl delete -f pod-nginx.yaml</p>
+</blockquote>
+<h3 id="43-label">4.3 Label（标签）<a class="headerlink" href="#43-label" title="Permanent link">&para;</a></h3>
+<p>Label是kubernetes系统中的一个重要概念。它的作用就是在资源上添加标识，用来对它们进行区分和选择。
+Label的特点：
+- 一个Label会以key/value键值对的形式附加到各种对象上，如Node、Pod、Service等等
+- 一个资源对象可以定义任意数量的Label ，同一个Label也可以被添加到任意数量的资源对象上去
+- Label通常在资源对象定义时确定，当然也可以在对象创建后动态添加或者删除
+可以通过Label实现资源的多维度分组，以便灵活、方便地进行资源分配、调度、配置、部署等管理工作。</p>
+<blockquote>
+<p>一些常用的Label 示例如下：
+- 版本标签："version":"release", "version":"stable"......
+- 环境标签："environment":"dev"，"environment":"test"，"environment":"pro"
+- 架构标签："tier":"frontend"，"tier":"backend"</p>
+</blockquote>
+<p>标签定义完毕之后，还要考虑到标签的选择，这就要使用到Label Selector，即：
+Label用于给某个资源对象定义标识
+Label Selector用于查询和筛选拥有某些标签的资源对象
+当前有两种Label Selector：
+- 基于等式的Label Selectorname = slave: 选择所有包含Label中key="name"且value="slave"的对象env != production: 选择所有包括Label中的key="env"且value不等于"production"的对象
+- 基于集合的Label Selectorname in (master, slave): 选择所有包含Label中的key="name"且value="master"或"slave"的对象name not in (frontend): 选择所有包含Label中的key="name"且value不等于"frontend"的对象
+标签的选择条件可以使用多个，此时将多个Label Selector进行组合，使用逗号","进行分隔即可。例如：</p>
+<blockquote>
+<p>name=slave，env!=production
+name not in (frontend)，env!=production</p>
+</blockquote>
+<h4 id="431">4.3.1 命令方式<a class="headerlink" href="#431" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># 为pod资源打标签</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl label pod nginx-pod version=1.0 -n dev</span>
+pod/nginx-pod<span class="w"> </span>labeled
+
+<span class="c1"># 为pod资源更新标签</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl label pod nginx-pod version=2.0 -n dev --overwrite</span>
+pod/nginx-pod<span class="w"> </span>labeled
+
+<span class="c1"># 查看标签</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl get pod nginx-pod  -n dev --show-labels</span>
+NAME<span class="w">        </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">   </span>AGE<span class="w">   </span>LABELS
+nginx-pod<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>10m<span class="w">   </span><span class="nv">version</span><span class="o">=</span><span class="m">2</span>.0
+
+<span class="c1"># 筛选标签</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl get pod -n dev -l version=2.0  --show-labels</span>
+NAME<span class="w">        </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">   </span>AGE<span class="w">   </span>LABELS
+nginx-pod<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>17m<span class="w">   </span><span class="nv">version</span><span class="o">=</span><span class="m">2</span>.0
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl get pod -n dev -l version!=2.0 --show-labels</span>
+No<span class="w"> </span>resources<span class="w"> </span>found<span class="w"> </span><span class="k">in</span><span class="w"> </span>dev<span class="w"> </span>namespace.
+
+<span class="c1">#删除标签</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl label pod nginx-pod version- -n dev</span>
+pod/nginx-pod<span class="w"> </span>labeled
+</code></pre></div>
+<h4 id="432">4.3.2 配置方式<a class="headerlink" href="#432" title="Permanent link">&para;</a></h4>
+<p><div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev</span>
+<span class="w">  </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.0&quot;</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">env</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;test&quot;</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx:latest</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pod</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx-port</span>
+<span class="w">      </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<span class="w">      </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TCP</span>
+</code></pre></div>
+然后就可以执行对应的更新命令了：<code>kubectl apply -f pod-nginx.yaml</code></p>
+<h3 id="44-deployment">4.4 Deployment（部署）<a class="headerlink" href="#44-deployment" title="Permanent link">&para;</a></h3>
+<p>在kubernetes中，Pod是最小的控制单元，但是kubernetes很少直接控制Pod，一般都是通过Pod控制器来完成的。Pod控制器用于pod的管理，确保pod资源符合预期的状态，当pod的资源出现故障时，会尝试进行重启或重建pod。
+在kubernetes中Pod控制器的种类有很多，本章节只介绍一种：Deployment。
+<img alt="04_4-4-1" src="../../image/Kubernetes/04_4-4-1.png" /></p>
+<h4 id="441">4.4.1 操作<a class="headerlink" href="#441" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># 命令格式: kubectl create deployment 名称  [参数] </span>
+<span class="c1"># --image  指定pod的镜像</span>
+<span class="c1"># --port   指定端口</span>
+<span class="c1"># --replicas  指定创建pod数量</span>
+<span class="c1"># --namespace  指定namespace</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl run nginx --image=nginx:latest --port=80 --replicas=3 -n dev</span>
+deployment.apps/nginx<span class="w"> </span>created
+
+<span class="c1"># 查看创建的Pod</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl get pods -n dev</span>
+NAME<span class="w">                     </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">   </span>AGE
+nginx-5ff7956ff6-6k8cb<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>19s
+nginx-5ff7956ff6-jxfjt<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>19s
+nginx-5ff7956ff6-v6jqw<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>19s
+
+<span class="c1"># 查看deployment的信息</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl get deploy -n dev</span>
+NAME<span class="w">    </span>READY<span class="w">   </span>UP-TO-DATE<span class="w">   </span>AVAILABLE<span class="w">   </span>AGE
+nginx<span class="w">   </span><span class="m">3</span>/3<span class="w">     </span><span class="m">3</span><span class="w">            </span><span class="m">3</span><span class="w">           </span>2m42s
+
+<span class="c1"># UP-TO-DATE：成功升级的副本数量</span>
+<span class="c1"># AVAILABLE：可用副本的数量</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl get deploy -n dev -o wide</span>
+NAME<span class="w">    </span>READY<span class="w"> </span>UP-TO-DATE<span class="w">  </span>AVAILABLE<span class="w">   </span>AGE<span class="w">     </span>CONTAINERS<span class="w">   </span>IMAGES<span class="w">              </span>SELECTOR
+nginx<span class="w">   </span><span class="m">3</span>/3<span class="w">     </span><span class="m">3</span><span class="w">         </span><span class="m">3</span><span class="w">           </span>2m51s<span class="w">   </span>nginx<span class="w">        </span>nginx:latest<span class="w">        </span><span class="nv">run</span><span class="o">=</span>nginx
+
+<span class="c1"># 查看deployment的详细信息</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl describe deploy nginx -n dev</span>
+Name:<span class="w">                   </span>nginx
+Namespace:<span class="w">              </span>dev
+CreationTimestamp:<span class="w">      </span>Wed,<span class="w"> </span><span class="m">08</span><span class="w"> </span>May<span class="w"> </span><span class="m">2021</span><span class="w"> </span><span class="m">11</span>:14:14<span class="w"> </span>+0800
+Labels:<span class="w">                 </span><span class="nv">run</span><span class="o">=</span>nginx
+Annotations:<span class="w">            </span>deployment.kubernetes.io/revision:<span class="w"> </span><span class="m">1</span>
+Selector:<span class="w">               </span><span class="nv">run</span><span class="o">=</span>nginx
+Replicas:<span class="w">               </span><span class="m">3</span><span class="w"> </span>desired<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">3</span><span class="w"> </span>updated<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">3</span><span class="w"> </span>total<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">3</span><span class="w"> </span>available<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>unavailable
+StrategyType:<span class="w">           </span>RollingUpdate
+MinReadySeconds:<span class="w">        </span><span class="m">0</span>
+RollingUpdateStrategy:<span class="w">  </span><span class="m">25</span>%<span class="w"> </span>max<span class="w"> </span>unavailable,<span class="w"> </span><span class="m">25</span>%<span class="w"> </span>max<span class="w"> </span>违规词汇
+Pod<span class="w"> </span>Template:
+<span class="w">  </span>Labels:<span class="w">  </span><span class="nv">run</span><span class="o">=</span>nginx
+<span class="w">  </span>Containers:
+<span class="w">   </span>nginx:
+<span class="w">    </span>Image:<span class="w">        </span>nginx:latest
+<span class="w">    </span>Port:<span class="w">         </span><span class="m">80</span>/TCP
+<span class="w">    </span>Host<span class="w"> </span>Port:<span class="w">    </span><span class="m">0</span>/TCP
+<span class="w">    </span>Environment:<span class="w">  </span>&lt;none&gt;
+<span class="w">    </span>Mounts:<span class="w">       </span>&lt;none&gt;
+<span class="w">  </span>Volumes:<span class="w">        </span>&lt;none&gt;
+Conditions:
+<span class="w">  </span>Type<span class="w">           </span>Status<span class="w">  </span>Reason
+<span class="w">  </span>----<span class="w">           </span>------<span class="w">  </span>------
+<span class="w">  </span>Available<span class="w">      </span>True<span class="w">    </span>MinimumReplicasAvailable
+<span class="w">  </span>Progressing<span class="w">    </span>True<span class="w">    </span>NewReplicaSetAvailable
+OldReplicaSets:<span class="w">  </span>&lt;none&gt;
+NewReplicaSet:<span class="w">   </span>nginx-5ff7956ff6<span class="w"> </span><span class="o">(</span><span class="m">3</span>/3<span class="w"> </span>replicas<span class="w"> </span>created<span class="o">)</span>
+Events:
+<span class="w">  </span>Type<span class="w">    </span>Reason<span class="w">             </span>Age<span class="w">    </span>From<span class="w">                   </span>Message
+<span class="w">  </span>----<span class="w">    </span>------<span class="w">             </span>----<span class="w">   </span>----<span class="w">                   </span>-------
+<span class="w">  </span>Normal<span class="w">  </span>ScalingReplicaSet<span class="w">  </span>5m43s<span class="w">  </span>deployment-controller<span class="w">  </span>Scaled<span class="w"> </span>up<span class="w"> </span>replicaset<span class="w"> </span>nginx-5ff7956ff6<span class="w"> </span>to<span class="w"> </span><span class="m">3</span>
+
+<span class="c1"># 删除 </span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl delete deploy nginx -n dev</span>
+deployment.apps<span class="w"> </span><span class="s2">&quot;nginx&quot;</span><span class="w"> </span>deleted
+</code></pre></div>
+<h4 id="442">4.4.2 配置操作<a class="headerlink" href="#442" title="Permanent link">&para;</a></h4>
+<p>创建一个deploy-nginx.yaml，内容如下：
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx:latest</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<span class="w">        </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<span class="w">          </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TCP</span>
+</code></pre></div>
+然后就可以执行对应的创建和删除命令了：</p>
+<blockquote>
+<p>创建：kubectl create -f deploy-nginx.yaml
+删除：kubectl delete -f deploy-nginx.yaml</p>
+</blockquote>
+<h3 id="45-service">4.5 Service（服务）<a class="headerlink" href="#45-service" title="Permanent link">&para;</a></h3>
+<p>通过上节课的学习，已经能够利用Deployment来创建一组Pod来提供具有高可用性的服务。
+虽然每个Pod都会分配一个单独的Pod IP，然而却存在如下两问题：
+- Pod IP 会随着Pod的重建产生变化
+- Pod IP 仅仅是集群内可见的虚拟IP，外部无法访问
+这样对于访问这个服务带来了难度。因此，kubernetes设计了Service来解决这个问题。
+Service可以看作是一组同类Pod对外的访问接口。借助Service，应用可以方便地实现服务发现和负载均衡。
+<img alt="04_4-5-1" src="../../image/Kubernetes/04_4-5-1.png" /></p>
+<h4 id="451-service">4.5.1 创建集群内部可访问的Service<a class="headerlink" href="#451-service" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># 暴露Service</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl expose deploy nginx --name=svc-nginx1 --type=ClusterIP --port=80 --target-port=80 -n dev</span>
+service/svc-nginx1<span class="w"> </span>exposed
+
+<span class="c1"># 查看service</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl get svc svc-nginx1 -n dev -o wide</span>
+NAME<span class="w">         </span>TYPE<span class="w">        </span>CLUSTER-IP<span class="w">       </span>EXTERNAL-IP<span class="w">   </span>PORT<span class="o">(</span>S<span class="o">)</span><span class="w">   </span>AGE<span class="w">     </span>SELECTOR
+svc-nginx1<span class="w">   </span>ClusterIP<span class="w">   </span><span class="m">10</span>.109.179.231<span class="w">   </span>&lt;none&gt;<span class="w">        </span><span class="m">80</span>/TCP<span class="w">    </span>3m51s<span class="w">   </span><span class="nv">run</span><span class="o">=</span>nginx
+
+<span class="c1"># 这里产生了一个CLUSTER-IP，这就是service的IP，在Service的生命周期中，这个地址是不会变动的</span>
+<span class="c1"># 可以通过这个IP访问当前Service对应的Pod</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># curl 10.109.179.231:80</span>
+&lt;!DOCTYPE<span class="w"> </span>html&gt;
+&lt;html&gt;
+<span class="w">    </span>&lt;head&gt;
+<span class="w">        </span>&lt;title&gt;Welcome<span class="w"> </span>to<span class="w"> </span>nginx!&lt;/title&gt;
+<span class="w">    </span>&lt;/head&gt;
+<span class="w">    </span>&lt;body&gt;
+<span class="w">        </span>&lt;h1&gt;Welcome<span class="w"> </span>to<span class="w"> </span>nginx!&lt;/h1&gt;
+<span class="w">        </span>.......
+<span class="w">    </span>&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+<h4 id="452-service">4.5.2 创建集群外部也可以访问的Service<a class="headerlink" href="#452-service" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># 上面创建的Service的type类型为ClusterIP，这个ip地址只用集群内部可访问</span>
+<span class="c1"># 如果需要创建外部也可以访问的Service，需要修改type为NodePort</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl expose deploy nginx --name=svc-nginx2 --type=NodePort --port=80 --target-port=80 -n dev</span>
+service/svc-nginx2<span class="w"> </span>exposed
+
+<span class="c1"># 此时查看，会发现出现了NodePort类型的Service，而且有一对Port（80:31928/TC）</span>
+<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl get svc  svc-nginx2  -n dev -o wide</span>
+NAME<span class="w">          </span>TYPE<span class="w">        </span>CLUSTER-IP<span class="w">       </span>EXTERNAL-IP<span class="w">   </span>PORT<span class="o">(</span>S<span class="o">)</span><span class="w">        </span>AGE<span class="w">    </span>SELECTOR
+svc-nginx2<span class="w">    </span>NodePort<span class="w">    </span><span class="m">10</span>.100.94.0<span class="w">      </span>&lt;none&gt;<span class="w">        </span><span class="m">80</span>:31928/TCP<span class="w">   </span>9s<span class="w">     </span><span class="nv">run</span><span class="o">=</span>nginx
+
+<span class="c1"># 接下来就可以通过集群外的主机访问 节点IP:31928访问服务了</span>
+<span class="c1"># 例如在的电脑主机上通过浏览器访问下面的地址</span>
+http://192.168.90.100:31928/
+</code></pre></div>
+<h4 id="453-service">4.5.3 删除Service<a class="headerlink" href="#453-service" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl delete svc svc-nginx-1 -n dev </span>
+service<span class="w"> </span><span class="s2">&quot;svc-nginx-1&quot;</span><span class="w"> </span>deleted
+</code></pre></div>
+<h4 id="454">4.5.4 配置方式<a class="headerlink" href="#454" title="Permanent link">&para;</a></h4>
+<p>创建一个svc-nginx.yaml，内容如下：
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Service</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">svc-nginx</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">clusterIP</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.109.179.231</span><span class="w"> </span><span class="c1">#固定svc的内网ip</span>
+<span class="w">  </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<span class="w">    </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TCP</span>
+<span class="w">    </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterIP</span>
+</code></pre></div>
+然后就可以执行对应的创建和删除命令了：</p>
+<blockquote>
+<p>创建：kubectl create -f svc-nginx.yaml
+删除：kubectl delete -f svc-nginx.yaml</p>
+</blockquote>
+<h3 id="_1">小结<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>至此，已经掌握了Namespace、Pod、Deployment、Service资源的基本操作，有了这些操作，就可以在kubernetes集群中实现一个服务的简单部署和访问了，但是如果想要更好的使用kubernetes，就需要深入学习这几种资源的细节和原理。</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+      
+    
+  </body>
+</html>
