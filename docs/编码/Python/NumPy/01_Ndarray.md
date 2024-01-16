@@ -17,6 +17,7 @@ a = np.array
 import numpy as np
 np.array(object, dtype=None, copy=True, order=None, subok=False, ndmin=0)
 ```
+
 参数说明：
 - object: 要转换为ndarray的任何集合对象, 它表示集合对象。可以是列表、元组、字典、集合等。
 - dtpe: 通过将此选项更改为指定的类型, 我们可以更改数组元素的数据类型。默认为None。
@@ -24,6 +25,7 @@ np.array(object, dtype=None, copy=True, order=None, subok=False, ndmin=0)
 - order: 可选参数，默认为None, 此选项可以分配3个可能的值。它可以是C（列顺序）、R（行顺序）或A（任意）。
 - subok: 可选参数，默认为False, 返回的数组默认将是基类数组。我们可以更改为通过设置此选项为true 使子类通过。
 - ndim: 可选参数，默认为0, 它表示结果数组的最小维数。
+
 
 要使用列表创建数组，请使用以下语法。
 ```python
