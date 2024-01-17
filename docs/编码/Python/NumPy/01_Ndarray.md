@@ -19,6 +19,7 @@ np.array(object, dtype=None, copy=True, order=None, subok=False, ndmin=0)
 ```
 
 参数说明:
+
 - object: 要转换为ndarray的任何集合对象, 它表示集合对象。可以是列表、元组、字典、集合等。
 - dtpe: 通过将此选项更改为指定的类型, 我们可以更改数组元素的数据类型。默认为None。
 - copy: 可选参数，默认为Ture, 它将创建数组的副本。如果将其设置为False, 则它将不复制数组。
