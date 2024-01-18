@@ -2181,6 +2181,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_%E4%BB%8E%E7%8E%B0%E6%9C%89%E6%95%B0%E6%8D%AE%E5%88%9B%E5%BB%BANumpy%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04 从现有数据创建Numpy数组
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2394,13 +2415,15 @@
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subok</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ndmin</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </code></pre></div></p>
-<p>参数说明:
-- object: 要转换为ndarray的任何集合对象, 它表示集合对象。可以是列表、元组、字典、集合等。
-- dtpe: 通过将此选项更改为指定的类型, 我们可以更改数组元素的数据类型。默认为None。
-- copy: 可选参数，默认为Ture, 它将创建数组的副本。如果将其设置为False, 则它将不复制数组。
-- order: 可选参数，默认为None, 此选项可以分配3个可能的值。它可以是C（列顺序）、R（行顺序）或A（任意）。
-- subok: 可选参数，默认为False, 返回的数组默认将是基类数组。我们可以更改为通过设置此选项为true 使子类通过。
-- ndim: 可选参数，默认为0, 它表示结果数组的最小维数。</p>
+<p>参数说明:</p>
+<ul>
+<li>object: 要转换为ndarray的任何集合对象, 它表示集合对象。可以是列表、元组、字典、集合等。</li>
+<li>dtpe: 通过将此选项更改为指定的类型, 我们可以更改数组元素的数据类型。默认为None。</li>
+<li>copy: 可选参数，默认为Ture, 它将创建数组的副本。如果将其设置为False, 则它将不复制数组。</li>
+<li>order: 可选参数，默认为None, 此选项可以分配3个可能的值。它可以是C（列顺序）、R（行顺序）或A（任意）。</li>
+<li>subok: 可选参数，默认为False, 返回的数组默认将是基类数组。我们可以更改为通过设置此选项为true 使子类通过。</li>
+<li>ndim: 可选参数，默认为0, 它表示结果数组的最小维数。</li>
+</ul>
 <p>要使用列表创建数组，请使用以下语法。
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
