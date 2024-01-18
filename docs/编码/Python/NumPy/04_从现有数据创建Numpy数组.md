@@ -86,6 +86,7 @@ print(type(a))
 ```python
 numpy.fromiter(iterable, dtype, count=-1)
 ```
+
 它接受以下参数。
 - Iterable：表示可迭代对象。
 - dtype：结果数组项的数据类型。
