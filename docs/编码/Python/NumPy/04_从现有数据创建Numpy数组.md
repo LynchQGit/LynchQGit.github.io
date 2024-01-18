@@ -60,7 +60,7 @@ numpy.frombuffer(buffer, dtype=float, count=-1, offset=0)
 
 它接受以下参数:
 - buffer：表示暴露缓冲区接口的对象.
-- dtype：返回的数据类型数组的数据类型。默认值为 0。
+- dtype：返回的数据类型数组的数据类型。默认为 float。可以使用任何标准数据类型。
 - count：返回的 ndarray 的长度。默认值为 -1。
 - offset：从中读取的起始位置。默认值为 0。
 
@@ -69,7 +69,7 @@ numpy.frombuffer(buffer, dtype=float, count=-1, offset=0)
 import numpy as np
 l = b'hello world'
 print(type(l))
-a = np.frombuffer(l, dtype="S1")
+a = np.frombuffer(l, dtype="S1")  # S1 表示一个字节
 print(a)
 print(type(a))
 ```
