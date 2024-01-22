@@ -2338,103 +2338,488 @@
 <blockquote>
 <p>torch.nn为我们提供了许多类和模块，用于实现和训练神经网络。</p>
 </blockquote>
-<p>nn模块包含以下模块和类：
-| 序号  |             类和模块             |                      描述                      |
-| :---: | :------------------------------: | :--------------------------------------------: |
-|   1   |        torch.nn.Parameter        |              模块参数的张量类型。              |
-|   2   |               容器               |            所有神经网络模块的基类。            |
-|  2.1  |         torch.nn.Module          |            所有神经网络模块的基类。            |
-|  2.2  |       torch.nn.Sequential        |         顺序容器，按传递顺序添加模块。         |
-|  2.3  |       torch.nn.ModuleList        |              在列表中保存子模块。              |
-|  2.4  |       torch.nn.ModuleDict        |              在字典中保存子模块。              |
-|  2.5  |      torch.nn.ParameterList      |               在列表中保存参数。               |
-|  2.6  |      torch.nn.parameterDict      |               在字典中保存参数。               |
-|   3   |              卷积层              |      对输入信号应用一维卷积，二维卷积等。      |
-|  3.1  |         torch.nn.Conv1d          |            对输入信号应用一维卷积。            |
-|  3.2  |         torch.nn.Conv2d          |            对输入信号应用二维卷积。            |
-|  3.3  |         torch.nn.Conv3d          |            对输入信号应用三维卷积。            |
-|  3.4  |     torch.nn.ConvTranspose1d     |        对输入图像应用一维转置卷积操作。        |
-|  3.5  |     torch.nn.ConvTranspose2d     |        对输入图像应用二维转置卷积操作。        |
-|  3.6  |     torch.nn.ConvTranspose3d     |        对输入图像应用三维转置卷积操作。        |
-|  3.7  |         torch.nn.Unfold          |        从批量输入张量中提取滑动局部块。        |
-|  3.8  |          torch.nn.Fold           |   将一系列滑动局部块组合成一个大的包含张量。   |
-|   4   |              池化层              |       应用一维最大池化，二维最大池化等。       |
-|  4.1  |        torch.nn.MaxPool1d        |               应用一维最大池化。               |
-|  4.2  |        torch.nn.MaxPool2d        |               应用二维最大池化。               |
-|  4.3  |        torch.nn.MaxPool3d        |               应用三维最大池化。               |
-|  4.4  |       torch.nn.MaxUnpool1d       |         计算 MaxPool1d 的部分逆操作。          |
-|  4.5  |       torch.nn.MaxUnpool2d       |         计算 MaxPool2d 的部分逆操作。          |
-|  4.6  |       torch.nn.MaxUnpool3d       |         计算 MaxPool3d 的部分逆操作。          |
-|  4.7  |        torch.nn.AvgPool1d        |               应用一维平均池化。               |
-|  4.8  |        torch.nn.AvgPool2d        |               应用二维平均池化。               |
-|  4.9  |        torch.nn.AvgPool3d        |               应用三维平均池化。               |
-| 4.10  |   torch.nn.FractionalMaxPool2d   |             应用二维分数最大池化。             |
-| 4.11  |        torch.nn.LPPool1d         |             应用一维功率平均池化。             |
-| 4.12  |        torch.nn.LPPool2d         |             应用二维功率平均池化。             |
-| 4.13  |    torch.nn.AdaptiveMaxPool1d    |            应用一维自适应最大池化。            |
-| 4.14  |    torch.nn.AdaptiveMaxPool2d    |            应用二维自适应最大池化。            |
-| 4.15  |    torch.nn.AdaptiveMaxPool3d    |            应用三维自适应最大池化。            |
-| 4.16  |    torch.nn.AdaptiveAvgPool1d    |            应用一维自适应平均池化。            |
-| 4.17  |    torch.nn.AdaptiveAvgPool2d    |            应用二维自适应平均池化。            |
-| 4.18  |    torch.nn.AdaptiveAvgPool3d    |            应用三维自适应平均池化。            |
-|   5   |              填充层              |     使用反射、复制、零等方法填充输入张量。     |
-|  5.1  |     torch.nn.ReflectionPad1d     |        使用输入边界的反射填充输入张量。        |
-|  5.2  |    torch.nn.ReplicationPad1d     |        使用输入边界的复制填充输入张量。        |
-|  5.3  |        torch.nn.ZeroPad2d        |           使用零填充输入张量的边界。           |
-|  5.4  |      torch.nn.ConstantPad1d      |       使用给定填充值填充输入张量的边界。       |
-|  ...  |               ...                |                      ...                       |
-|   6   |  非线性激活层（加权和，非线性）  |         应用ELU、硬收缩等逐元素函数。          |
-|  6.1  |           torch.nn.ELU           |              应用逐元素ELU函数。               |
-|  6.2  |       torch.nn.Hardshrink        |             应用逐元素硬收缩函数。             |
-|  6.3  |        torch.nn.LeakyReLU        |           应用逐元素LeakyReLU函数。            |
-|  6.4  |       torch.nn.LogSigmoid        |           应用逐元素LogSigmoid函数。           |
-|  6.5  |          torch.nn.PReLU          |             应用逐元素PReLU函数。              |
-|  6.6  |          torch.nn.ReLU           |              应用逐元素ReLU函数。              |
-|  ...  |               ...                |                      ...                       |
-|   7   |       非线性激活层（其他）       |      应用软最小值、softmax等逐元素函数。       |
-|  7.1  |         torch.nn.Softmin         |            应用逐元素软最小值函数。            |
-|  7.2  |         torch.nn.Softmax         |            应用逐元素softmax函数。             |
-|  ...  |               ...                |                      ...                       |
-|   8   |             归一化层             |     应用批归一化、组归一化、实例归一化等。     |
-|  8.1  |       torch.nn.BatchNorm1d       |          应用于2D或3D输入的批归一化。          |
-|  8.2  |        torch.nn.GroupNorm        |          应用于输入小批量的组归一化。          |
-|  ...  |               ...                |                      ...                       |
-|   9   |              循环层              |             应用RNN、LSTM、GRU等。             |
-|  9.1  |           torch.nn.RNN           |              应用多层Elman RNN。               |
-|  9.2  |          torch.nn.LSTM           |        应用多层长短时记忆（LSTM）RNN。         |
-|  9.3  |           torch.nn.GRU           |        应用多层门控循环单元（GRU）RNN。        |
-|  ...  |               ...                |                      ...                       |
-|  10   |              线性层              |                 应用线性转换。                 |
-| 10.1  |        torch.nn.Identity         |          占位符身份运算符，无关参数。          |
-| 10.2  |         torch.nn.Linear          |            对输入数据应用线性转换。            |
-| 10.3  |        torch.nn.Bilinear         |           对输入数据应用双线性转换。           |
-|  ...  |               ...                |                      ...                       |
-|  11   |              丢失层              |   用于正则化和防止神经元共适应的Dropout层。    |
-| 11.1  |         torch.nn.Dropout         |   用于正则化和防止神经元共适应的Dropout层。    |
-| 11.2  |      torch.nn.AlphaDropout       |          应用于输入的Alpha Dropout。           |
-|  ...  |               ...                |                      ...                       |
-|  12   |              稀疏层              |       用于存储和检索Word Embeddings等。        |
-| 12.1  |        torch.nn.Embedding        |        用于存储和检索Word Embeddings。         |
-| 12.2  |      torch.nn.EmbeddingBag       | 在不实例化中间嵌入的情况下计算嵌入的和或均值。 |
-|  ...  |               ...                |                      ...                       |
-|  13   |             距离函数             |          计算余弦相似性、成对距离等。          |
-| 13.1  |    torch.nn.CosineSimilarity     |          计算x1和x2之间的余弦相似性。          |
-| 13.2  |    torch.nn.PairwiseDistance     |        计算向量v1和v2之间的批次对距离。        |
-|  ...  |               ...                |                      ...                       |
-|  14   |             损失函数             |        用于分类、回归等任务的损失函数。        |
-| 14.1  |         torch.nn.L1Loss          | 测量输入x和目标y中每个元素之间的平均绝对误差。 |
-| 14.2  |         torch.nn.MSELoss         | 测量输入x和目标y中每个元素之间的平均平方误差。 |
-|  ...  |               ...                |                      ...                       |
-|  15   |              视觉层              |     重新排列张量元素，上采样多通道数据等。     |
-| 15.1  |      torch.nn.PixelShuffle       |               重新排列张量元素。               |
-| 15.2  |        torch.nn.Upsample         |               上采样多通道数据。               |
-|  ...  |               ...                |                      ...                       |
-|  16   | DataParallel层（多GPU，分布式）  |  模块级别实现数据并行性，分布式数据并行性等。  |
-| 16.1  |      torch.nn.DataParallel       |            模块级别实现数据并行性。            |
-| 16.2  | torch.nn.DistributedDataParallel |         模块级别实现分布式数据并行性。         |
-|  ...  |               ...                |                      ...                       |
-|  17   |             实用工具             |              clip_grad_norm_等。               |
-| 17.1  |     torch.nn.clip_grad_norm_     |          对所有模型参数进行梯度裁剪。          |</p>
+<p>nn模块包含以下模块和类：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">序号</th>
+<th style="text-align: center;">类和模块</th>
+<th style="text-align: center;">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">torch.nn.Parameter</td>
+<td style="text-align: center;">模块参数的张量类型。</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">容器</td>
+<td style="text-align: center;">所有神经网络模块的基类。</td>
+</tr>
+<tr>
+<td style="text-align: center;">2.1</td>
+<td style="text-align: center;">torch.nn.Module</td>
+<td style="text-align: center;">所有神经网络模块的基类。</td>
+</tr>
+<tr>
+<td style="text-align: center;">2.2</td>
+<td style="text-align: center;">torch.nn.Sequential</td>
+<td style="text-align: center;">顺序容器，按传递顺序添加模块。</td>
+</tr>
+<tr>
+<td style="text-align: center;">2.3</td>
+<td style="text-align: center;">torch.nn.ModuleList</td>
+<td style="text-align: center;">在列表中保存子模块。</td>
+</tr>
+<tr>
+<td style="text-align: center;">2.4</td>
+<td style="text-align: center;">torch.nn.ModuleDict</td>
+<td style="text-align: center;">在字典中保存子模块。</td>
+</tr>
+<tr>
+<td style="text-align: center;">2.5</td>
+<td style="text-align: center;">torch.nn.ParameterList</td>
+<td style="text-align: center;">在列表中保存参数。</td>
+</tr>
+<tr>
+<td style="text-align: center;">2.6</td>
+<td style="text-align: center;">torch.nn.parameterDict</td>
+<td style="text-align: center;">在字典中保存参数。</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">卷积层</td>
+<td style="text-align: center;">对输入信号应用一维卷积，二维卷积等。</td>
+</tr>
+<tr>
+<td style="text-align: center;">3.1</td>
+<td style="text-align: center;">torch.nn.Conv1d</td>
+<td style="text-align: center;">对输入信号应用一维卷积。</td>
+</tr>
+<tr>
+<td style="text-align: center;">3.2</td>
+<td style="text-align: center;">torch.nn.Conv2d</td>
+<td style="text-align: center;">对输入信号应用二维卷积。</td>
+</tr>
+<tr>
+<td style="text-align: center;">3.3</td>
+<td style="text-align: center;">torch.nn.Conv3d</td>
+<td style="text-align: center;">对输入信号应用三维卷积。</td>
+</tr>
+<tr>
+<td style="text-align: center;">3.4</td>
+<td style="text-align: center;">torch.nn.ConvTranspose1d</td>
+<td style="text-align: center;">对输入图像应用一维转置卷积操作。</td>
+</tr>
+<tr>
+<td style="text-align: center;">3.5</td>
+<td style="text-align: center;">torch.nn.ConvTranspose2d</td>
+<td style="text-align: center;">对输入图像应用二维转置卷积操作。</td>
+</tr>
+<tr>
+<td style="text-align: center;">3.6</td>
+<td style="text-align: center;">torch.nn.ConvTranspose3d</td>
+<td style="text-align: center;">对输入图像应用三维转置卷积操作。</td>
+</tr>
+<tr>
+<td style="text-align: center;">3.7</td>
+<td style="text-align: center;">torch.nn.Unfold</td>
+<td style="text-align: center;">从批量输入张量中提取滑动局部块。</td>
+</tr>
+<tr>
+<td style="text-align: center;">3.8</td>
+<td style="text-align: center;">torch.nn.Fold</td>
+<td style="text-align: center;">将一系列滑动局部块组合成一个大的包含张量。</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">池化层</td>
+<td style="text-align: center;">应用一维最大池化，二维最大池化等。</td>
+</tr>
+<tr>
+<td style="text-align: center;">4.1</td>
+<td style="text-align: center;">torch.nn.MaxPool1d</td>
+<td style="text-align: center;">应用一维最大池化。</td>
+</tr>
+<tr>
+<td style="text-align: center;">4.2</td>
+<td style="text-align: center;">torch.nn.MaxPool2d</td>
+<td style="text-align: center;">应用二维最大池化。</td>
+</tr>
+<tr>
+<td style="text-align: center;">4.3</td>
+<td style="text-align: center;">torch.nn.MaxPool3d</td>
+<td style="text-align: center;">应用三维最大池化。</td>
+</tr>
+<tr>
+<td style="text-align: center;">4.4</td>
+<td style="text-align: center;">torch.nn.MaxUnpool1d</td>
+<td style="text-align: center;">计算 MaxPool1d 的部分逆操作。</td>
+</tr>
+<tr>
+<td style="text-align: center;">4.5</td>
+<td style="text-align: center;">torch.nn.MaxUnpool2d</td>
+<td style="text-align: center;">计算 MaxPool2d 的部分逆操作。</td>
+</tr>
+<tr>
+<td style="text-align: center;">4.6</td>
+<td style="text-align: center;">torch.nn.MaxUnpool3d</td>
+<td style="text-align: center;">计算 MaxPool3d 的部分逆操作。</td>
+</tr>
+<tr>
+<td style="text-align: center;">4.7</td>
+<td style="text-align: center;">torch.nn.AvgPool1d</td>
+<td style="text-align: center;">应用一维平均池化。</td>
+</tr>
+<tr>
+<td style="text-align: center;">4.8</td>
+<td style="text-align: center;">torch.nn.AvgPool2d</td>
+<td style="text-align: center;">应用二维平均池化。</td>
+</tr>
+<tr>
+<td style="text-align: center;">4.9</td>
+<td style="text-align: center;">torch.nn.AvgPool3d</td>
+<td style="text-align: center;">应用三维平均池化。</td>
+</tr>
+<tr>
+<td style="text-align: center;">4.10</td>
+<td style="text-align: center;">torch.nn.FractionalMaxPool2d</td>
+<td style="text-align: center;">应用二维分数最大池化。</td>
+</tr>
+<tr>
+<td style="text-align: center;">4.11</td>
+<td style="text-align: center;">torch.nn.LPPool1d</td>
+<td style="text-align: center;">应用一维功率平均池化。</td>
+</tr>
+<tr>
+<td style="text-align: center;">4.12</td>
+<td style="text-align: center;">torch.nn.LPPool2d</td>
+<td style="text-align: center;">应用二维功率平均池化。</td>
+</tr>
+<tr>
+<td style="text-align: center;">4.13</td>
+<td style="text-align: center;">torch.nn.AdaptiveMaxPool1d</td>
+<td style="text-align: center;">应用一维自适应最大池化。</td>
+</tr>
+<tr>
+<td style="text-align: center;">4.14</td>
+<td style="text-align: center;">torch.nn.AdaptiveMaxPool2d</td>
+<td style="text-align: center;">应用二维自适应最大池化。</td>
+</tr>
+<tr>
+<td style="text-align: center;">4.15</td>
+<td style="text-align: center;">torch.nn.AdaptiveMaxPool3d</td>
+<td style="text-align: center;">应用三维自适应最大池化。</td>
+</tr>
+<tr>
+<td style="text-align: center;">4.16</td>
+<td style="text-align: center;">torch.nn.AdaptiveAvgPool1d</td>
+<td style="text-align: center;">应用一维自适应平均池化。</td>
+</tr>
+<tr>
+<td style="text-align: center;">4.17</td>
+<td style="text-align: center;">torch.nn.AdaptiveAvgPool2d</td>
+<td style="text-align: center;">应用二维自适应平均池化。</td>
+</tr>
+<tr>
+<td style="text-align: center;">4.18</td>
+<td style="text-align: center;">torch.nn.AdaptiveAvgPool3d</td>
+<td style="text-align: center;">应用三维自适应平均池化。</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">填充层</td>
+<td style="text-align: center;">使用反射、复制、零等方法填充输入张量。</td>
+</tr>
+<tr>
+<td style="text-align: center;">5.1</td>
+<td style="text-align: center;">torch.nn.ReflectionPad1d</td>
+<td style="text-align: center;">使用输入边界的反射填充输入张量。</td>
+</tr>
+<tr>
+<td style="text-align: center;">5.2</td>
+<td style="text-align: center;">torch.nn.ReplicationPad1d</td>
+<td style="text-align: center;">使用输入边界的复制填充输入张量。</td>
+</tr>
+<tr>
+<td style="text-align: center;">5.3</td>
+<td style="text-align: center;">torch.nn.ZeroPad2d</td>
+<td style="text-align: center;">使用零填充输入张量的边界。</td>
+</tr>
+<tr>
+<td style="text-align: center;">5.4</td>
+<td style="text-align: center;">torch.nn.ConstantPad1d</td>
+<td style="text-align: center;">使用给定填充值填充输入张量的边界。</td>
+</tr>
+<tr>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">非线性激活层（加权和，非线性）</td>
+<td style="text-align: center;">应用ELU、硬收缩等逐元素函数。</td>
+</tr>
+<tr>
+<td style="text-align: center;">6.1</td>
+<td style="text-align: center;">torch.nn.ELU</td>
+<td style="text-align: center;">应用逐元素ELU函数。</td>
+</tr>
+<tr>
+<td style="text-align: center;">6.2</td>
+<td style="text-align: center;">torch.nn.Hardshrink</td>
+<td style="text-align: center;">应用逐元素硬收缩函数。</td>
+</tr>
+<tr>
+<td style="text-align: center;">6.3</td>
+<td style="text-align: center;">torch.nn.LeakyReLU</td>
+<td style="text-align: center;">应用逐元素LeakyReLU函数。</td>
+</tr>
+<tr>
+<td style="text-align: center;">6.4</td>
+<td style="text-align: center;">torch.nn.LogSigmoid</td>
+<td style="text-align: center;">应用逐元素LogSigmoid函数。</td>
+</tr>
+<tr>
+<td style="text-align: center;">6.5</td>
+<td style="text-align: center;">torch.nn.PReLU</td>
+<td style="text-align: center;">应用逐元素PReLU函数。</td>
+</tr>
+<tr>
+<td style="text-align: center;">6.6</td>
+<td style="text-align: center;">torch.nn.ReLU</td>
+<td style="text-align: center;">应用逐元素ReLU函数。</td>
+</tr>
+<tr>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">非线性激活层（其他）</td>
+<td style="text-align: center;">应用软最小值、softmax等逐元素函数。</td>
+</tr>
+<tr>
+<td style="text-align: center;">7.1</td>
+<td style="text-align: center;">torch.nn.Softmin</td>
+<td style="text-align: center;">应用逐元素软最小值函数。</td>
+</tr>
+<tr>
+<td style="text-align: center;">7.2</td>
+<td style="text-align: center;">torch.nn.Softmax</td>
+<td style="text-align: center;">应用逐元素softmax函数。</td>
+</tr>
+<tr>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">归一化层</td>
+<td style="text-align: center;">应用批归一化、组归一化、实例归一化等。</td>
+</tr>
+<tr>
+<td style="text-align: center;">8.1</td>
+<td style="text-align: center;">torch.nn.BatchNorm1d</td>
+<td style="text-align: center;">应用于2D或3D输入的批归一化。</td>
+</tr>
+<tr>
+<td style="text-align: center;">8.2</td>
+<td style="text-align: center;">torch.nn.GroupNorm</td>
+<td style="text-align: center;">应用于输入小批量的组归一化。</td>
+</tr>
+<tr>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">循环层</td>
+<td style="text-align: center;">应用RNN、LSTM、GRU等。</td>
+</tr>
+<tr>
+<td style="text-align: center;">9.1</td>
+<td style="text-align: center;">torch.nn.RNN</td>
+<td style="text-align: center;">应用多层Elman RNN。</td>
+</tr>
+<tr>
+<td style="text-align: center;">9.2</td>
+<td style="text-align: center;">torch.nn.LSTM</td>
+<td style="text-align: center;">应用多层长短时记忆（LSTM）RNN。</td>
+</tr>
+<tr>
+<td style="text-align: center;">9.3</td>
+<td style="text-align: center;">torch.nn.GRU</td>
+<td style="text-align: center;">应用多层门控循环单元（GRU）RNN。</td>
+</tr>
+<tr>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">线性层</td>
+<td style="text-align: center;">应用线性转换。</td>
+</tr>
+<tr>
+<td style="text-align: center;">10.1</td>
+<td style="text-align: center;">torch.nn.Identity</td>
+<td style="text-align: center;">占位符身份运算符，无关参数。</td>
+</tr>
+<tr>
+<td style="text-align: center;">10.2</td>
+<td style="text-align: center;">torch.nn.Linear</td>
+<td style="text-align: center;">对输入数据应用线性转换。</td>
+</tr>
+<tr>
+<td style="text-align: center;">10.3</td>
+<td style="text-align: center;">torch.nn.Bilinear</td>
+<td style="text-align: center;">对输入数据应用双线性转换。</td>
+</tr>
+<tr>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">丢失层</td>
+<td style="text-align: center;">用于正则化和防止神经元共适应的Dropout层。</td>
+</tr>
+<tr>
+<td style="text-align: center;">11.1</td>
+<td style="text-align: center;">torch.nn.Dropout</td>
+<td style="text-align: center;">用于正则化和防止神经元共适应的Dropout层。</td>
+</tr>
+<tr>
+<td style="text-align: center;">11.2</td>
+<td style="text-align: center;">torch.nn.AlphaDropout</td>
+<td style="text-align: center;">应用于输入的Alpha Dropout。</td>
+</tr>
+<tr>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+</tr>
+<tr>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">稀疏层</td>
+<td style="text-align: center;">用于存储和检索Word Embeddings等。</td>
+</tr>
+<tr>
+<td style="text-align: center;">12.1</td>
+<td style="text-align: center;">torch.nn.Embedding</td>
+<td style="text-align: center;">用于存储和检索Word Embeddings。</td>
+</tr>
+<tr>
+<td style="text-align: center;">12.2</td>
+<td style="text-align: center;">torch.nn.EmbeddingBag</td>
+<td style="text-align: center;">在不实例化中间嵌入的情况下计算嵌入的和或均值。</td>
+</tr>
+<tr>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+</tr>
+<tr>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">距离函数</td>
+<td style="text-align: center;">计算余弦相似性、成对距离等。</td>
+</tr>
+<tr>
+<td style="text-align: center;">13.1</td>
+<td style="text-align: center;">torch.nn.CosineSimilarity</td>
+<td style="text-align: center;">计算x1和x2之间的余弦相似性。</td>
+</tr>
+<tr>
+<td style="text-align: center;">13.2</td>
+<td style="text-align: center;">torch.nn.PairwiseDistance</td>
+<td style="text-align: center;">计算向量v1和v2之间的批次对距离。</td>
+</tr>
+<tr>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+</tr>
+<tr>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">损失函数</td>
+<td style="text-align: center;">用于分类、回归等任务的损失函数。</td>
+</tr>
+<tr>
+<td style="text-align: center;">14.1</td>
+<td style="text-align: center;">torch.nn.L1Loss</td>
+<td style="text-align: center;">测量输入x和目标y中每个元素之间的平均绝对误差。</td>
+</tr>
+<tr>
+<td style="text-align: center;">14.2</td>
+<td style="text-align: center;">torch.nn.MSELoss</td>
+<td style="text-align: center;">测量输入x和目标y中每个元素之间的平均平方误差。</td>
+</tr>
+<tr>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+</tr>
+<tr>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">视觉层</td>
+<td style="text-align: center;">重新排列张量元素，上采样多通道数据等。</td>
+</tr>
+<tr>
+<td style="text-align: center;">15.1</td>
+<td style="text-align: center;">torch.nn.PixelShuffle</td>
+<td style="text-align: center;">重新排列张量元素。</td>
+</tr>
+<tr>
+<td style="text-align: center;">15.2</td>
+<td style="text-align: center;">torch.nn.Upsample</td>
+<td style="text-align: center;">上采样多通道数据。</td>
+</tr>
+<tr>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+</tr>
+<tr>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">DataParallel层（多GPU，分布式）</td>
+<td style="text-align: center;">模块级别实现数据并行性，分布式数据并行性等。</td>
+</tr>
+<tr>
+<td style="text-align: center;">16.1</td>
+<td style="text-align: center;">torch.nn.DataParallel</td>
+<td style="text-align: center;">模块级别实现数据并行性。</td>
+</tr>
+<tr>
+<td style="text-align: center;">16.2</td>
+<td style="text-align: center;">torch.nn.DistributedDataParallel</td>
+<td style="text-align: center;">模块级别实现分布式数据并行性。</td>
+</tr>
+<tr>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+</tr>
+<tr>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">实用工具</td>
+<td style="text-align: center;">clip_grad_norm_等。</td>
+</tr>
+<tr>
+<td style="text-align: center;">17.1</td>
+<td style="text-align: center;">torch.nn.clip_grad_norm_</td>
+<td style="text-align: center;">对所有模型参数进行梯度裁剪。</td>
+</tr>
+</tbody>
+</table>
 <h3 id="_1">参考资料:<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>https://pytorch.org/docs/stable/nn.html</p>
 
