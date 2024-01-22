@@ -9,25 +9,23 @@
       
       
       
-        <link rel="prev" href="../02_Git%E5%9F%BA%E7%A1%80/">
+        <link rel="prev" href="../03_PyTorch%E5%8C%85/">
       
       
-        <link rel="next" href="../04_%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/">
       
-      
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
     
     
       
-        <title>03 Git日常操作 - 韩林奇的个人博客</title>
+        <title>04 PyTorch中的torch.nn模块 - 韩林奇的个人博客</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.50c56a3b.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,7 +44,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#pytorchtorchnn" class="md-skip">
           跳转至
         </a>
       
@@ -88,7 +86,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="韩林奇的个人博客" class="md-header__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
+    <a href="../../../.." title="韩林奇的个人博客" class="md-header__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -108,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              03 Git日常操作
+              04 PyTorch中的torch.nn模块
             
           </span>
         </div>
@@ -231,7 +229,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="韩林奇的个人博客" class="md-nav__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
+    <a href="../../../.." title="韩林奇的个人博客" class="md-nav__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -261,7 +259,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -358,7 +356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/01_Docker%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+      <a href="../../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/01_Docker%E7%AE%80%E4%BB%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -379,7 +377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/02_Docker%E5%AE%89%E8%A3%85/" class="md-nav__link">
+      <a href="../../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/02_Docker%E5%AE%89%E8%A3%85/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -400,7 +398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/03_Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/03_Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -513,7 +511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/01_Kubernetes%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+      <a href="../../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/01_Kubernetes%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -534,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/02_Kubernetes%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="md-nav__link">
+      <a href="../../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/02_Kubernetes%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -555,7 +553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/03_Kubernetes%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/" class="md-nav__link">
+      <a href="../../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/03_Kubernetes%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -576,7 +574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/04_Kubernetes%E5%AE%9E%E6%88%98%E5%85%A5%E9%97%A8/" class="md-nav__link">
+      <a href="../../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/04_Kubernetes%E5%AE%9E%E6%88%98%E5%85%A5%E9%97%A8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -652,7 +650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../openai/openai_python_api/" class="md-nav__link">
+      <a href="../../../../openai/openai_python_api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -720,7 +718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F/" class="md-nav__link">
+      <a href="../../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -778,7 +776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Get%20Start/" class="md-nav__link">
+      <a href="../../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Get%20Start/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -799,7 +797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Harbor%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+      <a href="../../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Harbor%E7%AE%80%E4%BB%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -912,7 +910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%8E%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/%E5%9B%BD%E4%BA%A7%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" class="md-nav__link">
+      <a href="../../../../%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%8E%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/%E5%9B%BD%E4%BA%A7%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -945,8 +943,6 @@
       
   
   
-    
-  
   
   
     
@@ -957,12 +953,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
@@ -976,7 +972,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             开发工具
@@ -987,21 +983,19 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
         
           
           <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
@@ -1015,7 +1009,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7_1">
             <span class="md-nav__icon md-icon"></span>
             Git
@@ -1029,7 +1023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01_%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+      <a href="../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/01_%E7%AE%80%E4%BB%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1050,7 +1044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_Git%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      <a href="../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/02_Git%E5%9F%BA%E7%A1%80/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1068,28 +1062,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    03 Git日常操作
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/03_Git%E6%97%A5%E5%B8%B8%E6%93%8D%E4%BD%9C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1098,228 +1074,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      文件的添加、修改和删除
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="文件的添加、修改和删除">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      添加文件：迎接新成员
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      修改文件：雕琢宝石
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      删除文件：告别旧朋友
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      小结
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#diff" class="md-nav__link">
-    <span class="md-ellipsis">
-      查看更改（diff）
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="查看更改（diff）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#git-diff" class="md-nav__link">
-    <span class="md-ellipsis">
-      使用 Git Diff 检视魔法变化
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      详细对比工作目录和暂存区
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      对比历史提交
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      小结
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#checkout-reset" class="md-nav__link">
-    <span class="md-ellipsis">
-      版本回退（checkout, reset）
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="版本回退（checkout, reset）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#git-checkout" class="md-nav__link">
-    <span class="md-ellipsis">
-      Git Checkout: 时光穿梭
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-reset" class="md-nav__link">
-    <span class="md-ellipsis">
-      Git Reset: 改写过去
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      小结
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#branch-checkout-merge-rebase" class="md-nav__link">
-    <span class="md-ellipsis">
-      分支管理（branch, checkout, merge, rebase）
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="分支管理（branch, checkout, merge, rebase）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#git-branch" class="md-nav__link">
-    <span class="md-ellipsis">
-      Git Branch: 魔法分支的创建与管理
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-checkout_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Git Checkout: 在分支间跳跃
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-merge" class="md-nav__link">
-    <span class="md-ellipsis">
-      Git Merge: 融合分支的魔力
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-rebase" class="md-nav__link">
-    <span class="md-ellipsis">
-      Git Rebase: 重新编织你的魔法历史
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      小结
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1332,7 +1086,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04_%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+      <a href="../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/04_%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1353,7 +1107,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../05_%E9%AB%98%E7%BA%A7Git%E6%8A%80%E5%B7%A7/" class="md-nav__link">
+      <a href="../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/05_%E9%AB%98%E7%BA%A7Git%E6%8A%80%E5%B7%A7/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1374,7 +1128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../06_%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E4%B8%8E%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="md-nav__link">
+      <a href="../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/06_%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E4%B8%8E%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1395,7 +1149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_%E4%BD%BF%E7%94%A8Git%E7%9A%84%E5%B7%A5%E5%85%B7%E5%92%8C%E8%B5%84%E6%BA%90/" class="md-nav__link">
+      <a href="../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/07_%E4%BD%BF%E7%94%A8Git%E7%9A%84%E5%B7%A5%E5%85%B7%E5%92%8C%E8%B5%84%E6%BA%90/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1416,7 +1170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../08_%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BC%BA%E7%83%88%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%BC%9A%E4%BD%BF%E7%94%A8Git/" class="md-nav__link">
+      <a href="../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/08_%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BC%BA%E7%83%88%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%BC%9A%E4%BD%BF%E7%94%A8Git/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1437,7 +1191,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Gitignore/" class="md-nav__link">
+      <a href="../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/Gitignore/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1550,7 +1304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/MongoDB/python%E5%AE%9E%E7%8E%B0demo/" class="md-nav__link">
+      <a href="../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/MongoDB/python%E5%AE%9E%E7%8E%B0demo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1571,7 +1325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/MongoDB/%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/MongoDB/%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1637,7 +1391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/MySQL/Json%E5%AD%97%E6%AE%B5%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+      <a href="../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/MySQL/Json%E5%AD%97%E6%AE%B5%E6%93%8D%E4%BD%9C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1703,7 +1457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/RESP%E5%8D%8F%E8%AE%AE/" class="md-nav__link">
+      <a href="../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/RESP%E5%8D%8F%E8%AE%AE/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1724,7 +1478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E4%B8%8D%E5%90%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/" class="md-nav__link">
+      <a href="../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E4%B8%8D%E5%90%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1745,7 +1499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E5%88%86%E5%B8%83%E5%BC%8F/" class="md-nav__link">
+      <a href="../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E5%88%86%E5%B8%83%E5%BC%8F/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1766,7 +1520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E5%88%86%E5%B8%83%E5%BC%8F%E6%B6%88%E6%81%AF%E9%80%9A%E4%BF%A1/" class="md-nav__link">
+      <a href="../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E5%88%86%E5%B8%83%E5%BC%8F%E6%B6%88%E6%81%AF%E9%80%9A%E4%BF%A1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1787,7 +1541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E6%8C%81%E4%B9%85%E5%8C%96/" class="md-nav__link">
+      <a href="../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E6%8C%81%E4%B9%85%E5%8C%96/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1808,7 +1562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB/" class="md-nav__link">
+      <a href="../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1829,7 +1583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+      <a href="../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1850,7 +1604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/%E8%AF%BB%E5%86%99%E5%86%85%E5%AD%98/" class="md-nav__link">
+      <a href="../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/%E8%AF%BB%E5%86%99%E5%86%85%E5%AD%98/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1883,8 +1637,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -1893,12 +1649,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
         
           
           <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
@@ -1912,7 +1668,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             编码
@@ -1963,7 +1719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Go/%E6%88%90%E9%95%BF%E8%B7%AF%E7%BA%BF/" class="md-nav__link">
+      <a href="../../../Go/%E6%88%90%E9%95%BF%E8%B7%AF%E7%BA%BF/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2021,7 +1777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Go/%E9%9D%A2%E8%AF%95/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" class="md-nav__link">
+      <a href="../../../Go/%E9%9D%A2%E8%AF%95/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2055,19 +1811,21 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" checked>
         
           
           <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
@@ -2081,7 +1839,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9_2">
             <span class="md-nav__icon md-icon"></span>
             Python
@@ -2095,7 +1853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/GIL/" class="md-nav__link">
+      <a href="../../GIL/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2116,7 +1874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/Pydantic/" class="md-nav__link">
+      <a href="../../Pydantic/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2174,7 +1932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/NumPy/00_%E5%89%8D%E8%A8%80/" class="md-nav__link">
+      <a href="../../NumPy/00_%E5%89%8D%E8%A8%80/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2195,7 +1953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/NumPy/01_Ndarray/" class="md-nav__link">
+      <a href="../../NumPy/01_Ndarray/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2216,7 +1974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/NumPy/02_NumPy%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
+      <a href="../../NumPy/02_NumPy%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2237,7 +1995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/NumPy/03_Numpy%E6%95%B0%E7%BB%84%E5%88%9B%E5%BB%BA/" class="md-nav__link">
+      <a href="../../NumPy/03_Numpy%E6%95%B0%E7%BB%84%E5%88%9B%E5%BB%BA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2258,7 +2016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/NumPy/04_%E4%BB%8E%E7%8E%B0%E6%9C%89%E6%95%B0%E6%8D%AE%E5%88%9B%E5%BB%BANumpy%E6%95%B0%E7%BB%84/" class="md-nav__link">
+      <a href="../../NumPy/04_%E4%BB%8E%E7%8E%B0%E6%9C%89%E6%95%B0%E6%8D%AE%E5%88%9B%E5%BB%BANumpy%E6%95%B0%E7%BB%84/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2284,19 +2042,21 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_4" checked>
         
           
           <label class="md-nav__link" for="__nav_9_2_4" id="__nav_9_2_4_label" tabindex="0">
@@ -2310,7 +2070,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_2_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_2_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9_2_4">
             <span class="md-nav__icon md-icon"></span>
             PyTorch
@@ -2324,7 +2084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/PyTorch/00_PyTorch%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+      <a href="../00_PyTorch%E7%AE%80%E4%BB%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2345,7 +2105,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/PyTorch/01_%E5%88%9D%E8%AF%86PyTorch/" class="md-nav__link">
+      <a href="../01_%E5%88%9D%E8%AF%86PyTorch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2366,7 +2126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/PyTorch/02_PyTorch%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" class="md-nav__link">
+      <a href="../02_PyTorch%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2387,7 +2147,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/PyTorch/03_PyTorch%E5%8C%85/" class="md-nav__link">
+      <a href="../03_PyTorch%E5%8C%85/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2405,10 +2165,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/PyTorch/04_PyTorch%E4%B8%AD%E7%9A%84torch.nn%E6%A8%A1%E5%9D%97/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    04 PyTorch中的torch.nn模块
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2417,6 +2195,48 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pytorchtorchnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      PyTorch中的torch.nn模块
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PyTorch中的torch.nn模块">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考资料:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2470,199 +2290,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#pytorchtorchnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      PyTorch中的torch.nn模块
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PyTorch中的torch.nn模块">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      文件的添加、修改和删除
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="文件的添加、修改和删除">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      添加文件：迎接新成员
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      修改文件：雕琢宝石
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      删除文件：告别旧朋友
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      小结
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#diff" class="md-nav__link">
-    <span class="md-ellipsis">
-      查看更改（diff）
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="查看更改（diff）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#git-diff" class="md-nav__link">
-    <span class="md-ellipsis">
-      使用 Git Diff 检视魔法变化
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      详细对比工作目录和暂存区
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      对比历史提交
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      小结
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#checkout-reset" class="md-nav__link">
-    <span class="md-ellipsis">
-      版本回退（checkout, reset）
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="版本回退（checkout, reset）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#git-checkout" class="md-nav__link">
-    <span class="md-ellipsis">
-      Git Checkout: 时光穿梭
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-reset" class="md-nav__link">
-    <span class="md-ellipsis">
-      Git Reset: 改写过去
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      小结
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#branch-checkout-merge-rebase" class="md-nav__link">
-    <span class="md-ellipsis">
-      分支管理（branch, checkout, merge, rebase）
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="分支管理（branch, checkout, merge, rebase）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#git-branch" class="md-nav__link">
-    <span class="md-ellipsis">
-      Git Branch: 魔法分支的创建与管理
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-checkout_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Git Checkout: 在分支间跳跃
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-merge" class="md-nav__link">
-    <span class="md-ellipsis">
-      Git Merge: 融合分支的魔力
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-rebase" class="md-nav__link">
-    <span class="md-ellipsis">
-      Git Rebase: 重新编织你的魔法历史
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      小结
+      参考资料:
     </span>
   </a>
   
@@ -2691,79 +2331,112 @@
   
 
 
-  <h1>03 Git日常操作</h1>
+  <h1>04 PyTorch中的torch.nn模块</h1>
 
-<h2 id="_1">文件的添加、修改和删除<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>当你踏上编码之旅，与代码的交互是不可避免的。在 Git 的世界中，你将如何优雅地处理文件的添加、修改和删除呢？这不仅仅是保持你的代码库整洁的问题，更是关乎到如何高效地记录你的代码演变历程。</p>
-<h3 id="_2">添加文件：迎接新成员<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>&lt;file&gt;
-</code></pre></div>
-每当你创造出一个新文件时，你需要告诉 Git，“嘿，这里有个新伙伴。” 使用 git add 命令就像是在给你的新文件办理入仓库手续。一旦添加，它就会出现在你的下一次提交中，成为仓库历史的一部分。</p>
-<h3 id="_3">修改文件：雕琢宝石<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p><div class="highlight"><pre><span></span><code><span class="c1">## 修改文件后</span>
-git<span class="w"> </span>add<span class="w"> </span>&lt;file&gt;
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;描述你的修改&quot;</span>
-</code></pre></div>
-就像雕琢宝石一样，我们总想让代码更完美。当你改进文件时，重复 add 和 commit 的流程就像是在记录每一次刻划。这确保了你的每次修改都被记下，以便未来查看或者如果需要的话，回退到某个特定版本。</p>
-<h3 id="_4">删除文件：告别旧朋友<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>rm<span class="w"> </span>&lt;file&gt;
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;描述为何删除文件&quot;</span>
-</code></pre></div>
-随着项目的进展，有些文件不再需要，就像告别一个旧朋友。使用 git rm 可以将文件从工作目录和暂存区中移除。完成这个命令后，文件在下一次提交时就会从你的仓库中消失。记得留下一条消息解释为什么这个文件不再是必需的，这就像是给它写一封告别信。</p>
-<h3 id="_5">小结<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>添加、修改和删除文件是你在 Git 仓库中日常会进行的操作。掌握这些基本的文件操作是你成为 Git 巫师必经的路径。记得，每一个 commit 都是你项目故事中的一个节点，确保它们清晰和有意义，这将帮助未来的你，或者是与你协作的其他巫师了解每一步的魔法是如何施展的。</p>
-<h2 id="diff">查看更改（diff）<a class="headerlink" href="#diff" title="Permanent link">&para;</a></h2>
-<p>在编写代码的过程中，我们经常需要回顾所做的更改，以确保每一次提交都像艺术品一样精致。在 Git 的世界里，有一个强大的术语叫做 <code>diff</code>，它是一种巧妙的术士工具，让你能够窥视代码的过去和现在之间的差异。</p>
-<h3 id="git-diff">使用 Git Diff 检视魔法变化<a class="headerlink" href="#git-diff" title="Permanent link">&para;</a></h3>
-<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>diff
-</code></pre></div>
-当你施展了一系列编码咒语后，git diff 将揭示出自上次提交以来，你的代码发生了哪些变化。它展示了行与行之间的对比，标出了被移除的旧咒语（红色）和新增的新魔法（绿色）。</p>
-<h3 id="_6">详细对比工作目录和暂存区<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>diff<span class="w"> </span>--staged
-</code></pre></div>
-如果你已经将一些文件添加到暂存区，准备好提交它们，但在最后一刻想再次确认，git diff --staged 将会显示工作目录与暂存区之间的差异。这是一次深入审视，确保你的暂存区只包含了你想要的魔法。</p>
-<h3 id="_7">对比历史提交<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>diff<span class="w"> </span>&lt;commit1&gt;<span class="w"> </span>&lt;commit2&gt;
-</code></pre></div>
-有时，你可能会好奇在两次历史提交之间你的代码发生了哪些变化。这个命令将打开一扇时间之窗，让你可以审视两个不同时间点的代码之间的不同。</p>
-<h3 id="_8">小结<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p>git diff 是 Git 里一项重要的巫术，它让你能够在提交之前进行最终检查，确认你的改动正是你所希望的。它像是一面镜子，清晰地反映出你的代码随时间变化的轨迹。每当你准备提交一段重要的代码时，不妨先使用 git diff，给你的代码变动一个最后的审视。这样做不仅能帮助你避免一些小错误，还能提高你作为一名代码巫师的精准度和自信心。</p>
-<h2 id="checkout-reset">版本回退（checkout, reset）<a class="headerlink" href="#checkout-reset" title="Permanent link">&para;</a></h2>
-<p>在编码的道路上，我们有时会走进歧途，或者决定放弃一些魔法实验。在 Git 的领域里，这并不是问题，因为你拥有时光倒流的能力。我们来探索 <code>checkout</code> 和 <code>reset</code>，这两个强大的咒语，它们能让你穿梭于不同版本之间，就像拥有一部时光机一样。</p>
-<h3 id="git-checkout">Git Checkout: 时光穿梭<a class="headerlink" href="#git-checkout" title="Permanent link">&para;</a></h3>
-<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>&lt;commit-hash&gt;
-</code></pre></div>
-想要回到过去，检查或恢复到某个特定的魔法状态（提交）吗？git checkout 就是你的时光旅行咒语。只需一个提交的哈希值，你就可以把文件恢复到那个时刻的状态。这就像是读取一本旧日记，让你回忆起当时的魔法编排。</p>
-<p>但记住，这种旅行是临时的。如果你想在那个时间点开始一个新的魔法故事，你需要创建一个新的分支。</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>&lt;new-branch&gt;<span class="w"> </span>&lt;commit-hash&gt;
-</code></pre></div>
-<h3 id="git-reset">Git Reset: 改写过去<a class="headerlink" href="#git-reset" title="Permanent link">&para;</a></h3>
-<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>&lt;commit-hash&gt;
-</code></pre></div>
-如果你决定某个魔法实验是个错误，想要彻底撤销它，git reset 是更为极端的咒语。使用 --hard 选项，你可以将当前分支的状态回退到你所指定的历史提交，并且清除所有后续的变化，就像它们从未发生过。</p>
-<p>但请小心，这个咒语的力量很大，会造成无法恢复的后果。它会将工作目录和暂存区的变化全部抹去，所以在施展之前，一定要确保你不会失去重要的魔法成果。</p>
-<h3 id="_9">小结<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<p>checkout 和 reset 都是版本控制中的强力工具。它们使得回退到过去的版本变得可能，但每个咒语都有其特定的使用场景和潜在的风险。在使用这些咒语时，记得要像对待任何强大的魔法一样谨慎，只有这样，你才能确保你的代码历史书写得既精彩又正确。</p>
-<h2 id="branch-checkout-merge-rebase">分支管理（branch, checkout, merge, rebase）<a class="headerlink" href="#branch-checkout-merge-rebase" title="Permanent link">&para;</a></h2>
-<p>在编程的魔法世界中，分支管理是巫师们保持秩序、探索新领域并最终统一魔法成果的重要法术。想象一下，你可以在安全的实验室中试验各种强大的咒语，而不会影响到外面世界的和平。接下来，让我们探索一些关于分支管理的基础咒语：<code>branch</code>, <code>checkout</code>, <code>merge</code> 和 <code>rebase</code>。</p>
-<h3 id="git-branch">Git Branch: 魔法分支的创建与管理<a class="headerlink" href="#git-branch" title="Permanent link">&para;</a></h3>
-<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>branch<span class="w"> </span>&lt;new-branch-name&gt;
-</code></pre></div>
-创建一个新的分支就像是在你的魔法森林中开辟了一条新的小径。这个路径允许你安全地进行实验，而不会影响到主路径（通常是 master 或 main 分支）。使用 git branch 不仅可以创建新的小径，还可以查看所有分支的清单，让你了解森林中所有的路径。</p>
-<h3 id="git-checkout_1">Git Checkout: 在分支间跳跃<a class="headerlink" href="#git-checkout_1" title="Permanent link">&para;</a></h3>
-<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>&lt;branch-name&gt;
-</code></pre></div>
-巫师们需要能够自由地在不同的分支间跳跃。git checkout 咒语可以让你做到这一点。它就像是一双神奇的靴子，让你能够立即从一个分支跳到另一个分支，继续你的魔法工作。</p>
-<h3 id="git-merge">Git Merge: 融合分支的魔力<a class="headerlink" href="#git-merge" title="Permanent link">&para;</a></h3>
-<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>merge<span class="w"> </span>&lt;branch-name&gt;
-</code></pre></div>
-当你在一个分支上的实验成功了，你就需要将这些新的魔法成果带回主路径。git merge 咒语允许你将一个分支的改动合并到另一个分支上，就像是将两条小径合并成一条大道，让所有人都能享受到你的魔法。</p>
-<h3 id="git-rebase">Git Rebase: 重新编织你的魔法历史<a class="headerlink" href="#git-rebase" title="Permanent link">&para;</a></h3>
-<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>rebase<span class="w"> </span>&lt;base-branch&gt;
-</code></pre></div>
-有时，你的魔法实验小径可能会落后于主路径。git rebase 是一种更高级的法术，它允许你重新编织你分支上的改动，使其看起来就像是直接在最新的主路径上进行的。这个过程可以让历史更加整洁，但也更加复杂，需要谨慎使用。</p>
-<h3 id="_10">小结<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<p>分支管理是一门艺术，也是一门科学。通过精通 branch, checkout, merge, 和 rebase 这些咒语，你可以在编码过程中保持灵活性和组织性。记得，每个分支都是你魔法创造力的体现，管理它们的过程就像是在编织一张庞大的魔法网络。使用这些咒语来指导你的代码历史，让它成为一部精彩的魔法史诗。</p>
+<h2 id="pytorchtorchnn">PyTorch中的torch.nn模块<a class="headerlink" href="#pytorchtorchnn" title="Permanent link">&para;</a></h2>
+<p>PyTorch提供了torch.nn模块，以帮助我们创建和训练神经网络。我们将首先在MNIST数据集上训练基本的神经网络，不使用这些模型的任何特征。我们仅使用基本的PyTorch张量功能，然后逐步添加torch.nn中的一个特征。</p>
+<blockquote>
+<p>torch.nn为我们提供了许多类和模块，用于实现和训练神经网络。</p>
+</blockquote>
+<p>nn模块包含以下模块和类：
+| 序号  |             类和模块             |                      描述                      |
+| :---: | :------------------------------: | :--------------------------------------------: |
+|   1   |        torch.nn.Parameter        |              模块参数的张量类型。              |
+|   2   |               容器               |            所有神经网络模块的基类。            |
+|  2.1  |         torch.nn.Module          |            所有神经网络模块的基类。            |
+|  2.2  |       torch.nn.Sequential        |         顺序容器，按传递顺序添加模块。         |
+|  2.3  |       torch.nn.ModuleList        |              在列表中保存子模块。              |
+|  2.4  |       torch.nn.ModuleDict        |              在字典中保存子模块。              |
+|  2.5  |      torch.nn.ParameterList      |               在列表中保存参数。               |
+|  2.6  |      torch.nn.parameterDict      |               在字典中保存参数。               |
+|   3   |              卷积层              |      对输入信号应用一维卷积，二维卷积等。      |
+|  3.1  |         torch.nn.Conv1d          |            对输入信号应用一维卷积。            |
+|  3.2  |         torch.nn.Conv2d          |            对输入信号应用二维卷积。            |
+|  3.3  |         torch.nn.Conv3d          |            对输入信号应用三维卷积。            |
+|  3.4  |     torch.nn.ConvTranspose1d     |        对输入图像应用一维转置卷积操作。        |
+|  3.5  |     torch.nn.ConvTranspose2d     |        对输入图像应用二维转置卷积操作。        |
+|  3.6  |     torch.nn.ConvTranspose3d     |        对输入图像应用三维转置卷积操作。        |
+|  3.7  |         torch.nn.Unfold          |        从批量输入张量中提取滑动局部块。        |
+|  3.8  |          torch.nn.Fold           |   将一系列滑动局部块组合成一个大的包含张量。   |
+|   4   |              池化层              |       应用一维最大池化，二维最大池化等。       |
+|  4.1  |        torch.nn.MaxPool1d        |               应用一维最大池化。               |
+|  4.2  |        torch.nn.MaxPool2d        |               应用二维最大池化。               |
+|  4.3  |        torch.nn.MaxPool3d        |               应用三维最大池化。               |
+|  4.4  |       torch.nn.MaxUnpool1d       |         计算 MaxPool1d 的部分逆操作。          |
+|  4.5  |       torch.nn.MaxUnpool2d       |         计算 MaxPool2d 的部分逆操作。          |
+|  4.6  |       torch.nn.MaxUnpool3d       |         计算 MaxPool3d 的部分逆操作。          |
+|  4.7  |        torch.nn.AvgPool1d        |               应用一维平均池化。               |
+|  4.8  |        torch.nn.AvgPool2d        |               应用二维平均池化。               |
+|  4.9  |        torch.nn.AvgPool3d        |               应用三维平均池化。               |
+| 4.10  |   torch.nn.FractionalMaxPool2d   |             应用二维分数最大池化。             |
+| 4.11  |        torch.nn.LPPool1d         |             应用一维功率平均池化。             |
+| 4.12  |        torch.nn.LPPool2d         |             应用二维功率平均池化。             |
+| 4.13  |    torch.nn.AdaptiveMaxPool1d    |            应用一维自适应最大池化。            |
+| 4.14  |    torch.nn.AdaptiveMaxPool2d    |            应用二维自适应最大池化。            |
+| 4.15  |    torch.nn.AdaptiveMaxPool3d    |            应用三维自适应最大池化。            |
+| 4.16  |    torch.nn.AdaptiveAvgPool1d    |            应用一维自适应平均池化。            |
+| 4.17  |    torch.nn.AdaptiveAvgPool2d    |            应用二维自适应平均池化。            |
+| 4.18  |    torch.nn.AdaptiveAvgPool3d    |            应用三维自适应平均池化。            |
+|   5   |              填充层              |     使用反射、复制、零等方法填充输入张量。     |
+|  5.1  |     torch.nn.ReflectionPad1d     |        使用输入边界的反射填充输入张量。        |
+|  5.2  |    torch.nn.ReplicationPad1d     |        使用输入边界的复制填充输入张量。        |
+|  5.3  |        torch.nn.ZeroPad2d        |           使用零填充输入张量的边界。           |
+|  5.4  |      torch.nn.ConstantPad1d      |       使用给定填充值填充输入张量的边界。       |
+|  ...  |               ...                |                      ...                       |
+|   6   |  非线性激活层（加权和，非线性）  |         应用ELU、硬收缩等逐元素函数。          |
+|  6.1  |           torch.nn.ELU           |              应用逐元素ELU函数。               |
+|  6.2  |       torch.nn.Hardshrink        |             应用逐元素硬收缩函数。             |
+|  6.3  |        torch.nn.LeakyReLU        |           应用逐元素LeakyReLU函数。            |
+|  6.4  |       torch.nn.LogSigmoid        |           应用逐元素LogSigmoid函数。           |
+|  6.5  |          torch.nn.PReLU          |             应用逐元素PReLU函数。              |
+|  6.6  |          torch.nn.ReLU           |              应用逐元素ReLU函数。              |
+|  ...  |               ...                |                      ...                       |
+|   7   |       非线性激活层（其他）       |      应用软最小值、softmax等逐元素函数。       |
+|  7.1  |         torch.nn.Softmin         |            应用逐元素软最小值函数。            |
+|  7.2  |         torch.nn.Softmax         |            应用逐元素softmax函数。             |
+|  ...  |               ...                |                      ...                       |
+|   8   |             归一化层             |     应用批归一化、组归一化、实例归一化等。     |
+|  8.1  |       torch.nn.BatchNorm1d       |          应用于2D或3D输入的批归一化。          |
+|  8.2  |        torch.nn.GroupNorm        |          应用于输入小批量的组归一化。          |
+|  ...  |               ...                |                      ...                       |
+|   9   |              循环层              |             应用RNN、LSTM、GRU等。             |
+|  9.1  |           torch.nn.RNN           |              应用多层Elman RNN。               |
+|  9.2  |          torch.nn.LSTM           |        应用多层长短时记忆（LSTM）RNN。         |
+|  9.3  |           torch.nn.GRU           |        应用多层门控循环单元（GRU）RNN。        |
+|  ...  |               ...                |                      ...                       |
+|  10   |              线性层              |                 应用线性转换。                 |
+| 10.1  |        torch.nn.Identity         |          占位符身份运算符，无关参数。          |
+| 10.2  |         torch.nn.Linear          |            对输入数据应用线性转换。            |
+| 10.3  |        torch.nn.Bilinear         |           对输入数据应用双线性转换。           |
+|  ...  |               ...                |                      ...                       |
+|  11   |              丢失层              |   用于正则化和防止神经元共适应的Dropout层。    |
+| 11.1  |         torch.nn.Dropout         |   用于正则化和防止神经元共适应的Dropout层。    |
+| 11.2  |      torch.nn.AlphaDropout       |          应用于输入的Alpha Dropout。           |
+|  ...  |               ...                |                      ...                       |
+|  12   |              稀疏层              |       用于存储和检索Word Embeddings等。        |
+| 12.1  |        torch.nn.Embedding        |        用于存储和检索Word Embeddings。         |
+| 12.2  |      torch.nn.EmbeddingBag       | 在不实例化中间嵌入的情况下计算嵌入的和或均值。 |
+|  ...  |               ...                |                      ...                       |
+|  13   |             距离函数             |          计算余弦相似性、成对距离等。          |
+| 13.1  |    torch.nn.CosineSimilarity     |          计算x1和x2之间的余弦相似性。          |
+| 13.2  |    torch.nn.PairwiseDistance     |        计算向量v1和v2之间的批次对距离。        |
+|  ...  |               ...                |                      ...                       |
+|  14   |             损失函数             |        用于分类、回归等任务的损失函数。        |
+| 14.1  |         torch.nn.L1Loss          | 测量输入x和目标y中每个元素之间的平均绝对误差。 |
+| 14.2  |         torch.nn.MSELoss         | 测量输入x和目标y中每个元素之间的平均平方误差。 |
+|  ...  |               ...                |                      ...                       |
+|  15   |              视觉层              |     重新排列张量元素，上采样多通道数据等。     |
+| 15.1  |      torch.nn.PixelShuffle       |               重新排列张量元素。               |
+| 15.2  |        torch.nn.Upsample         |               上采样多通道数据。               |
+|  ...  |               ...                |                      ...                       |
+|  16   | DataParallel层（多GPU，分布式）  |  模块级别实现数据并行性，分布式数据并行性等。  |
+| 16.1  |      torch.nn.DataParallel       |            模块级别实现数据并行性。            |
+| 16.2  | torch.nn.DistributedDataParallel |         模块级别实现分布式数据并行性。         |
+|  ...  |               ...                |                      ...                       |
+|  17   |             实用工具             |              clip_grad_norm_等。               |
+| 17.1  |     torch.nn.clip_grad_norm_     |          对所有模型参数进行梯度裁剪。          |</p>
+<h3 id="_1">参考资料:<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>https://pytorch.org/docs/stable/nn.html</p>
 
 
 
@@ -2810,10 +2483,10 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections"], "search": "../../../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.sections"], "search": "../../../../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.7389ff0e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.7389ff0e.min.js"></script>
       
     
   </body>
