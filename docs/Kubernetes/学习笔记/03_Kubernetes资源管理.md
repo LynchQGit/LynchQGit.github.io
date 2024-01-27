@@ -5,7 +5,7 @@ kubernetes的本质上就是一个集群系统，用户可以在集群中部署�
 kubernetes的最小管理单元是pod而不是容器，所以只能将容器放在Pod中，而kubernetes一般也不会直接管理Pod，而是通过Pod控制器来管理Pod的。
 Pod可以提供服务之后，就要考虑如何访问Pod中服务，kubernetes提供了Service资源实现这个功能。
 当然，如果Pod中程序的数据需要持久化，kubernetes还提供了各种存储系统。
-![03_3-1-1](../image/Kubernetes/03_3-1-1.png)
+![03_3-1-1](../../image/Kubernetes/03_3-1-1.png)
 学习kubernetes的核心，就是学习如何对集群上的Pod、Pod控制器、Service、存储等各种资源进行操作。
 ### 3.2 YAML语言介绍
 YAML是一个类似 XML、JSON 的标记性语言。它强调以数据为中心，并不是以标识语言为重点。因而YAML本身的定义比较简单，号称"一种人性化的数据格式语言"。
