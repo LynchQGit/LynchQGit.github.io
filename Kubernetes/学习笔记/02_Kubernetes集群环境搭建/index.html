@@ -2966,7 +2966,7 @@
 从github 下载发行版的二进制包，手动部署每个组件，组成Kubernetes 集群。
 Kubeadm 降低部署门槛，但屏蔽了很多细节，遇到问题很难排查。如果想更容易可控，推荐使用二进制包部署Kubernetes 集群，虽然手动部署麻烦点，期间可以学习很多工作原理，也利于后期维护。</p>
 </blockquote>
-<p><img alt="02_2-1-1" src="../image/Kubernetes/02_2-1-1.png" /></p>
+<p><img alt="02_2-1-1" src="../../../image/Kubernetes/02_2-1-1.png" /></p>
 <h3 id="22-kubernetes">2.2 Kubernetes部署方式介绍<a class="headerlink" href="#22-kubernetes" title="Permanent link">&para;</a></h3>
 <p><strong>kubeadm</strong> 是官方社区推出的一个用于快速部署kubernetes 集群的工具，这个工具能通过两条指令完成一个kubernetes 集群的部署：
 - 创建一个Master 节点kubeadm init
@@ -2987,7 +2987,7 @@ Kubeadm 降低部署门槛，但屏蔽了很多细节，遇到问题很难排查
 <li>部署Dashboard Web 页面，可视化查看Kubernetes 资源</li>
 </ul>
 <h3 id="25">2.5 准备环境<a class="headerlink" href="#25" title="Permanent link">&para;</a></h3>
-<p><img alt="02_2-5-1" src="../image/Kubernetes/02_2-5-1.png" /></p>
+<p><img alt="02_2-5-1" src="../../../image/Kubernetes/02_2-5-1.png" /></p>
 <table>
 <thead>
 <tr>
@@ -3235,7 +3235,7 @@ systemctl<span class="w"> </span>restart<span class="w"> </span>docker
 kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>kube-flannel.yml
 等待它安装完毕，集群的状态已经是Ready。
 </code></pre></div>
-<p><img alt="02_2-6-15-1" src="../image/Kubernetes/02_2-6-15-1.png" /></p>
+<p><img alt="02_2-6-15-1" src="../../../image/Kubernetes/02_2-6-15-1.png" /></p>
 <h4 id="2616-kuberadm">2.6.16 Kuberadm中的命令<a class="headerlink" href="#2616-kuberadm" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="c1"># 生成 新的token</span>
 <span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubeadm token create --print-join-command</span>
@@ -3253,9 +3253,9 @@ kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> <
 <h4 id="274-pod">2.7.4 查看Pod<a class="headerlink" href="#274-pod" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pod
 </code></pre></div>
-<img alt="02_2-7-4-1" src="../image/Kubernetes/02_2-7-4-1.png" />
+<img alt="02_2-7-4-1" src="../../../image/Kubernetes/02_2-7-4-1.png" />
 浏览器测试效果：
-<img alt="02_2-7-4-2" src="../image/Kubernetes/02_2-7-4-2.png" /></p>
+<img alt="02_2-7-4-2" src="../../../image/Kubernetes/02_2-7-4-2.png" /></p>
 
 
 
