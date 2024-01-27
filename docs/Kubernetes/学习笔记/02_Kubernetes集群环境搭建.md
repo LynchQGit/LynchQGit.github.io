@@ -8,7 +8,7 @@
 >从github 下载发行版的二进制包，手动部署每个组件，组成Kubernetes 集群。
 >Kubeadm 降低部署门槛，但屏蔽了很多细节，遇到问题很难排查。如果想更容易可控，推荐使用二进制包部署Kubernetes 集群，虽然手动部署麻烦点，期间可以学习很多工作原理，也利于后期维护。
 
-![02_2-1-1](../image/Kubernetes/02_2-1-1.png)
+![02_2-1-1](../../image/Kubernetes/02_2-1-1.png)
 ### 2.2 Kubernetes部署方式介绍
 **kubeadm** 是官方社区推出的一个用于快速部署kubernetes 集群的工具，这个工具能通过两条指令完成一个kubernetes 集群的部署：
 - 创建一个Master 节点kubeadm init
@@ -30,7 +30,7 @@
 - 部署Dashboard Web 页面，可视化查看Kubernetes 资源
 
 ### 2.5 准备环境
-![02_2-5-1](../image/Kubernetes/02_2-5-1.png)
+![02_2-5-1](../../image/Kubernetes/02_2-5-1.png)
 
 |   角色   |   IP地址    |               组件                |
 | :------: | :---------: | :-------------------------------: |
@@ -291,7 +291,7 @@ kubectl apply -f kube-flannel.yml
 等待它安装完毕，集群的状态已经是Ready。
 ```
 
-![02_2-6-15-1](../image/Kubernetes/02_2-6-15-1.png)
+![02_2-6-15-1](../../image/Kubernetes/02_2-6-15-1.png)
 
 #### 2.6.16 Kuberadm中的命令
 ```bash
@@ -319,6 +319,6 @@ kubectl get pod,svc
 ```bash
 kubectl get pod
 ```
-![02_2-7-4-1](../image/Kubernetes/02_2-7-4-1.png)
+![02_2-7-4-1](../../image/Kubernetes/02_2-7-4-1.png)
 浏览器测试效果：
-![02_2-7-4-2](../image/Kubernetes/02_2-7-4-2.png)
+![02_2-7-4-2](../../image/Kubernetes/02_2-7-4-2.png)
