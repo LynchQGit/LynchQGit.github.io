@@ -5,7 +5,7 @@
 Namespace是kubernetes系统中的一种非常重要资源，它的主要作用是用来实现**多套环境的资源隔**离或者**多租户的资源隔离**。
 默认情况下，kubernetes集群中的所有的Pod都是可以相互访问的。但是在实际中，可能不想让两个Pod之间进行互相的访问，那此时就可以将两个Pod划分到不同的namespace下。kubernetes通过将集群内部的资源分配到不同的Namespace中，可以形成逻辑上的"组"，以方便不同的组的资源进行隔离使用和管理。
 可以通过kubernetes的授权机制，将不同的namespace交给不同租户进行管理，这样就实现了多租户的资源隔离。此时还能结合kubernetes的资源配额机制，限定不同租户能占用的资源，例如CPU使用量、内存使用量等等，来实现租户可用资源的管理。
-![04_4-1-1](../image/Kubernetes/04_4-1-1.png)
+![04_4-1-1](../../image/Kubernetes/04_4-1-1.png)
 kubernetes在集群启动之后，会默认创建几个namespace
 ```bash
 [root@master ~]# kubectl  get namespace
@@ -86,7 +86,7 @@ metadata:
 ### 4.2 Pod
 Pod是kubernetes集群进行管理的最小单元，程序要运行必须部署在容器中，而容器必须存在于Pod中。
 Pod可以认为是容器的封装，一个Pod中可以存在一个或者多个容器。
-![04_4-2-1](../image/Kubernetes/04_4-2-1.png)
+![04_4-2-1](../../image/Kubernetes/04_4-2-1.png)
 kubernetes在集群启动之后，集群中的各个组件也都是以Pod方式运行的。可以通过下面命令查看：
 ```bash
 [root@master ~]# kubectl get pod -n kube-system
@@ -316,7 +316,7 @@ spec:
 ### 4.4 Deployment（部署）
 在kubernetes中，Pod是最小的控制单元，但是kubernetes很少直接控制Pod，一般都是通过Pod控制器来完成的。Pod控制器用于pod的管理，确保pod资源符合预期的状态，当pod的资源出现故障时，会尝试进行重启或重建pod。
 在kubernetes中Pod控制器的种类有很多，本章节只介绍一种：Deployment。
-![04_4-4-1](../image/Kubernetes/04_4-4-1.png)
+![04_4-4-1](../../image/Kubernetes/04_4-4-1.png)
 #### 4.4.1 操作
 ```bash
 # 命令格式: kubectl create deployment 名称  [参数] 
@@ -420,7 +420,7 @@ spec:
 - Pod IP 仅仅是集群内可见的虚拟IP，外部无法访问
 这样对于访问这个服务带来了难度。因此，kubernetes设计了Service来解决这个问题。
 Service可以看作是一组同类Pod对外的访问接口。借助Service，应用可以方便地实现服务发现和负载均衡。
-![04_4-5-1](../image/Kubernetes/04_4-5-1.png)
+![04_4-5-1](../../image/Kubernetes/04_4-5-1.png)
 #### 4.5.1 创建集群内部可访问的Service
 ```bash
 # 暴露Service
