@@ -53,3 +53,20 @@ tensor(4.)
 tensor(48.)
 ```
 ![10_01-04](../../../image/编码/Python/PyTorch/10_01-04.png)
+
+### 怎么用图直观表现梯度呢？
+我们可以使用`torchviz`库来可视化梯度。让我们看一个例子。
+```python
+import torch
+from torchviz import make_dot
+
+x = torch.tensor(2.0, requires_grad=True)
+y = 9 * x ** 4 + 2 * x ** 3 + 3 * x ** 2 + 6 * x + 1
+make_dot(y)
+```
+![10_01-05](../../../image/编码/Python/PyTorch/10_01-05.png)
+我们可以看到梯度是如何流动的。
+MulBackward0表示乘法的梯度，AddBackward0表示加法的梯度，PowBackward0表示幂的梯度。
+
+### torchviz
+torchviz 是一个用于可视化 PyTorch 模型的工具包。它提供了一个简单的 API 来创建图形并将其导出为图像或 PDF 文件。
