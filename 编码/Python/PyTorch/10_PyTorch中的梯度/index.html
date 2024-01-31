@@ -2344,6 +2344,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="PyTorch中的梯度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      怎么用图直观表现梯度呢？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#torchviz" class="md-nav__link">
+    <span class="md-ellipsis">
+      torchviz
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2475,6 +2499,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="PyTorch中的梯度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      怎么用图直观表现梯度呢？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#torchviz" class="md-nav__link">
+    <span class="md-ellipsis">
+      torchviz
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2538,6 +2586,20 @@
 <span class="n">tensor</span><span class="p">(</span><span class="mf">48.</span><span class="p">)</span>
 </code></pre></div>
 <img alt="10_01-04" src="../../../../image/%E7%BC%96%E7%A0%81/Python/PyTorch/10_01-04.png" /></p>
+<h3 id="_1">怎么用图直观表现梯度呢？<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>我们可以使用<code>torchviz</code>库来可视化梯度。让我们看一个例子。
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">torchviz</span> <span class="kn">import</span> <span class="n">make_dot</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">9</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">6</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">make_dot</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</code></pre></div>
+<img alt="10_01-05" src="../../../../image/%E7%BC%96%E7%A0%81/Python/PyTorch/10_01-05.png" />
+我们可以看到梯度是如何流动的。
+MulBackward0表示乘法的梯度，AddBackward0表示加法的梯度，PowBackward0表示幂的梯度。</p>
+<h3 id="torchviz">torchviz<a class="headerlink" href="#torchviz" title="Permanent link">&para;</a></h3>
+<p>torchviz 是一个用于可视化 PyTorch 模型的工具包。它提供了一个简单的 API 来创建图形并将其导出为图像或 PDF 文件。</p>
 
 
 
