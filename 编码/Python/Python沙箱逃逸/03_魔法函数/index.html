@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../PyTorch/11_%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">
+        <link rel="prev" href="../02_%E5%87%BD%E6%95%B0%E5%AF%BC%E5%85%A5%E9%99%90%E5%88%B6%E5%92%8C%E7%BB%95%E8%BF%87/">
       
       
-        <link rel="next" href="../02_%E5%87%BD%E6%95%B0%E5%AF%BC%E5%85%A5%E9%99%90%E5%88%B6%E5%92%8C%E7%BB%95%E8%BF%87/">
+        <link rel="next" href="../../%E5%A4%8D%E4%B9%A0/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%94%A8%E4%BE%8B/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>01 沙箱逃逸概述 - 韩林奇的个人博客</title>
+        <title>03 魔法函数 - 韩林奇的个人博客</title>
       
     
     
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              01 沙箱逃逸概述
+              03 魔法函数
             
           </span>
         </div>
@@ -2380,28 +2380,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    01 沙箱逃逸概述
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../01_%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8%E6%A6%82%E8%BF%B0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2410,33 +2392,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      沙箱逃逸概述
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2467,10 +2422,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../03_%E9%AD%94%E6%B3%95%E5%87%BD%E6%95%B0/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    03 魔法函数
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2479,6 +2452,33 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      魔法函数
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2600,7 +2600,7 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      沙箱逃逸概述
+      魔法函数
     </span>
   </a>
   
@@ -2624,28 +2624,100 @@
   
 
 
-  <h1>01 沙箱逃逸概述</h1>
+  <h1>03 魔法函数</h1>
 
-<h2 id="_1">沙箱逃逸概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>沙箱逃逸就是在在一个严格限制的python环境中，通过绕过限制和过滤达到执行更高权限，甚至getshell的过程。</p>
-<p>既然是想getshell，或者说是执行命令就需要一个可执行命令的包。可直接执行命令的模块有
-<div class="highlight"><pre><span></span><code><span class="n">os</span>
-<span class="n">pty</span>
-<span class="n">subprocess</span>
-<span class="n">platform</span>
-<span class="n">commands</span>
+<h2 id="_1">魔法函数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>python沙箱逃逸还是离不开继承关系和子父类关系，在查看和使用类的继承，魔法函数起到了不可比拟的作用。</p>
+<p>先看看几个常用的魔法函数
+<div class="highlight"><pre><span></span><code><span class="vm">__class__</span>
+<span class="n">返回调用的类型</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">A</span><span class="p">():</span>
+<span class="o">&gt;&gt;&gt;</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>  <span class="c1"># &lt;class &#39;__main__.A&#39;&gt;</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">__main__</span><span class="o">.</span><span class="n">A</span><span class="s1">&#39;&gt;</span>
 </code></pre></div></p>
-<p>有些时候，比如CTF，我们并不需要去执行命令，而是去读取目录下的flag文件即可，也就是说需要文件读取的模块来执行，常用的文件读取模块：
-<div class="highlight"><pre><span></span><code><span class="n">file</span>
-<span class="nb">open</span>
-<span class="n">codecs</span>
-<span class="n">fileinput</span>
+<div class="highlight"><pre><span></span><code><span class="vm">__mro__</span>
+<span class="n">查看类继承的所有父类</span><span class="err">，</span><span class="n">直到object</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">D</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">C</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">D</span><span class="o">.</span><span class="vm">__mro__</span><span class="p">)</span>  <span class="c1"># (&lt;class &#39;__main__.D&#39;&gt;, &lt;class &#39;__main__.B&#39;&gt;, &lt;class &#39;__main__.C&#39;&gt;, &lt;class &#39;__main__.A&#39;&gt;, &lt;class &#39;object&#39;&gt;)</span>
+<span class="p">(</span><span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">__main__</span><span class="o">.</span><span class="n">D</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="n">__main__</span><span class="o">.</span><span class="sa">B</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="n">__main__</span><span class="o">.</span><span class="n">C</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="n">__main__</span><span class="o">.</span><span class="n">A</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="nb">object</span><span class="s1">&#39;&gt;)</span>
 </code></pre></div>
-不过其中file只在python2中执行
-python2
-<img alt="01_01-01" src="../../../../image/%E7%BC%96%E7%A0%81/Python/%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/01_01-01.png" />
-python3
-<img alt="01_01-02" src="../../../../image/%E7%BC%96%E7%A0%81/Python/%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/01_01-02.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="n">__subclasses__</span>
+<span class="n">获取类的所有子类</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">())</span>  <span class="c1"># [&lt;class &#39;__main__.B&#39;&gt;, &lt;class &#39;__main__.C&#39;&gt;]</span>
+<span class="p">[</span><span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">__main__</span><span class="o">.</span><span class="sa">B</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="n">__main__</span><span class="o">.</span><span class="n">C</span><span class="s1">&#39;&gt;]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="vm">__bases__</span>
+<span class="n">返回所有直接父类组成的元组</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">B</span><span class="o">.</span><span class="vm">__bases__</span><span class="p">)</span>  <span class="c1"># (&lt;class &#39;__main__.A&#39;&gt;,)  不返回object类</span>
+<span class="p">(</span><span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">__main__</span><span class="o">.</span><span class="n">A</span><span class="s1">&#39;&gt;,)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="fm">__init__</span>
+<span class="n">类实例创建之后调用</span><span class="p">,</span> <span class="n">对当前对象的实例的一些初始化</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="o">...</span>         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ok&quot;</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>  <span class="c1"># 输出ok</span>
+<span class="n">ok</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="vm">__globals__</span>
+<span class="n">能够返回函数所在模块命名空间的所有变量</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="o">...</span>         <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
+<span class="o">...</span>         <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="fm">__init__</span><span class="o">.</span><span class="vm">__globals__</span>
+<span class="p">{</span><span class="s1">&#39;__name__&#39;</span><span class="p">:</span> <span class="s1">&#39;__main__&#39;</span><span class="p">,</span> <span class="s1">&#39;__doc__&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;__package__&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;__loader__&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">_frozen_importlib</span><span class="o">.</span><span class="n">BuiltinImporter</span><span class="s1">&#39;&gt;, &#39;</span><span class="n">__spec__</span><span class="s1">&#39;: None, &#39;</span><span class="vm">__annotations__</span><span class="s1">&#39;: </span><span class="si">{}</span><span class="s1">, &#39;</span><span class="n">__builtins__</span><span class="s1">&#39;: &lt;module &#39;</span><span class="n">builtins</span><span class="s1">&#39; (built-in)&gt;, &#39;</span><span class="n">A</span><span class="s1">&#39;: &lt;class &#39;</span><span class="n">__main__</span><span class="o">.</span><span class="n">A</span><span class="s1">&#39;&gt;, &#39;</span><span class="n">a</span><span class="s1">&#39;: &lt;__main__.A object at 0x7f452cdb5040&gt;}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="fm">__getattribute__</span>
+<span class="n">当类被调用的时候</span><span class="err">，</span><span class="n">无条件进入此函数</span><span class="err">。</span>
+<span class="fm">__getattr__</span>
+<span class="n">对象中不存在的属性时调用</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+<span class="o">&gt;&gt;&gt;</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="o">&gt;&gt;&gt;</span>         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Bob&quot;</span>
+<span class="o">&gt;&gt;&gt;</span>     <span class="k">def</span> <span class="fm">__getattribute__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+<span class="o">&gt;&gt;&gt;</span>         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ok&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span>     <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="o">&gt;&gt;&gt;</span>         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;getattr&#39;</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">name</span>  <span class="c1"># ok, 这时候不管调用什么属性都会返回ok，相当于拦截了属性调用。</span>
+<span class="n">ok</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">age</span>   <span class="c1"># getattr  调用不存在的属性会执行，相当于处理了AttributeError。</span>
+<span class="nb">getattr</span>
+</code></pre></div>
 
 
 
