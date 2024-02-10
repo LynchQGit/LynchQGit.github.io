@@ -1117,6 +1117,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      国密算法的典型应用场景有哪些？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipsec" class="md-nav__link">
+    <span class="md-ellipsis">
+      国密算法在端到端的IPsec隧道中的工作原理如下：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4g5g-vpdn" class="md-nav__link">
+    <span class="md-ellipsis">
+      4G/5G VPDN业务组网
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3016,6 +3043,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      国密算法的典型应用场景有哪些？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipsec" class="md-nav__link">
+    <span class="md-ellipsis">
+      国密算法在端到端的IPsec隧道中的工作原理如下：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4g5g-vpdn" class="md-nav__link">
+    <span class="md-ellipsis">
+      4G/5G VPDN业务组网
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3134,80 +3188,134 @@
 <thead>
 <tr>
 <th style="text-align: left;">对比项</th>
-<th style="text-align: left;">DES算法</th>
-<th style="text-align: left;">AES算法</th>
-<th style="text-align: left;">SM1算法</th>
-<th style="text-align: left;">SM4算法</th>
-<th style="text-align: left;">RSA算法</th>
-<th style="text-align: left;">SM2算法</th>
-<th style="text-align: left;">SHA1算法</th>
-<th style="text-align: left;">SHA256算法</th>
-<th style="text-align: left;">SM3算法</th>
+<th style="text-align: center;">DES算法</th>
+<th style="text-align: center;">AES算法</th>
+<th style="text-align: center;">SM1算法</th>
+<th style="text-align: center;">SM4算法</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: left;">计算结构</td>
-<td style="text-align: left;">难，基于标准的算数和逻辑运算，不含非线性变换</td>
-<td style="text-align: left;">极难，基于字节代换、行代换等，不含非线性变换</td>
-<td style="text-align: left;">未公开</td>
-<td style="text-align: left;">极难，基于基本轮函数+迭代，含非线性变换</td>
-<td style="text-align: left;">难，基于可逆幂模运算</td>
-<td style="text-align: left;">极难，基于椭圆曲线上点群离散对数难题</td>
-<td style="text-align: left;">函数结构类似，但SM3算法设计更复杂</td>
-<td style="text-align: left;">函数结构类似，但SM3算法设计更复杂</td>
-<td style="text-align: left;">函数结构类似，但SM3算法设计更复杂</td>
+<td style="text-align: center;">难，基于标准的算数和逻辑运算，不含非线性变换</td>
+<td style="text-align: center;">极难，基于字节代换、行代换等，不含非线性变换</td>
+<td style="text-align: center;">未公开</td>
+<td style="text-align: center;">极难，基于基本轮函数+迭代，含非线性变换</td>
 </tr>
 <tr>
 <td style="text-align: left;">分组长度</td>
-<td style="text-align: left;">64位</td>
-<td style="text-align: left;">128位</td>
-<td style="text-align: left;">128位</td>
-<td style="text-align: left;">128位</td>
-<td style="text-align: left;">亚指数级</td>
-<td style="text-align: left;">完全指数级</td>
-<td style="text-align: left;">128位</td>
-<td style="text-align: left;">256位</td>
-<td style="text-align: left;">256 位</td>
+<td style="text-align: center;">64位</td>
+<td style="text-align: center;">128位</td>
+<td style="text-align: center;">128位</td>
+<td style="text-align: center;">128位</td>
 </tr>
 <tr>
 <td style="text-align: left;">密钥长度</td>
-<td style="text-align: left;">64位（3DES为128位）</td>
-<td style="text-align: left;">128/192/256位</td>
-<td style="text-align: left;">128位</td>
-<td style="text-align: left;">128位</td>
-<td style="text-align: left;">较长</td>
-<td style="text-align: left;">较短</td>
-<td style="text-align: left;">较快</td>
-<td style="text-align: left;">略低于SHA1</td>
-<td style="text-align: left;">略低于SHA1</td>
+<td style="text-align: center;">64位（3DES为128位）</td>
+<td style="text-align: center;">128/192/256位</td>
+<td style="text-align: center;">128位</td>
+<td style="text-align: center;">128位</td>
 </tr>
 <tr>
 <td style="text-align: left;">计算轮次</td>
-<td style="text-align: left;">16轮（3DES为48轮）</td>
-<td style="text-align: left;">20/12/14轮</td>
-<td style="text-align: left;">未公开</td>
-<td style="text-align: left;">32轮</td>
-<td style="text-align: left;">慢</td>
-<td style="text-align: left;">较RAS算法快百倍以上</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;">安全性</td>
-<td style="text-align: left;">较低（3DES较高）</td>
-<td style="text-align: left;">较高</td>
-<td style="text-align: left;">与AES相当</td>
-<td style="text-align: left;">较高</td>
-<td style="text-align: left;">一般</td>
-<td style="text-align: left;">较高</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;">16轮（3DES为48轮）</td>
+<td style="text-align: center;">20/12/14轮</td>
+<td style="text-align: center;">未公开</td>
+<td style="text-align: center;">32轮</td>
 </tr>
 </tbody>
 </table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">对比项</th>
+<th style="text-align: center;">RSA算法</th>
+<th style="text-align: center;">SM2算法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">计算结构</td>
+<td style="text-align: center;">难，基于可逆幂模运算</td>
+<td style="text-align: center;">极难，基于椭圆曲线上点群离散对数难题</td>
+</tr>
+<tr>
+<td style="text-align: left;">计算复杂度</td>
+<td style="text-align: center;">亚指数级</td>
+<td style="text-align: center;">完全指数级</td>
+</tr>
+<tr>
+<td style="text-align: left;">密钥长度（相同安全性能下）</td>
+<td style="text-align: center;">较长</td>
+<td style="text-align: center;">较短</td>
+</tr>
+<tr>
+<td style="text-align: left;">密钥生成速度</td>
+<td style="text-align: center;">慢</td>
+<td style="text-align: center;">较RAS算法快百倍以上</td>
+</tr>
+<tr>
+<td style="text-align: left;">安全性</td>
+<td style="text-align: center;">一般</td>
+<td style="text-align: center;">较高</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">对比项</th>
+<th style="text-align: center;">SHA1算法</th>
+<th style="text-align: center;">SHA256算法</th>
+<th style="text-align: center;">SM3算法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">计算结构</td>
+<td style="text-align: center;">函数结构类似，但SM3算法设计更复杂</td>
+<td style="text-align: center;">函数结构类似，但SM3算法设计更复杂</td>
+<td style="text-align: center;">函数结构类似，但SM3算法设计更复杂</td>
+</tr>
+<tr>
+<td style="text-align: left;">摘要长度</td>
+<td style="text-align: center;">160位</td>
+<td style="text-align: center;">256位</td>
+<td style="text-align: center;">256 位</td>
+</tr>
+<tr>
+<td style="text-align: left;">运算速度</td>
+<td style="text-align: center;">较快</td>
+<td style="text-align: center;">略低于SHA1</td>
+<td style="text-align: center;">略低于SHA1</td>
+</tr>
+<tr>
+<td style="text-align: left;">安全性</td>
+<td style="text-align: center;">一般</td>
+<td style="text-align: center;">较高</td>
+<td style="text-align: center;">高于SHA256</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_11">国密算法的典型应用场景有哪些？<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>AD-WAN纵向IP/MPLS组网
+国密算法可以与AD-WAN技术结合，应用于IP/MPLS纵向网场景。通过AD-WAN智能运维平台，实现国密配置一键下发，在网络中构建国密数据加密通道，实现基于国密的端到端的IPsec隧道保护。</p>
+<p><img alt="gm010" src="../../../image/../docs/image/密码学与安全技术/加密技术/gm010.png" /></p>
+<h3 id="ipsec">国密算法在端到端的IPsec隧道中的工作原理如下：<a class="headerlink" href="#ipsec" title="Permanent link">&para;</a></h3>
+<p>(1) 在IKE密钥协商阶段，使用IKE协议进行密钥协商过程中，采用SM2算法生成会话密钥。</p>
+<p>(2) 在身份认证阶段，本端使用SM2和SM3算法生成身份信息的数字签名，并使用SM1或SM4算法和会话密钥对身份信息和数字签名进行加密；对端收到加密的身份信息后，使用相同的会话密钥解密，然后通过SM2和SM3算法进行身份认证。</p>
+<p>(3) 在数据传输阶段，本端使用SM2和SM3算法生成用户数据的数字签名，并使用SM1或SM4算法以及会话密钥对用户数据和数字签名进行加密；对端收到加密的用户数据后，使用相同的会话密钥解密，然后通过SM2和SM3算法进行数据完整性检查。</p>
+<p><img alt="gm011" src="../../../image/../docs/image/密码学与安全技术/加密技术/gm011.png" /></p>
+<h3 id="4g5g-vpdn">4G/5G VPDN业务组网<a class="headerlink" href="#4g5g-vpdn" title="Permanent link">&para;</a></h3>
+<p>4G/5G VPDN（Virtual Private Dialup Network，虚拟专有拨号网络）业务是在4G/5G无线网络中采用拨号方式实现的一种虚拟专有网络业务。它利用L2TP技术为客户构建与互联网隔离的隧道，以满足客户分支和总部内网通信的需求。VPDN组网同时支持将L2TP和IPsec技术结合，通过L2TP完成用户认证确保接入安全，并利用IPsec保障通信数据安全。</p>
+<p>(1) 4G/5G VPDN组网中分支网关由4G/5G路由设备担任，通过拨号接入运营商网络。</p>
+<p>(2) 运营商对4G/5G路由设备的APN（Access Point Name，接入点名称）、账户、SIM/USIM卡信息进行认证。</p>
+<p>(3) 4G/5G路由设备认证通过后被运营商判断是VPDN用户，同时由运营商AAA服务器向LAC（L2TP Access Concentrator，L2TP访问集中器）设备下发L2TP隧道属性，LAC设备将基于下发的L2TP隧道属性信息向该VPDN用户所属总部的LNS（L2TP Network Server，L2TP网络服务器）设备发起隧道建立请求。</p>
+<p>(4) L2TP隧道建立后，LAC设备会通过此隧道向LNS设备透传用户的认证信息。LNS设备向总部内网的AAA服务器发起对VPDN用户的二次认证，认证通过后为VPDN用户分配一个企业内网IP地址。分支终端用户和总部可以开始通信。</p>
+<p>(5) 分支网关与总部网关设备上均安装有国密板卡，通过IPsec协商建立起端到端的IPsec隧道，使用国密算法对传输的数据报文进行加密保护和数据完整性检查。</p>
+<p>(6) 经IPsec加密后的数据报文在LAC设备处进行L2TP封装后，通过L2TP隧道传输到LNS。</p>
+<p>(7) LNS收到数据报文后首先对L2TP报文进行解封装，然后经过IPsec解密还原出数据报文，根据报文目的IP地址转发报文</p>
+<p><img alt="gm012" src="../../../image/../docs/image/密码学与安全技术/加密技术/gm012.png" /></p>
 
 
 
