@@ -87,4 +87,5 @@ Adding arrays a and b ..
  [ 4  8 11 14]
  [12 24 45 11]]
 ```
+
 ![broadcasting](../../../image/编码/Python/Numpy/broadcasting.png)
