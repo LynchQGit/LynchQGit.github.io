@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../05_%E5%9C%A8%E6%95%B0%E5%80%BC%E8%8C%83%E5%9B%B4%E5%86%85%E5%88%9B%E5%BB%BANumpy%E6%95%B0%E7%BB%84/">
+        <link rel="prev" href="../06_NumPy%20%E5%B9%BF%E6%92%AD/">
       
       
-        <link rel="next" href="../07_NumPy%E6%95%B0%E7%BB%84%E8%BF%AD%E4%BB%A3/">
+        <link rel="next" href="../../PyTorch/00_PyTorch%E7%AE%80%E4%BB%8B/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>06 NumPy 广播 - 韩林奇的个人博客</title>
+        <title>07 NumPy数组迭代 - 韩林奇的个人博客</title>
       
     
     
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              06 NumPy 广播
+              07 NumPy数组迭代
             
           </span>
         </div>
@@ -2101,6 +2101,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_NumPy%20%E5%B9%BF%E6%92%AD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    06 NumPy 广播
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -2115,7 +2136,7 @@
           
   
   <span class="md-ellipsis">
-    06 NumPy 广播
+    07 NumPy数组迭代
   </span>
   
 
@@ -2126,7 +2147,7 @@
         
   
   <span class="md-ellipsis">
-    06 NumPy 广播
+    07 NumPy数组迭代
   </span>
   
 
@@ -2148,17 +2169,26 @@
         <li class="md-nav__item">
   <a href="#numpy" class="md-nav__link">
     <span class="md-ellipsis">
-      NumPy 广播
+      NumPy 数组迭代
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="NumPy 广播">
+    <nav class="md-nav" aria-label="NumPy 数组迭代">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      广播规则
+      迭代顺序
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      数组值的修改
     </span>
   </a>
   
@@ -2173,27 +2203,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../07_NumPy%E6%95%B0%E7%BB%84%E8%BF%AD%E4%BB%A3/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    07 NumPy数组迭代
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -2825,17 +2834,26 @@
         <li class="md-nav__item">
   <a href="#numpy" class="md-nav__link">
     <span class="md-ellipsis">
-      NumPy 广播
+      NumPy 数组迭代
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="NumPy 广播">
+    <nav class="md-nav" aria-label="NumPy 数组迭代">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      广播规则
+      迭代顺序
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      数组值的修改
     </span>
   </a>
   
@@ -2864,96 +2882,174 @@
   
 
 
-  <h1>06 NumPy 广播</h1>
+  <h1>07 NumPy数组迭代</h1>
 
-<h2 id="numpy">NumPy 广播<a class="headerlink" href="#numpy" title="Permanent link">&para;</a></h2>
-<p>在数学运算中，我们可能需要考虑不同形状的数组。NumPy 可以执行涉及不同形状数组的操作。
-例如，如果我们考虑矩阵乘法操作，如果两个矩阵的形状相同，那么这个操作将很容易执行。但是，我们可能也需要在形状不相似的情况下进行操作。</p>
-<p>考虑以下示例来相乘两个数组。
-示例
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">])</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
-</code></pre></div></p>
-<p>输出：
-<div class="highlight"><pre><span></span><code><span class="p">[</span> <span class="mi">2</span>  <span class="mi">8</span> <span class="mi">18</span> <span class="mi">32</span> <span class="mi">50</span> <span class="mi">72</span> <span class="mi">98</span><span class="p">]</span>
-</code></pre></div></p>
-<p>然而，在上面的示例中，如果我们考虑不同形状的数组，将会得到如下的错误。
-示例
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">19</span><span class="p">])</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
-</code></pre></div>
-输出：
-<div class="highlight"><pre><span></span><code>ValueError: operands could not be broadcast together with shapes (7,) (8,)
-</code></pre></div></p>
-<p>在上面的示例中，我们可以看到两个数组的形状不相似，因此它们不能相乘。NumPy 可以通过使用广播(broadcasting)的概念来执行这种操作。
-在广播中，较小的数组被广播到较大的数组，以使它们的形状相互兼容。</p>
-<h3 id="_1">广播规则<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>如果满足以下情况，就可以进行广播。</p>
-<ul>
-<li>
-<p>较小维度的数组可以在其形状中附加 '1'。</p>
-</li>
-<li>
-<p>每个输出维度的大小是维度中的输入大小的最大值。</p>
-</li>
-<li>
-<p>如果输入在特定维度上的大小与输出大小匹配，或者其值恰好为 1，则可以在计算中使用它。</p>
-</li>
-<li>
-<p>如果输入大小为 1，则在维度上使用第一个数据条目进行计算。</p>
-</li>
-</ul>
-<p>只有满足以下规则，才能将广播应用于数组。</p>
-<ul>
-<li>
-<p>所有输入数组具有相同的形状。</p>
-</li>
-<li>
-<p>数组具有相同数量的维度，每个维度的长度要么是一个公共长度，要么是 1。</p>
-</li>
-<li>
-<p>维度较少的数组可以在其形状中附加 '1'。</p>
-</li>
-</ul>
-<p>让我们看一个广播的示例。
-示例
+<h2 id="numpy">NumPy 数组迭代<a class="headerlink" href="#numpy" title="Permanent link">&para;</a></h2>
+<p>NumPy 提供了一个迭代器对象，即 <code>nditer</code>，可以使用 Python 标准的迭代器接口来迭代给定的数组。
+考虑以下示例。</p>
+<p>示例
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">printing array a..&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Printing array:&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Iterating over the array:&quot;</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">printing array b..&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Adding arrays a and b ..&quot;</span><span class="p">)</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">nditer</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
 </code></pre></div>
 输出：
-<div class="highlight"><pre><span></span><code><span class="n">printing</span> <span class="n">array</span> <span class="n">a</span><span class="o">..</span>
+<div class="highlight"><pre><span></span><code><span class="n">Printing</span> <span class="n">array</span><span class="p">:</span>
+<span class="p">[[</span> <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">4</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mi">2</span>  <span class="mi">4</span>  <span class="mi">5</span>  <span class="mi">6</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">10</span> <span class="mi">20</span> <span class="mi">39</span>  <span class="mi">3</span><span class="p">]]</span>
+<span class="n">Iterating</span> <span class="n">over</span> <span class="n">the</span> <span class="n">array</span><span class="p">:</span>
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">2</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">10</span> <span class="mi">20</span> <span class="mi">39</span> <span class="mi">3</span>
+</code></pre></div>
+迭代的顺序不遵循特殊的排序，如行优先或列优先。但是，它的意图是匹配数组的内存布局。</p>
+<p>让我们迭代上面示例中数组的转置。</p>
+<p>示例
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Printing the array:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Printing the transpose of the array:&quot;</span><span class="p">)</span>
+
+<span class="n">at</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">T</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">at</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Iterating over the transposed array:&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">nditer</span><span class="p">(</span><span class="n">at</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</code></pre></div>
+输出：
+<div class="highlight"><pre><span></span><code><span class="n">Printing</span> <span class="n">the</span> <span class="n">array</span><span class="p">:</span>
+<span class="p">[[</span> <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">4</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mi">2</span>  <span class="mi">4</span>  <span class="mi">5</span>  <span class="mi">6</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">10</span> <span class="mi">20</span> <span class="mi">39</span>  <span class="mi">3</span><span class="p">]]</span>
+<span class="n">Printing</span> <span class="n">the</span> <span class="n">transpose</span> <span class="n">of</span> <span class="n">the</span> <span class="n">array</span><span class="p">:</span>
+<span class="p">[[</span> <span class="mi">1</span>  <span class="mi">2</span> <span class="mi">10</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mi">2</span>  <span class="mi">4</span> <span class="mi">20</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mi">3</span>  <span class="mi">5</span> <span class="mi">39</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mi">4</span>  <span class="mi">6</span>  <span class="mi">3</span><span class="p">]]</span>
+<span class="n">Iterating</span> <span class="n">over</span> <span class="n">the</span> <span class="n">transposed</span> <span class="n">array</span><span class="p">:</span>
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">2</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">10</span> <span class="mi">20</span> <span class="mi">39</span> <span class="mi">3</span>
+</code></pre></div></p>
+<h3 id="_1">迭代顺序<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>正如我们所知，有两种方式将值存储到 numpy 数组中：</p>
+<ul>
+<li>
+<p>F 风格顺序</p>
+</li>
+<li>
+<p>C 风格顺序</p>
+</li>
+</ul>
+<p>让我们看一个示例，演示 numpy 迭代器如何处理特定的顺序（F 或 C）。</p>
+<p>示例
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Printing the array:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Printing the transpose of the array:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">at</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">T</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">at</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Iterating over the transposed array</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">nditer</span><span class="p">(</span><span class="n">at</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Sorting the transposed array in C-style:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Iterating over the C-style array:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">nditer</span><span class="p">(</span><span class="n">at</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">at</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="s1">&#39;F&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Iterating over the F-style array:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">nditer</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</code></pre></div></p>
+<p>输出：
+<div class="highlight"><pre><span></span><code><span class="n">Iterating</span> <span class="n">over</span> <span class="n">the</span> <span class="n">transposed</span> <span class="n">array</span>
+
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">2</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">10</span> <span class="mi">20</span> <span class="mi">39</span> <span class="mi">3</span>
+<span class="n">Sorting</span> <span class="n">the</span> <span class="n">transposed</span> <span class="n">array</span> <span class="ow">in</span> <span class="n">C</span><span class="o">-</span><span class="n">style</span><span class="p">:</span>
+
+<span class="n">Iterating</span> <span class="n">over</span> <span class="n">the</span> <span class="n">C</span><span class="o">-</span><span class="n">style</span> <span class="n">array</span><span class="p">:</span>
+
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">10</span> <span class="mi">2</span> <span class="mi">4</span> <span class="mi">20</span> <span class="mi">3</span> <span class="mi">5</span> <span class="mi">39</span> <span class="mi">4</span> <span class="mi">6</span> <span class="mi">3</span>
+<span class="n">Iterating</span> <span class="n">over</span> <span class="n">the</span> <span class="n">F</span><span class="o">-</span><span class="n">style</span> <span class="n">array</span><span class="p">:</span>
+
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">2</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">10</span> <span class="mi">20</span> <span class="mi">39</span> <span class="mi">3</span>
+<span class="n">我们可以在定义迭代器对象本身时指定顺序</span> <span class="s1">&#39;C&#39;</span> <span class="n">或</span> <span class="s1">&#39;F&#39;</span><span class="err">。</span><span class="n">考虑以下示例</span><span class="err">。</span>
+</code></pre></div></p>
+<p>示例
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Printing the array:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Printing the transpose of the array:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">at</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">T</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">at</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Iterating over the transposed array</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">nditer</span><span class="p">(</span><span class="n">at</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Sorting the transposed array in C-style:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Iterating over the C-style array:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">nditer</span><span class="p">(</span><span class="n">at</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</code></pre></div>
+输出：
+<div class="highlight"><pre><span></span><code><span class="n">Iterating</span> <span class="n">over</span> <span class="n">the</span> <span class="n">transposed</span> <span class="n">array</span>
+
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">2</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">10</span> <span class="mi">20</span> <span class="mi">39</span> <span class="mi">3</span>
+<span class="n">Sorting</span> <span class="n">the</span> <span class="n">transposed</span> <span class="n">array</span> <span class="ow">in</span> <span class="n">C</span><span class="o">-</span><span class="n">style</span><span class="p">:</span>
+
+
+<span class="n">Iterating</span> <span class="n">over</span> <span class="n">the</span> <span class="n">C</span><span class="o">-</span><span class="n">style</span> <span class="n">array</span><span class="p">:</span>
+
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">10</span> <span class="mi">2</span> <span class="mi">4</span> <span class="mi">20</span> <span class="mi">3</span> <span class="mi">5</span> <span class="mi">39</span> <span class="mi">4</span> <span class="mi">6</span> <span class="mi">3</span>
+</code></pre></div></p>
+<h3 id="_2">数组值的修改<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>在迭代过程中，我们不能修改数组元素，因为与迭代器对象关联的 <code>op-flag</code> 设置为 <code>readonly</code>。</p>
+<p>然而，我们可以将此标志设置为 <code>readwrite</code> 或 <code>writeonly</code>，以修改数组值。考虑以下示例。</p>
+<p>示例
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Printing the original array:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Iterating over the modified array</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">nditer</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">op_flags</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;readwrite&#39;</span><span class="p">]):</span>
+    <span class="n">x</span><span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</code></pre></div>
+输出：
+<div class="highlight"><pre><span></span><code><span class="n">Printing</span> <span class="n">the</span> <span class="n">original</span> <span class="n">array</span><span class="p">:</span>
+
 <span class="p">[[</span> <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">4</span><span class="p">]</span>
  <span class="p">[</span> <span class="mi">2</span>  <span class="mi">4</span>  <span class="mi">5</span>  <span class="mi">6</span><span class="p">]</span>
  <span class="p">[</span><span class="mi">10</span> <span class="mi">20</span> <span class="mi">39</span>  <span class="mi">3</span><span class="p">]]</span>
 
-<span class="n">printing</span> <span class="n">array</span> <span class="n">b</span><span class="o">..</span>
-<span class="p">[</span><span class="mi">2</span> <span class="mi">4</span> <span class="mi">6</span> <span class="mi">8</span><span class="p">]</span>
+<span class="n">Iterating</span> <span class="n">over</span> <span class="n">the</span> <span class="n">modified</span> <span class="n">array</span>
 
-<span class="n">Adding</span> <span class="n">arrays</span> <span class="n">a</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">..</span>
-<span class="p">[[</span> <span class="mi">3</span>  <span class="mi">6</span>  <span class="mi">9</span> <span class="mi">12</span><span class="p">]</span>
- <span class="p">[</span> <span class="mi">4</span>  <span class="mi">8</span> <span class="mi">11</span> <span class="mi">14</span><span class="p">]</span>
- <span class="p">[</span><span class="mi">12</span> <span class="mi">24</span> <span class="mi">45</span> <span class="mi">11</span><span class="p">]]</span>
+<span class="mi">3</span> <span class="mi">6</span> <span class="mi">9</span> <span class="mi">12</span> <span class="mi">6</span> <span class="mi">12</span> <span class="mi">15</span> <span class="mi">18</span> <span class="mi">30</span> <span class="mi">60</span> <span class="mi">117</span> <span class="mi">9</span>
 </code></pre></div></p>
-<p><img alt="broadcasting" src="../../../../image/%E7%BC%96%E7%A0%81/Python/Numpy/broadcasting.png" /></p>
 
 
 
