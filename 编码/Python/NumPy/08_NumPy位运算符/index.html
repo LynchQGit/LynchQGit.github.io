@@ -9,8 +9,10 @@
       
       
       
-        <link rel="prev" href="../%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%94%A8%E4%BE%8B/">
+        <link rel="prev" href="../07_NumPy%E6%95%B0%E7%BB%84%E8%BF%AD%E4%BB%A3/">
       
+      
+        <link rel="next" href="../../PyTorch/00_PyTorch%E7%AE%80%E4%BB%8B/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -18,7 +20,7 @@
     
     
       
-        <title>难理解的基础知识 - 韩林奇的个人博客</title>
+        <title>08 NumPy位运算符 - 韩林奇的个人博客</title>
       
     
     
@@ -70,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-object-oriented-programming-oop" class="md-skip">
+        <a href="#numpy" class="md-skip">
           跳转至
         </a>
       
@@ -106,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              难理解的基础知识
+              08 NumPy位运算符
             
           </span>
         </div>
@@ -1934,6 +1936,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1942,11 +1946,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_9_2_3" id="__nav_9_2_3_label" tabindex="0">
@@ -1960,7 +1964,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9_2_3">
             <span class="md-nav__icon md-icon"></span>
             NumPy
@@ -1974,7 +1978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NumPy/00_%E5%89%8D%E8%A8%80/" class="md-nav__link">
+      <a href="../00_%E5%89%8D%E8%A8%80/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1995,7 +1999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NumPy/01_Ndarray/" class="md-nav__link">
+      <a href="../01_Ndarray/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2016,7 +2020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NumPy/02_NumPy%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
+      <a href="../02_NumPy%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2037,7 +2041,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NumPy/03_Numpy%E6%95%B0%E7%BB%84%E5%88%9B%E5%BB%BA/" class="md-nav__link">
+      <a href="../03_Numpy%E6%95%B0%E7%BB%84%E5%88%9B%E5%BB%BA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2058,7 +2062,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NumPy/04_%E4%BB%8E%E7%8E%B0%E6%9C%89%E6%95%B0%E6%8D%AE%E5%88%9B%E5%BB%BANumpy%E6%95%B0%E7%BB%84/" class="md-nav__link">
+      <a href="../04_%E4%BB%8E%E7%8E%B0%E6%9C%89%E6%95%B0%E6%8D%AE%E5%88%9B%E5%BB%BANumpy%E6%95%B0%E7%BB%84/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2079,7 +2083,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NumPy/05_%E5%9C%A8%E6%95%B0%E5%80%BC%E8%8C%83%E5%9B%B4%E5%86%85%E5%88%9B%E5%BB%BANumpy%E6%95%B0%E7%BB%84/" class="md-nav__link">
+      <a href="../05_%E5%9C%A8%E6%95%B0%E5%80%BC%E8%8C%83%E5%9B%B4%E5%86%85%E5%88%9B%E5%BB%BANumpy%E6%95%B0%E7%BB%84/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2100,7 +2104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NumPy/06_NumPy%20%E5%B9%BF%E6%92%AD/" class="md-nav__link">
+      <a href="../06_NumPy%20%E5%B9%BF%E6%92%AD/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2121,7 +2125,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NumPy/07_NumPy%E6%95%B0%E7%BB%84%E8%BF%AD%E4%BB%A3/" class="md-nav__link">
+      <a href="../07_NumPy%E6%95%B0%E7%BB%84%E8%BF%AD%E4%BB%A3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2139,10 +2143,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../NumPy/08_NumPy%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    08 NumPy位运算符
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2151,6 +2173,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#numpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      NumPy 位运算符
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NumPy 位运算符">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      位与运算
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      位与运算真值表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      位或运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      位或运算真值表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      非运算
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      左移运算
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      右移运算
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2657,8 +2775,6 @@
                 
   
   
-    
-  
   
   
     
@@ -2667,11 +2783,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_6" >
         
           
           <label class="md-nav__link" for="__nav_9_2_6" id="__nav_9_2_6_label" tabindex="0">
@@ -2685,7 +2801,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_2_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_2_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9_2_6">
             <span class="md-nav__icon md-icon"></span>
             复习
@@ -2699,7 +2815,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%94%A8%E4%BE%8B/" class="md-nav__link">
+      <a href="../../%E5%A4%8D%E4%B9%A0/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%94%A8%E4%BE%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2717,28 +2833,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    难理解的基础知识
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../%E5%A4%8D%E4%B9%A0/%E9%9A%BE%E7%90%86%E8%A7%A3%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2747,159 +2845,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-object-oriented-programming-oop" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. 面向对象编程（Object-Oriented Programming, OOP）
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. 面向对象编程（Object-Oriented Programming, OOP）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      类与对象
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      继承
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      多态
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. 迭代器与生成器
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. 迭代器与生成器">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      迭代器
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      生成器
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      3 异常处理
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. 并发与多线程
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. 并发与多线程">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      并发
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      多线程
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. 文件操作和异常处理
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. 迭代与推导式
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2953,19 +2898,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-object-oriented-programming-oop" class="md-nav__link">
+  <a href="#numpy" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 面向对象编程（Object-Oriented Programming, OOP）
+      NumPy 位运算符
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. 面向对象编程（Object-Oriented Programming, OOP）">
+    <nav class="md-nav" aria-label="NumPy 位运算符">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      类与对象
+      位与运算
     </span>
   </a>
   
@@ -2974,7 +2919,7 @@
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      继承
+      位与运算真值表
     </span>
   </a>
   
@@ -2983,31 +2928,16 @@
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      多态
+      位或运算符
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. 迭代器与生成器
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. 迭代器与生成器">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      迭代器
+      位或运算真值表
     </span>
   </a>
   
@@ -3016,40 +2946,16 @@
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      生成器
+      非运算
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      3 异常处理
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. 并发与多线程
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. 并发与多线程">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      并发
+      左移运算
     </span>
   </a>
   
@@ -3058,7 +2964,7 @@
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
-      多线程
+      右移运算
     </span>
   </a>
   
@@ -3066,24 +2972,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. 文件操作和异常处理
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. 迭代与推导式
-    </span>
-  </a>
   
 </li>
       
@@ -3105,149 +2993,198 @@
   
 
 
-  <h1>难理解的基础知识</h1>
+  <h1>08 NumPy位运算符</h1>
 
-<p>在Python的基础知识中，有一些概念和特性可能相对难以理解。下面是一些较为常见且具有挑战性的主题，每个主题都会提供实例以帮助解释。</p>
-<h2 id="1-object-oriented-programming-oop">1. 面向对象编程（Object-Oriented Programming, OOP）<a class="headerlink" href="#1-object-oriented-programming-oop" title="Permanent link">&para;</a></h2>
-<p>面向对象编程是一种程序设计思想，它将代码组织成可重用的对象，并通过定义类、创建对象和调用方法来实现。以下是一些OOP的关键概念：</p>
-<h3 id="_1">类与对象<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>类是一个模板，描述了对象的属性和操作。对象是类的实例，可以访问类的属性和方法。例如，下面是一个简单的类和对象的示例：
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+<h2 id="numpy">NumPy 位运算符<a class="headerlink" href="#numpy" title="Permanent link">&para;</a></h2>
+<p>NumPy 提供了以下位运算符。</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>运算符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>bitwise_and</td>
+<td>用于计算相应数组元素之间的位与运算。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bitwise_or</td>
+<td>用于计算相应数组元素之间的位或运算。</td>
+</tr>
+<tr>
+<td>3</td>
+<td>invert</td>
+<td>用于计算数组元素的位非运算。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>left_shift</td>
+<td>用于将元素的二进制表示的位向左移动。</td>
+</tr>
+<tr>
+<td>5</td>
+<td>right_shift</td>
+<td>用于将元素的二进制表示的位向右移动。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_1">位与运算<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>NumPy 提供了 <code>bitwise_and()</code> 函数，用于计算两个操作数的位与运算。</p>
+<p>位与运算在操作数的二进制表示的相应位上执行。如果操作数中的相应位都设置为 1，则仅在 AND 结果中的相应位将设置为 1，否则将设置为 0。</p>
+<p>示例
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-    <span class="k">def</span> <span class="nf">bark</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> is barking!&quot;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">12</span>
 
-<span class="n">my_dog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;Buddy&quot;</span><span class="p">)</span>
-<span class="n">my_dog</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>  <span class="c1"># 输出结果: Buddy is barking!</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a 的二进制表示:&quot;</span><span class="p">,</span> <span class="nb">bin</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b 的二进制表示:&quot;</span><span class="p">,</span> <span class="nb">bin</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a 和 b 的位与运算: &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">bitwise_and</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
 </code></pre></div></p>
-<h3 id="_2">继承<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>继承允许创建一个新类，从现有的类中继承属性和方法。子类可以重写或扩展父类的功能。例如，以下示例说明子类继承父类并添加新方法：
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">eat</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The animal is eating.&quot;</span><span class="p">)</span>
-
-<span class="k">class</span> <span class="nc">Cat</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">meow</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Meow!&quot;</span><span class="p">)</span>
-
-<span class="n">my_cat</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">()</span>
-<span class="n">my_cat</span><span class="o">.</span><span class="n">eat</span><span class="p">()</span>  <span class="c1"># 输出结果: The animal is eating.</span>
-<span class="n">my_cat</span><span class="o">.</span><span class="n">meow</span><span class="p">()</span>  <span class="c1"># 输出结果: Meow!</span>
+<p>输出:
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="n">的二进制表示</span><span class="p">:</span> <span class="mb">0b1010</span>
+<span class="n">b</span> <span class="n">的二进制表示</span><span class="p">:</span> <span class="mb">0b1100</span>
+<span class="n">a</span> <span class="n">和</span> <span class="n">b</span> <span class="n">的位与运算</span><span class="p">:</span>  <span class="mi">8</span>
 </code></pre></div></p>
-<h3 id="_3">多态<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>多态允许不同类的对象对相同的方法做出不同的响应。这使得代码更灵活、可扩展和可维护。例如，以下示例演示了不同类型的对象调用相同的方法：
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Shape</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+<h3 id="_2">位与运算真值表<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>两位的位与运算结果仅在两位都为 1 时为 1，否则为 0。</p>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>位与 (A, B)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_3">位或运算符<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>NumPy 提供了 <code>bitwise_or()</code> 函数，用于计算两个操作数的位或运算。</p>
+<p>位或运算在操作数的二进制表示的相应位上执行。如果操作数中的相应位中至少有一个设置为 1，则 OR 结果中的相应位将设置为 1；否则将设置为 0。</p>
+<p>示例
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="k">class</span> <span class="nc">Circle</span><span class="p">(</span><span class="n">Shape</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Drawing a circle.&quot;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">90</span>
 
-<span class="k">class</span> <span class="nc">Rectangle</span><span class="p">(</span><span class="n">Shape</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Drawing a rectangle.&quot;</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">draw_shape</span><span class="p">(</span><span class="n">shape</span><span class="p">):</span>
-    <span class="n">shape</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
-
-<span class="n">circle</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">()</span>
-<span class="n">rectangle</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">()</span>
-
-<span class="n">draw_shape</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>  <span class="c1"># 输出结果: Drawing a circle.</span>
-<span class="n">draw_shape</span><span class="p">(</span><span class="n">rectangle</span><span class="p">)</span>  <span class="c1"># 输出结果: Drawing a rectangle.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a 的二进制表示:&quot;</span><span class="p">,</span> <span class="nb">bin</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b 的二进制表示:&quot;</span><span class="p">,</span> <span class="nb">bin</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a 和 b 的位或运算: &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">bitwise_or</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
 </code></pre></div></p>
-<h2 id="2">2. 迭代器与生成器<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
-<p>迭代器和生成器是Python中处理可迭代对象的重要概念，它们可以逐个地处理序列中的元素。</p>
-<h3 id="_4">迭代器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>迭代器是一个实现了__iter__()和__next__()方法的对象。它通过__next__()方法返回序列中的下一个元素，并在没有更多元素时引发StopIteration异常。以下是一个使用迭代器遍历列表的示例：
-<div class="highlight"><pre><span></span><code>numbers = [1, 2, 3]
-iter_numbers = iter(numbers)
-
-print(next(iter_numbers))  # 输出结果: 1
-print(next(iter_numbers))  # 输出结果: 2
-print(next(iter_numbers))  # 输出结果: 3
+<p>输出:
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="n">的二进制表示</span><span class="p">:</span> <span class="mb">0b110010</span>
+<span class="n">b</span> <span class="n">的二进制表示</span><span class="p">:</span> <span class="mb">0b1011010</span>
+<span class="n">a</span> <span class="n">和</span> <span class="n">b</span> <span class="n">的位或运算</span><span class="p">:</span>  <span class="mi">122</span>
 </code></pre></div></p>
-<h3 id="_5">生成器<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>生成器是一种特殊的迭代器，它使用yield关键字来定义。生成器函数会暂停执行并返回一个值，然后在下一次访问时继续执行。这样可以节省内存，并使代码更简洁。以下是一个生成器函数的示例：
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">even_numbers</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">yield</span> <span class="n">i</span>
+<h3 id="_4">位或运算真值表<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>两位的位或运算结果仅在两位中至少有一个为 1 时为 1，否则为 0。</p>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>位或 (A, B)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">非运算<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>用于计算给定操作数的位非运算。如果在函数中传递了有符号整数，则返回 2 的补码。</p>
+<p>考虑以下示例。</p>
+<p>示例
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">even_numbers</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>  <span class="c1"># 输出结果: 0, 2, 4, 6, 8</span>
-</code></pre></div></p>
-<h2 id="3">3 异常处理<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
-<p>异常处理是一种捕获和处理程序中出现的错误的机制。Python提供了try-except-finally语句来处理异常。
-<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="mi">0</span>
-<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Divide by zero error!&quot;</span><span class="p">)</span>
-<span class="k">finally</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cleanup code.&quot;</span><span class="p">)</span>
-</code></pre></div></p>
-<p>上述代码中，我们尝试将10除以0，这会引发ZeroDivisionError异常。通过使用try-except-finally语句，我们可以在发生异常时捕获并处理它。无论是否发生异常，finally块中的代码都会执行。</p>
-<h2 id="4">4. 并发与多线程<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
-<p>并发和多线程是指同时执行多个任务的能力。</p>
-<h3 id="_6">并发<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>并发是指程序设计的一种方式，使得多个任务在同一时间段内交替执行。Python中的threading模块可以用于实现并发。
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">threading</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">20</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;二进制表示:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">binary_repr</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
 
-<span class="k">def</span> <span class="nf">print_numbers</span><span class="p">():</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">invert</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
 
-<span class="k">def</span> <span class="nf">print_letters</span><span class="p">():</span>
-    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">]:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
-
-<span class="n">t1</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">print_numbers</span><span class="p">)</span>
-<span class="n">t2</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">print_letters</span><span class="p">)</span>
-
-<span class="n">t1</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-<span class="n">t2</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-
-<span class="n">t1</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
-<span class="n">t2</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
-</code></pre></div></p>
-<p>上述示例中，我们使用线程t1和t2来并发地打印数字和字母。</p>
-<h3 id="_7">多线程<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<p>多线程是指在一个进程中运行多个线程的能力。Python使用全局解释器锁（Global Interpreter Lock, GIL）来确保同一时间只有一个线程执行Python字节码。因此，在CPU密集型任务中，多线程可能无法实现真正的并行ism。</p>
-<h2 id="5">5. 文件操作和异常处理<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
-<p>文件操作是一种常见的编程任务，而异常处理则用于在文件操作中处理潜在的错误。
-<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-        <span class="n">contents</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;File not found!&quot;</span><span class="p">)</span>
-<span class="k">except</span> <span class="ne">PermissionError</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Permission denied!&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
-<span class="k">finally</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cleanup code.&quot;</span><span class="p">)</span>
-</code></pre></div></p>
-<p>上述代码中，我们使用with语句打开一个文件进行读取操作。如果文件不存在或无法访问，会引发相应的异常（FileNotFoundError和PermissionError）。通过使用try-except-else-finally语句，我们可以捕获并处理这些异常。</p>
-<h2 id="6">6. 迭代与推导式<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
-<p>迭代是指遍历序列中的元素的过程。Python提供了多种迭代方式，如for循环、列表推导式、生成器表达式等。
-<div class="highlight"><pre><span></span><code><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;cherry&quot;</span><span class="p">]</span>
-
-<span class="c1"># 使用for循环迭代</span>
-<span class="k">for</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">fruit</span><span class="p">)</span>
-
-<span class="c1"># 使用列表推导式创建新列表</span>
-<span class="n">upper_fruits</span> <span class="o">=</span> <span class="p">[</span><span class="n">fruit</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">for</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">upper_fruits</span><span class="p">)</span>  <span class="c1"># 输出结果: [&#39;APPLE&#39;, &#39;BANANA&#39;, &#39;CHERRY&#39;]</span>
-
-<span class="c1"># 使用生成器表达式计算总长度</span>
-<span class="n">total_length</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fruit</span><span class="p">)</span> <span class="k">for</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">total_length</span><span class="p">)</span>  <span class="c1"># 输出结果: 18</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;二进制表示: &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">binary_repr</span><span class="p">(</span><span class="mi">235</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
 </code></pre></div>
-上述示例展示了如何使用不同的迭代方式对列表中的元素进行操作。</p>
+输出:
+<div class="highlight"><pre><span></span><code><span class="n">二进制表示</span><span class="p">:</span> <span class="mi">00010100</span>
+<span class="p">[</span><span class="mi">235</span><span class="p">]</span>
+<span class="n">二进制表示</span><span class="p">:</span>  <span class="mi">11101011</span>
+</code></pre></div></p>
+<h3 id="_6">左移运算<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>它将操作数的二进制表示中的位向左移动指定的位置。相同数量的 0 从右侧附加。考虑以下示例。</p>
+<p>示例
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;20 向左移动 3 位:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">left_shift</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;20 的 8 位二进制表示:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">binary_repr</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;160 的 8 位二进制表示:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">binary_repr</span><span class="p">(</span><span class="mi">160</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+</code></pre></div>
+输出:
+<div class="highlight"><pre><span></span><code><span class="mi">20</span> <span class="n">向左移动</span> <span class="mi">3</span> <span class="n">位</span><span class="p">:</span> <span class="mi">160</span>
+<span class="mi">20</span> <span class="n">的</span> <span class="mi">8</span> <span class="n">位二进制表示</span><span class="p">:</span> <span class="mi">00010100</span>
+<span class="mi">160</span> <span class="n">的</span> <span class="mi">8</span> <span class="n">位二进制表示</span><span class="p">:</span> <span class="mi">10100000</span>
+</code></pre></div></p>
+<h3 id="_7">右移运算<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>它将操作数的二进制表示中的位向右移动指定的位置。相同数量的 0 从左侧附加。考虑以下示例。</p>
+<p>示例
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;20 向右移动 3 位:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">right_shift</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;20 的 8 位二进制表示:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">binary_repr</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;160 的 8 位二进制表示:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">binary_repr</span><span class="p">(</span><span class="mi">160</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+</code></pre></div>
+输出:
+<div class="highlight"><pre><span></span><code><span class="mi">20</span> <span class="n">向右移动</span> <span class="mi">3</span> <span class="n">位</span><span class="p">:</span> <span class="mi">2</span>
+<span class="mi">20</span> <span class="n">的</span> <span class="mi">8</span> <span class="n">位二进制表示</span><span class="p">:</span> <span class="mi">00010100</span>
+<span class="mi">160</span> <span class="n">的</span> <span class="mi">8</span> <span class="n">位二进制表示</span><span class="p">:</span> <span class="mi">10100000</span>
+</code></pre></div></p>
 
 
 
