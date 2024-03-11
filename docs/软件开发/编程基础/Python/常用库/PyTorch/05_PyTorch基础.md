@@ -3,11 +3,11 @@
 理解使用`PyTorch`所需的所有基本概念至关重要。PyTorch完全基于`张量（Tensors）`。`张量`具有执行操作的功能。除此之外，还有许多其他概念是执行任务所需的。
 
 现在，逐一理解所有这些概念，以深入了解PyTorch。
-![05_01-01](../../..//image/编码/Python/PyTorch/05_01-01.png)
+![05_01-01](../../../../../image/软件开发/编程基础/Python/常用库/PyTorch/05_01-01.png)
 
 ### 矩阵或张量
 张量是PyTorch的关键组件。我们可以说PyTorch完全基于张量。在数学术语中，数字的矩形数组称为矩阵。在NumPy库中，这些矩阵被称为ndaaray。在PyTorch中，它被称为张量。张量是一个n维数据容器。例如，在PyTorch中，1D张量是一个向量，2D张量是一个矩阵，3D张量是一个立方体，4D张量是一个立方体向量。
-![05_01-02](../../..//image/编码/Python/PyTorch/05_01-02.png)
+![05_01-02](../../../../..//image/软件开发/编程基础/Python/常用库/PyTorch/05_01-02.png)
 
 上面的矩阵表示具有三行和两列的2D张量。
 
@@ -33,7 +33,7 @@ print(pyTensor)
 ```python
 tensor ([[3., 4.],[8., 5.]])
 ```
-![05_02-01](../../..//image/编码/Python/PyTorch/05_02-01.png)
+![05_02-01](../../../../../image/软件开发/编程基础/Python/常用库/PyTorch/05_02-01.png)
 
 #### 创建具有随机数和全部为1的张量
 要创建一个具有随机数的张量，您必须使用rand()方法，要创建一个全部为1的张量，您必须使用torch的ones()。为了生成随机数，torch的rand之外还将使用带有0参数的manual_seed方法。
@@ -52,7 +52,7 @@ print(rand_t)
 Tensor ([[1., 1.],[1., 1.]])
 tensor ([[0.4963, 0.7682],[0.0885, 0.1320]])
 ```
-![05_03-01](../../../image/编码/Python/PyTorch/05_03-01.png)
+![05_03-01](../../../../../image/软件开发/编程基础/Python/常用库/PyTorch/05_03-01.png)
 
 #### 从NumPy数组创建张量
 要从NumPy数组创建张量，我们必须创建一个NumPy数组。一旦创建了NumPy数组，我们必须将其作为参数传递给from_numpy()。此方法将NumPy数组转换为张量。
@@ -70,11 +70,11 @@ print(np1_arr_from_Tensor)
 ```python
 [[1. 1.] [1. 1.]]
 ```
-![05_04-01](../../../image/编码/Python/PyTorch/05_04-01.png)
+![05_04-01](../../../../../image/软件开发/编程基础/Python/常用库/PyTorch/05_04-01.png)
 
 ### 张量运算
 张量类似于数组，因此我们对数组执行的所有操作也可以应用于张量。
-![05_05-01](../../../image/编码/Python/PyTorch/05_05-01.png)
+![05_05-01](../../../../../image/软件开发/编程基础/Python/常用库/PyTorch/05_05-01.png)
 #### 改变张量的大小
 我们可以使用张量的size属性来调整张量的大小。我们使用Tensor.view()来调整张量的大小。调整张量的大小意味着将2x2维张量转换为4x1或4x4维张量转换为16x1等。要打印张量的大小，我们使用Tensor.size()方法。
 
@@ -91,7 +91,7 @@ print(pyt_Tensor)
 torch.Size ([2, 2])
 tensor ([1., 1., 1., 1.])
 ```
-![05_05-02](../../../image/编码/Python/PyTorch/05_05-02.png)
+![05_05-02](../../../../../image/软件开发/编程基础/Python/常用库/PyTorch/05_05-02.png)
 
 #### 数学运算
 所有的数学运算，如加法、减法、除法和乘法，都可以在张量上执行。torch可以执行数学运算。我们使用torch.add()、torch.sub()、torch.mul()和torch.div()来执行张量上的操作。
@@ -113,7 +113,7 @@ print(Tensor_a)
 tensor ([[2., 2.], [2., 2.]])
 tensor ([[2., 2.], [2., 2.]])
 ```
-![05_06-01](../../../image/编码/Python/PyTorch/05_06-01.png)
+![05_06-01](../../../../../image/软件开发/编程基础/Python/常用库/PyTorch/05_06-01.png)
 
 #### 均值和标准差
 我们可以计算张量的标准差，无论是一维还是多维。在我们的数学计算中，我们首先要计算均值，然后在给定的数据上应用以下公式。
@@ -136,7 +136,7 @@ print(std_dev)
 tensor (3.)
 tensor (1.5811)
 ```
-![05_07-01](../../../image/编码/Python/PyTorch/05_07-01.png)
+![05_07-01](../../../../../image/软件开发/编程基础/Python/常用库/PyTorch/05_07-01.png)
 
 ### 变量和梯度
 该包的中心类是autograd.variable。其主要任务是包装一个Tensor。它支持几乎所有在其上定义的操作。您可以调用.backword()，只有在完成计算时才计算所有梯度。
@@ -154,7 +154,7 @@ pyt_var = Variable(torch.ones((2, 2)), requires_grad = True)
 print(pyt_var)
 ```
 上述代码的行为与张量相同，因此我们可以以相同的方式应用所有操作。
-![05_07-02](../../../image/编码/Python/PyTorch/05_07-02.png)
+![05_07-02](../../../../../image/软件开发/编程基础/Python/常用库/PyTorch/05_07-02.png)
 让我们看看如何在PyTorch中计算梯度。
 示例
 ```python
@@ -174,4 +174,4 @@ print(x.grad)               # get the gradient of variable x
 ```python
 tensor([20.])
 ```
-![05_07-03](../../../image/编码/Python/PyTorch/05_07-03.png)
+![05_07-03](../../../../../image/软件开发/编程基础/Python/常用库/PyTorch/05_07-03.png)

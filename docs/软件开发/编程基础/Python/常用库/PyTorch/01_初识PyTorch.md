@@ -7,7 +7,7 @@ PyTorch提供的高级功能如下：
 提供基于自动微分系统的带有磁带的 深度神经网络。
 
 PyTorch的开发目的是在实现和构建 深度学习神经网络 时提供高度的灵活性和速度。正如你已经知道的，它是用于 Python 编程语言的机器学习库，因此安装、运行和理解都非常简单。PyTorch是完全符合Python风格的（使用广泛采用的Python习惯用语，而不是编写Java和C++代码），因此可以快速成功地构建 神经网络模型。
-![01_01-01](../../../image/编码/Python/PyTorch/01_01-01.png)
+![01_01-01](../../../../../image/软件开发/编程基础/Python/常用库/PyTorch/01_01-01.png)
 
 ### PyTorch的历史
 PyTorch 于2016年发布。许多研究人员越来越愿意采用PyTorch。它由 Facebook 运营。Facebook还运营 Caffe2（用于快速特征嵌入的卷积架构）。将PyTorch定义的模型转换为Caffe2是一项具有挑战性的任务。为此，Facebook和Microsoft于2017年9月发明了 开放神经网络交换（ONNX）。简而言之，ONNX是为在框架之间转换模型而开发的。Caffe2在2018年3月并入了PyTorch。
