@@ -10,7 +10,7 @@ import numpy as np
 a = np.array
 ```
 参考以下图像
-![Ndarray_01](../../../../../image/软件开发/编程基础/Python/常用库/NumPy/Ndarray_01.png)
+![Ndarray_01](../../../../../image/软件开发/编程基础/Python/常用库/Numpy/Ndarray_01.png)
 
 我们还可以将一个集合对象传递到array例程中，以创建等效的n维数组。语法如下。
 ```python
@@ -34,7 +34,7 @@ import numpy as np
 a = np.array([1, 2, 3])
 print(a)
 ```
-![Ndarray_02](../../../../../image/软件开发/编程基础/Python/常用库/NumPy/Ndarray_02.png)
+![Ndarray_02](../../../../../image/软件开发/编程基础/Python/常用库/Numpy/Ndarray_02.png)
 
 要创建多维数组对象，请使用以下语法。
 ```python
@@ -42,7 +42,7 @@ import numpy as np
 a = np.array([[1, 2], [3, 4]])
 print(a)
 ```
-![Ndarray_03](../../../../../image/软件开发/编程基础/Python/常用库/NumPy/Ndarray_03.png)
+![Ndarray_03](../../../../../image/软件开发/编程基础/Python/常用库/Numpy/Ndarray_03.png)
 
 要更改数组元素的数据类型，请在集合后面提到数据类型的名称。
 ```python
@@ -50,7 +50,7 @@ import numpy as np
 a = np.array([1, 2], dtype=complex)
 print(a)
 ```
-![Ndarray_04](../../../../../image/软件开发/编程基础/Python/常用库/NumPy/Ndarray_04.png)
+![Ndarray_04](../../../../../image/软件开发/编程基础/Python/常用库/Numpy/Ndarray_04.png)
 
 ### 查找数组的维度
 可以使用ndim函数查找数组的维度。
@@ -59,7 +59,7 @@ import numpy as np
 arr = np.array([[1, 2, 3, 4], [4, 5, 6, 7], [9, 10, 11, 23]])
 print(arr.ndim)
 ```
-![Ndarray_05](../../../../../image/软件开发/编程基础/Python/常用库/NumPy/Ndarray_05.png)
+![Ndarray_05](../../../../../image/软件开发/编程基础/Python/常用库/Numpy/Ndarray_05.png)
 
 ### 查找每个数组元素的大小
 使用itemsize函数可以获取每个数组项的大小。它返回每个数组元素占用的字节数。
@@ -105,7 +105,7 @@ print("形状:", a.shape)
 与ndarray对象关联的reshape()函数用于重塑数组。它接受两个参数，表示数组的新形状的行和列。
 
 让我们重塑以下图像中给定的数组。
-![Ndarray_06](../../../../../image/软件开发/编程基础/Python/常用库/NumPy/Ndarray_06.png)
+![Ndarray_06](../../../../../image/软件开发/编程基础/Python/常用库/Numpy/Ndarray_06.png)
 示例
 ```python
 import numpy as np
@@ -181,7 +181,7 @@ print("元素总和:", a.sum())
 
 ### NumPy数组轴
 NumPy多维数组由轴表示，其中axis-0表示列，axis-1表示行。我们可以指定轴来执行行级或列级计算，例如对行或列元素进行加法。
-![Ndarray_07](../../../../../image/软件开发/编程基础/Python/常用库/NumPy/Ndarray_07.png)
+![Ndarray_07](../../../../../image/软件开发/编程基础/Python/常用库/Numpy/Ndarray_07.png)
 要计算每列的最大元素、每行的最小元素以及所有行元素的总和，请考虑以下示例。
 
 示例

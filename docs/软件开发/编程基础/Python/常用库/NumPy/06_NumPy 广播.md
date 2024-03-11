@@ -88,4 +88,4 @@ Adding arrays a and b ..
  [12 24 45 11]]
 ```
 
-![broadcasting](../../../../../image/软件开发/编程基础/Python/常用库/NumPy/broadcasting.png)
+![broadcasting](../../../../../image/软件开发/编程基础/Python/常用库/Numpy/broadcasting.png)
