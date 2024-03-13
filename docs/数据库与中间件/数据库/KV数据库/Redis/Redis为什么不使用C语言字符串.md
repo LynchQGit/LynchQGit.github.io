@@ -10,7 +10,7 @@ redis 127.0.0.1:6379> GET lynch
 ```
 Redis 是用 C 语言写的，但是对于Redis的字符串，却不是 C 语言中的字符串（即以空字符’\0’结尾的字符数组），它是自己构建了一种名为 简单动态字符串（simple dynamic string）简称SDS的抽象类型，并将 SDS 作为 Redis的默认字符串表示。
 
-![Redis字符串类型](../../image/数据库与中间件/Redis/Redis为什么不使用C语言字符串01.png)
+![Redis字符串类型](../../../../image/数据库与中间件/数据库/KV数据库/Redis/Redis为什么不使用C语言字符串01.png)
 
 ### Redis 字符串
 `SDS`名为简单动态字符串，它是内部如何设计的，既然是C语言写的为什么不用C语言的字符串呢？
@@ -62,7 +62,7 @@ struct __attribute__ ((__packed__)) sdshdr8 {
 
 - buf[] : 字符数组，用于存放实际字符串
 
-![SDS结构示例01](../../image/数据库与中间件/Redis/SDS结构示例.png)
+![SDS结构示例01](../../../../image/数据库与中间件/数据库/KV数据库/Redis/SDS结构示例.png)
 
 定义的这些字段有以下一些好处：
 
@@ -73,7 +73,7 @@ struct __attribute__ ((__packed__)) sdshdr8 {
 - 读写字符串不依赖于 \0，保证二进制安全。
 
 对应在文章开头中我们设置的 key="lynch"、value="code"，存储情况如下图所示：
-![SDS结构示例02](../../image/数据库与中间件/Redis/SDS结构示例02.png)
+![SDS结构示例02](../../../../image/数据库与中间件/数据库/KV数据库/Redis/SDS结构示例02.png)
 
 从图中可以看出SDS 也遵循 C 字符串以空字符“\0”结尾的惯例，而保存空字符的大小不计算在 SDS 的 len 属性中。
 
@@ -96,15 +96,15 @@ struct __attribute__ ((__packed__)) sdshdr8 {
 
 - sdshdr64：存储大小为 2^ 64
 
-![SDS结构示例03](../../image/数据库与中间件/Redis/SDS结构示例03.png)
+![SDS结构示例03](../../../../image/数据库与中间件/数据库/KV数据库/Redis/SDS结构示例03.png)
 
-![SDS结构示例04](../../image/数据库与中间件/Redis/SDS结构示例04.png)
+![SDS结构示例04](../../../../image/数据库与中间件/数据库/KV数据库/Redis/SDS结构示例04.png)
 
 上面5 种数据结构存储不同长度的内容，而在使用中Redis 会根据 SDS 存储的内容长度来选择不同的结构。
 
 ### 底层编码选择
 字符串是 Redis最基本的数据类型，Redis 中字符串对象的编码可以是下面三种类型：
-![底层字符串类型01](../../image/数据库与中间件/Redis/底层字符串类型01.png)
+![底层字符串类型01](../../../../image/数据库与中间件/数据库/KV数据库/Redis/底层字符串类型01.png)
 
 - int 编码：存储8个字节的长整型（long，2^63-1）字符串，长度小于等于20
 
@@ -144,7 +144,7 @@ string
 > embstr：只分配一次内存空间，SDS结构体和RedisObject分配在同一块连续的内存空间
 > raw：需要分配两次内存空间，SDS结构体和依赖RedisObject不在连续
 
-![emstr和raw编码的区别](../../image/数据库与中间件/Redis/emstr和raw编码的区别.png)
+![emstr和raw编码的区别](../../../../image/数据库与中间件/数据库/KV数据库/Redis/emstr和raw编码的区别.png)
 
 ### SDS相对C字符串的好处
 SDS 是Redis中用于存储二进制数据的一种结构, 具有动态扩容的特点。
