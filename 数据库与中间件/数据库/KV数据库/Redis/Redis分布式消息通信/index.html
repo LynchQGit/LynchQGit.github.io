@@ -9,25 +9,25 @@
       
       
       
-        <link rel="prev" href="../../MySQL/Json%E5%AD%97%E6%AE%B5%E6%93%8D%E4%BD%9C/">
+        <link rel="prev" href="../Redis%E5%88%86%E5%B8%83%E5%BC%8F/">
       
       
-        <link rel="next" href="../Redis%E4%B8%8D%E5%90%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/">
+        <link rel="next" href="../Redis%E6%8C%81%E4%B9%85%E5%8C%96/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
     
     
       
-        <title>RESP协议 - 韩林奇的个人博客</title>
+        <title>Redis分布式消息通信 - 韩林奇的个人博客</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e359304.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.7e359304.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#redis-cluster-bus" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -83,7 +88,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="韩林奇的个人博客" class="md-header__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
+    <a href="../../../../.." title="韩林奇的个人博客" class="md-header__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -103,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              RESP协议
+              Redis分布式消息通信
             
           </span>
         </div>
@@ -226,7 +231,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="韩林奇的个人博客" class="md-nav__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
+    <a href="../../../../.." title="韩林奇的个人博客" class="md-nav__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -256,7 +261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -353,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/01_Docker%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+      <a href="../../../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/01_Docker%E7%AE%80%E4%BB%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -374,7 +379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/02_Docker%E5%AE%89%E8%A3%85/" class="md-nav__link">
+      <a href="../../../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/02_Docker%E5%AE%89%E8%A3%85/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -395,7 +400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/03_Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../../../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/03_Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -508,7 +513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/01_Kubernetes%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+      <a href="../../../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/01_Kubernetes%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -529,7 +534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/02_Kubernetes%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="md-nav__link">
+      <a href="../../../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/02_Kubernetes%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -550,7 +555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/03_Kubernetes%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/" class="md-nav__link">
+      <a href="../../../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/03_Kubernetes%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -571,7 +576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/04_Kubernetes%E5%AE%9E%E6%88%98%E5%85%A5%E9%97%A8/" class="md-nav__link">
+      <a href="../../../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/04_Kubernetes%E5%AE%9E%E6%88%98%E5%85%A5%E9%97%A8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -647,7 +652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../openai/openai_python_api/" class="md-nav__link">
+      <a href="../../../../../openai/openai_python_api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -715,7 +720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F/" class="md-nav__link">
+      <a href="../../../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -773,7 +778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Get%20Start/" class="md-nav__link">
+      <a href="../../../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Get%20Start/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -794,7 +799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Harbor%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+      <a href="../../../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Harbor%E7%AE%80%E4%BB%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -907,7 +912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%8E%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%BD%E5%AF%86%E7%AE%97%E6%B3%95/" class="md-nav__link">
+      <a href="../../../../../%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%8E%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%BD%E5%AF%86%E7%AE%97%E6%B3%95/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -928,7 +933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%8E%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/%E5%9B%BD%E4%BA%A7%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95demo/" class="md-nav__link">
+      <a href="../../../../../%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%8E%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/%E5%9B%BD%E4%BA%A7%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95demo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1041,7 +1046,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/01_%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+      <a href="../../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/01_%E7%AE%80%E4%BB%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1062,7 +1067,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/02_Git%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      <a href="../../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/02_Git%E5%9F%BA%E7%A1%80/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1083,7 +1088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/03_Git%E6%97%A5%E5%B8%B8%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+      <a href="../../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/03_Git%E6%97%A5%E5%B8%B8%E6%93%8D%E4%BD%9C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1104,7 +1109,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/04_%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+      <a href="../../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/04_%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1125,7 +1130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/05_%E9%AB%98%E7%BA%A7Git%E6%8A%80%E5%B7%A7/" class="md-nav__link">
+      <a href="../../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/05_%E9%AB%98%E7%BA%A7Git%E6%8A%80%E5%B7%A7/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1146,7 +1151,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/06_%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E4%B8%8E%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="md-nav__link">
+      <a href="../../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/06_%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E4%B8%8E%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1167,7 +1172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/07_%E4%BD%BF%E7%94%A8Git%E7%9A%84%E5%B7%A5%E5%85%B7%E5%92%8C%E8%B5%84%E6%BA%90/" class="md-nav__link">
+      <a href="../../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/07_%E4%BD%BF%E7%94%A8Git%E7%9A%84%E5%B7%A5%E5%85%B7%E5%92%8C%E8%B5%84%E6%BA%90/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1188,7 +1193,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/08_%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BC%BA%E7%83%88%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%BC%9A%E4%BD%BF%E7%94%A8Git/" class="md-nav__link">
+      <a href="../../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/08_%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BC%BA%E7%83%88%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%BC%9A%E4%BD%BF%E7%94%A8Git/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1209,7 +1214,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/Gitignore/" class="md-nav__link">
+      <a href="../../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/Gitignore/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1284,6 +1289,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1292,146 +1299,30 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" checked>
         
           
           <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    MongoDB
+    数据库
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8_1">
             <span class="md-nav__icon md-icon"></span>
-            MongoDB
+            数据库
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../MongoDB/python%E5%AE%9E%E7%8E%B0demo/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Python实现demo
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../MongoDB/%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    基本命令
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    MySQL
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_2">
-            <span class="md-nav__icon md-icon"></span>
-            MySQL
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../MySQL/Json%E5%AD%97%E6%AE%B5%E6%93%8D%E4%BD%9C/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Json字段操作
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
             
               
                 
@@ -1451,24 +1342,24 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8_1_1" id="__nav_8_1_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Redis
+    KV数据库
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_8_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_1_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_1_1">
             <span class="md-nav__icon md-icon"></span>
-            Redis
+            KV数据库
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1480,13 +1371,45 @@
   
   
   
-    <li class="md-nav__item md-nav__item--active">
+    
+    
+    
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1_1_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8_1_1_1" id="__nav_8_1_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Redis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_1_1_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_1_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Redis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESP%E5%8D%8F%E8%AE%AE/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1495,7 +1418,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1568,10 +1490,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Redis%E5%88%86%E5%B8%83%E5%BC%8F%E6%B6%88%E6%81%AF%E9%80%9A%E4%BF%A1/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Redis分布式消息通信
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1580,6 +1520,75 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#redis-cluster-bus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redis Cluster Bus协议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Redis Cluster Bus协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      消息结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      消息类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      通信方式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      示例
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1664,6 +1673,265 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_1_2" id="__nav_8_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    关系型数据库
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            关系型数据库
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_1_2_1" id="__nav_8_1_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MySQL
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_1_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            MySQL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/Json%E5%AD%97%E6%AE%B5%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Json字段操作
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_1_3" id="__nav_8_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    文档型数据库
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            文档型数据库
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_1_3_1" id="__nav_8_1_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MongoDB
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_1_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            MongoDB
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%96%87%E6%A1%A3%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/MongoDB/python%E5%AE%9E%E7%8E%B0demo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python实现demo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%96%87%E6%A1%A3%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/MongoDB/%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    基本命令
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1805,7 +2073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Go/gRPC/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Go/gRPC/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1826,7 +2094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Go/%E6%88%90%E9%95%BF%E8%B7%AF%E7%BA%BF/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Go/%E6%88%90%E9%95%BF%E8%B7%AF%E7%BA%BF/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1884,7 +2152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Go/%E9%9D%A2%E8%AF%95/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Go/%E9%9D%A2%E8%AF%95/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1958,7 +2226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/GIL/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/GIL/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1979,7 +2247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E6%B7%B1%E5%85%A5Pendulum/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E6%B7%B1%E5%85%A5Pendulum/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2037,7 +2305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/Python%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/01_%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8%E6%A6%82%E8%BF%B0/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/Python%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/01_%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8%E6%A6%82%E8%BF%B0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2058,7 +2326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/Python%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/02_%E5%87%BD%E6%95%B0%E5%AF%BC%E5%85%A5%E9%99%90%E5%88%B6%E5%92%8C%E7%BB%95%E8%BF%87/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/Python%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/02_%E5%87%BD%E6%95%B0%E5%AF%BC%E5%85%A5%E9%99%90%E5%88%B6%E5%92%8C%E7%BB%95%E8%BF%87/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2079,7 +2347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/Python%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/03_%E9%AD%94%E6%B3%95%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/Python%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/03_%E9%AD%94%E6%B3%95%E5%87%BD%E6%95%B0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2100,7 +2368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/Python%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/04_%E7%B1%BB%E7%BB%A7%E6%89%BF%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/Python%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/04_%E7%B1%BB%E7%BB%A7%E6%89%BF%E4%BD%BF%E7%94%A8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2121,7 +2389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/Python%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/05_%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0%E6%9F%A5%E6%89%BE/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/Python%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/05_%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0%E6%9F%A5%E6%89%BE/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2187,7 +2455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%A4%8D%E4%B9%A0/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%94%A8%E4%BE%8B/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%A4%8D%E4%B9%A0/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%94%A8%E4%BE%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2208,7 +2476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%A4%8D%E4%B9%A0/%E9%9A%BE%E7%90%86%E8%A7%A3%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%A4%8D%E4%B9%A0/%E9%9A%BE%E7%90%86%E8%A7%A3%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2311,7 +2579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/00_%E5%89%8D%E8%A8%80/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/00_%E5%89%8D%E8%A8%80/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2332,7 +2600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/01_Ndarray/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/01_Ndarray/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2353,7 +2621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/02_NumPy%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/02_NumPy%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2374,7 +2642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/03_Numpy%E6%95%B0%E7%BB%84%E5%88%9B%E5%BB%BA/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/03_Numpy%E6%95%B0%E7%BB%84%E5%88%9B%E5%BB%BA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2395,7 +2663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/04_%E4%BB%8E%E7%8E%B0%E6%9C%89%E6%95%B0%E6%8D%AE%E5%88%9B%E5%BB%BANumpy%E6%95%B0%E7%BB%84/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/04_%E4%BB%8E%E7%8E%B0%E6%9C%89%E6%95%B0%E6%8D%AE%E5%88%9B%E5%BB%BANumpy%E6%95%B0%E7%BB%84/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2416,7 +2684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/05_%E5%9C%A8%E6%95%B0%E5%80%BC%E8%8C%83%E5%9B%B4%E5%86%85%E5%88%9B%E5%BB%BANumpy%E6%95%B0%E7%BB%84/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/05_%E5%9C%A8%E6%95%B0%E5%80%BC%E8%8C%83%E5%9B%B4%E5%86%85%E5%88%9B%E5%BB%BANumpy%E6%95%B0%E7%BB%84/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2437,7 +2705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/06_NumPy%20%E5%B9%BF%E6%92%AD/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/06_NumPy%20%E5%B9%BF%E6%92%AD/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2458,7 +2726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/07_NumPy%E6%95%B0%E7%BB%84%E8%BF%AD%E4%BB%A3/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/07_NumPy%E6%95%B0%E7%BB%84%E8%BF%AD%E4%BB%A3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2479,7 +2747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/08_NumPy%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/08_NumPy%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2500,7 +2768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/09_NumPy%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/09_NumPy%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2521,7 +2789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/10_NumPy%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/10_NumPy%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2542,7 +2810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/11_Numpy%E7%BB%9F%E8%AE%A1%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/11_Numpy%E7%BB%9F%E8%AE%A1%E5%87%BD%E6%95%B0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2563,7 +2831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/12_NumPy%E6%8E%92%E5%BA%8F%E5%92%8C%E6%90%9C%E7%B4%A2/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/12_NumPy%E6%8E%92%E5%BA%8F%E5%92%8C%E6%90%9C%E7%B4%A2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2584,7 +2852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/13_NumPy%E7%9A%84%E5%A4%8D%E5%88%B6%E5%92%8C%E8%A7%86%E5%9B%BE/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/13_NumPy%E7%9A%84%E5%A4%8D%E5%88%B6%E5%92%8C%E8%A7%86%E5%9B%BE/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2605,7 +2873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/14_NumPy%E7%9F%A9%E9%98%B5%E5%BA%93/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/14_NumPy%E7%9F%A9%E9%98%B5%E5%BA%93/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2671,7 +2939,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/00_PyTorch%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/00_PyTorch%E7%AE%80%E4%BB%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2692,7 +2960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/01_%E5%88%9D%E8%AF%86PyTorch/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/01_%E5%88%9D%E8%AF%86PyTorch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2713,7 +2981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/02_PyTorch%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/02_PyTorch%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2734,7 +3002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/03_PyTorch%E5%8C%85/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/03_PyTorch%E5%8C%85/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2755,7 +3023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/04_PyTorch%E4%B8%AD%E7%9A%84torch.nn%E6%A8%A1%E5%9D%97/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/04_PyTorch%E4%B8%AD%E7%9A%84torch.nn%E6%A8%A1%E5%9D%97/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2776,7 +3044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/05_PyTorch%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/05_PyTorch%E5%9F%BA%E7%A1%80/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2797,7 +3065,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/06_%E5%BC%A0%E9%87%8F/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/06_%E5%BC%A0%E9%87%8F/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2818,7 +3086,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/07_%E4%B8%80%E7%BB%B4%E5%BC%A0%E9%87%8F/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/07_%E4%B8%80%E7%BB%B4%E5%BC%A0%E9%87%8F/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2839,7 +3107,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/08_%E5%90%91%E9%87%8F%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/08_%E5%90%91%E9%87%8F%E6%93%8D%E4%BD%9C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2860,7 +3128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/09_%E4%BA%8C%E7%BB%B4%E5%BC%A0%E9%87%8F/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/09_%E4%BA%8C%E7%BB%B4%E5%BC%A0%E9%87%8F/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2881,7 +3149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/10_PyTorch%E4%B8%AD%E7%9A%84%E6%A2%AF%E5%BA%A6/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/10_PyTorch%E4%B8%AD%E7%9A%84%E6%A2%AF%E5%BA%A6/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2902,7 +3170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/11_%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/11_%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2923,7 +3191,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/12_%E9%A2%84%E6%B5%8B%E5%92%8C%E7%BA%BF%E6%80%A7%E7%B1%BB/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/12_%E9%A2%84%E6%B5%8B%E5%92%8C%E7%BA%BF%E6%80%A7%E7%B1%BB/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2944,7 +3212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/13_%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/13_%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3010,7 +3278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/Pydantic/Pydantic/" class="md-nav__link">
+      <a href="../../../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/Pydantic/Pydantic/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3081,6 +3349,65 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#redis-cluster-bus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redis Cluster Bus协议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Redis Cluster Bus协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      消息结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      消息类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      通信方式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      示例
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3097,28 +3424,40 @@
   
 
 
-  <h1>RESP协议</h1>
+  <h1>Redis分布式消息通信</h1>
 
-<p><code>RESP（Redis Serialization Protocol）</code>是一种简单的二进制安全协议，用于在Redis客户端和服务端之间传输数据。使用RESP的主要原因是简单、高效且易于实现。RESP协议支持五种基本数据类型：简单字符串、错误、整数、字节数组和数组。</p>
-<p><em>RESP协议</em>的解析原理基于前缀标识符，每种数据类型都有一个特定的前缀字符：</p>
-<ol>
-<li>简单字符串：以<code>+</code>开头，表示一段非二进制安全的字符串，用于表示成功状态或简单的结果。字符串以<code>\r\n</code>（CRLF，回车换行）结束。例如：<code>+OK\r\n</code></li>
-<li>错误：以-开头，表示一个错误消息。错误消息以<code>\r\n</code>结束。例如：<code>-ERR invalid password\r\n</code></li>
-<li>整数：以<code>:</code>开头，表示一个有符号整数。整数以<code>\r\n</code>结束。例如：<code>:1000\r\n</code></li>
-<li>字节数组：以<code>$</code>开头，表示一个二进制安全的字节数组。字节数组的长度紧跟在<code>$</code>后面，然后是\r\n，接着是字节数组本身，最后是<code>\r\n</code>。例如：<code>$6\r\nfoobar\r\n</code></li>
-<li>数组：以<code>*</code>开头，表示一个包含多个元素的数组。数组的长度紧跟在<code>*</code>后面，然后是<code>\r\n</code>。接下来是数组中的每个元素，每个元素都是RESP编码的。例如：<code>*3\r\n:1\r\n:2\r\n:3\r\n</code></li>
-</ol>
-<p>在解析RESP数据时，首先会检查第一个字符，以确定数据类型。然后根据数据类型，解析器会按照相应的规则解析剩余的数据，并将其转换为内部表示。对于嵌套的数据结构（如数组），解析器会递归地解析元素。</p>
-<p>例如，当Redis服务端收到以下RESP编码的命令时：
-<code>*3\r\n$3\r\nSET\r\n$5\r\nmykey\r\n$7\r\nmyvalue\r\n</code></p>
-<p>它会按照以下步骤进行解析：</p>
-<ol>
-<li>首先识别*，表示这是一个数组，长度是3。</li>
-<li>解析第一个元素，识别$，表示这是一个字节数组，长度是3。解析出字节数组的内容SET。</li>
-<li>解析第二个元素，识别$，表示这是一个字节数组，长度是5。解析出字节数组的内容mykey。</li>
-<li>解析第三个元素，识别$，表示这是一个字节数组，长度是7。解析出字节数组的内容myvalue。</li>
-<li>最终，服务端解析出一个包含三个元素的数组：["SET", "mykey", "myvalue"]。根据这个数组，服务端可以执行相应的命令。</li>
-</ol>
+<p>Redis集群间的节点通过Redis Cluster Bus（集群总线）进行消息通信。Redis Cluster Bus主要用于节点间的元数据交换、故障检测和故障恢复等操作。</p>
+<h2 id="redis-cluster-bus">Redis Cluster Bus协议<a class="headerlink" href="#redis-cluster-bus" title="Permanent link">&para;</a></h2>
+<p>Redis Cluster Bus协议是一种二进制协议，它使用了一种紧凑的二进制消息格式，以减少网络带宽消耗和提高处理速度。</p>
+<h3 id="_1">消息结构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>Redis Cluster Bus协议的消息结构如下：
+<div class="highlight"><pre><span></span><code>+---------+-------------+---------+----------+----------------+------+--------+
+|   大小   |    4 字节   |  2 字节  |  2 字节   |   8 字节       | ...  |  1 字节 |
++---------+-------------+---------+----------+----------------+------+--------+
+| 字段名   |   签名       |  版本   |  类型     |    消息长度     | ...  |  校验和 |
++---------+-------------+---------+----------+----------------+------+--------+
+| 示例值   | &quot;RCmb&quot;      |  1      |  CLUSTERMSG_TYPE_...      | ...  |        |
++---------+-------------+---------+----------+----------------+------+--------+
+</code></pre></div>
+- 签名（Signature）：标识该消息为Redis Cluster Bus协议的消息，固定为"RCmb"。
+- 版本（Version）：协议的版本号，当前为1。
+- 类型（Type）：消息类型，如故障检测、配置更新等。
+- 消息长度（Message Length）：消息的长度，包括消息头和消息体。
+- 校验和（Checksum）：对消息内容进行CRC16校验，用于检测消息在传输过程中是否出错。</p>
+<h3 id="_2">消息类型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>Redis Cluster Bus协议支持多种消息类型，用于处理不同的集群操作：
+- PING：节点间发送心跳消息，用于检测其他节点的存活状态。
+- PONG：回应PING消息，通知发送者节点自己的存活状态。
+- MEET：邀请一个新节点加入集群。
+- FAIL：通知集群中的其他节点，某个节点已宕机。
+- UPDATE：通知集群中的其他节点，某个节点的元数据已发生变化。
+- MFSTART：通知集群中的其他节点，开始进行手动故障转移操作。
+- GFAIL：通知集群中的其他节点，某个节点可能已宕机，但尚未确认。</p>
+<h3 id="_3">通信方式<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>Redis集群中的每个节点会为集群总线维护一个独立的TCP连接，这些连接组成了一个全连接网络。通过该网络，节点可以高效地将消息广播到集群中的其他节点。
+每个节点在启动时会分配一个随机生成的48位节点ID，用于在集群总线中标识自己。节点间的通信消息会包含发送者和接收者的节点ID，以指定消息的来源和目的地。</p>
+<h2 id="_4">示例<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>例如，当一个新节点需要加入集群时，它会向集群中的一个已有节点发送MEET消息。收到MEET消息的节点会将新节点的信息添加到自己的节点表，并将MEET消息广播给集群中的其他节点。其他节点收到MEET消息后，也会将新节点的信息添加到自己的节点表，从而完成新节点的加入。</p>
 
 
 
@@ -3165,10 +3504,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.sections"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
       
     
   </body>
