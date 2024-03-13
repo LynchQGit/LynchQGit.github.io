@@ -3423,7 +3423,7 @@
 
 <span class="n">misaki</span>\<span class="n">user</span>
 </code></pre></div>
-<img alt="01_02-01" src="../../../image/编码/Python/沙箱逃逸/01_02-01.png" /></p>
+<img alt="01_02-01" src="../../../../../image/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/01_02-01.png" /></p>
 <p>或者使用字符串拼接的方式
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">__import__</span><span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="o">+</span><span class="s1">&#39;s&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;who&#39;</span><span class="o">+</span><span class="s1">&#39;ami&#39;</span><span class="p">)</span>
 <span class="n">aiuser</span>
@@ -3476,9 +3476,9 @@
 <h3 id="builtins"><code>builtins</code> 内建模块<a class="headerlink" href="#builtins" title="Permanent link">&para;</a></h3>
 <p><code>__builtins__</code>即时引用，在程序还为执行代码的时候就已经加载进来了。此模块并不需要导入，可以在任何模块中执行引用。
 比如在python2中
-<img alt="01_03-01" src="../../../image/编码/Python/沙箱逃逸/01_03-01.png" /></p>
+<img alt="01_03-01" src="../../../../../image/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/01_03-01.png" /></p>
 <p>python3中
-<img alt="01_03-02" src="../../../image/编码/Python/沙箱逃逸/01_03-02.png" /></p>
+<img alt="01_03-02" src="../../../../../image/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/01_03-02.png" /></p>
 <p>所以我们通过dict属性来调用这些函数，例如如下调用exec来执行其中的python语句。
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">__builtins__</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;exec&#39;</span><span class="p">](</span><span class="s2">&quot;print(&#39;ok&#39;)&quot;</span><span class="p">)</span>
 <span class="n">ok</span>
