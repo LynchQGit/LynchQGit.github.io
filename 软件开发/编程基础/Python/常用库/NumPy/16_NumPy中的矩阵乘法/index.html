@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../12_NumPy%E6%8E%92%E5%BA%8F%E5%92%8C%E6%90%9C%E7%B4%A2/">
+        <link rel="prev" href="../15_NumPy%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">
       
       
-        <link rel="next" href="../14_NumPy%E7%9F%A9%E9%98%B5%E5%BA%93/">
+        <link rel="next" href="../../PyTorch/00_PyTorch%E7%AE%80%E4%BB%8B/">
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>13 NumPy的复制和视图 - 韩林奇的个人博客</title>
+        <title>16 NumPy中的矩阵乘法 - 韩林奇的个人博客</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#numpy" class="md-skip">
+        <a href="#numpymatrix-multiplication" class="md-skip">
           跳转至
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              13 NumPy的复制和视图
+              16 NumPy中的矩阵乘法
             
           </span>
         </div>
@@ -2764,28 +2764,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    13 NumPy的复制和视图
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../13_NumPy%E7%9A%84%E5%A4%8D%E5%88%B6%E5%92%8C%E8%A7%86%E5%9B%BE/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2794,66 +2776,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#numpy" class="md-nav__link">
-    <span class="md-ellipsis">
-      NumPy的复制和视图
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="NumPy的复制和视图">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      数组赋值
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ndarrayview" class="md-nav__link">
-    <span class="md-ellipsis">
-      ndarray.view()方法
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ndarraycopy" class="md-nav__link">
-    <span class="md-ellipsis">
-      ndarray.copy()方法
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2905,10 +2827,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../16_NumPy%E4%B8%AD%E7%9A%84%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    16 NumPy中的矩阵乘法
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2917,6 +2857,66 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#numpymatrix-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      NumPy中的矩阵乘法(Matrix Multiplication)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NumPy中的矩阵乘法(Matrix Multiplication)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      示例 1：逐元素矩阵乘法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      示例 2：矩阵乘积
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      示例 3：点积
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3391,37 +3391,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#numpy" class="md-nav__link">
+  <a href="#numpymatrix-multiplication" class="md-nav__link">
     <span class="md-ellipsis">
-      NumPy的复制和视图
+      NumPy中的矩阵乘法(Matrix Multiplication)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="NumPy的复制和视图">
+    <nav class="md-nav" aria-label="NumPy中的矩阵乘法(Matrix Multiplication)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      数组赋值
+      示例 1：逐元素矩阵乘法
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ndarrayview" class="md-nav__link">
+  <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
-      ndarray.view()方法
+      示例 2：矩阵乘积
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ndarraycopy" class="md-nav__link">
+  <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
-      ndarray.copy()方法
+      示例 3：点积
     </span>
   </a>
   
@@ -3450,153 +3450,137 @@
   
 
 
-  <h1>13 NumPy的复制和视图</h1>
+  <h1>16 NumPy中的矩阵乘法</h1>
 
-<h2 id="numpy">NumPy的复制和视图<a class="headerlink" href="#numpy" title="Permanent link">&para;</a></h2>
-<p>输入数组的副本在某个其他位置物理存储，并返回存储在该特定位置的内容，这是输入数组的副本，而在视图的情况下，返回同一内存位置的不同视图。
-在本教程的本节中，我们将考虑从某个内存位置生成不同副本和视图的方法。</p>
-<h3 id="_1">数组赋值<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>将<code>numpy</code>数组赋值给另一个数组不会直接复制原始数组，而是创建另一个具有相同内容和相同id的数组。它表示对原始数组的引用。对这个引用所做的更改也会反映在原始数组中。</p>
-<p><code>id()</code>函数返回数组的通用标识符，类似于C中的指针。</p>
-<p>考虑以下示例。</p>
-<p>示例
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<h2 id="numpymatrix-multiplication">NumPy中的矩阵乘法(Matrix Multiplication)<a class="headerlink" href="#numpymatrix-multiplication" title="Permanent link">&para;</a></h2>
+<p>矩阵的乘法是一种操作，通过将两个矩阵作为输入，将第一个矩阵的行与第二个矩阵的列相乘，生成一个单独的矩阵。需要注意的是，第一个矩阵的行数应等于第二个矩阵的列数。</p>
+<p><img alt="Matrix" src="../../../../../../image/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/Numpy/Matrix01.png" /></p>
+<p>在Python中，使用NumPy进行矩阵乘法的过程被称为向量化。向量化的主要目标是消除或减少我们明确使用的for循环。通过从程序中减少“for”循环可以加快计算速度。内置的NumPy包用于数组处理和操作。
+有三种方法可以执行numpy矩阵乘法。</p>
+<ul>
+<li>
+<p>第一种是使用multiply()函数，该函数执行矩阵的逐元素乘法。</p>
+</li>
+<li>
+<p>第二种是使用matmul()函数，该函数执行两个数组的矩阵乘积。</p>
+</li>
+<li>
+<p>最后一种是使用dot()函数，该函数执行两个数组的点积。</p>
+</li>
+</ul>
+<h3 id="1">示例 1：逐元素矩阵乘法<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  
 
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">19</span><span class="p">]])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Original Array:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">ID of array a:&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-
-<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">making copy of the array a&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">ID of b:&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
-
-<span class="n">b</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Changes on b also reflect to a:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">array1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]],</span><span class="n">ndmin</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>  
+<span class="n">array2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span><span class="n">ndmin</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>  
+<span class="n">result</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">array1</span><span class="p">,</span><span class="n">array2</span><span class="p">)</span>  
+<span class="n">result</span>
 </code></pre></div>
+<p>在上面的代码中</p>
+<ul>
+<li>
+<p>我们导入了别名为np的numpy。</p>
+</li>
+<li>
+<p>我们使用numpy.array()函数创建了array1和array2，维数为3。</p>
+</li>
+<li>
+<p>我们创建了一个名为result的变量，并将np.multiply()函数的返回值赋给它。</p>
+</li>
+<li>
+<p>我们在np.multiply()中传递了array1和array2两个数组。</p>
+</li>
+<li>
+<p>最后，我们尝试打印result的值。</p>
+</li>
+</ul>
+<p>在输出中，显示了一个三维矩阵，其元素是array1和array2元素的逐元素乘积的结果。
 输出：
-<div class="highlight"><pre><span></span><code><span class="n">Original</span> <span class="n">Array</span><span class="p">:</span>
- <span class="p">[[</span> <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">4</span><span class="p">]</span>
- <span class="p">[</span> <span class="mi">9</span>  <span class="mi">0</span>  <span class="mi">2</span>  <span class="mi">3</span><span class="p">]</span>
- <span class="p">[</span> <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span> <span class="mi">19</span><span class="p">]]</span>
-
-<span class="n">ID</span> <span class="n">of</span> <span class="n">array</span> <span class="n">a</span><span class="p">:</span> <span class="mi">139663602288640</span>
-<span class="n">making</span> <span class="n">copy</span> <span class="n">of</span> <span class="n">the</span> <span class="n">array</span> <span class="n">a</span>
-<span class="n">ID</span> <span class="n">of</span> <span class="n">b</span><span class="p">:</span> <span class="mi">139663602288640</span>
-<span class="n">Changes</span> <span class="n">on</span> <span class="n">b</span> <span class="n">also</span> <span class="n">reflect</span> <span class="n">to</span> <span class="n">a</span><span class="p">:</span>
-<span class="p">[[</span> <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span><span class="p">]</span>
- <span class="p">[</span> <span class="mi">4</span>  <span class="mi">9</span>  <span class="mi">0</span><span class="p">]</span>
- <span class="p">[</span> <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">1</span><span class="p">]</span>
- <span class="p">[</span> <span class="mi">2</span>  <span class="mi">3</span> <span class="mi">19</span><span class="p">]]</span>
+<div class="highlight"><pre><span></span><code><span class="n">array</span><span class="p">([[[</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">21</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">24</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">24</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">21</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span>  <span class="mi">9</span><span class="p">]]])</span>
 </code></pre></div></p>
-<h3 id="ndarrayview">ndarray.view()方法<a class="headerlink" href="#ndarrayview" title="Permanent link">&para;</a></h3>
-<p><code>ndarray.view()</code>方法返回一个包含与原始数组相同内容的新数组对象。由于它是一个新的数组对象，因此对此对象进行的更改不会反映在原始数组中。</p>
-<p>考虑以下示例。</p>
-<p>示例
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<h3 id="2">示例 2：矩阵乘积<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  
 
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">19</span><span class="p">]])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Original Array:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">ID of array a:&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-
-<span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">ID of b:&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">printing the view b&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-
-<span class="n">b</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Changes made to the view b do not reflect a&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Original array </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">view</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">array1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]],</span><span class="n">ndmin</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>  
+<span class="n">array2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span><span class="n">ndmin</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>  
+<span class="n">result</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">array1</span><span class="p">,</span><span class="n">array2</span><span class="p">)</span>  
+<span class="n">result</span>
 </code></pre></div>
 输出：
-<div class="highlight"><pre><span></span><code><span class="n">Original</span> <span class="n">Array</span><span class="p">:</span>
- <span class="p">[[</span> <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">4</span><span class="p">]</span>
- <span class="p">[</span> <span class="mi">9</span>  <span class="mi">0</span>  <span class="mi">2</span>  <span class="mi">3</span><span class="p">]</span>
- <span class="p">[</span> <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span> <span class="mi">19</span><span class="p">]]</span>
-
-<span class="n">ID</span> <span class="n">of</span> <span class="n">array</span> <span class="n">a</span><span class="p">:</span> <span class="mi">140280414447456</span>
-
-<span class="n">ID</span> <span class="n">of</span> <span class="n">b</span><span class="p">:</span> <span class="mi">140280287000656</span>
-
-<span class="n">printing</span> <span class="n">the</span> <span class="n">view</span> <span class="n">b</span>
-<span class="p">[[</span> <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">4</span><span class="p">]</span>
- <span class="p">[</span> <span class="mi">9</span>  <span class="mi">0</span>  <span class="mi">2</span>  <span class="mi">3</span><span class="p">]</span>
- <span class="p">[</span> <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span> <span class="mi">19</span><span class="p">]]</span>
-
-<span class="n">Changes</span> <span class="n">made</span> <span class="n">to</span> <span class="n">the</span> <span class="n">view</span> <span class="n">b</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">reflect</span> <span class="n">a</span>
-
-<span class="n">Original</span> <span class="n">array</span>
- <span class="p">[[</span> <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">4</span><span class="p">]</span>
- <span class="p">[</span> <span class="mi">9</span>  <span class="mi">0</span>  <span class="mi">2</span>  <span class="mi">3</span><span class="p">]</span>
- <span class="p">[</span> <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span> <span class="mi">19</span><span class="p">]]</span>
-
-<span class="n">view</span>
- <span class="p">[[</span> <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span><span class="p">]</span>
- <span class="p">[</span> <span class="mi">4</span>  <span class="mi">9</span>  <span class="mi">0</span><span class="p">]</span>
- <span class="p">[</span> <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">1</span><span class="p">]</span>
- <span class="p">[</span> <span class="mi">2</span>  <span class="mi">3</span> <span class="mi">19</span><span class="p">]]</span>
-</code></pre></div></p>
-<h3 id="ndarraycopy">ndarray.copy()方法<a class="headerlink" href="#ndarraycopy" title="Permanent link">&para;</a></h3>
-<p>它返回原始数组的深度副本，与原始数组不共享任何内存。对深度副本进行的修改不会反映在原始数组中。</p>
-<p>考虑以下示例。</p>
-<p>示例
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">19</span><span class="p">]])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Original Array:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">ID of array a:&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-
-<span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">ID of b:&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">printing the deep copy b&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-
-<span class="n">b</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Changes made to the copy b do not reflect a&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Original array </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Copy</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">array</span><span class="p">([[[</span> <span class="mi">30</span><span class="p">,</span>  <span class="mi">24</span><span class="p">,</span>  <span class="mi">18</span><span class="p">],</span>
+            <span class="p">[</span> <span class="mi">84</span><span class="p">,</span>  <span class="mi">69</span><span class="p">,</span>  <span class="mi">54</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">138</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span>  <span class="mi">90</span><span class="p">]]])</span>
 </code></pre></div>
+在上面的代码中</p>
+<ul>
+<li>
+<p>我们导入了别名为np的numpy。</p>
+</li>
+<li>
+<p>我们使用numpy.array()函数创建了array1和array2，维数为3。</p>
+</li>
+<li>
+<p>我们创建了一个名为result的变量，并将np.matmul()函数的返回值赋给它。</p>
+</li>
+<li>
+<p>我们在np.matmul()中传递了array1和array2两个数组。</p>
+</li>
+<li>
+<p>最后，我们尝试打印result的值。</p>
+</li>
+</ul>
+<p>在输出中，显示了一个三维矩阵，其元素是array1和array2元素的乘积结果。</p>
+<h3 id="3">示例 3：点积<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>numpy.dot具有以下规格：</p>
+<ul>
+<li>
+<p>当a和b都是1-D（一维）数组时-&gt; 两个向量的内积（不包含复共轭）</p>
+</li>
+<li>
+<p>当a和b都是2-D（二维）数组时 -&gt; 矩阵乘法</p>
+</li>
+<li>
+<p>当a或b为0-D（也称为标量）时 -&gt; 使用numpy.multiply(a, b)或a * b进行乘法。</p>
+</li>
+<li>
+<p>当a是N-D数组，b是1-D数组时 -&gt; 在a和b的最后一个轴上进行求和乘积。</p>
+</li>
+<li>
+<p>当a是N-D数组，b是M-D数组，并且M&gt;=2时 -&gt; 在a的最后一个轴和b的倒数第二个轴上进行求和乘积：同时，dot(a, b)[i,j,k,m] = sum(a[i,j,:] * b[k,:,m])</p>
+</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  
+
+<span class="n">array1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]],</span><span class="n">ndmin</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>  
+<span class="n">array2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span><span class="n">ndmin</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>  
+<span class="n">result</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">array1</span><span class="p">,</span><span class="n">array2</span><span class="p">)</span>  
+<span class="n">result</span>
+</code></pre></div>
+在上面的代码中</p>
+<ul>
+<li>
+<p>我们导入了别名为np的numpy。</p>
+</li>
+<li>
+<p>我们使用numpy.array()函数创建了array1和array2，维数为3。</p>
+</li>
+<li>
+<p>我们创建了一个名为result的变量，并将np.dot()函数的返回值赋给它。</p>
+</li>
+<li>
+<p>我们在np.dot()中传递了array1和array2两个数组。</p>
+</li>
+<li>
+<p>最后，我们尝试打印result的值。</p>
+</li>
+</ul>
+<p>在输出中，显示了一个三维矩阵，其元素是array1和array2元素的点积结果。
 输出：
-<div class="highlight"><pre><span></span><code><span class="n">Original</span> <span class="n">Array</span><span class="p">:</span>
- <span class="p">[[</span> <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">4</span><span class="p">]</span>
- <span class="p">[</span> <span class="mi">9</span>  <span class="mi">0</span>  <span class="mi">2</span>  <span class="mi">3</span><span class="p">]</span>
- <span class="p">[</span> <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span> <span class="mi">19</span><span class="p">]]</span>
-
-<span class="n">ID</span> <span class="n">of</span> <span class="n">array</span> <span class="n">a</span><span class="p">:</span> <span class="mi">139895697586176</span>
-
-<span class="n">ID</span> <span class="n">of</span> <span class="n">b</span><span class="p">:</span> <span class="mi">139895570139296</span>
-
-<span class="n">printing</span> <span class="n">the</span> <span class="n">deep</span> <span class="n">copy</span> <span class="n">b</span>
-<span class="p">[[</span> <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">4</span><span class="p">]</span>
- <span class="p">[</span> <span class="mi">9</span>  <span class="mi">0</span>  <span class="mi">2</span>  <span class="mi">3</span><span class="p">]</span>
- <span class="p">[</span> <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span> <span class="mi">19</span><span class="p">]]</span>
-
-<span class="n">Changes</span> <span class="n">made</span> <span class="n">to</span> <span class="n">the</span> <span class="n">copy</span> <span class="n">b</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">reflect</span> <span class="n">a</span>
-
-<span class="n">Original</span> <span class="n">array</span>
- <span class="p">[[</span> <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">4</span><span class="p">]</span>
- <span class="p">[</span> <span class="mi">9</span>  <span class="mi">0</span>  <span class="mi">2</span>  <span class="mi">3</span><span class="p">]</span>
- <span class="p">[</span> <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span> <span class="mi">19</span><span class="p">]]</span>
-
-<span class="n">Copy</span>
- <span class="p">[[</span> <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span><span class="p">]</span>
- <span class="p">[</span> <span class="mi">4</span>  <span class="mi">9</span>  <span class="mi">0</span><span class="p">]</span>
- <span class="p">[</span> <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">1</span><span class="p">]</span>
- <span class="p">[</span> <span class="mi">2</span>  <span class="mi">3</span> <span class="mi">19</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="n">array</span><span class="p">([[[[</span> <span class="mi">30</span><span class="p">,</span>  <span class="mi">24</span><span class="p">,</span>  <span class="mi">18</span><span class="p">]],</span>
+            <span class="p">[[</span> <span class="mi">84</span><span class="p">,</span>  <span class="mi">69</span><span class="p">,</span>  <span class="mi">54</span><span class="p">]],</span>
+            <span class="p">[[</span><span class="mi">138</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span>  <span class="mi">90</span><span class="p">]]]])</span>
 </code></pre></div></p>
 
 
