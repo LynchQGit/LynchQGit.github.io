@@ -9,24 +9,24 @@
       
       
       
-        <link rel="prev" href="../01_Docker%E7%AE%80%E4%BB%8B/">
+        <link rel="prev" href="../16_NumPy%E4%B8%AD%E7%9A%84%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95/">
       
       
-        <link rel="next" href="../03_Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+        <link rel="next" href="../../PyTorch/00_PyTorch%E7%AE%80%E4%BB%8B/">
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.0.13">
     
     
       
-        <title>02 Docker安装 - 韩林奇的个人博客</title>
+        <title>17 Python中的numpy.array() - 韩林奇的个人博客</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ffa9267a.min.css">
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.ffa9267a.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
 
@@ -42,7 +42,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#docker" class="md-skip">
+        <a href="#pythonnumpyarray" class="md-skip">
           跳转至
         </a>
       
@@ -85,7 +85,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="韩林奇的个人博客" class="md-header__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
+    <a href="../../../../../.." title="韩林奇的个人博客" class="md-header__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              02 Docker安装
+              17 Python中的numpy.array()
             
           </span>
         </div>
@@ -211,7 +211,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="韩林奇的个人博客" class="md-nav__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
+    <a href="../../../../../.." title="韩林奇的个人博客" class="md-nav__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -242,7 +242,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -255,18 +255,16 @@
 
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
       
       
       
@@ -275,7 +273,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Docker
@@ -286,16 +284,14 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
       
       
       
@@ -304,7 +300,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2_1">
           <span class="md-nav__icon md-icon"></span>
           01 Docker基础
@@ -317,7 +313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01_Docker%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+      <a href="../../../../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/01_Docker%E7%AE%80%E4%BB%8B/" class="md-nav__link">
         01 Docker简介
       </a>
     </li>
@@ -329,190 +325,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          02 Docker安装
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/02_Docker%E5%AE%89%E8%A3%85/" class="md-nav__link">
         02 Docker安装
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#docker" class="md-nav__link">
-    二、Docker安装
-  </a>
-  
-    <nav class="md-nav" aria-label="二、Docker安装">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21" class="md-nav__link">
-    2.1 前提说明
-  </a>
-  
-    <nav class="md-nav" aria-label="2.1 前提说明">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#211-centos-docker" class="md-nav__link">
-    2.1.1 CentOS Docker 安装
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#212" class="md-nav__link">
-    2.1.2 前提条件
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#213" class="md-nav__link">
-    2.1.3 查看自己的内核
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-docker" class="md-nav__link">
-    2.2 Docker 的基本组成
-  </a>
-  
-    <nav class="md-nav" aria-label="2.2 Docker 的基本组成">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#221-image" class="md-nav__link">
-    2.2.1 镜像（image）
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#222-container" class="md-nav__link">
-    2.2.2 容器（container）
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#223-repository" class="md-nav__link">
-    2.2.3 仓库（repository）
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#224" class="md-nav__link">
-    2.2.4 小结
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23-docker" class="md-nav__link">
-    2.3 Docker平台架构图解（入门版）
-  </a>
-  
-    <nav class="md-nav" aria-label="2.3 Docker平台架构图解（入门版）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#231-docker" class="md-nav__link">
-    2.3.1 Docker工作原理
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#232" class="md-nav__link">
-    2.3.2 整体架构及底层通信原理简述
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#233-docker" class="md-nav__link">
-    2.3.3 Docker运行的基本流程为
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#24" class="md-nav__link">
-    2.4 安装步骤
-  </a>
-  
-    <nav class="md-nav" aria-label="2.4 安装步骤">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#241-centos-7-docker" class="md-nav__link">
-    2.4.1 CentOS 7 安装 Docker
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#253" class="md-nav__link">
-    2.5.3 底层原理
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -524,7 +341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03_Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../../../../../../Docker/01_Docker%E5%9F%BA%E7%A1%80/03_Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         03 Docker常用命令
       </a>
     </li>
@@ -609,7 +426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/01_Kubernetes%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+      <a href="../../../../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/01_Kubernetes%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
         01 Kubernetes介绍
       </a>
     </li>
@@ -623,7 +440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/02_Kubernetes%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="md-nav__link">
+      <a href="../../../../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/02_Kubernetes%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="md-nav__link">
         02 Kubernetes集群环境搭建
       </a>
     </li>
@@ -637,7 +454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/03_Kubernetes%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/" class="md-nav__link">
+      <a href="../../../../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/03_Kubernetes%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/" class="md-nav__link">
         03 Kubernetes资源管理
       </a>
     </li>
@@ -651,7 +468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/04_Kubernetes%E5%AE%9E%E6%88%98%E5%85%A5%E9%97%A8/" class="md-nav__link">
+      <a href="../../../../../../Kubernetes/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/04_Kubernetes%E5%AE%9E%E6%88%98%E5%85%A5%E9%97%A8/" class="md-nav__link">
         04 Kubernetes实战入门
       </a>
     </li>
@@ -709,7 +526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../openai/openai_python_api/" class="md-nav__link">
+      <a href="../../../../../../openai/openai_python_api/" class="md-nav__link">
         Openai python api
       </a>
     </li>
@@ -760,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F/" class="md-nav__link">
+      <a href="../../../../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/%E5%B8%B8%E7%94%A8%E9%95%9C%E5%83%8F/" class="md-nav__link">
         常用镜像
       </a>
     </li>
@@ -801,7 +618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Get%20Start/" class="md-nav__link">
+      <a href="../../../../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Get%20Start/" class="md-nav__link">
         Get Start
       </a>
     </li>
@@ -815,7 +632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Harbor%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+      <a href="../../../../../../%E5%88%B6%E5%93%81%E7%AE%A1%E7%90%86/Harbor/Harbor%E7%AE%80%E4%BB%8B/" class="md-nav__link">
         Harbor简介
       </a>
     </li>
@@ -900,7 +717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%8E%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%BD%E5%AF%86%E7%AE%97%E6%B3%95/" class="md-nav__link">
+      <a href="../../../../../../%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%8E%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%BD%E5%AF%86%E7%AE%97%E6%B3%95/" class="md-nav__link">
         什么是国密算法
       </a>
     </li>
@@ -914,7 +731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%8E%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/%E5%9B%BD%E4%BA%A7%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95demo/" class="md-nav__link">
+      <a href="../../../../../../%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%8E%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/%E5%9B%BD%E4%BA%A7%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95demo/" class="md-nav__link">
         国产加密算法demo
       </a>
     </li>
@@ -999,7 +816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/01_%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+      <a href="../../../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/01_%E7%AE%80%E4%BB%8B/" class="md-nav__link">
         01 简介
       </a>
     </li>
@@ -1013,7 +830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/02_Git%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      <a href="../../../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/02_Git%E5%9F%BA%E7%A1%80/" class="md-nav__link">
         02 Git基础
       </a>
     </li>
@@ -1027,7 +844,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/03_Git%E6%97%A5%E5%B8%B8%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+      <a href="../../../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/03_Git%E6%97%A5%E5%B8%B8%E6%93%8D%E4%BD%9C/" class="md-nav__link">
         03 Git日常操作
       </a>
     </li>
@@ -1041,7 +858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/04_%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+      <a href="../../../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/04_%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/" class="md-nav__link">
         04 远程仓库的使用
       </a>
     </li>
@@ -1055,7 +872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/05_%E9%AB%98%E7%BA%A7Git%E6%8A%80%E5%B7%A7/" class="md-nav__link">
+      <a href="../../../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/05_%E9%AB%98%E7%BA%A7Git%E6%8A%80%E5%B7%A7/" class="md-nav__link">
         05 高级Git技巧
       </a>
     </li>
@@ -1069,7 +886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/06_%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E4%B8%8E%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="md-nav__link">
+      <a href="../../../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/06_%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E4%B8%8E%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="md-nav__link">
         06 最佳实践与常见问题
       </a>
     </li>
@@ -1083,7 +900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/07_%E4%BD%BF%E7%94%A8Git%E7%9A%84%E5%B7%A5%E5%85%B7%E5%92%8C%E8%B5%84%E6%BA%90/" class="md-nav__link">
+      <a href="../../../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/07_%E4%BD%BF%E7%94%A8Git%E7%9A%84%E5%B7%A5%E5%85%B7%E5%92%8C%E8%B5%84%E6%BA%90/" class="md-nav__link">
         07 使用Git的工具和资源
       </a>
     </li>
@@ -1097,7 +914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/08_%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BC%BA%E7%83%88%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%BC%9A%E4%BD%BF%E7%94%A8Git/" class="md-nav__link">
+      <a href="../../../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/08_%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BC%BA%E7%83%88%E5%BB%BA%E8%AE%AE%E5%AD%A6%E4%BC%9A%E4%BD%BF%E7%94%A8Git/" class="md-nav__link">
         08 为什么强烈建议学会使用Git
       </a>
     </li>
@@ -1111,7 +928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/Gitignore/" class="md-nav__link">
+      <a href="../../../../../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Git/Gitignore/" class="md-nav__link">
         Gitignore
       </a>
     </li>
@@ -1250,7 +1067,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/%E6%95%B0%E6%8D%AE%E5%BA%93/KV%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/RESP%E5%8D%8F%E8%AE%AE/" class="md-nav__link">
+      <a href="../../../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/%E6%95%B0%E6%8D%AE%E5%BA%93/KV%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/RESP%E5%8D%8F%E8%AE%AE/" class="md-nav__link">
         RESP协议
       </a>
     </li>
@@ -1264,7 +1081,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/%E6%95%B0%E6%8D%AE%E5%BA%93/KV%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E4%B8%8D%E5%90%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/" class="md-nav__link">
+      <a href="../../../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/%E6%95%B0%E6%8D%AE%E5%BA%93/KV%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E4%B8%8D%E5%90%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/" class="md-nav__link">
         Redis不同数据结构使用场景
       </a>
     </li>
@@ -1278,7 +1095,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/%E6%95%B0%E6%8D%AE%E5%BA%93/KV%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E4%BD%BF%E7%94%A8C%E8%AF%AD%E8%A8%80%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="md-nav__link">
+      <a href="../../../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/%E6%95%B0%E6%8D%AE%E5%BA%93/KV%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E4%BD%BF%E7%94%A8C%E8%AF%AD%E8%A8%80%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="md-nav__link">
         Redis为什么不使用C语言字符串
       </a>
     </li>
@@ -1292,7 +1109,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/%E6%95%B0%E6%8D%AE%E5%BA%93/KV%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E5%88%86%E5%B8%83%E5%BC%8F/" class="md-nav__link">
+      <a href="../../../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/%E6%95%B0%E6%8D%AE%E5%BA%93/KV%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E5%88%86%E5%B8%83%E5%BC%8F/" class="md-nav__link">
         Redis分布式
       </a>
     </li>
@@ -1306,7 +1123,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/%E6%95%B0%E6%8D%AE%E5%BA%93/KV%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E5%88%86%E5%B8%83%E5%BC%8F%E6%B6%88%E6%81%AF%E9%80%9A%E4%BF%A1/" class="md-nav__link">
+      <a href="../../../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/%E6%95%B0%E6%8D%AE%E5%BA%93/KV%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E5%88%86%E5%B8%83%E5%BC%8F%E6%B6%88%E6%81%AF%E9%80%9A%E4%BF%A1/" class="md-nav__link">
         Redis分布式消息通信
       </a>
     </li>
@@ -1320,7 +1137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/%E6%95%B0%E6%8D%AE%E5%BA%93/KV%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E6%8C%81%E4%B9%85%E5%8C%96/" class="md-nav__link">
+      <a href="../../../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/%E6%95%B0%E6%8D%AE%E5%BA%93/KV%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E6%8C%81%E4%B9%85%E5%8C%96/" class="md-nav__link">
         Redis持久化
       </a>
     </li>
@@ -1334,7 +1151,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/%E6%95%B0%E6%8D%AE%E5%BA%93/KV%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB/" class="md-nav__link">
+      <a href="../../../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/%E6%95%B0%E6%8D%AE%E5%BA%93/KV%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB/" class="md-nav__link">
         Redis数据迁移
       </a>
     </li>
@@ -1348,7 +1165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/%E6%95%B0%E6%8D%AE%E5%BA%93/KV%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+      <a href="../../../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/%E6%95%B0%E6%8D%AE%E5%BA%93/KV%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
         Redis的数据结构
       </a>
     </li>
@@ -1362,7 +1179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/%E6%95%B0%E6%8D%AE%E5%BA%93/KV%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E8%AF%BB%E5%86%99%E5%86%85%E5%AD%98/" class="md-nav__link">
+      <a href="../../../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/%E6%95%B0%E6%8D%AE%E5%BA%93/KV%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E8%AF%BB%E5%86%99%E5%86%85%E5%AD%98/" class="md-nav__link">
         读写内存
       </a>
     </li>
@@ -1444,7 +1261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/%E6%95%B0%E6%8D%AE%E5%BA%93/%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/Json%E5%AD%97%E6%AE%B5%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+      <a href="../../../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/%E6%95%B0%E6%8D%AE%E5%BA%93/%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/Json%E5%AD%97%E6%AE%B5%E6%93%8D%E4%BD%9C/" class="md-nav__link">
         Json字段操作
       </a>
     </li>
@@ -1526,7 +1343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%96%87%E6%A1%A3%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/MongoDB/python%E5%AE%9E%E7%8E%B0demo/" class="md-nav__link">
+      <a href="../../../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%96%87%E6%A1%A3%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/MongoDB/python%E5%AE%9E%E7%8E%B0demo/" class="md-nav__link">
         Python实现demo
       </a>
     </li>
@@ -1540,7 +1357,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%96%87%E6%A1%A3%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/MongoDB/%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../../../../../../%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%96%87%E6%A1%A3%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/MongoDB/%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         基本命令
       </a>
     </li>
@@ -1581,16 +1398,18 @@
 
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
       
       
       
@@ -1599,7 +1418,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_9">
           <span class="md-nav__icon md-icon"></span>
           软件开发
@@ -1610,14 +1429,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" checked>
       
       
       
@@ -1626,7 +1447,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_9_1">
           <span class="md-nav__icon md-icon"></span>
           编程基础
@@ -1666,7 +1487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Go/gRPC/" class="md-nav__link">
+      <a href="../../../../Go/gRPC/" class="md-nav__link">
         gRPC
       </a>
     </li>
@@ -1680,7 +1501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Go/%E6%88%90%E9%95%BF%E8%B7%AF%E7%BA%BF/" class="md-nav__link">
+      <a href="../../../../Go/%E6%88%90%E9%95%BF%E8%B7%AF%E7%BA%BF/" class="md-nav__link">
         成长路线
       </a>
     </li>
@@ -1721,7 +1542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Go/%E9%9D%A2%E8%AF%95/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" class="md-nav__link">
+      <a href="../../../../Go/%E9%9D%A2%E8%AF%95/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" class="md-nav__link">
         开发常见错误总结
       </a>
     </li>
@@ -1747,14 +1568,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_2" checked>
       
       
       
@@ -1763,7 +1586,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_9_1_2">
           <span class="md-nav__icon md-icon"></span>
           Python
@@ -1776,7 +1599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/GIL/" class="md-nav__link">
+      <a href="../../../GIL/" class="md-nav__link">
         GIL
       </a>
     </li>
@@ -1790,7 +1613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E6%B7%B1%E5%85%A5Pendulum/" class="md-nav__link">
+      <a href="../../../%E6%B7%B1%E5%85%A5Pendulum/" class="md-nav__link">
         深入Pendulum:Python中处理日期和时间的更好方式
       </a>
     </li>
@@ -1831,7 +1654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/Python%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/01_%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8%E6%A6%82%E8%BF%B0/" class="md-nav__link">
+      <a href="../../../Python%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/01_%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8%E6%A6%82%E8%BF%B0/" class="md-nav__link">
         01 沙箱逃逸概述
       </a>
     </li>
@@ -1845,7 +1668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/Python%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/02_%E5%87%BD%E6%95%B0%E5%AF%BC%E5%85%A5%E9%99%90%E5%88%B6%E5%92%8C%E7%BB%95%E8%BF%87/" class="md-nav__link">
+      <a href="../../../Python%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/02_%E5%87%BD%E6%95%B0%E5%AF%BC%E5%85%A5%E9%99%90%E5%88%B6%E5%92%8C%E7%BB%95%E8%BF%87/" class="md-nav__link">
         02 函数导入限制和绕过
       </a>
     </li>
@@ -1859,7 +1682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/Python%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/03_%E9%AD%94%E6%B3%95%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      <a href="../../../Python%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/03_%E9%AD%94%E6%B3%95%E5%87%BD%E6%95%B0/" class="md-nav__link">
         03 魔法函数
       </a>
     </li>
@@ -1873,7 +1696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/Python%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/04_%E7%B1%BB%E7%BB%A7%E6%89%BF%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+      <a href="../../../Python%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/04_%E7%B1%BB%E7%BB%A7%E6%89%BF%E4%BD%BF%E7%94%A8/" class="md-nav__link">
         04 类继承使用
       </a>
     </li>
@@ -1887,7 +1710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/Python%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/05_%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0%E6%9F%A5%E6%89%BE/" class="md-nav__link">
+      <a href="../../../Python%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8/05_%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0%E6%9F%A5%E6%89%BE/" class="md-nav__link">
         05 特殊函数查找
       </a>
     </li>
@@ -1935,7 +1758,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%A4%8D%E4%B9%A0/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%94%A8%E4%BE%8B/" class="md-nav__link">
+      <a href="../../../%E5%A4%8D%E4%B9%A0/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%94%A8%E4%BE%8B/" class="md-nav__link">
         基础语法用例
       </a>
     </li>
@@ -1949,7 +1772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%A4%8D%E4%B9%A0/%E9%9A%BE%E7%90%86%E8%A7%A3%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="md-nav__link">
+      <a href="../../../%E5%A4%8D%E4%B9%A0/%E9%9A%BE%E7%90%86%E8%A7%A3%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="md-nav__link">
         难理解的基础知识
       </a>
     </li>
@@ -1968,14 +1791,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_2_5" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_2_5" checked>
       
       
       
@@ -1984,7 +1809,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_1_2_5_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_1_2_5_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_9_1_2_5">
           <span class="md-nav__icon md-icon"></span>
           常用库
@@ -1995,14 +1820,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_2_5_1" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_2_5_1" checked>
       
       
       
@@ -2011,7 +1838,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_9_1_2_5_1_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_9_1_2_5_1_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_9_1_2_5_1">
           <span class="md-nav__icon md-icon"></span>
           NumPy
@@ -2024,7 +1851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/00_%E5%89%8D%E8%A8%80/" class="md-nav__link">
+      <a href="../00_%E5%89%8D%E8%A8%80/" class="md-nav__link">
         00 前言
       </a>
     </li>
@@ -2038,7 +1865,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/01_Ndarray/" class="md-nav__link">
+      <a href="../01_Ndarray/" class="md-nav__link">
         01 Ndarray
       </a>
     </li>
@@ -2052,7 +1879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/02_NumPy%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
+      <a href="../02_NumPy%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
         02 NumPy数据类型
       </a>
     </li>
@@ -2066,7 +1893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/03_Numpy%E6%95%B0%E7%BB%84%E5%88%9B%E5%BB%BA/" class="md-nav__link">
+      <a href="../03_Numpy%E6%95%B0%E7%BB%84%E5%88%9B%E5%BB%BA/" class="md-nav__link">
         03 Numpy数组创建
       </a>
     </li>
@@ -2080,7 +1907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/04_%E4%BB%8E%E7%8E%B0%E6%9C%89%E6%95%B0%E6%8D%AE%E5%88%9B%E5%BB%BANumpy%E6%95%B0%E7%BB%84/" class="md-nav__link">
+      <a href="../04_%E4%BB%8E%E7%8E%B0%E6%9C%89%E6%95%B0%E6%8D%AE%E5%88%9B%E5%BB%BANumpy%E6%95%B0%E7%BB%84/" class="md-nav__link">
         04 从现有数据创建Numpy数组
       </a>
     </li>
@@ -2094,7 +1921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/05_%E5%9C%A8%E6%95%B0%E5%80%BC%E8%8C%83%E5%9B%B4%E5%86%85%E5%88%9B%E5%BB%BANumpy%E6%95%B0%E7%BB%84/" class="md-nav__link">
+      <a href="../05_%E5%9C%A8%E6%95%B0%E5%80%BC%E8%8C%83%E5%9B%B4%E5%86%85%E5%88%9B%E5%BB%BANumpy%E6%95%B0%E7%BB%84/" class="md-nav__link">
         05 在数值范围内创建Numpy数组
       </a>
     </li>
@@ -2108,7 +1935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/06_NumPy%20%E5%B9%BF%E6%92%AD/" class="md-nav__link">
+      <a href="../06_NumPy%20%E5%B9%BF%E6%92%AD/" class="md-nav__link">
         06 NumPy 广播
       </a>
     </li>
@@ -2122,7 +1949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/07_NumPy%E6%95%B0%E7%BB%84%E8%BF%AD%E4%BB%A3/" class="md-nav__link">
+      <a href="../07_NumPy%E6%95%B0%E7%BB%84%E8%BF%AD%E4%BB%A3/" class="md-nav__link">
         07 NumPy数组迭代
       </a>
     </li>
@@ -2136,7 +1963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/08_NumPy%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6/" class="md-nav__link">
+      <a href="../08_NumPy%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6/" class="md-nav__link">
         08 NumPy位运算符
       </a>
     </li>
@@ -2150,7 +1977,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/09_NumPy%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      <a href="../09_NumPy%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0/" class="md-nav__link">
         09 NumPy字符串函数
       </a>
     </li>
@@ -2164,7 +1991,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/10_NumPy%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      <a href="../10_NumPy%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0/" class="md-nav__link">
         10 NumPy数学函数
       </a>
     </li>
@@ -2178,7 +2005,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/11_Numpy%E7%BB%9F%E8%AE%A1%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      <a href="../11_Numpy%E7%BB%9F%E8%AE%A1%E5%87%BD%E6%95%B0/" class="md-nav__link">
         11 Numpy统计函数
       </a>
     </li>
@@ -2192,7 +2019,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/12_NumPy%E6%8E%92%E5%BA%8F%E5%92%8C%E6%90%9C%E7%B4%A2/" class="md-nav__link">
+      <a href="../12_NumPy%E6%8E%92%E5%BA%8F%E5%92%8C%E6%90%9C%E7%B4%A2/" class="md-nav__link">
         12 NumPy排序和搜索
       </a>
     </li>
@@ -2206,7 +2033,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/13_NumPy%E7%9A%84%E5%A4%8D%E5%88%B6%E5%92%8C%E8%A7%86%E5%9B%BE/" class="md-nav__link">
+      <a href="../13_NumPy%E7%9A%84%E5%A4%8D%E5%88%B6%E5%92%8C%E8%A7%86%E5%9B%BE/" class="md-nav__link">
         13 NumPy的复制和视图
       </a>
     </li>
@@ -2220,7 +2047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/14_NumPy%E7%9F%A9%E9%98%B5%E5%BA%93/" class="md-nav__link">
+      <a href="../14_NumPy%E7%9F%A9%E9%98%B5%E5%BA%93/" class="md-nav__link">
         14 NumPy矩阵库
       </a>
     </li>
@@ -2234,7 +2061,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/15_NumPy%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="md-nav__link">
+      <a href="../15_NumPy%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="md-nav__link">
         15 NumPy线性代数
       </a>
     </li>
@@ -2248,7 +2075,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/16_NumPy%E4%B8%AD%E7%9A%84%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95/" class="md-nav__link">
+      <a href="../16_NumPy%E4%B8%AD%E7%9A%84%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95/" class="md-nav__link">
         16 NumPy中的矩阵乘法
       </a>
     </li>
@@ -2260,11 +2087,68 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/NumPy/17_Python%E4%B8%AD%E7%9A%84numpy.array%28%29/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          17 Python中的numpy.array()
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         17 Python中的numpy.array()
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pythonnumpyarray" class="md-nav__link">
+    Python中的numpy.array()
+  </a>
+  
+    <nav class="md-nav" aria-label="Python中的numpy.array()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    返回值
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2310,7 +2194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/00_PyTorch%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+      <a href="../../PyTorch/00_PyTorch%E7%AE%80%E4%BB%8B/" class="md-nav__link">
         00 PyTorch简介
       </a>
     </li>
@@ -2324,7 +2208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/01_%E5%88%9D%E8%AF%86PyTorch/" class="md-nav__link">
+      <a href="../../PyTorch/01_%E5%88%9D%E8%AF%86PyTorch/" class="md-nav__link">
         01 初识PyTorch
       </a>
     </li>
@@ -2338,7 +2222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/02_PyTorch%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" class="md-nav__link">
+      <a href="../../PyTorch/02_PyTorch%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" class="md-nav__link">
         02 PyTorch安装教程
       </a>
     </li>
@@ -2352,7 +2236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/03_PyTorch%E5%8C%85/" class="md-nav__link">
+      <a href="../../PyTorch/03_PyTorch%E5%8C%85/" class="md-nav__link">
         03 PyTorch包
       </a>
     </li>
@@ -2366,7 +2250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/04_PyTorch%E4%B8%AD%E7%9A%84torch.nn%E6%A8%A1%E5%9D%97/" class="md-nav__link">
+      <a href="../../PyTorch/04_PyTorch%E4%B8%AD%E7%9A%84torch.nn%E6%A8%A1%E5%9D%97/" class="md-nav__link">
         04 PyTorch中的torch.nn模块
       </a>
     </li>
@@ -2380,7 +2264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/05_PyTorch%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      <a href="../../PyTorch/05_PyTorch%E5%9F%BA%E7%A1%80/" class="md-nav__link">
         05 PyTorch基础
       </a>
     </li>
@@ -2394,7 +2278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/06_%E5%BC%A0%E9%87%8F/" class="md-nav__link">
+      <a href="../../PyTorch/06_%E5%BC%A0%E9%87%8F/" class="md-nav__link">
         06 张量
       </a>
     </li>
@@ -2408,7 +2292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/07_%E4%B8%80%E7%BB%B4%E5%BC%A0%E9%87%8F/" class="md-nav__link">
+      <a href="../../PyTorch/07_%E4%B8%80%E7%BB%B4%E5%BC%A0%E9%87%8F/" class="md-nav__link">
         07 一维张量
       </a>
     </li>
@@ -2422,7 +2306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/08_%E5%90%91%E9%87%8F%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+      <a href="../../PyTorch/08_%E5%90%91%E9%87%8F%E6%93%8D%E4%BD%9C/" class="md-nav__link">
         08 向量操作
       </a>
     </li>
@@ -2436,7 +2320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/09_%E4%BA%8C%E7%BB%B4%E5%BC%A0%E9%87%8F/" class="md-nav__link">
+      <a href="../../PyTorch/09_%E4%BA%8C%E7%BB%B4%E5%BC%A0%E9%87%8F/" class="md-nav__link">
         09 二维张量
       </a>
     </li>
@@ -2450,7 +2334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/10_PyTorch%E4%B8%AD%E7%9A%84%E6%A2%AF%E5%BA%A6/" class="md-nav__link">
+      <a href="../../PyTorch/10_PyTorch%E4%B8%AD%E7%9A%84%E6%A2%AF%E5%BA%A6/" class="md-nav__link">
         10 PyTorch中的梯度
       </a>
     </li>
@@ -2464,7 +2348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/11_%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" class="md-nav__link">
+      <a href="../../PyTorch/11_%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" class="md-nav__link">
         11 线性回归
       </a>
     </li>
@@ -2478,7 +2362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/12_%E9%A2%84%E6%B5%8B%E5%92%8C%E7%BA%BF%E6%80%A7%E7%B1%BB/" class="md-nav__link">
+      <a href="../../PyTorch/12_%E9%A2%84%E6%B5%8B%E5%92%8C%E7%BA%BF%E6%80%A7%E7%B1%BB/" class="md-nav__link">
         12 预测和线性类
       </a>
     </li>
@@ -2492,7 +2376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/13_%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+      <a href="../../PyTorch/13_%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
         13 使用自定义模块创建数据模型
       </a>
     </li>
@@ -2540,7 +2424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/Pydantic/Pydantic/" class="md-nav__link">
+      <a href="../../Pydantic/Pydantic/" class="md-nav__link">
         Pydantic
       </a>
     </li>
@@ -2607,146 +2491,24 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#docker" class="md-nav__link">
-    二、Docker安装
+  <a href="#pythonnumpyarray" class="md-nav__link">
+    Python中的numpy.array()
   </a>
   
-    <nav class="md-nav" aria-label="二、Docker安装">
+    <nav class="md-nav" aria-label="Python中的numpy.array()">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21" class="md-nav__link">
-    2.1 前提说明
-  </a>
-  
-    <nav class="md-nav" aria-label="2.1 前提说明">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#211-centos-docker" class="md-nav__link">
-    2.1.1 CentOS Docker 安装
+  <a href="#_1" class="md-nav__link">
+    参数
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#212" class="md-nav__link">
-    2.1.2 前提条件
+  <a href="#_2" class="md-nav__link">
+    返回值
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#213" class="md-nav__link">
-    2.1.3 查看自己的内核
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-docker" class="md-nav__link">
-    2.2 Docker 的基本组成
-  </a>
-  
-    <nav class="md-nav" aria-label="2.2 Docker 的基本组成">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#221-image" class="md-nav__link">
-    2.2.1 镜像（image）
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#222-container" class="md-nav__link">
-    2.2.2 容器（container）
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#223-repository" class="md-nav__link">
-    2.2.3 仓库（repository）
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#224" class="md-nav__link">
-    2.2.4 小结
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23-docker" class="md-nav__link">
-    2.3 Docker平台架构图解（入门版）
-  </a>
-  
-    <nav class="md-nav" aria-label="2.3 Docker平台架构图解（入门版）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#231-docker" class="md-nav__link">
-    2.3.1 Docker工作原理
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#232" class="md-nav__link">
-    2.3.2 整体架构及底层通信原理简述
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#233-docker" class="md-nav__link">
-    2.3.3 Docker运行的基本流程为
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#24" class="md-nav__link">
-    2.4 安装步骤
-  </a>
-  
-    <nav class="md-nav" aria-label="2.4 安装步骤">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#241-centos-7-docker" class="md-nav__link">
-    2.4.1 CentOS 7 安装 Docker
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#253" class="md-nav__link">
-    2.5.3 底层原理
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -2773,167 +2535,133 @@
   
 
 
-  <h1>02 Docker安装</h1>
+  <h1>17 Python中的numpy.array()</h1>
 
-<h2 id="docker">二、Docker安装<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h2>
-<h3 id="21">2.1 前提说明<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
-<h4 id="211-centos-docker">2.1.1 CentOS Docker 安装<a class="headerlink" href="#211-centos-docker" title="Permanent link">&para;</a></h4>
-<p>Docker并非是一个通用的容器工具，它依赖于已存在并运行的Linux内核环境。
-Docker实质上是在已经运行的Linux下制造了一个隔离的文件环境，因此它执行的效率几乎等同于所部署的Linux主机。
-因此，Docker必须部署在Linux内核的系统上。如果其他系统想部署Docker就必须安装一个虚拟Linux环境。
-<img alt="Docker安装01" src="../../../image/Docker/Docker%E5%AE%89%E8%A3%8501.png" />
-在Windows上部署Docker的方法都是先安装一个虚拟机，并在安装Linux系统的虚拟机中运行Docker。</p>
-<h4 id="212">2.1.2 前提条件<a class="headerlink" href="#212" title="Permanent link">&para;</a></h4>
-<p>目前，CentOS仅发行版本中的内核支持Docker。Docker运行在CentOS 7（64-bit）上，要求系统为64位，Linux系统内核版本为3.8以上，这里选用Centos7.x</p>
-<h4 id="213">2.1.3 查看自己的内核<a class="headerlink" href="#213" title="Permanent link">&para;</a></h4>
-<p>uname 命令用于打印当前系统相关信息（内核版本号，硬件架构，主机名称和操作系统类型等）。
-<div class="highlight"><pre><span></span><code>/ &gt; cat /etc/redhat-release
-CentOS Linux release 7.9.2009(Core)
+<h2 id="pythonnumpyarray">Python中的numpy.array()<a class="headerlink" href="#pythonnumpyarray" title="Permanent link">&para;</a></h2>
+<p>NumPy中的同质多维数组是主要对象。它基本上是一个由元素组成的表，所有元素的类型都相同，并由一组正整数的元组索引。在NumPy中，这些维度被称为轴。
+NumPy的数组类称为ndarray或别名数组。numpy.array与标准Python库的array.array类不同。array.array仅处理一维数组并提供较少的功能。
+语法</p>
+<blockquote>
+<p>numpy.array(object, dtype=None, copy=True, order='K', subok=False, ndmin=0)</p>
+</blockquote>
+<h4 id="_1">参数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<p>在numpy.array()函数中有以下参数。</p>
+<p>1) object: array_like
+任何对象，它暴露出一个数组接口，其array方法返回任何嵌套序列或数组。</p>
+<p>2) dtype : 可选的数据类型
+此参数用于定义数组元素的所需参数。如果不定义数据类型，则它将确定类型，以便将对象保留在序列中所需的最小类型。此参数仅用于向上转换数组。</p>
+<p>3) copy: 布尔型（可选）
+如果我们将copy设置为true，则会复制对象，否则当对象是嵌套序列时，或者需要满足任何其他要求（如dtype、order等）时，将进行复制。</p>
+<p>4) order : {'K', 'A', 'C', 'F'}，可选
+order参数指定数组的内存布局。当对象不是数组时，新创建的数组将在C顺序（行头或行主要）中，除非指定了'F'。当指定了F时，它将在Fortran顺序（列头或列主要）中。当对象是数组时，它保持以下顺序。
+order   no copy copy=True
+'K' 保持不变    保留F和C顺序。
+'A' 保持不变    当输入是F且不是C时，F顺序，否则C顺序
+'C' C顺序 C顺序
+'F' F顺序 F顺序
+当copy=False或为其他原因进行复制时，结果将与copy=True相同，A的某些异常情况除外。默认顺序为'K'。</p>
+<p>5) subok : 布尔型（可选）
+当subok=True时，子类将被传递，否则返回的数组将强制成基类数组（默认）。</p>
+<p>6) ndmin : 整数（可选）
+此参数指定所需的结果数组应具有的最小维数。可以根据需要在形状前面添加用户。</p>
+<h4 id="_2">返回值<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p>numpy.array()方法返回一个ndarray。ndarray是一个满足指定要求的数组对象。
+示例1：numpy.array()
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  
 
-/ &gt; uname -r
-5.14.0-162.6.1.el9_1.x86_64
-</code></pre></div></p>
-<h3 id="22-docker">2.2 Docker 的基本组成<a class="headerlink" href="#22-docker" title="Permanent link">&para;</a></h3>
-<h4 id="221-image">2.2.1 镜像（image）<a class="headerlink" href="#221-image" title="Permanent link">&para;</a></h4>
-<p>Docker 镜像（Image）就是一个 只读 的模板。镜像可以用来创建 Docker 容器， 一个镜像可以创建很多容器 。
-它也相当于是一个root文件系统。比如官方镜像 centos:7 就包含了完整的一套 centos:7 最小系统的 root 文件系统。
-相当于容器的“源代码”， docker镜像文件类似于Java的类模板，而docker容器实例类似于java中new出来的实例对象。</p>
-<h4 id="222-container">2.2.2 容器（container）<a class="headerlink" href="#222-container" title="Permanent link">&para;</a></h4>
-<ul>
-<li>从面向对象角度
-Docker 利用容器（Container）独立运行的一个或一组应用，应用程序或服务运行在容器里面，容器就类似于一个虚拟化的运行环境， 容器是用镜像创建的运行实例 。就像是Java中的类和实例对象一样，镜像是静态的定义，容器是镜像运行时的实体。容器为镜像提供了一个标准的和隔离的运行环境 ，它可以被启动、开始、停止、删除。每个容器都是相互隔离的、保证安全的平台</li>
-<li>从镜像容器角度
-<code>可以把容器看做是一个简易版的 Linux 环境</code>  （包括root用户权限、进程空间、用户空间和网络空间等）和运行在其中的应用程序。</li>
-</ul>
-<h4 id="223-repository">2.2.3 仓库（repository）<a class="headerlink" href="#223-repository" title="Permanent link">&para;</a></h4>
-<p><code>仓库（Respository）</code>是集中存放镜像文件的场所。
-类似于：
-Maven仓库，存放各种jar包的地方；
-github仓库，存放各种git项目的地方；
-Docker公司提供的官方registry被称为Docker Hub，存放各种镜像模板的地方。
-仓库分为公开仓库（Public）和私有仓库（Private）两种形式。
-最大的公开仓库是 Docker Hub(https://hub.docker.com/) ，
-存放了数量庞大的镜像供用户下载。国内的公开仓库包括阿里云 、网易云等</p>
-<h4 id="224">2.2.4 小结<a class="headerlink" href="#224" title="Permanent link">&para;</a></h4>
-<ul>
-<li>需要正确的理解仓库/镜像/容器这几个概念:
-Docker 本身是一个容器运行载体或称之为管理引擎。我们把应用程序和配置依赖打包好形成一个可交付的运行环境，这个打包好的运行环境就是image镜像文件。只有通过这个镜像文件才能生成Docker容器实例(类似Java中new出来一个对象)。
-image文件可以看作是容器的模板。Docker 根据 image 文件生成容器的实例。同一个 image 文件，可以生成多个同时运行的容器实例。</li>
-<li>镜像文件
-image 文件生成的容器实例，本身也是一个文件，称为镜像文件。</li>
-<li>容器实例
-一个容器运行一种服务，当我们需要的时候，就可以通过docker客户端创建一个对应的运行实例，也就是我们的容器 。</li>
-<li>仓库
-就是放一堆镜像的地方，我们可以把镜像发布到仓库中，需要的时候再从仓库中拉下来就可以了。</li>
-</ul>
-<h3 id="23-docker">2.3 Docker平台架构图解（入门版）<a class="headerlink" href="#23-docker" title="Permanent link">&para;</a></h3>
-<p><img alt="Docker平台架构图解" src="../../../image/Docker/Docker%E5%B9%B3%E5%8F%B0%E6%9E%B6%E6%9E%84%E5%9B%BE%E8%A7%A3.png" /></p>
-<h4 id="231-docker">2.3.1 Docker工作原理<a class="headerlink" href="#231-docker" title="Permanent link">&para;</a></h4>
-<p>Docker是一个Client-Server结构的系统，Docker守护进程运行在主机上， 然后通过Socket连接从客户端访问，守护进程从客户端接受命令并管理运行在主机上的容器 。 容器，是一个运行时环境，就是我们前面说到的集装箱。可以对比mysql演示对比讲解。
-<img alt="Docker工作原理" src="../../../image/Docker/Docker%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.png" /></p>
-<h4 id="232">2.3.2 整体架构及底层通信原理简述<a class="headerlink" href="#232" title="Permanent link">&para;</a></h4>
-<p>Docker是一个C/S模式的架构，后端是一个松耦合架构，众多模块各司其职。</p>
-<h4 id="233-docker">2.3.3 Docker运行的基本流程为<a class="headerlink" href="#233-docker" title="Permanent link">&para;</a></h4>
-<ol>
-<li>用户是使用Docker Client 与Docker Daemon 建立通信，并发送请求给后者。</li>
-<li>Docker Daemon 作为Docker架构中的主体部分，首先提供Docker Server 的功能时期可以接受 Docker Client的请求。</li>
-<li>Docker Engine 执行Docker内部的一些列工作，每一项工作都是以一个Job的形式的存在。</li>
-<li>Job的运行过程中，当需要容器镜像时，则从Docker Register中下载镜像，并通过镜像管理驱动Graph driver 将下载镜像以Graph的形式存储。</li>
-<li>当需要为Docker创建网络环境时，通过网络驱动Network driver创建并配置Docker容器网络环境。</li>
-<li>当需要限制Docker容器运行资源或执行用户指令等操作时，则通过Exec driver来完成。</li>
-<li>Libcontainer是一项独立的容器管理包，Network driver以及Exec driver都是通过Libcontainer来实现具体容器进行的操作。
-<img alt="Docker运行基本流程" src="../../../image/Docker/Docker%E8%BF%90%E8%A1%8C%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B.png" /></li>
-</ol>
-<h3 id="24">2.4 安装步骤<a class="headerlink" href="#24" title="Permanent link">&para;</a></h3>
-<h4 id="241-centos-7-docker">2.4.1 CentOS 7 安装 Docker<a class="headerlink" href="#241-centos-7-docker" title="Permanent link">&para;</a></h4>
-<ol>
-<li>
-<p>确定你是CentOS 7 或以上版本
-<div class="highlight"><pre><span></span><code># 查看CentOS版本命令
-cat /etc/redhat-release
-</code></pre></div></p>
-</li>
-<li>
-<p>卸载旧版本
-https://docs.docker.com/engine/install/centos/
-<div class="highlight"><pre><span></span><code>sudo yum remove docker \
-                  docker-client \
-                  docker-client-latest \
-                  docker-common \
-                  docker-latest \
-                  docker-latest-logrotate \
-                  docker-logrotate \
-                  docker-engine
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>  
+<span class="n">arr</span>
 </code></pre></div>
-<img alt="卸载旧版本" src="../../../image/Docker/%E5%8D%B8%E8%BD%BD%E6%97%A7%E7%89%88%E6%9C%AC.png" /></p>
-</li>
-<li>
-<p>yum安装gcc相关命令
-<div class="highlight"><pre><span></span><code># yum安装gcc相关命令
-yum -y install gcc
-yum -y install gcc-c++
+输出：
+<div class="highlight"><pre><span></span><code><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 </code></pre></div></p>
-</li>
-<li>
-<p>安装需要的软件包
-<img alt="安装需要的软件包" src="../../../image/Docker/%E5%AE%89%E8%A3%85%E9%9C%80%E8%A6%81%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%8C%85.png" />
-<div class="highlight"><pre><span></span><code>sudo yum install -y yum-utils
-sudo yum-config-manager \
-    --add-repo \
-    https://download.docker.com/linux/centos/docker-ce.repo
-</code></pre></div>
-使用存储库安装
-<div class="highlight"><pre><span></span><code>在新主机上首次安装Docker Engine之前，您需要设置Docker存储库。之后，您可以从存储库安装和更新Docker
-设置存储库
-安装 yum-utils 包（提供yum-config-manager 实用程序）并设置稳定的存储库
-# 官网要求
-yum install -y yum-utils
-</code></pre></div></p>
-</li>
-<li>
-<p>设置stable镜像仓库
-<img alt="设置stable镜像库" src="../../../image/Docker/%E8%AE%BE%E7%BD%AEstable%E9%95%9C%E5%83%8F%E5%BA%93.png" />
-<div class="highlight"><pre><span></span><code># 推荐使用 使用阿里的 docker 镜像仓库，国外的镜像仓库是比较慢的
-yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
-</code></pre></div></p>
-</li>
-<li>
-<p>更新yum软件包索引
-<div class="highlight"><pre><span></span><code># 更新yum软件包索引
-yum makecache fast
-</code></pre></div></p>
-</li>
-<li>安装Docker CE引擎
-<div class="highlight"><pre><span></span><code># 命令
-yum -y install docker-ce docker-ce-cli containerd.io
-</code></pre></div></li>
-<li>启动Docker
-<div class="highlight"><pre><span></span><code># 启动命令
-systemctl start docker
-</code></pre></div></li>
-<li>测试
-<img alt="测试是否安装" src="../../../image/Docker/%E6%B5%8B%E8%AF%95%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85.png" />
-<div class="highlight"><pre><span></span><code>docker version 
+<p>在上面的代码中
+我们导入了别名为np的numpy库。</p>
+<p>我们声明了变量<code>arr</code>并将值分配为np.array()函数返回的值。</p>
+<p>在array()函数中，我们只传递了元素，没有传递轴。</p>
+<p>最后，我们尝试打印arr的值。</p>
+<p>输出中显示了一个数组。
+示例2：
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  
 
-docker run hello-world
-</code></pre></div></li>
-</ol>
-<p>输出这段提示以后hello world就会停止运行，容器自动终止。
-10. 卸载
-<div class="highlight"><pre><span></span><code># 卸载命令
-systemctl stop docker 
-yum remove docker-ce docker-ce-cli containerd.io
-rm -rf /var/lib/docker
-rm -rf /var/lib/containerd
-</code></pre></div></p>
-<h4 id="253">2.5.3 底层原理<a class="headerlink" href="#253" title="Permanent link">&para;</a></h4>
-<p>为什么Docker会比VM虚拟机快：
-<div class="highlight"><pre><span></span><code>1. docker有着比虚拟机更少的抽象层 
-   由于docker不需要Hypervisor(虚拟机)实现硬件资源虚拟化,运行在docker容器上的程序直接使用的都是实际物理机的硬件资源。因此在CPU、内存利用率上docker将会在效率上有明显优势。 
-2. docker利用的是宿主机的内核,而不需要加载操作系统OS内核 
-   当新建一个容器时,docker不需要和虚拟机一样重新加载一个操作系统内核。进而避免引寻、加载操作系统内核返回等比较费时费资源的过程,当新建一个虚拟机时,虚拟机软件需要加载OS,返回新建过程是分钟级别的。而docker由于直接利用宿主机的操作系统,则省略了返回过程,因此新建一个docker容器只需要几秒钟。
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">])</span>  
+<span class="n">arr</span>
 </code></pre></div>
-<img alt="底层原理" src="../../../image/Docker/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86.png" /></p>
+输出：
+<div class="highlight"><pre><span></span><code><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">])</span>
+</code></pre></div></p>
+<p>在上面的代码中
+我们导入了别名为np的numpy库。</p>
+<p>我们声明了变量<code>arr</code>并将值分配为np.array()函数返回的值。</p>
+<p>在array()函数中，我们传递了不同类型的元素，例如整数、浮点数等。</p>
+<p>最后，我们尝试打印arr的值。</p>
+<p>输出中显示了一个数组，其中的元素类型为能够容纳序列中的对象所需的最小类型。</p>
+<p>示例3：多于一个维度
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mi">7</span><span class="p">]])</span>  
+<span class="n">arr</span>
+</code></pre></div>
+输出：
+<div class="highlight"><pre><span></span><code><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">7.</span><span class="p">]])</span>
+</code></pre></div>
+在上面的代码中
+我们导入了别名为np的numpy库。</p>
+<p>我们声明了变量<code>arr</code>并将值分配为np.array()函数返回的值。</p>
+<p>在array()函数中，我们通过不同的方括号传递了元素的数量。</p>
+<p>最后，我们尝试打印arr的值。</p>
+<p>输出中显示了一个多维数组。
+示例4：最小维度：2
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">],</span> <span class="n">ndmin</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  
+<span class="n">arr</span>
+</code></pre></div>
+输出：
+<div class="highlight"><pre><span></span><code><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">]])</span>
+</code></pre></div>
+在上面的代码中
+我们导入了别名为np的numpy库。</p>
+<p>我们声明了变量<code>arr</code>并将值分配为np.array()函数返回的值。</p>
+<p>在array()函数中，我们通过方括号传递了元素的数量和创建ndarray的维度。</p>
+<p>最后，我们尝试打印arr的值。</p>
+<p>输出中显示了一个二维数组。</p>
+<p>示例5：提供类型
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">12</span><span class="p">,</span> <span class="mf">45.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
+<span class="n">arr</span>
+</code></pre></div>
+输出：
+<div class="highlight"><pre><span></span><code><span class="n">array</span><span class="p">([</span><span class="mf">12.</span><span class="o">+</span><span class="mf">0.</span><span class="n">j</span><span class="p">,</span> <span class="mf">45.</span><span class="o">+</span><span class="mf">0.</span><span class="n">j</span><span class="p">,</span>  <span class="mf">3.</span><span class="o">+</span><span class="mf">0.</span><span class="n">j</span><span class="p">])</span>
+</code></pre></div>
+在上面的代码中
+我们导入了别名为np的numpy库。</p>
+<p>我们声明了变量<code>arr</code>并将值分配为np.array()函数返回的值。</p>
+<p>在array()函数中，我们通过方括号传递了元素，并将dtype设置为complex。</p>
+<p>最后，我们尝试打印arr的值。</p>
+<p>输出中的<code>arr</code>元素的值以复数形式显示。</p>
+<p>示例6：从子类创建数组
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mat</span><span class="p">(</span><span class="s1">&#39;1 2;3 4&#39;</span><span class="p">))</span>  
+<span class="n">arr</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mat</span><span class="p">(</span><span class="s1">&#39;1 2;3 4&#39;</span><span class="p">),</span> <span class="n">subok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
+<span class="n">arr</span>
+</code></pre></div>
+输出：
+<div class="highlight"><pre><span></span><code><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+</code></pre></div>
+在上面的代码中
+我们导入了别名为np的numpy库。</p>
+<p>我们声明了变量<code>arr</code>并将值分配为np.array()函数返回的值。</p>
+<p>在array()函数中，我们通过np.mat()函数以矩阵形式传递了元素，并设置subok=True。</p>
+<p>最后，我们尝试打印arr的值。</p>
+<p>输出中显示了一个多维数组。</p>
 
 
 
@@ -2971,10 +2699,10 @@ rm -rf /var/lib/containerd
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../../..", "features": ["navigation.sections"], "search": "../../../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+      <script src="../../../../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
     
   </body>
