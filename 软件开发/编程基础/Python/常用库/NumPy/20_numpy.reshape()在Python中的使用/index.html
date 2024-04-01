@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../17_Python%E4%B8%AD%E7%9A%84numpy.array%28%29/">
+        <link rel="prev" href="../19_numpy.append%28%29%E5%9C%A8Python%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8/">
       
       
-        <link rel="next" href="../19_numpy.append%28%29%E5%9C%A8Python%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8/">
+        <link rel="next" href="../../PyTorch/00_PyTorch%E7%AE%80%E4%BB%8B/">
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>18 使用numpy.concatenate()在Python中连接数组 - 韩林奇的个人博客</title>
+        <title>20 numpy.reshape()在Python中的使用 - 韩林奇的个人博客</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#numpyconcatenatepython" class="md-skip">
+        <a href="#numpyreshapepython" class="md-skip">
           跳转至
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              18 使用numpy.concatenate()在Python中连接数组
+              20 numpy.reshape()在Python中的使用
             
           </span>
         </div>
@@ -2869,28 +2869,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    18 使用numpy.concatenate()在Python中连接数组
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../18_%E4%BD%BF%E7%94%A8numpy.concatenate%28%29%E5%9C%A8Python%E4%B8%AD%E8%BF%9E%E6%8E%A5%E6%95%B0%E7%BB%84/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2899,72 +2881,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#numpyconcatenatepython" class="md-nav__link">
-    <span class="md-ellipsis">
-      使用numpy.concatenate()在Python中连接数组
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="使用numpy.concatenate()在Python中连接数组">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      语法
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="语法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      参数
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      返回结果
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2995,10 +2911,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../20_numpy.reshape%28%29%E5%9C%A8Python%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    20 numpy.reshape()在Python中的使用
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -3007,6 +2941,66 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#numpyreshapepython" class="md-nav__link">
+    <span class="md-ellipsis">
+      numpy.reshape()在Python中的使用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="numpy.reshape()在Python中的使用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      语法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      参数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      返回值
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3481,13 +3475,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#numpyconcatenatepython" class="md-nav__link">
+  <a href="#numpyreshapepython" class="md-nav__link">
     <span class="md-ellipsis">
-      使用numpy.concatenate()在Python中连接数组
+      numpy.reshape()在Python中的使用
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="使用numpy.concatenate()在Python中连接数组">
+    <nav class="md-nav" aria-label="numpy.reshape()在Python中的使用">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3497,8 +3491,7 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="语法">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
@@ -3512,14 +3505,9 @@
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      返回结果
+      返回值
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -3546,116 +3534,153 @@
   
 
 
-  <h1>18 使用numpy.concatenate()在Python中连接数组</h1>
+  <h1>20 numpy.reshape()在Python中的使用</h1>
 
-<h2 id="numpyconcatenatepython">使用numpy.concatenate()在Python中连接数组<a class="headerlink" href="#numpyconcatenatepython" title="Permanent link">&para;</a></h2>
-<p>numpy.concatenate() 函数是NumPy包中的函数。该函数主要用于将NumPy数组组合在一起。此函数基本上用于在指定的轴上连接两个或多个具有相同形状的数组。有以下几点需要注意：
-NumPy的concatenate()不像传统的数据库连接那样，它更像是将NumPy数组堆叠在一起。</p>
-<p>此函数可以在垂直和水平方向上操作。这意味着我们可以将数组水平或垂直连接在一起。</p>
-<p><img alt="Concatenate" src="../../../../../../image/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/Numpy/Concatenate.png" /></p>
-<p>concatenate() 函数通常写作 np.concatenate()，但我们也可以写成 numpy.concatenate()。这取决于导入numpy包的方式，即使用 import numpy as np 还是 import numpy。</p>
-<h3 id="_1">语法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h2 id="numpyreshapepython">numpy.reshape()在Python中的使用<a class="headerlink" href="#numpyreshapepython" title="Permanent link">&para;</a></h2>
+<p>numpy.reshape()函数是NumPy包中的一个函数。顾名思义，reshape表示“改变形状”。numpy.reshape()函数帮助我们在不改变数据的情况下为数组获取新的形状。
+有时，我们需要将数据从宽格式转换为长格式。在这种情况下，我们必须使用reshape()函数来重新塑造数组。</p>
+<h4 id="_1">语法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
 <blockquote>
-<p>numpy.concatenate((a1, a2, ...), axis)</p>
+<p>numpy.reshape(arr, new_shape, order='C')</p>
 </blockquote>
 <h4 id="_2">参数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
-<p>1) (a1, a2, ...)</p>
-<p>此参数定义数组序列。这里的 a1、a2、a3 ... 是具有相同形状的数组，除了与轴相对应的维度。</p>
-<p>2) axis：int（可选）</p>
-<p>此参数定义沿着哪个轴连接数组。默认情况下，其值为 0。</p>
-<h4 id="_3">返回结果<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
-<p>它将返回包含两个数组元素的 ndarray。</p>
-<p>示例 1：numpy.concatenate()
+<p>reshape()函数有以下参数：</p>
+<p>1) arr: array_like
+这是一个ndarray。这是我们想要重新塑造的源数组。这个参数是必需的，在numpy.reshape()函数中发挥着重要作用。</p>
+<p>2) new_shape: int或int元组
+我们要将原始数组转换为的形状应与原始数组兼容。如果是整数，则结果将是长度为该整数的1-D数组。一个形状维度可以为-1。在这里，该值会被数组的长度和剩余维度近似。</p>
+<p>3) order: {'C'，'F'，'A'}，可选
+这些索引顺序参数在reshape()函数中发挥着关键作用。这些索引顺序用于读取源数组的元素，并使用这些索引顺序将元素放入重新塑造的数组中。
+索引顺序'C'表示使用类似C的索引顺序读取/写入元素，其中最后一个轴索引变化最快，从第一个轴索引变化最慢。
+索引顺序'F'表示使用类似Fortran的索引顺序读取/写入元素，其中最后一个轴索引变化最慢，而第一个轴索引变化最快。
+'C'和'F'顺序不涉及底层数组的内存布局，只涉及索引的顺序。
+索引顺序'A'表示在内存中连续时，按照类似Fortran的索引顺序读取/写入元素，否则使用类似C的顺序。</p>
+<h4 id="_3">返回值<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p>该函数返回一个ndarray。如果可能，它是一个新的视图对象；否则，它将是一个副本。返回的数组的内存布局没有保证。
+示例 1：类似C的索引顺序
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span> 
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">30</span><span class="p">]])</span> 
-<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span> 
-<span class="n">z</span> 
-</code></pre></div>
-上述代码中</p>
-<p>我们使用别名np导入numpy。</p>
-<p>我们使用np.array()函数创建一个数组'x'。</p>
-<p>然后，我们使用相同的np.array()函数创建另一个数组'y'。</p>
-<p>我们声明变量'z'并将其赋值为np.concatenate()函数的返回值。</p>
-<p>我们在函数中传递数组'x'和'y'。</p>
-<p>最后，我们尝试打印'z'的值。</p>
-<p>在输出中，根据axis=0，显示了数组'x'和'y'的值。</p>
-<p>输出：
-<div class="highlight"><pre><span></span><code><span class="n">array</span><span class="p">([[</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">],</span>
-       <span class="p">[</span> <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">],</span>
-       <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">30</span><span class="p">]])</span>
-</code></pre></div></p>
-<p>示例 2：numpy.concatenate() 使用 axis=0
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span> 
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">30</span><span class="p">]])</span> 
-<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> 
-<span class="n">z</span> 
-</code></pre></div>
-输出：
-<div class="highlight"><pre><span></span><code><span class="n">array</span><span class="p">([[</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">],</span>
-       <span class="p">[</span> <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">],</span>
-       <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">30</span><span class="p">]])</span>
-</code></pre></div></p>
-<p>示例 3：numpy.concatenate() 使用 axis=1
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span> 
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">30</span><span class="p">]])</span> 
-<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">T</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
-<span class="n">z</span> 
-</code></pre></div>
-输出：
-<div class="highlight"><pre><span></span><code><span class="n">array</span><span class="p">([[</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span>
-       <span class="p">[</span> <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span> <span class="mi">30</span><span class="p">]])</span>
-</code></pre></div>
-在上面的示例中，'.T' 用于将行变为列，列变为行。</p>
-<p>示例 4：numpy.concatenate() 使用 axis=None
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span> 
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">30</span><span class="p">]])</span> 
-<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> 
-<span class="n">z</span> 
-</code></pre></div>
-输出：
-<div class="highlight"><pre><span></span><code><span class="n">array</span><span class="p">([</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">30</span><span class="p">])</span>
-</code></pre></div>
-在上面的示例中，我们使用了np.concatenate()函数。该函数不会保留 MaskedArray 输入的屏蔽。以下是可以保留 MaskedArray 输入的屏蔽的连接数组的方法。</p>
-<p>示例 5：np.ma.concatenate()
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> 
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> 
-<span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked</span> 
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span> 
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> 
 <span class="n">x</span> 
 <span class="n">y</span> 
-<span class="n">z1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">])</span> 
-<span class="n">z2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">])</span> 
-<span class="n">z1</span> 
-<span class="n">z2</span> 
 </code></pre></div>
-上述代码中</p>
-<p>我们使用别名np导入numpy。</p>
-<p>我们使用np.ma.arange()函数创建一个数组'x'。</p>
-<p>然后，我们使用相同的np.ma.arange()函数创建另一个数组'y'。</p>
-<p>我们声明变量'z1'并将其赋值为np.concatenate()函数的返回值。</p>
-<p>我们声明变量'z2'并将其赋值为np.ma.concatenate()函数的返回值。</p>
-<p>最后，我们尝试打印'z1'和'z2'的值。</p>
-<p>在输出中，数组'z1'和'z2'的值保留了 MaskedArray 输入的屏蔽。</p>
-<p>输出：
-<div class="highlight"><pre><span></span><code><span class="n">masked_array</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">--</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-              <span class="n">mask</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span>
-              <span class="n">fill_value</span><span class="o">=</span><span class="mi">999999</span><span class="p">)</span>
-<span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
-<span class="n">masked_array</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
-              <span class="n">mask</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-              <span class="n">fill_value</span><span class="o">=</span><span class="mi">999999</span><span class="p">)</span>
-<span class="n">masked_array</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">--</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
-              <span class="n">mask</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span>
-              <span class="n">fill_value</span><span class="o">=</span><span class="mi">999999</span><span class="p">)</span>
+输出：
+<div class="highlight"><pre><span></span><code><span class="n">array</span><span class="p">([</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">])</span>
+<span class="n">array</span><span class="p">([[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">]])</span>
+</code></pre></div></p>
+<p>在上面的代码中</p>
+<ul>
+<li>
+<p>我们使用别名np导入了numpy。</p>
+</li>
+<li>
+<p>我们使用np.arange()函数创建了一个数组'x'。</p>
+</li>
+<li>
+<p>我们声明了变量'y'，并将其赋值为np.reshape()函数的返回值。</p>
+</li>
+<li>
+<p>我们在函数中传递了数组'x'和形状。</p>
+</li>
+<li>
+<p>最后，我们尝试打印数组的值。</p>
+</li>
+</ul>
+<p>在输出中，数组已经被表示为三行四列。
+示例 2：与C ravel然后C reshape等效
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span> 
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span> 
+<span class="n">x</span> 
+<span class="n">y</span> 
+</code></pre></div>
+ravel()函数用于创建一个连续的扁平数组。返回一个包含输入元素的一维数组。只有在需要时才会制作副本。
+输出：
+<div class="highlight"><pre><span></span><code><span class="n">array</span><span class="p">([</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">])</span>
+<span class="n">array</span><span class="p">([[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">]])</span>
+</code></pre></div></p>
+<p>示例 3：类似Fortran的索引顺序
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span> 
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;F&#39;</span><span class="p">)</span> 
+<span class="n">x</span> 
+<span class="n">y</span> 
+</code></pre></div>
+输出：
+<div class="highlight"><pre><span></span><code><span class="n">array</span><span class="p">([</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">])</span>
+<span class="n">array</span><span class="p">([[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">8</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">9</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">2</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">3</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">]])</span>
+</code></pre></div>
+在上面的代码中
+- 我们使用别名np导入了numpy。</p>
+<ul>
+<li>
+<p>我们使用np.arange()函数创建了一个数组'x'。</p>
+</li>
+<li>
+<p>我们声明了变量'y'，并将其赋值为np.reshape()函数的返回值。</p>
+</li>
+<li>
+<p>我们在函数中传递了数组'x'、形状和类似Fortran的索引顺序。</p>
+</li>
+<li>
+<p>最后，我们尝试打印数组的值。</p>
+</li>
+</ul>
+<p>在输出中，数组已经被表示为四行三列。
+示例 4：类似Fortran的索引顺序
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span> 
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;F&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;F&#39;</span><span class="p">)</span> 
+<span class="n">x</span> 
+<span class="n">y</span>
+</code></pre></div>
+输出：
+<div class="highlight"><pre><span></span><code><span class="n">array</span><span class="p">([</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">])</span>
+<span class="n">array</span><span class="p">([[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">8</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">9</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">2</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">3</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">]])</span>
+</code></pre></div></p>
+<p>示例 5：未指定的值被推断为2
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span> 
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span> 
+<span class="n">x</span> 
+<span class="n">y</span> 
+</code></pre></div>
+在上面的代码中
+- 我们使用别名np导入了numpy。</p>
+<ul>
+<li>
+<p>我们使用np.arange()函数创建了一个数组'x'。</p>
+</li>
+<li>
+<p>我们声明了变量'y'，并将其赋值为np.reshape()函数的返回值。</p>
+</li>
+<li>
+<p>我们在函数中传递了数组'x'和形状（未指定值）。</p>
+</li>
+<li>
+<p>最后，我们尝试打印数组的值。</p>
+</li>
+</ul>
+<p>在输出中，数组已经被表示为两行五列。
+输出：
+<div class="highlight"><pre><span></span><code><span class="n">array</span><span class="p">([</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">])</span>
+<span class="n">array</span><span class="p">([[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">]])</span>
 </code></pre></div></p>
 
 
