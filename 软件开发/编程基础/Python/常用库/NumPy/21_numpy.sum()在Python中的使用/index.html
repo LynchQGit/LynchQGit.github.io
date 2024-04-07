@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../00_PyTorch%E7%AE%80%E4%BB%8B/">
+        <link rel="prev" href="../20_numpy.reshape%28%29%E5%9C%A8Python%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8/">
       
       
-        <link rel="next" href="../02_PyTorch%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">
+        <link rel="next" href="../../PyTorch/00_PyTorch%E7%AE%80%E4%BB%8B/">
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>01 初识PyTorch - 韩林奇的个人博客</title>
+        <title>21 numpy.sum()在Python中的使用 - 韩林奇的个人博客</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pytorch" class="md-skip">
+        <a href="#numpysumpython" class="md-skip">
           跳转至
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              01 初识PyTorch
+              21 numpy.sum()在Python中的使用
             
           </span>
         </div>
@@ -2452,6 +2452,8 @@
                 
   
   
+    
+  
   
   
     
@@ -2460,11 +2462,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_2_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_2_5_1" checked>
         
           
           <label class="md-nav__link" for="__nav_9_1_2_5_1" id="__nav_9_1_2_5_1_label" tabindex="0">
@@ -2478,7 +2480,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_9_1_2_5_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_9_1_2_5_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9_1_2_5_1">
             <span class="md-nav__icon md-icon"></span>
             NumPy
@@ -2492,7 +2494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NumPy/00_%E5%89%8D%E8%A8%80/" class="md-nav__link">
+      <a href="../00_%E5%89%8D%E8%A8%80/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2513,7 +2515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NumPy/01_Ndarray/" class="md-nav__link">
+      <a href="../01_Ndarray/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2534,7 +2536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NumPy/02_NumPy%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
+      <a href="../02_NumPy%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2555,7 +2557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NumPy/03_Numpy%E6%95%B0%E7%BB%84%E5%88%9B%E5%BB%BA/" class="md-nav__link">
+      <a href="../03_Numpy%E6%95%B0%E7%BB%84%E5%88%9B%E5%BB%BA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2576,7 +2578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NumPy/04_%E4%BB%8E%E7%8E%B0%E6%9C%89%E6%95%B0%E6%8D%AE%E5%88%9B%E5%BB%BANumpy%E6%95%B0%E7%BB%84/" class="md-nav__link">
+      <a href="../04_%E4%BB%8E%E7%8E%B0%E6%9C%89%E6%95%B0%E6%8D%AE%E5%88%9B%E5%BB%BANumpy%E6%95%B0%E7%BB%84/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2597,7 +2599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NumPy/05_%E5%9C%A8%E6%95%B0%E5%80%BC%E8%8C%83%E5%9B%B4%E5%86%85%E5%88%9B%E5%BB%BANumpy%E6%95%B0%E7%BB%84/" class="md-nav__link">
+      <a href="../05_%E5%9C%A8%E6%95%B0%E5%80%BC%E8%8C%83%E5%9B%B4%E5%86%85%E5%88%9B%E5%BB%BANumpy%E6%95%B0%E7%BB%84/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2618,7 +2620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NumPy/06_NumPy%20%E5%B9%BF%E6%92%AD/" class="md-nav__link">
+      <a href="../06_NumPy%20%E5%B9%BF%E6%92%AD/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2639,7 +2641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NumPy/07_NumPy%E6%95%B0%E7%BB%84%E8%BF%AD%E4%BB%A3/" class="md-nav__link">
+      <a href="../07_NumPy%E6%95%B0%E7%BB%84%E8%BF%AD%E4%BB%A3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2660,7 +2662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NumPy/08_NumPy%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6/" class="md-nav__link">
+      <a href="../08_NumPy%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2681,7 +2683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NumPy/09_NumPy%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      <a href="../09_NumPy%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2702,7 +2704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NumPy/10_NumPy%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      <a href="../10_NumPy%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2723,7 +2725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NumPy/11_Numpy%E7%BB%9F%E8%AE%A1%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      <a href="../11_Numpy%E7%BB%9F%E8%AE%A1%E5%87%BD%E6%95%B0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2744,7 +2746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NumPy/12_NumPy%E6%8E%92%E5%BA%8F%E5%92%8C%E6%90%9C%E7%B4%A2/" class="md-nav__link">
+      <a href="../12_NumPy%E6%8E%92%E5%BA%8F%E5%92%8C%E6%90%9C%E7%B4%A2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2765,7 +2767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NumPy/13_NumPy%E7%9A%84%E5%A4%8D%E5%88%B6%E5%92%8C%E8%A7%86%E5%9B%BE/" class="md-nav__link">
+      <a href="../13_NumPy%E7%9A%84%E5%A4%8D%E5%88%B6%E5%92%8C%E8%A7%86%E5%9B%BE/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2786,7 +2788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NumPy/14_NumPy%E7%9F%A9%E9%98%B5%E5%BA%93/" class="md-nav__link">
+      <a href="../14_NumPy%E7%9F%A9%E9%98%B5%E5%BA%93/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2807,7 +2809,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NumPy/15_NumPy%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="md-nav__link">
+      <a href="../15_NumPy%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2828,7 +2830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NumPy/16_NumPy%E4%B8%AD%E7%9A%84%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95/" class="md-nav__link">
+      <a href="../16_NumPy%E4%B8%AD%E7%9A%84%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2849,7 +2851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NumPy/17_Python%E4%B8%AD%E7%9A%84numpy.array%28%29/" class="md-nav__link">
+      <a href="../17_Python%E4%B8%AD%E7%9A%84numpy.array%28%29/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2870,7 +2872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NumPy/18_%E4%BD%BF%E7%94%A8numpy.concatenate%28%29%E5%9C%A8Python%E4%B8%AD%E8%BF%9E%E6%8E%A5%E6%95%B0%E7%BB%84/" class="md-nav__link">
+      <a href="../18_%E4%BD%BF%E7%94%A8numpy.concatenate%28%29%E5%9C%A8Python%E4%B8%AD%E8%BF%9E%E6%8E%A5%E6%95%B0%E7%BB%84/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2891,7 +2893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NumPy/19_numpy.append%28%29%E5%9C%A8Python%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+      <a href="../19_numpy.append%28%29%E5%9C%A8Python%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2912,100 +2914,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../NumPy/20_numpy.reshape%28%29%E5%9C%A8Python%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+      <a href="../20_numpy.reshape%28%29%E5%9C%A8Python%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     20 numpy.reshape()在Python中的使用
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../NumPy/21_numpy.sum%28%29%E5%9C%A8Python%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    21 numpy.sum()在Python中的使用
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-    
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_2_5_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_9_1_2_5_2" id="__nav_9_1_2_5_2_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    PyTorch
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_9_1_2_5_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_9_1_2_5_2">
-            <span class="md-nav__icon md-icon"></span>
-            PyTorch
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../00_PyTorch%E7%AE%80%E4%BB%8B/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    00 PyTorch简介
   </span>
   
 
@@ -3033,7 +2946,7 @@
           
   
   <span class="md-ellipsis">
-    01 初识PyTorch
+    21 numpy.sum()在Python中的使用
   </span>
   
 
@@ -3044,7 +2957,7 @@
         
   
   <span class="md-ellipsis">
-    01 初识PyTorch
+    21 numpy.sum()在Python中的使用
   </span>
   
 
@@ -3064,28 +2977,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pytorch" class="md-nav__link">
+  <a href="#numpysumpython" class="md-nav__link">
     <span class="md-ellipsis">
-      PyTorch的历史
+      numpy.sum()在Python中的使用
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pytorch_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      为什么使用PyTorch？
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="为什么使用PyTorch？">
+    <nav class="md-nav" aria-label="numpy.sum()在Python中的使用">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      简单的接口
+      语法
     </span>
   </a>
   
@@ -3094,7 +2998,7 @@
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      混合前端
+      参数
     </span>
   </a>
   
@@ -3103,52 +3007,7 @@
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      分布式训练
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    <span class="md-ellipsis">
-      Python为先
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      工具和库
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onnx" class="md-nav__link">
-    <span class="md-ellipsis">
-      本地ONNX支持
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c" class="md-nav__link">
-    <span class="md-ellipsis">
-      C++前端
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      云合作伙伴
+      返回值
     </span>
   </a>
   
@@ -3168,6 +3027,51 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_2_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1_2_5_2" id="__nav_9_1_2_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    PyTorch
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_9_1_2_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1_2_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            PyTorch
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
                 
   
@@ -3175,7 +3079,49 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_PyTorch%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" class="md-nav__link">
+      <a href="../../PyTorch/00_PyTorch%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    00 PyTorch简介
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PyTorch/01_%E5%88%9D%E8%AF%86PyTorch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 初识PyTorch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PyTorch/02_PyTorch%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3196,7 +3142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03_PyTorch%E5%8C%85/" class="md-nav__link">
+      <a href="../../PyTorch/03_PyTorch%E5%8C%85/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3217,7 +3163,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04_PyTorch%E4%B8%AD%E7%9A%84torch.nn%E6%A8%A1%E5%9D%97/" class="md-nav__link">
+      <a href="../../PyTorch/04_PyTorch%E4%B8%AD%E7%9A%84torch.nn%E6%A8%A1%E5%9D%97/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3238,7 +3184,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../05_PyTorch%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      <a href="../../PyTorch/05_PyTorch%E5%9F%BA%E7%A1%80/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3259,7 +3205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../06_%E5%BC%A0%E9%87%8F/" class="md-nav__link">
+      <a href="../../PyTorch/06_%E5%BC%A0%E9%87%8F/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3280,7 +3226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_%E4%B8%80%E7%BB%B4%E5%BC%A0%E9%87%8F/" class="md-nav__link">
+      <a href="../../PyTorch/07_%E4%B8%80%E7%BB%B4%E5%BC%A0%E9%87%8F/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3301,7 +3247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../08_%E5%90%91%E9%87%8F%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+      <a href="../../PyTorch/08_%E5%90%91%E9%87%8F%E6%93%8D%E4%BD%9C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3322,7 +3268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../09_%E4%BA%8C%E7%BB%B4%E5%BC%A0%E9%87%8F/" class="md-nav__link">
+      <a href="../../PyTorch/09_%E4%BA%8C%E7%BB%B4%E5%BC%A0%E9%87%8F/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3343,7 +3289,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../10_PyTorch%E4%B8%AD%E7%9A%84%E6%A2%AF%E5%BA%A6/" class="md-nav__link">
+      <a href="../../PyTorch/10_PyTorch%E4%B8%AD%E7%9A%84%E6%A2%AF%E5%BA%A6/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3364,7 +3310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../11_%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" class="md-nav__link">
+      <a href="../../PyTorch/11_%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3385,7 +3331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../12_%E9%A2%84%E6%B5%8B%E5%92%8C%E7%BA%BF%E6%80%A7%E7%B1%BB/" class="md-nav__link">
+      <a href="../../PyTorch/12_%E9%A2%84%E6%B5%8B%E5%92%8C%E7%BA%BF%E6%80%A7%E7%B1%BB/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3406,7 +3352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../13_%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+      <a href="../../PyTorch/13_%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3550,28 +3496,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pytorch" class="md-nav__link">
+  <a href="#numpysumpython" class="md-nav__link">
     <span class="md-ellipsis">
-      PyTorch的历史
+      numpy.sum()在Python中的使用
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pytorch_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      为什么使用PyTorch？
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="为什么使用PyTorch？">
+    <nav class="md-nav" aria-label="numpy.sum()在Python中的使用">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      简单的接口
+      语法
     </span>
   </a>
   
@@ -3580,7 +3517,7 @@
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      混合前端
+      参数
     </span>
   </a>
   
@@ -3589,52 +3526,7 @@
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      分布式训练
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    <span class="md-ellipsis">
-      Python为先
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      工具和库
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#onnx" class="md-nav__link">
-    <span class="md-ellipsis">
-      本地ONNX支持
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c" class="md-nav__link">
-    <span class="md-ellipsis">
-      C++前端
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      云合作伙伴
+      返回值
     </span>
   </a>
   
@@ -3663,113 +3555,118 @@
   
 
 
-  <h1>01 初识PyTorch</h1>
+  <h1>21 numpy.sum()在Python中的使用</h1>
 
-<p>PyTorch 是基于 Torch 库的计算机软件的一小部分。它是由 Facebook 推出的深度学习框架。PyTorch是用于 Python 编程语言的 机器学习库，用于诸如 自然语言处理 等应用。</p>
-<p>PyTorch提供的高级功能如下：</p>
-<p>利用 图形处理单元（GPU），实现具有强大加速的张量计算。</p>
-<p>提供基于自动微分系统的带有磁带的 深度神经网络。</p>
-<p>PyTorch的开发目的是在实现和构建 深度学习神经网络 时提供高度的灵活性和速度。正如你已经知道的，它是用于 Python 编程语言的机器学习库，因此安装、运行和理解都非常简单。PyTorch是完全符合Python风格的（使用广泛采用的Python习惯用语，而不是编写Java和C++代码），因此可以快速成功地构建 神经网络模型。
-<img alt="01_01-01" src="../../../../../../image/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/PyTorch/01_01-01.png" /></p>
-<h3 id="pytorch">PyTorch的历史<a class="headerlink" href="#pytorch" title="Permanent link">&para;</a></h3>
-<p>PyTorch 于2016年发布。许多研究人员越来越愿意采用PyTorch。它由 Facebook 运营。Facebook还运营 Caffe2（用于快速特征嵌入的卷积架构）。将PyTorch定义的模型转换为Caffe2是一项具有挑战性的任务。为此，Facebook和Microsoft于2017年9月发明了 开放神经网络交换（ONNX）。简而言之，ONNX是为在框架之间转换模型而开发的。Caffe2在2018年3月并入了PyTorch。</p>
-<p>PyTorch使构建非常复杂的神经网络变得容易。这一特点迅速使其成为首选库。在研究工作中，它与TensorFlow形成了激烈的竞争。PyTorch的发明者希望创建一个高度命令式的库，可以轻松运行所有的数值计算，最终他们发明了PyTorch。对于深度学习科学家、机器学习开发人员和神经网络调试器来说，实时运行和测试代码的一部分是一个巨大的挑战。PyTorch完成了这个挑战，让他们能够实时运行和测试代码，而不必等待检查是否有效。</p>
-<p>注意：要使用PyTorch的功能和服务，可以使用Python包，例如NumPy、SciPy和Cython。</p>
-<h3 id="pytorch_1">为什么使用PyTorch？<a class="headerlink" href="#pytorch_1" title="Permanent link">&para;</a></h3>
-<p>为什么选择PyTorch？PyTorch有什么特别之处，使其成为构建深度学习模型的特殊选择。PyTorch是一个动态库。动态库意味着它是一个灵活的库，您可以根据自己的要求和更改使用该库。目前在Kaggle竞赛中，PyTorch被不断地被优胜者使用。</p>
-<p>有很多特性使得深度学习科学家在制作深度学习模型时使用它。</p>
-<p>这些特性包括：
-Feature For PyTorch
-1. Simple Interface(简单的接口)
-2. Hybird Front-End(混合前端)
-3. Distributed Training(分布式训练)
-4. Python-Firts(以Python为中心)
-5. Tools and Libraries(工具和库)
-6. Native ONNX Support(本地ONNX支持)
-7. C++ Front-End(C++前端)
-8. Cloud Partners(云合作伙伴)</p>
-<h4 id="_1">简单的接口<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
-<p>PyTorch具有与Python类似的非常简单的接口。它提供了一种使用API的简便方法。这个框架非常容易像Python一样运行和操作。PyTorch可以轻松地在Windows和Linux上理解或实现。</p>
-<h4 id="_2">混合前端<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
-<p>PyTorch提供了一个新的混合前端，它在急切模式中提供了灵活性和易用性，同时最初过渡到图形模式以获得在C++运行时环境中的速度、优化和功能。</p>
-<p>例如：
-<div class="highlight"><pre><span></span><code><span class="nd">@torch</span><span class="o">.</span><span class="n">jit</span><span class="o">.</span><span class="n">script</span>  
- <span class="k">def</span> <span class="nf">Rnn</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">Wh</span><span class="p">,</span> <span class="n">Uh</span><span class="p">,</span> <span class="n">Wy</span><span class="p">,</span> <span class="n">bh</span><span class="p">,</span> <span class="n">by</span><span class="p">):</span>  
-  <span class="n">y</span> <span class="o">=</span> <span class="p">[]</span>                                                       
-  <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)):</span>  
-    <span class="n">h</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">@</span> <span class="n">Wh</span> <span class="o">+</span> <span class="n">h</span> <span class="o">@</span> <span class="n">Uh</span> <span class="o">+</span> <span class="n">bh</span><span class="p">)</span>  
-<span class="n">y</span> <span class="o">+=</span> <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">h</span> <span class="o">@</span> <span class="n">Wy</span> <span class="o">+</span> <span class="n">by</span><span class="p">)]</span>  
-    <span class="k">if</span> <span class="n">t</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>  
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;stats: &quot;</span><span class="p">,</span> <span class="n">h</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">h</span><span class="o">.</span><span class="n">var</span><span class="p">())</span>  
-    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">h</span>
+<h2 id="numpysumpython">numpy.sum()在Python中的使用<a class="headerlink" href="#numpysumpython" title="Permanent link">&para;</a></h2>
+<p>numpy.sum()函数是Python的NumPy包中的一个函数。该函数用于计算给定数组的所有元素的总和、每行的总和以及每列的总和。</p>
+<p>本质上，该函数将数组的元素相加，将ndarray中的元素相加。还可以将数组的行和列元素相加。输出将以数组对象的形式呈现。
+<img alt="numpy.sum.png" src="../../../../../../image/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/Python/%E5%B8%B8%E7%94%A8%E5%BA%93/Numpy/numpy.sum.png" /></p>
+<h4 id="_1">语法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<p>numpy.sum()函数的语法如下：</p>
+<blockquote>
+<p>numpy.sum(arr, axis=None, dtype=None, out=None, keepdims=<no value>, initial=<no value>)</p>
+</blockquote>
+<h4 id="_2">参数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p>1) arr: array_like
+这是一个ndarray。这是我们想要求和其元素的源数组。该参数是必需的，在numpy.sum()函数中发挥着重要作用。</p>
+<p>2) axis: int或None或int元组(可选)
+此参数定义要执行求和的轴。默认轴是None，将对数组的所有元素求和。当轴为负时，它从最后一个轴计数到第一个轴。在版本1.7.0中，当轴是整数元组时，对元组中指定的所有轴执行求和，而不是像以前那样只在单个轴或所有轴上执行求和。</p>
+<p>3) dtype: dtype(可选)
+此参数定义累加器和求和后的返回数组的类型。默认情况下，使用arr的dtype，除非arr的整数dtype精度低于默认平台整数。在这种情况下，当arr是有符号的时，使用平台整数，当arr是无符号的时，使用与平台整数相同精度的无符号整数。</p>
+<p>4) out: ndarray(可选)
+此参数定义替代输出数组，结果将被放置在其中。此结果数组必须与预期输出具有相同的形状。必要时，将强制转换输出值的类型。</p>
+<p>5) keepdims: bool(可选)
+此参数定义一个布尔值。当此参数设置为True时，被减少的轴将保留在结果中，作为尺寸为一的维度。通过此选项，结果将正确广播到输入数组。当传递默认值时，不会将keepdims传递给ndarray的子类的sum方法，但是在非默认值情况下会传递。如果子类方法不实现keepdims，那么可能会引发任何异常。</p>
+<p>6) initial: 标量
+此参数定义求和的起始值。</p>
+<h4 id="_3">返回值<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p>该函数返回一个与arr具有相同形状的数组，指定的轴已被移除。当arr是0维数组时，或者当轴为None时，返回标量。当指定了数组输出时，返回对out的引用。</p>
+<p>示例 1：numpy.array()
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span> 
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> 
+<span class="n">b</span>
+</code></pre></div>
+输出：
+<div class="highlight"><pre><span></span><code><span class="mf">0.9</span>
+</code></pre></div>
+在上面的代码中
+我们使用别名<code>np</code>导入了numpy。</p>
+<p>我们使用np.array()函数创建了一个数组<code>a</code>。</p>
+<p>我们声明了变量<code>b</code>，并将其赋值为np.sum()函数的返回值。</p>
+<p>我们在函数中传递了数组'a'。</p>
+<p>最后，我们尝试打印变量'b'的值。</p>
+<p>在输出中，显示了数组所有元素的总和。</p>
+<p>示例 2：
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">6.1</span><span class="p">])</span> 
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span> 
+<span class="n">x</span>
+</code></pre></div>
+输出：
+<div class="highlight"><pre><span></span><code><span class="mi">6</span>
+</code></pre></div>
+在上面的代码中
+我们使用别名<code>np</code>导入了numpy。</p>
+<p>我们使用np.array()函数创建了一个数组<code>a</code>。</p>
+<p>我们声明了变量<code>x</code>，并将其赋值为np.sum()函数的返回值。</p>
+<p>我们在函数中传递了数组<code>a</code>和int32的数据类型。</p>
+<p>最后，我们尝试打印变量<code>x</code>的值。</p>
+<p>在输出中，只显示了整数值的总和，不包括浮点值。</p>
+<p>示例 3：
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span> 
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> 
+<span class="n">b</span>
+</code></pre></div>
+输出：
+<div class="highlight"><pre><span></span><code><span class="mi">13</span>
 </code></pre></div></p>
-<h4 id="_3">分布式训练<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
-<p>PyTorch允许开发者以分布式方式训练神经网络模型。通过对等通信和在Python和C++中异步执行集体操作的本机支持，它在研究和生产中都提供了优化的性能。</p>
-<p>例如：
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">torch.distributed</span> <span class="k">as</span> <span class="nn">dist1</span>   
-<span class="kn">from</span> <span class="nn">torch.nn.parallel</span> <span class="kn">import</span> <span class="n">DistributedDataParallel</span>  
-<span class="n">dist1</span><span class="o">.</span><span class="n">init_process_group</span><span class="p">(</span><span class="n">backend</span><span class="o">=</span><span class="s1">&#39;gloo&#39;</span><span class="p">)</span>  
-<span class="n">model</span> <span class="o">=</span> <span class="n">DistributedDataParallel</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>  
+<p>示例 4：
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span> 
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> 
+<span class="n">b</span>
+</code></pre></div>
+在上面的代码中
+我们使用别名<code>np</code>导入了numpy。</p>
+<p>我们使用np.array()函数创建了一个数组<code>a</code>。</p>
+<p>我们声明了变量<code>b</code>，并将其赋值为np.sum()函数的返回值。</p>
+<p>我们在函数中传递了数组<code>a</code>和axis=0。</p>
+<p>最后，我们尝试打印变量<code>b</code>的值。</p>
+<p>在输出中，按列元素进行了相加，并显示了对应的和。</p>
+<p>输出：
+<div class="highlight"><pre><span></span><code><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
 </code></pre></div></p>
-<h4 id="python">Python为先<a class="headerlink" href="#python" title="Permanent link">&para;</a></h4>
-<p>PyTorch完全基于Python。PyTorch与Python的最流行的库和包（如Cython和Numba）一起使用。PyTorch深深地嵌入在Python中。它的代码完全符合Python风格。Pythonic 意味着在代码中使用广泛采用的Python习惯用语，而不是编写java和C++代码。</p>
-<p>例如：
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">torch</span>  
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  
-<span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  
-<span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">x</span><span class="p">)</span>  
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>  
+<p>示例 5：
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span> 
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">b</span>
+</code></pre></div>
+输出：
+<div class="highlight"><pre><span></span><code><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
 </code></pre></div></p>
-<h4 id="_4">工具和库<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
-<p>有丰富的工具和库生态系统可用于扩展PyTorch并支持计算机视觉和强化学习等领域的开发。这个生态系统是由一群积极的开发者和研究人员开发的。这些生态系统帮助他们构建灵活且快速访问深度学习神经网络的工具。</p>
-<p>例如：
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">torchvision.models</span> <span class="k">as</span> <span class="nn">models</span>  
-<span class="n">resnet18</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">resnet18</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
-<span class="n">alexnet</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">alexnet</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
-<span class="n">squeezenet</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">squeezenet1_0</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
-<span class="n">vgg16</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">vgg16</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
-<span class="n">densenet</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">densenet161</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
-<span class="n">inception</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">inception_v3</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
-</code></pre></div></p>
-<h4 id="onnx">本地ONNX支持<a class="headerlink" href="#onnx" title="Permanent link">&para;</a></h4>
-<p>ONNX是为在框架之间转换模型而开发的。要直接访问与ONNX兼容的平台、运行时、可视化工具等，需要在标准ONNX中导出模型。</p>
-<p>例如：
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">torch.onnx</span>  
-<span class="kn">import</span> <span class="nn">torchvision</span>  
-<span class="n">dum_input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">)</span>  
-<span class="n">model</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">alexnet</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
-<span class="n">torch</span><span class="o">.</span><span class="n">onnx</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">dum_input</span><span class="p">,</span> <span class="s2">&quot;alexnet.onnx&quot;</span><span class="p">)</span>  
-</code></pre></div></p>
-<h4 id="c">C++前端<a class="headerlink" href="#c" title="Permanent link">&para;</a></h4>
-<p>C++前端是PyTorch的C++接口，遵循已建立的Python前端的设计和架构。它支持在高性能、低延迟和裸机C++应用程序中进行研究。</p>
-<p>例如：
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;torch/torch.h&gt;</span>
-<span class="n">torch</span><span class="o">::</span><span class="n">nn</span><span class="o">::</span><span class="n">Linear</span><span class="w"> </span><span class="nf">model</span><span class="p">(</span><span class="n">num_features</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-<span class="n">torch</span><span class="o">::</span><span class="n">optim</span><span class="o">::</span><span class="n">SGD</span><span class="w"> </span><span class="nf">optimizer</span><span class="p">(</span><span class="n">model</span><span class="o">-&gt;</span><span class="n">parameters</span><span class="p">());</span>
-<span class="k">auto</span><span class="w"> </span><span class="n">data_loader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">data</span><span class="o">::</span><span class="n">data_loader</span><span class="p">(</span><span class="n">dataset</span><span class="p">);</span>
-<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">epoch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">epoch</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">epoch</span><span class="p">)</span>
-<span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">batch</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">data_loader</span><span class="p">)</span>
-<span class="w">      </span><span class="p">{</span>
-<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">prediction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">model</span><span class="o">-&gt;</span><span class="n">forward</span><span class="p">(</span><span class="n">batch</span><span class="p">.</span><span class="n">data</span><span class="p">);</span>
-<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">loss</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">loss_function</span><span class="p">(</span><span class="n">prediction</span><span class="p">,</span><span class="w"> </span><span class="n">batch</span><span class="p">.</span><span class="n">target</span><span class="p">);</span>
-<span class="w">        </span><span class="n">loss</span><span class="p">.</span><span class="n">backward</span><span class="p">();</span>
-<span class="w">        </span><span class="n">optimizer</span><span class="p">.</span><span class="n">step</span><span class="p">();</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></p>
-<h4 id="_5">云合作伙伴<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
-<p>PyTorch得到许多主要云平台的支持，例如AWS。通过使用预构建的镜像，在GPU上进行大规模培训，并能够在生产规模环境中运行模型等，它提供了无摩擦的开发和简便的扩展。</p>
-<p>例如：
-<div class="highlight"><pre><span></span><code><span class="n">export</span> <span class="n">IMAGE_FAMILY</span><span class="o">=</span><span class="s2">&quot;pytorch-latest-cpu&quot;</span>  
-<span class="n">export</span> <span class="n">ZONE</span><span class="o">=</span><span class="s2">&quot;us-west1-b&quot;</span>  
-<span class="n">export</span> <span class="n">INSTANCE_NAME</span><span class="o">=</span><span class="s2">&quot;my-instance&quot;</span>  
-<span class="n">gcloud</span> <span class="n">compute</span> <span class="n">instances</span> <span class="n">create</span> <span class="err">$</span><span class="n">INSTANCE_NAME</span> \  
-<span class="o">--</span><span class="n">zone</span><span class="o">=</span><span class="err">$</span><span class="n">ZONE</span> \  
-<span class="o">--</span><span class="n">image</span><span class="o">-</span><span class="n">family</span><span class="o">=</span><span class="err">$</span><span class="n">IMAGE_FAMILY</span> \ 
-</code></pre></div></p>
+<p>示例 6：
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span><span class="mi">15</span><span class="p">],</span> <span class="n">initial</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span> 
+<span class="n">b</span>
+</code></pre></div>
+输出：
+<div class="highlight"><pre><span></span><code><span class="mi">23</span>
+</code></pre></div>
+在上面的代码中
+我们使用别名<code>np</code>导入了numpy。</p>
+<p>我们声明了变量<code>b</code>，并将其赋值为np.sum()函数的返回值。</p>
+<p>我们在函数中传递了元素的数量和初始值。</p>
+<p>最后，我们尝试打印变量<code>b</code>的值。</p>
+<p>在输出中，首先将初始值添加到序列中的最后一个元素，然后对所有元素进行求和。</p>
 
 
 
