@@ -9,22 +9,22 @@
       
       
       
-        <link rel="prev" href="../02_Kubernetes%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+        <link rel="prev" href="../../01_%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/04_Kubernetes%E5%AE%9E%E6%88%98%E5%85%A5%E9%97%A8/">
       
       
-        <link rel="next" href="../04_Kubernetes%E5%AE%9E%E6%88%98%E5%85%A5%E9%97%A8/">
+        <link rel="next" href="../../../openai/openai_python_api/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
     
     
       
-        <title>03 Kubernetes资源管理 - 韩林奇的个人博客</title>
+        <title>深入了解 kube-scheduler - 韩林奇的个人博客</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -46,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#kubernetes" class="md-skip">
+        <a href="#kube-scheduler" class="md-skip">
           跳转至
         </a>
       
@@ -91,12 +91,12 @@
     <a href="../../.." title="韩林奇的个人博客" class="md-header__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              03 Kubernetes资源管理
+              深入了解 kube-scheduler
             
           </span>
         </div>
@@ -124,7 +124,7 @@
     <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
       </label>
     
   
@@ -134,7 +134,7 @@
     <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
@@ -144,7 +144,7 @@
     <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
     
       <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
@@ -152,13 +152,13 @@
       
     
     
-      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
       <label class="md-header__button md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -167,15 +167,15 @@
       <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="查找">
         
         <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
       
@@ -198,7 +198,7 @@
         <a href="https://github.com/LynchQGit/LynchQGit.github.io" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -234,7 +234,7 @@
     <a href="../../.." title="韩林奇的个人博客" class="md-nav__button md-logo" aria-label="韩林奇的个人博客" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
     韩林奇的个人博客
@@ -244,7 +244,7 @@
       <a href="https://github.com/LynchQGit/LynchQGit.github.io" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -475,8 +475,6 @@
                 
   
   
-    
-  
   
   
     
@@ -485,28 +483,28 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
         
           
           <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    学习笔记
+    01 学习笔记
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
-            学习笔记
+            01 学习笔记
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -517,7 +515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01_Kubernetes%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+      <a href="../../01_%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/01_Kubernetes%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -538,7 +536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_Kubernetes%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="md-nav__link">
+      <a href="../../01_%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/02_Kubernetes%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -556,28 +554,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    03 Kubernetes资源管理
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../01_%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/03_Kubernetes%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -586,99 +566,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      三、Kubernetes资源管理
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="三、Kubernetes资源管理">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.1 资源管理介绍
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-yaml" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.2 YAML语言介绍
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.3 资源管理方式
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3.3 资源管理方式">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#331" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.3.1 命令式对象管理
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#332" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.3.2 命令式对象配置
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#333" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.3.3 声明式对象配置
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -691,7 +578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04_Kubernetes%E5%AE%9E%E6%88%98%E5%85%A5%E9%97%A8/" class="md-nav__link">
+      <a href="../../01_%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/04_Kubernetes%E5%AE%9E%E6%88%98%E5%85%A5%E9%97%A8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -700,6 +587,159 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    02 源码学习
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            02 源码学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    深入了解 kube-scheduler
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    深入了解 kube-scheduler
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kube-scheduler_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      kube-scheduler 用途
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scheduler-pod" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scheduler Pod 调度流程
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      源码调用链路
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scheduler-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scheduler Framework
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      如何扩展插件
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3733,6 +3773,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -3741,77 +3783,47 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#kubernetes" class="md-nav__link">
+  <a href="#kube-scheduler_1" class="md-nav__link">
     <span class="md-ellipsis">
-      三、Kubernetes资源管理
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="三、Kubernetes资源管理">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.1 资源管理介绍
+      kube-scheduler 用途
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#32-yaml" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#scheduler-pod" class="md-nav__link">
     <span class="md-ellipsis">
-      3.2 YAML语言介绍
+      Scheduler Pod 调度流程
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#33" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      3.3 资源管理方式
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3.3 资源管理方式">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#331" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.3.1 命令式对象管理
+      源码调用链路
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#332" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#scheduler-framework" class="md-nav__link">
     <span class="md-ellipsis">
-      3.3.2 命令式对象配置
+      Scheduler Framework
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#333" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      3.3.3 声明式对象配置
+      如何扩展插件
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3833,581 +3845,43 @@
   
 
 
-  <h1>03 Kubernetes资源管理</h1>
-
-<h2 id="kubernetes">三、Kubernetes资源管理<a class="headerlink" href="#kubernetes" title="Permanent link">&para;</a></h2>
-<h3 id="31">3.1 资源管理介绍<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
-<p>在kubernetes中，所有的内容都抽象为资源，用户需要通过操作资源来管理kubernetes。
-kubernetes的本质上就是一个集群系统，用户可以在集群中部署各种服务，所谓的部署服务，其实就是在kubernetes集群中运行一个个的容器，并将指定的程序跑在容器中。
-kubernetes的最小管理单元是pod而不是容器，所以只能将容器放在Pod中，而kubernetes一般也不会直接管理Pod，而是通过Pod控制器来管理Pod的。
-Pod可以提供服务之后，就要考虑如何访问Pod中服务，kubernetes提供了Service资源实现这个功能。
-当然，如果Pod中程序的数据需要持久化，kubernetes还提供了各种存储系统。
-<img alt="03_3-1-1" src="../../../image/Kubernetes/03_3-1-1.png" />
-学习kubernetes的核心，就是学习如何对集群上的Pod、Pod控制器、Service、存储等各种资源进行操作。</p>
-<h3 id="32-yaml">3.2 YAML语言介绍<a class="headerlink" href="#32-yaml" title="Permanent link">&para;</a></h3>
-<p>YAML是一个类似 XML、JSON 的标记性语言。它强调以数据为中心，并不是以标识语言为重点。因而YAML本身的定义比较简单，号称"一种人性化的数据格式语言"。
-<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">&lt;lynch&gt;</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">&lt;age&gt;15&lt;/age&gt;</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">&lt;address&gt;Beijing&lt;/address&gt;</span>
-<span class="l l-Scalar l-Scalar-Plain">&lt;/lynch&gt;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nt">lynch</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">age</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">15</span>
-<span class="w">  </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Beijing</span>
-</code></pre></div>
-YAML的语法比较简单，主要有下面几个：
-- 大小写敏感
-- 使用缩进表示层级关系
-- 缩进不允许使用tab，只允许空格( 低版本限制 )
-- 缩进的空格数不重要，只要相同层级的元素左对齐即可
-- '#'表示注释
-YAML支持以下几种数据类型：
-- 纯量：单个的、不可再分的值
-- 对象：键值对的集合，又称为映射（mapping）/ 哈希（hash） / 字典（dictionary）
-- 数组：一组按次序排列的值，又称为序列（sequence） / 列表（list）</p>
-<p><div class="highlight"><pre><span></span><code><span class="c1"># 纯量, 就是指的一个简单的值，字符串、布尔值、整数、浮点数、Null、时间、日期</span>
-<span class="c1"># 1 布尔类型</span>
-<span class="nt">c1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true (或者True)</span>
-<span class="c1"># 2 整型</span>
-<span class="nt">c2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">234</span>
-<span class="c1"># 3 浮点型</span>
-<span class="nt">c3</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.14</span>
-<span class="c1"># 4 null类型 </span>
-<span class="nt">c4</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~</span><span class="w">  </span><span class="c1"># 使用~表示null</span>
-<span class="c1"># 5 日期类型</span>
-<span class="nt">c5</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2018-02-17</span><span class="w">    </span><span class="c1"># 日期必须使用ISO 8601格式，即yyyy-MM-dd</span>
-<span class="c1"># 6 时间类型</span>
-<span class="nt">c6</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2018-02-17T15:02:31+08:00</span><span class="w">  </span><span class="c1"># 时间使用ISO 8601格式，时间和日期之间使用T连接，最后使用+代表时区</span>
-<span class="c1"># 7 字符串类型</span>
-<span class="nt">c7</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lynch</span><span class="w">     </span><span class="c1"># 简单写法，直接写值 , 如果字符串中间有特殊字符，必须使用双引号或者单引号包裹 </span>
-<span class="nt">c8</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">line1</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">line2</span><span class="w">     </span><span class="c1"># 字符串过多的情况可以拆成多行，每一行会被转化成一个空格</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># 对象</span>
-<span class="c1"># 形式一(推荐):</span>
-<span class="nt">lynch</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">age</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">15</span>
-<span class="w">  </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Beijing</span>
-<span class="c1"># 形式二(了解):</span>
-<span class="nt">lynch</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">age</span><span class="p">:</span><span class="w"> </span><span class="nv">15</span><span class="p p-Indicator">,</span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="nv">Beijing</span><span class="p p-Indicator">}</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># 数组</span>
-<span class="c1"># 形式一(推荐):</span>
-<span class="nt">address</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">顺义</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">昌平</span><span class="w">  </span>
-<span class="c1"># 形式二(了解):</span>
-<span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">顺义</span><span class="p p-Indicator">,</span><span class="nv">昌平</span><span class="p p-Indicator">]</span>
-</code></pre></div></p>
+<h1 id="kube-scheduler">深入了解 kube-scheduler<a class="headerlink" href="#kube-scheduler" title="Permanent link">&para;</a></h1>
+<h2 id="kube-scheduler_1">kube-scheduler 用途<a class="headerlink" href="#kube-scheduler_1" title="Permanent link">&para;</a></h2>
+<p>kube-scheduler 主要用途是负责将 Pod 调度到 Node 上。
+<img alt="k8s-pod-create-flow" src="../../../image/Kubernetes/resource_code_learning/k8s-pod-create-flow.png" />
+Pod 创建流程：</p>
 <blockquote>
-<p>小提示：
-1 书写yaml切记: 后面要加一个空格
-2 如果需要将多段yaml配置放在一个文件中，中间要使用---分隔
-3 下面是一个yaml转json的网站，可以通过它验证yaml是否书写正确
-https://www.json2yaml.com/convert-yaml-to-json</p>
+<p>说明：所有的组件只与 APIServer 做交互，APIServer 再把信息更新的 Etcd 中。</p>
 </blockquote>
-<h3 id="33">3.3 资源管理方式<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
-<ul>
-<li>命令式对象管理：直接使用命令去操作kubernetes资源<blockquote>
-<p>kubectl run nginx-pod --image=nginx:1.17.1 --port=80</p>
-</blockquote>
-</li>
-<li>命令式对象配置：通过命令配置和配置文件去操作kubernetes资源<blockquote>
-<p>kubectl create/patch -f nginx-pod.yaml</p>
-</blockquote>
-</li>
-<li>声明式对象配置：通过apply命令和配置文件去操作kubernetes资源<blockquote>
-<p>kubectl apply -f nginx-pod.yaml</p>
-</blockquote>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">类型</th>
-<th style="text-align: center;">操作对象</th>
-<th style="text-align: center;">适用环境</th>
-<th style="text-align: center;">优点</th>
-<th style="text-align: center;">缺点</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">命令式对象管理</td>
-<td style="text-align: center;">对象</td>
-<td style="text-align: center;">测试</td>
-<td style="text-align: center;">简单</td>
-<td style="text-align: center;">只能操作活动对象，无法审计、跟踪</td>
-</tr>
-<tr>
-<td style="text-align: center;">命令式对象配置</td>
-<td style="text-align: center;">文件</td>
-<td style="text-align: center;">开发</td>
-<td style="text-align: center;">可以审计、跟踪</td>
-<td style="text-align: center;">项目大时，配置文件多，操作麻烦</td>
-</tr>
-<tr>
-<td style="text-align: center;">声明式对象配置</td>
-<td style="text-align: center;">目录</td>
-<td style="text-align: center;">开发</td>
-<td style="text-align: center;">支持目录操作</td>
-<td style="text-align: center;">意外情况下难以调试</td>
-</tr>
-</tbody>
-</table>
-<h4 id="331">3.3.1 命令式对象管理<a class="headerlink" href="#331" title="Permanent link">&para;</a></h4>
-<ul>
-<li>kubectl命令
-kubectl是kubernetes集群的命令行工具，通过它能够对集群本身进行管理，并能够在集群上进行容器化应用的安装部署。kubectl命令的语法如下：<blockquote>
-<p>kubectl [command] [type] [name] [flags]</p>
-</blockquote>
-</li>
-</ul>
-<p><strong>comand</strong>：指定要对资源执行的操作，例如create、get、delete
-<strong>type</strong>：指定资源类型，比如deployment、pod、service
-<strong>name</strong>：指定资源的名称，名称大小写敏感
-<strong>flags</strong>：指定额外的可选参数
-<div class="highlight"><pre><span></span><code><span class="c1"># 查看所有pod</span>
-<span class="l l-Scalar l-Scalar-Plain">kubectl get pod</span><span class="w"> </span>
-
-<span class="l l-Scalar l-Scalar-Plain"># 查看某个pod</span>
-<span class="l l-Scalar l-Scalar-Plain">kubectl get pod pod_name</span>
-
-<span class="l l-Scalar l-Scalar-Plain"># 查看某个pod,以yaml格式展示结果</span>
-<span class="l l-Scalar l-Scalar-Plain">kubectl get pod pod_name -o yaml</span>
-</code></pre></div>
-- 资源类型（type）
-kubernetes中所有的内容都抽象为资源，可以通过下面的命令进行查看:</p>
+<ol>
+<li>用户向 Kubernetes APIServer 发送创建（create/apply）指令。</li>
+<li>APIServer 接收到配置文件，进行校验，将配置数据存储到 Etcd 中。</li>
+<li>Contriller-manager 监听 APIServer 的变化，检测到有新的 Pod 对象时，控制器创建 Pod 并且将其状态设为 Pending 。</li>
+<li>Scheduler 也通过监听 APIServer 的变化，发现有新的、尚未分配节点（Node）的 Pod。根据预选策略和优选策略，选择一个最适合的 Node 来运行新的 Pod 。</li>
+<li>Pod 被调度到对应的 Node 后，该 Node 上的 kubelet 组件则开始根据 Pod 配置文件，拉镜像、启动 app、就绪探针探测。</li>
+<li>Kubelet 向 APIServer 上报状态为 Reday，APIServer 写入到 Etcd 中。</li>
+</ol>
+<h2 id="scheduler-pod">Scheduler Pod 调度流程<a class="headerlink" href="#scheduler-pod" title="Permanent link">&para;</a></h2>
+<p>Scheduler 的作用是负责将 Pod 调度到 Node 上。
+Kubernetes 是如何设计这个组件，保证它稳定高效的运行？
+1. 需要能够实时监听到有新的 Pod 待调度。
+2. 同一时间如果有大量待调度的 Pod，如何保证不能漏掉？先处理哪个 Pod？调度过程中，如果是失败，如何处理？所以需要加个队列并且有重试机制等。
+3. 调度过程中依赖 Node 、 Pod 的实时信息，根据 Node 、 Pod 信息，决策 Pod 调度到哪个 Node 上合适，每次调度都要调用 APIServer 是否低效？得在本地缓存一份数据，加个缓存。
+4. 调度选择过程中，考虑因素有很多，很难周全，所以可扩展性一定要设计好。
+5. Pod 绑定过程中可能依赖 pvc 绑定等，耗时比较长，所以绑定要是异步的，但是匹配哪个 Node 合适的策略算法，则需要同步执行。所以要有两个周期，调度周期和绑定周期。调度周期串行，绑定周期并行。</p>
+<p>以下是调度框架
+<img alt="k8s-scheduler-frame" src="../../../image/Kubernetes/resource_code_learning/k8s-scheduler-frame.png" /></p>
+<h2 id="_1">源码调用链路<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p>kubectl api-resources</p>
+<p>原图是用 draw.io 画的，可打开后二次编辑。</p>
 </blockquote>
-<p>经常使用的资源有下面这些</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">资源分类</th>
-<th style="text-align: center;">资源名称</th>
-<th style="text-align: center;">缩写</th>
-<th style="text-align: center;">资源作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">集群级别资源</td>
-<td style="text-align: center;">nodes</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">集群组成部分</td>
-</tr>
-<tr>
-<td style="text-align: center;">namespaces</td>
-<td style="text-align: center;">ns</td>
-<td style="text-align: center;">隔离Pod</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;">pod资源</td>
-<td style="text-align: center;">pods</td>
-<td style="text-align: center;">po</td>
-<td style="text-align: center;">装载容器</td>
-</tr>
-<tr>
-<td style="text-align: center;">pod资源控制器</td>
-<td style="text-align: center;">replicationcontrollers</td>
-<td style="text-align: center;">rc</td>
-<td style="text-align: center;">控制pod资源</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">replicasets</td>
-<td style="text-align: center;">rs</td>
-<td style="text-align: center;">控制pod资源</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">deployments</td>
-<td style="text-align: center;">deploy</td>
-<td style="text-align: center;">控制pod资源</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">daemonsets</td>
-<td style="text-align: center;">ds</td>
-<td style="text-align: center;">控制pod资源</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">jobs</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">控制pod资源</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">cronjobs</td>
-<td style="text-align: center;">cj</td>
-<td style="text-align: center;">控制pod资源</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">horizontalpodautoscalers</td>
-<td style="text-align: center;">hpa</td>
-<td style="text-align: center;">控制pod资源</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">statefulsets</td>
-<td style="text-align: center;">sts</td>
-<td style="text-align: center;">控制pod资源</td>
-</tr>
-<tr>
-<td style="text-align: center;">服务发现资源</td>
-<td style="text-align: center;">services</td>
-<td style="text-align: center;">svc</td>
-<td style="text-align: center;">统一pod对外接口</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">ingress</td>
-<td style="text-align: center;">ing</td>
-<td style="text-align: center;">统一pod对外接口</td>
-</tr>
-<tr>
-<td style="text-align: center;">存储资源</td>
-<td style="text-align: center;">volumeattachments</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">存储</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">persistentvolumes</td>
-<td style="text-align: center;">pv</td>
-<td style="text-align: center;">存储</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">persistentvolumeclaims</td>
-<td style="text-align: center;">pvc</td>
-<td style="text-align: center;">存储</td>
-</tr>
-<tr>
-<td style="text-align: center;">配置资源</td>
-<td style="text-align: center;">configmaps</td>
-<td style="text-align: center;">cm</td>
-<td style="text-align: center;">配置</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">secrets</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">配置</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>操作（comand）
-kubernetes允许对资源进行多种操作，可以通过--help查看详细的操作命令
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>--help
-</code></pre></div></li>
-</ul>
-<p>经常使用的操作有下面这些：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">操作</th>
-<th style="text-align: center;">命令</th>
-<th style="text-align: center;">翻译</th>
-<th style="text-align: center;">作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">基本命令</td>
-<td style="text-align: center;">create</td>
-<td style="text-align: center;">创建</td>
-<td style="text-align: center;">创建一个资源</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">edit</td>
-<td style="text-align: center;">编辑</td>
-<td style="text-align: center;">编辑一个资源</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">get</td>
-<td style="text-align: center;">获取</td>
-<td style="text-align: center;">获取一个资源</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">patch</td>
-<td style="text-align: center;">更新</td>
-<td style="text-align: center;">更新一个资源</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">delete</td>
-<td style="text-align: center;">删除</td>
-<td style="text-align: center;">删除一个资源</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">explain</td>
-<td style="text-align: center;">解释</td>
-<td style="text-align: center;">展示资源文档</td>
-</tr>
-<tr>
-<td style="text-align: center;">运行和调试</td>
-<td style="text-align: center;">run</td>
-<td style="text-align: center;">运行</td>
-<td style="text-align: center;">在集群中运行一个指定的镜像</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">expose</td>
-<td style="text-align: center;">暴露</td>
-<td style="text-align: center;">暴露资源为Service</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">desribe</td>
-<td style="text-align: center;">描述</td>
-<td style="text-align: center;">显示资源内部信息</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">logs</td>
-<td style="text-align: center;">日志输出</td>
-<td style="text-align: center;">输出容器在pod中的日志</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">attach</td>
-<td style="text-align: center;">附着</td>
-<td style="text-align: center;">进入运行中的容器</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">exec</td>
-<td style="text-align: center;">执行</td>
-<td style="text-align: center;">在容器中执行命令</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">cp</td>
-<td style="text-align: center;">复制</td>
-<td style="text-align: center;">在pod内外复制文件</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">rollout</td>
-<td style="text-align: center;">发布</td>
-<td style="text-align: center;">管理资源的发布</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">scale</td>
-<td style="text-align: center;">扩缩容</td>
-<td style="text-align: center;">扩缩容资源</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">autoscale</td>
-<td style="text-align: center;">自动扩缩容</td>
-<td style="text-align: center;">自动扩缩容资源</td>
-</tr>
-<tr>
-<td style="text-align: center;">高级命令</td>
-<td style="text-align: center;">apply</td>
-<td style="text-align: center;">应用</td>
-<td style="text-align: center;">通过文件对资源进行配置</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">labe</td>
-<td style="text-align: center;">标签</td>
-<td style="text-align: center;">更新资源上的标签</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">annotate</td>
-<td style="text-align: center;">注释</td>
-<td style="text-align: center;">更新资源上的注解</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">convert</td>
-<td style="text-align: center;">转换</td>
-<td style="text-align: center;">将资源转换为最新版本</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">taint</td>
-<td style="text-align: center;">污点</td>
-<td style="text-align: center;">更新资源上的污点</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">top</td>
-<td style="text-align: center;">统计</td>
-<td style="text-align: center;">统计资源使用情况</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">cordon</td>
-<td style="text-align: center;">排障</td>
-<td style="text-align: center;">标记节点为不可调度</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">uncordon</td>
-<td style="text-align: center;">恢复</td>
-<td style="text-align: center;">标记节点为可调度</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">drain</td>
-<td style="text-align: center;">驱逐</td>
-<td style="text-align: center;">将节点设置为不可调度</td>
-</tr>
-<tr>
-<td style="text-align: center;">其他命令</td>
-<td style="text-align: center;">cluster-info</td>
-<td style="text-align: center;">集群信息</td>
-<td style="text-align: center;">显示集群信息</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">api-versions</td>
-<td style="text-align: center;">API版本</td>
-<td style="text-align: center;">显示API版本</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">version</td>
-<td style="text-align: center;">版本</td>
-<td style="text-align: center;">显示Server和Client的版本</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">config</td>
-<td style="text-align: center;">配置</td>
-<td style="text-align: center;">修改kubeconfig文件</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">plugin</td>
-<td style="text-align: center;">插件</td>
-<td style="text-align: center;">调用外部插件</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">help</td>
-<td style="text-align: center;">帮助</td>
-<td style="text-align: center;">显示命令或子命令的帮助</td>
-</tr>
-</tbody>
-</table>
-<p>下面以一个namespace / pod的创建和删除简单演示下命令的使用：
-<div class="highlight"><pre><span></span><code><span class="c1"># 创建一个namespace</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl create namespace dev</span>
-namespace/dev<span class="w"> </span>created
-
-<span class="c1"># 获取namespace</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl get ns</span>
-NAME<span class="w">              </span>STATUS<span class="w">   </span>AGE
-default<span class="w">           </span>Active<span class="w">   </span>21h
-dev<span class="w">               </span>Active<span class="w">   </span>21s
-kube-node-lease<span class="w">   </span>Active<span class="w">   </span>21h
-kube-public<span class="w">       </span>Active<span class="w">   </span>21h
-kube-system<span class="w">       </span>Active<span class="w">   </span>21h
-
-<span class="c1"># 在此namespace下创建并运行一个nginx的Pod</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl run pod --image=nginx:latest -n dev</span>
-kubectl<span class="w"> </span>run<span class="w"> </span>--generator<span class="o">=</span>deployment/apps.v1<span class="w"> </span>is<span class="w"> </span>DEPRECATED<span class="w"> </span>and<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>removed<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>future<span class="w"> </span>version.<span class="w"> </span>Use<span class="w"> </span>kubectl<span class="w"> </span>run<span class="w"> </span>--generator<span class="o">=</span>run-pod/v1<span class="w"> </span>or<span class="w"> </span>kubectl<span class="w"> </span>create<span class="w"> </span>instead.
-deployment.apps/pod<span class="w"> </span>created
-
-<span class="c1"># 查看新创建的pod</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl get pod -n dev</span>
-NAME<span class="w">  </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">   </span>AGE
-pod<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>21s
-
-<span class="c1"># 删除指定的pod</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl delete pod pod-864f9875b9-pcw7x</span>
-pod<span class="w"> </span><span class="s2">&quot;pod&quot;</span><span class="w"> </span>deleted
-
-<span class="c1"># 删除指定的namespace</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl delete ns dev</span>
-namespace<span class="w"> </span><span class="s2">&quot;dev&quot;</span><span class="w"> </span>deleted
-</code></pre></div></p>
-<h4 id="332">3.3.2 命令式对象配置<a class="headerlink" href="#332" title="Permanent link">&para;</a></h4>
-<p>命令式对象配置就是使用命令配合配置文件一起来操作kubernetes资源。
-1. 创建一个nginxpod.yaml，内容如下：
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Namespace</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev</span>
-
-<span class="nn">---</span>
-
-<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pod</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginxpod</span>
-<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev</span>
-<span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">containers</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx-containers</span>
-<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx:latest</span>
+<p><img alt="k8s-scheduler-chain" src="../../../image/Kubernetes/resource_code_learning/k8s-scheduler-chain.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 42 个序号对应的源码位置依次为：</span>
+<span class="m">1</span><span class="w"> </span>找到启动主函数
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/cmd/kube-scheduler/scheduler.go#L31
 </code></pre></div>
-2. 执行create命令，创建资源：
-<div class="highlight"><pre><span></span><code><span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl create -f nginxpod.yaml</span>
-namespace/dev<span class="w"> </span>created
-pod/nginxpod<span class="w"> </span>created
-</code></pre></div>
-此时发现创建了两个资源对象，分别是namespace和pod
-3. 执行get命令，查看资源：
-<div class="highlight"><pre><span></span><code><span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1">#  kubectl get -f nginxpod.yaml</span>
-NAME<span class="w">            </span>STATUS<span class="w">   </span>AGE
-namespace/dev<span class="w">   </span>Active<span class="w">   </span>18s
-
-NAME<span class="w">            </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">   </span>AGE
-pod/nginxpod<span class="w">    </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>17s
-</code></pre></div>
-这样就显示了两个资源对象的信息
-4. 执行delete命令，删除资源：
-<div class="highlight"><pre><span></span><code><span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1"># kubectl delete -f nginxpod.yaml</span>
-namespace<span class="w"> </span><span class="s2">&quot;dev&quot;</span><span class="w"> </span>deleted
-pod<span class="w"> </span><span class="s2">&quot;nginxpod&quot;</span><span class="w"> </span>deleted
-</code></pre></div>
-此时发现两个资源对象被删除了
-【总结】
-命令式对象配置的方式操作资源，可以简单的认为：命令  +  yaml配置文件（里面是命令需要的各种参数）</p>
-<h4 id="333">3.3.3 声明式对象配置<a class="headerlink" href="#333" title="Permanent link">&para;</a></h4>
-<p>声明式对象配置跟命令式对象配置很相似，但是它只有一个命令apply。
-<div class="highlight"><pre><span></span><code><span class="c1"># 首先执行一次kubectl apply -f yaml文件，发现创建了资源</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1">#  kubectl apply -f nginxpod.yaml</span>
-namespace/dev<span class="w"> </span>created
-pod/nginxpod<span class="w"> </span>created
-
-<span class="c1"># 再次执行一次kubectl apply -f yaml文件，发现说资源没有变动</span>
-<span class="o">[</span>root@master<span class="w"> </span>~<span class="o">]</span><span class="c1">#  kubectl apply -f nginxpod.yaml</span>
-namespace/dev<span class="w"> </span>unchanged
-pod/nginxpod<span class="w"> </span>unchanged
-</code></pre></div></p>
-<p><strong>【总结】</strong>
-其实声明式对象配置就是使用apply描述一个资源最终的状态（在yaml中定义状态）
-使用apply操作资源：
-- 如果资源不存在，就创建，相当于 kubectl create
-- 如果资源已存在，就更新，相当于 kubectl patch</p>
-<blockquote>
-<p>扩展：kubectl可以在node节点上运行吗 ?
-kubectl的运行是需要进行配置的，它的配置文件是$HOME/.kube，如果想要在node节点运行此命令，需要将master上的.kube文件复制到node节点上，即在master节点上执行下面操作：
-<code>scp  -r  HOME/.kube   node1: HOME/</code>
-使用推荐: 三种方式应该怎么用 ?
-创建/更新资源 使用声明式对象配置 kubectl apply -f XXX.yaml
-删除资源 使用命令式对象配置 kubectl delete -f XXX.yaml
-查询资源 使用命令式对象管理 kubectl get(describe) 资源名称</p>
-</blockquote>
+<h2 id="scheduler-framework">Scheduler Framework<a class="headerlink" href="#scheduler-framework" title="Permanent link">&para;</a></h2>
+<h2 id="_2">如何扩展插件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 
 
 
@@ -4454,10 +3928,10 @@ kubectl的运行是需要进行配置的，它的配置文件是$HOME/.kube，�
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections"], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
       
     
   </body>
