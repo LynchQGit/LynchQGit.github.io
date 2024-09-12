@@ -48,8 +48,115 @@ https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedu
 
 4、5 初始化 snapshot 实例
 https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/scheduler.go#L300
-https://github.com/kubernetes/kubernetes/blob/v1.31.0/pkg/scheduler/backend/cache/snapshot.go#L49
-https://github.com/kubernetes/kubernetes/blob/v1.31.0/pkg/scheduler/backend/cache/snapshot.go#L30
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/backend/cache/snapshot.go#L49
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/backend/cache/snapshot.go#L30
+
+6、7、8、9 初始化 profiles、fwk 实例
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/scheduler.go#L313
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/profile/profile.go#L51
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/profile/profile.go#L39
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/framework/runtime/framework.go#L261
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/framework/runtime/framework.go#L53
+
+10、11、12 初始化 podQueue 实例
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/scheduler.go#L350
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/backend/queue/scheduling_queue.go#L132
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/backend/queue/scheduling_queue.go#L317
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/backend/queue/scheduling_queue.go#L150
+
+13、14、15 初始化 schedulerCache 实例
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/scheduler.go#L368
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/backend/cache/cache.go#L42
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/backend/cache/cache.go#L91
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/backend/cache/cache.go#L60
+
+17、18 运行 scheduler
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/cmd/kube-scheduler/app/server.go#L165
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/cmd/kube-scheduler/app/server.go#L165
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/scheduler.go#L473
+
+19、运行 SchedulingQueue
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/scheduler.go#L476
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/backend/queue/scheduling_queue.go#L356
+
+20、21 从队列中拿出 Pod 进行调度
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/scheduler.go#L485
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L66
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/backend/queue/scheduling_queue.go#L835
+
+获取 fwk
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L87
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L383
+
+22、23、24、25、26、27、28、29、30、31、32、33、34、35 进入 调度周期
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L113
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L144
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L155
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L416
+
+更新 Snapshot
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L420
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/backend/cache/cache.go#L190
+
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L430
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/backend/cache/snapshot.go#L175
+
+运行 PreFilterPlugins
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L483
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/framework/runtime/framework.go#L700
+
+运行 FilterPlugin
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L526
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L602
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L637
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L670
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/framework/runtime/framework.go#L977
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/framework/runtime/framework.go#L864
+
+运行 PreScorePlugins
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L454
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L769
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L792
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/framework/runtime/framework.go#L1057
+
+运行 ScorePlugins
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L798
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/framework/runtime/framework.go#L1107
+
+运行 ReservePluginsReserve
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L216
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/framework/runtime/framework.go#L1368
+
+运行 PermitPlugins
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L239
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/framework/runtime/framework.go#L1453
+
+36、37、38、39、40、41 进入 绑定周期
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L128
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L275
+
+运行 WaitOnPermit
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L288
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/framework/runtime/framework.go#L1513
+
+运行 PreBindPlugins
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L305
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/framework/runtime/framework.go#L1238
+
+运行 BindPlugins
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L323
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L983
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L994
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/framework/runtime/framework.go#L1281
+
+运行 PostBindPlugins
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L336
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/framework/runtime/framework.go#L1332
+
+42 标记 Pod 调度已完成，不要回队列
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L136
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/backend/queue/active_queue.go#L842
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/backend/queue/active_queue.go#L331
 ```
 具体代码太多了，不展示在这。
 
