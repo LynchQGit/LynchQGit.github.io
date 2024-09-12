@@ -3876,12 +3876,245 @@ Kubernetes 是如何设计这个组件，保证它稳定高效的运行？
 <p>原图是用 draw.io 画的，可打开后二次编辑。</p>
 </blockquote>
 <p><img alt="k8s-scheduler-chain" src="../../../image/Kubernetes/resource_code_learning/k8s-scheduler-chain.png" /></p>
-<div class="highlight"><pre><span></span><code><span class="c1"># 42 个序号对应的源码位置依次为：</span>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># 42 个序号对应的源码位置依次为：</span>
 <span class="m">1</span><span class="w"> </span>找到启动主函数
-https://github.com/shychee/kubernetes/blob/v1.31.0-learning/cmd/kube-scheduler/scheduler.go#L31
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/cmd/kube-scheduler/scheduler.go#L32
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/cmd/kube-scheduler/app/server.go#L81
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/cmd/kube-scheduler/scheduler.go#L34
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/cmd/kube-scheduler/app/server.go#L133
+
+<span class="m">2</span><span class="w"> </span>Setup<span class="w"> </span>初始化
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/cmd/kube-scheduler/app/server.go#L153
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/cmd/kube-scheduler/app/server.go#L384
+
+<span class="m">3</span>、16<span class="w"> </span>初始化<span class="w"> </span>scheduler<span class="w"> </span>实例
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/cmd/kube-scheduler/app/server.go#L413
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/scheduler.go#L371
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/scheduler.go#L65
+
+<span class="m">4</span>、5<span class="w"> </span>初始化<span class="w"> </span>snapshot<span class="w"> </span>实例
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/scheduler.go#L300
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/backend/cache/snapshot.go#L49
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/backend/cache/snapshot.go#L30
+
+<span class="m">6</span>、7、8、9<span class="w"> </span>初始化<span class="w"> </span>profiles、fwk<span class="w"> </span>实例
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/scheduler.go#L313
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/profile/profile.go#L51
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/profile/profile.go#L39
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/framework/runtime/framework.go#L261
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/framework/runtime/framework.go#L53
+
+<span class="m">10</span>、11、12<span class="w"> </span>初始化<span class="w"> </span>podQueue<span class="w"> </span>实例
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/scheduler.go#L350
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/backend/queue/scheduling_queue.go#L132
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/backend/queue/scheduling_queue.go#L317
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/backend/queue/scheduling_queue.go#L150
+
+<span class="m">13</span>、14、15<span class="w"> </span>初始化<span class="w"> </span>schedulerCache<span class="w"> </span>实例
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/scheduler.go#L368
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/backend/cache/cache.go#L42
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/backend/cache/cache.go#L91
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/backend/cache/cache.go#L60
+
+<span class="m">17</span>、18<span class="w"> </span>运行<span class="w"> </span>scheduler
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/cmd/kube-scheduler/app/server.go#L165
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/cmd/kube-scheduler/app/server.go#L165
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/scheduler.go#L473
+
+<span class="m">19</span>、运行<span class="w"> </span>SchedulingQueue
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/scheduler.go#L476
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/backend/queue/scheduling_queue.go#L356
+
+<span class="m">20</span>、21<span class="w"> </span>从队列中拿出<span class="w"> </span>Pod<span class="w"> </span>进行调度
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/scheduler.go#L485
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L66
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/backend/queue/scheduling_queue.go#L835
+
+获取<span class="w"> </span>fwk
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L87
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L383
+
+<span class="m">22</span>、23、24、25、26、27、28、29、30、31、32、33、34、35<span class="w"> </span>进入<span class="w"> </span>调度周期
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L113
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L144
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L155
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L416
+
+更新<span class="w"> </span>Snapshot
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L420
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/backend/cache/cache.go#L190
+
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L430
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/backend/cache/snapshot.go#L175
+
+运行<span class="w"> </span>PreFilterPlugins
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L483
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/framework/runtime/framework.go#L700
+
+运行<span class="w"> </span>FilterPlugin
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L526
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L602
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L637
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L670
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/framework/runtime/framework.go#L977
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/framework/runtime/framework.go#L864
+
+运行<span class="w"> </span>PreScorePlugins
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L454
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L769
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L792
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/framework/runtime/framework.go#L1057
+
+运行<span class="w"> </span>ScorePlugins
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L798
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/framework/runtime/framework.go#L1107
+
+运行<span class="w"> </span>ReservePluginsReserve
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L216
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/framework/runtime/framework.go#L1368
+
+运行<span class="w"> </span>PermitPlugins
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L239
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/framework/runtime/framework.go#L1453
+
+<span class="m">36</span>、37、38、39、40、41<span class="w"> </span>进入<span class="w"> </span>绑定周期
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L128
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L275
+
+运行<span class="w"> </span>WaitOnPermit
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L288
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/framework/runtime/framework.go#L1513
+
+运行<span class="w"> </span>PreBindPlugins
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L305
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/framework/runtime/framework.go#L1238
+
+运行<span class="w"> </span>BindPlugins
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L323
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L983
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L994
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/framework/runtime/framework.go#L1281
+
+运行<span class="w"> </span>PostBindPlugins
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L336
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/framework/runtime/framework.go#L1332
+
+<span class="m">42</span><span class="w"> </span>标记<span class="w"> </span>Pod<span class="w"> </span>调度已完成，不要回队列
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/schedule_one.go#L136
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/backend/queue/active_queue.go#L842
+https://github.com/shychee/kubernetes/blob/v1.31.0-learning/pkg/scheduler/backend/queue/active_queue.go#L331
 </code></pre></div>
+具体代码太多了，不展示在这。</p>
 <h2 id="scheduler-framework">Scheduler Framework<a class="headerlink" href="#scheduler-framework" title="Permanent link">&para;</a></h2>
+<p>上面调度链路图，可以清晰的看出  Framework 调度算法的扩展点。
+<img alt="k8s-scheduler-framework-01" src="../../../image/Kubernetes/resource_code_learning/k8s-scheduler-framework-01.png" />
+具体每个扩展点包含哪些 plugin， 每个 plugin 可作用于那些扩展点，如下图：
+<img alt="k8s-scheduler-framework-02" src="../../../image/Kubernetes/resource_code_learning/k8s-scheduler-framework-02.png" /></p>
 <h2 id="_2">如何扩展插件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>如果我们要实现自己的插件，必须向调度框架注册插件并完成配置，另外还必须实现扩展点接口。</p>
+<ol>
+<li>
+<p>向调度框架注册插件 &amp; 扩展点实现接口如下：
+out-of-tree 实现扩展示例
+main.go
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="s">&quot;os&quot;</span>
+
+<span class="w">    </span><span class="s">&quot;k8s.io/component-base/cli&quot;</span>
+<span class="w">    </span><span class="nx">_</span><span class="w"> </span><span class="s">&quot;k8s.io/component-base/metrics/prometheus/clientgo&quot;</span><span class="w">  </span><span class="c1">// 指标收集</span>
+<span class="w">    </span><span class="nx">_</span><span class="w"> </span><span class="s">&quot;k8s.io/component-base/metrics/prometheus/version&quot;</span><span class="w"> </span><span class="c1">// 版本收集</span>
+<span class="w">    </span><span class="s">&quot;k8s.io/kubernetes/cmd/kube-scheduler/app&quot;</span>
+
+<span class="w">    </span><span class="s">&quot;xxx/pkg/scheduler/framework/plugins/example&quot;</span>
+
+<span class="w">    </span><span class="c1">// 注册 scheduler-plugins 插件</span>
+<span class="w">    </span><span class="nx">_</span><span class="w"> </span><span class="s">&quot;sigs.k8s.io/scheduler-plugins/pkg/apis/config/scheme&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// 将自定义插件注册到调度框架中。稍后, 它们可以由各种工作负载的调度文件(profile)组成。</span>
+<span class="w">    </span><span class="nx">command</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="nx">NewSchedulerCommand</span><span class="p">(</span>
+<span class="w">        </span><span class="nx">app</span><span class="p">.</span><span class="nx">WithPlugin</span><span class="p">(</span><span class="nx">example</span><span class="p">.</span><span class="nx">Name</span><span class="p">,</span><span class="w"> </span><span class="nx">example</span><span class="p">.</span><span class="nx">New</span><span class="p">),</span>
+<span class="w">    </span><span class="p">)</span>
+
+<span class="w">    </span><span class="nx">code</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">cli</span><span class="p">.</span><span class="nx">Run</span><span class="p">(</span><span class="nx">command</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">os</span><span class="p">.</span><span class="nx">Exit</span><span class="p">(</span><span class="nx">code</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">example</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="s">&quot;context&quot;</span>
+
+<span class="w">    </span><span class="nx">v1</span><span class="w"> </span><span class="s">&quot;k8s.io/api/core/v1&quot;</span>
+<span class="w">    </span><span class="s">&quot;k8s.io/apimachinery/pkg/runtime&quot;</span>
+<span class="w">    </span><span class="s">&quot;k8s.io/klog/v2&quot;</span>
+<span class="w">    </span><span class="s">&quot;k8s.io/kubernetes/pkg/scheduler/framework&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">Name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;example.com/example&quot;</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="nx">framework</span><span class="p">.</span><span class="nx">FilterPlugin</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">ExamplePlugin</span><span class="p">{}</span>
+
+<span class="kd">type</span><span class="w"> </span><span class="nx">ExamplePlugin</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="c1">// NewExamplePlugin 是插件的构造函数，返回一个实现了 framework.Plugin 接口的结构体实例。</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">NewExamplePlugin</span><span class="p">(</span><span class="nx">_</span><span class="w"> </span><span class="nx">runtime</span><span class="p">.</span><span class="nx">Object</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="nx">framework</span><span class="p">.</span><span class="nx">Handle</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nx">framework</span><span class="p">.</span><span class="nx">Plugin</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">ExamplePlugin</span><span class="p">{},</span><span class="w"> </span><span class="kc">nil</span>
+<span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="w"> </span><span class="o">*</span><span class="nx">ExamplePlugin</span><span class="p">)</span><span class="w"> </span><span class="nx">Filter</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">state</span><span class="w"> </span><span class="o">*</span><span class="nx">framework</span><span class="p">.</span><span class="nx">CycleState</span><span class="p">,</span><span class="w"> </span><span class="nx">pod</span><span class="w"> </span><span class="o">*</span><span class="nx">v1</span><span class="p">.</span><span class="nx">Pod</span><span class="p">,</span><span class="w"> </span><span class="nx">nodeInfo</span><span class="w"> </span><span class="o">*</span><span class="nx">framework</span><span class="p">.</span><span class="nx">NodeInfo</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nx">framework</span><span class="p">.</span><span class="nx">Status</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">cpu</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">nodeInfo</span><span class="p">.</span><span class="nx">Allocatable</span><span class="p">.</span><span class="nx">MillCpu</span>
+<span class="w">    </span><span class="nx">memory</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">nodeInfo</span><span class="p">.</span><span class="nx">Allocatable</span><span class="p">.</span><span class="nx">Memory</span>
+<span class="w">    </span><span class="nx">klog</span><span class="p">.</span><span class="nx">InfoS</span><span class="p">(</span><span class="s">&quot;Filter&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pod&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">pod</span><span class="p">.</span><span class="nx">Name</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;current nodeInfo&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">nodeInfo</span><span class="p">.</span><span class="nx">Node</span><span class="p">().</span><span class="nx">Name</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;cpu&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">cpu</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;memory&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">memory</span><span class="p">)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">framework</span><span class="p">.</span><span class="nx">NewStatus</span><span class="p">(</span><span class="nx">framework</span><span class="p">.</span><span class="nx">Success</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="w"> </span><span class="o">*</span><span class="nx">ExamplePlugin</span><span class="p">)</span><span class="w"> </span><span class="nx">Name</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">Name</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>进行配置，enable 插件
+编写 kube-scheduler 启动命令配置文件 example-cm.yaml</p>
+<blockquote>
+<p>一个 ksc 里面可以描述多个 profile，会启动多个独立 scheduler 。
+pod 想用那个 scheduler，就填对应的 schedulerName 。如果没指定，就是 default-scheduler。
+由于这个配置是给 kube-scheduler 的而不是 kube-apiserver，所以 k api-resources 或 k get KubeSchedulerConfiguration 都是找不到这个资源的。</p>
+</blockquote>
+</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">apiVersion</span><span class="err">: </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="l l-Scalar l-Scalar-Plain">kind</span><span class="err">: </span><span class="l l-Scalar l-Scalar-Plain">ConfigMap</span>
+<span class="l l-Scalar l-Scalar-Plain">metadata</span><span class="p p-Indicator">:</span>
+<span class="err">  </span><span class="l l-Scalar l-Scalar-Plain">name</span><span class="err">: </span><span class="l l-Scalar l-Scalar-Plain">example-scheduler-config</span>
+<span class="err">  </span><span class="l l-Scalar l-Scalar-Plain">namespace</span><span class="err">: </span><span class="l l-Scalar l-Scalar-Plain">kube-system</span>
+<span class="nt">data</span><span class="p">:</span>
+<span class="err">  </span><span class="l l-Scalar l-Scalar-Plain">scheduler-config.yaml</span><span class="err">: </span><span class="l l-Scalar l-Scalar-Plain">|</span>
+<span class="err">    </span><span class="l l-Scalar l-Scalar-Plain">apiVersion</span><span class="err">: </span><span class="l l-Scalar l-Scalar-Plain">kubescheduler.config.k8s.io/v1</span>
+<span class="err">    </span><span class="l l-Scalar l-Scalar-Plain">kind</span><span class="err">: </span><span class="l l-Scalar l-Scalar-Plain">KubeSchedulerConfiguration</span>
+<span class="err">    </span><span class="nt">leaderElection</span><span class="p">:</span>
+<span class="err">      </span><span class="l l-Scalar l-Scalar-Plain">leaderElect</span><span class="err">: </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="err">    </span><span class="nt">clientConnection</span><span class="p">:</span>
+<span class="err">      </span><span class="l l-Scalar l-Scalar-Plain">acceptContentTypes</span><span class="err">: </span><span class="l l-Scalar l-Scalar-Plain">&quot;&quot;</span>
+<span class="err">      </span><span class="l l-Scalar l-Scalar-Plain">burst</span><span class="err">: </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+<span class="err">      </span><span class="l l-Scalar l-Scalar-Plain">contentType</span><span class="err">: </span><span class="l l-Scalar l-Scalar-Plain">application/vnd.kubernetes.protobuf</span>
+<span class="err">      </span><span class="l l-Scalar l-Scalar-Plain">qps</span><span class="err">: </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+<span class="err">    </span><span class="nt">profiles</span><span class="p">:</span>
+<span class="err">    - </span><span class="l l-Scalar l-Scalar-Plain">schedulerName</span><span class="err">: </span><span class="l l-Scalar l-Scalar-Plain">example-scheduler</span>
+<span class="err">      </span><span class="nt">plugins</span><span class="p">:</span>
+<span class="err">        </span><span class="nt">filter</span><span class="p">:</span>
+<span class="err">          </span><span class="nt">enabled</span><span class="p">:</span>
+<span class="err">          - </span><span class="l l-Scalar l-Scalar-Plain">name</span><span class="err">: </span><span class="l l-Scalar l-Scalar-Plain">&quot;example&quot;</span><span class="err"> </span>
+</code></pre></div>
+<img alt="k8s-scheduler-profiles-framework" src="../../../image/Kubernetes/resource_code_learning/k8s-scheduler-profiles-framework.png" /></p>
+<ol>
+<li>使用自定义 scheduler
+Pod yaml 文件中指定 <code>schedulerName: example-scheduler</code> 即可使用自定义 Scheduler 了。</li>
+</ol>
 
 
 
