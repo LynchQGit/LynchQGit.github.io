@@ -1,4 +1,4 @@
-# 基于 Rust 构建 Web 服务器
+# 基于 Rust 构建单线程 Web 服务器
 在当今的互联网时代,Web服务器是支撑各种网络应用的基础设施。作为一名开发者,了解Web服务器的工作原理和实现方式非常重要。本文将带领大家使用Rust语言从零开始构建一个简单的单线程Web服务器,深入理解Web服务器的核心概念和基本架构。
 
 > **为什么选择 Rust 语言**
@@ -492,6 +492,570 @@ fn handle_request(request_line: &str) -> (&str, String) {
     }
 }
 ```
+
+> **实现简单的路由功能**
+让我们来实现一个简单的路由功能，这将使服务器更加灵活和易于扩展。我们将使用闭包来定义路由处理函数，这样可以轻松地添加新的路由。
+以下是实现路由功能的方法：
+
+```rust
+use std::collections::HashMap;
+use tokio::net::{TcpListener, TcpStream};
+use tokio::io::{AsyncReadExt, AsyncWriteExt};
+use std::sync::Arc;
+use log::{info, error};
+
+type RouteHandler = Arc<dyn Fn(String) -> String + Send + Sync>;
+
+struct Router {
+    routes: HashMap<String, RouteHandler>,
+}
+
+impl Router {
+    fn new() -> Self {
+        Router {
+            routes: HashMap::new(),
+        }
+    }
+
+    fn add_route<F>(&mut self, path: &str, handler: F)
+    where
+        F: Fn(String) -> String + Send + Sync + 'static,
+    {
+        self.routes.insert(path.to_string(), Arc::new(handler));
+    }
+
+    fn handle_request(&self, path: &str, body: String) -> (String, String) {
+        match self.routes.get(path) {
+            Some(handler) => ("HTTP/1.1 200 OK".to_string(), handler(body)),
+            None => ("HTTP/1.1 404 NOT FOUND".to_string(), "404 Not Found".to_string()),
+        }
+    }
+}
+
+#[tokio::main]
+async fn main() {
+    env_logger::init();
+    let mut router = Router::new();
+
+    // 添加路由
+    router.add_route("/", |_| "Hello, World!".to_string());
+    router.add_route("/about", |_| "About page".to_string());
+    router.add_route("/echo", |body| body);
+
+    let router = Arc::new(router);
+
+    let listener = TcpListener::bind("127.0.0.1:7878").await.unwrap();
+    info!("Listening on 127.0.0.1:7878");
+
+    loop {
+        match listener.accept().await {
+            Ok((stream, _)) => {
+                let router = router.clone();
+                tokio::spawn(async move {
+                    handle_connection(stream, router).await;
+                });
+            }
+            Err(e) => {
+                error!("Error accepting connection: {}", e);
+            }
+        }
+    }
+}
+
+async fn handle_connection(mut stream: TcpStream, router: Arc<Router>) {
+    let mut buffer = [0; 1024];
+
+    match stream.read(&mut buffer).await {
+        Ok(_) => {
+            let request = String::from_utf8_lossy(&buffer[..]);
+            let request_line = request.lines().next().unwrap_or("");
+            let (method, path, _) = parse_request_line(request_line);
+
+            info!("Received request: {} {}", method, path);
+
+            let body = extract_body(&request);
+            let (status_line, response_body) = router.handle_request(path, body);
+
+            let response = format!(
+                "{}\r\nContent-Length: {}\r\n\r\n{}",
+                status_line,
+                response_body.len(),
+                response_body
+            );
+
+            if let Err(e) = stream.write_all(response.as_bytes()).await {
+                error!("Failed to write to stream: {}", e);
+            }
+            if let Err(e) = stream.flush().await {
+                error!("Failed to flush stream: {}", e);
+            }
+        }
+        Err(e) => {
+            error!("Failed to read from stream: {}", e);
+        }
+    }
+}
+
+fn parse_request_line(request_line: &str) -> (&str, &str, &str) {
+    let mut parts = request_line.split_whitespace();
+    let method = parts.next().unwrap_or("");
+    let path = parts.next().unwrap_or("");
+    let version = parts.next().unwrap_or("");
+    (method, path, version)
+}
+
+fn extract_body(request: &str) -> String {
+    request.split("\r\n\r\n").nth(1).unwrap_or("").to_string()
+}
+```
+
+这个实现添加了以下功能：
+1. Router 结构体，用于存储和管理路由。
+2. add_route 方法，允许添加新的路由和对应的处理函数。
+3. handle_request 方法，根据请求路径调用相应的处理函数。
+4. 在 main 函数中，我们创建 Router 实例并添加一些示例路由。
+5. handle_connection 函数现在使用 Router 来处理请求。
+6. 添加了 parse_request_line 和 extract_body 辅助函数来解析请求。
+
+这个实现允许你轻松地添加新的路由和处理函数。例如，你可以这样添加新路由：
+```rust
+router.add_route("/api/users", |_| {
+    // 这里可以添加获取用户列表的逻辑
+    "{\"users\": [\"Alice\", \"Bob\"]}".to_string()
+});
+```
+
+> **支持不同的 HTTP 方法**
+首先来定义一个枚举来表示不同的 HTTP 方法：
+```rust
+#[derive(Debug, PartialEq, Eq, Hash, Clone)]
+enum HttpMethod {
+    GET,
+    POST,
+    PUT,
+    DELETE,
+    // 可以根据需要添加其他 HTTP 方法
+}
+```
+
+创建了 Request 结构体，包含 HTTP 方法、路径和请求体。
+```rust
+struct Request {
+    method: HttpMethod,
+    path: String,
+    body: String,
+}
+```
+
+修改了 Router 结构，使用 (HttpMethod, String) 作为路由的键，这样可以同时匹配 HTTP 方法和路径。
+```rust
+struct Router {
+    routes: HashMap<(HttpMethod, String), RouteHandler>,
+}
+```
+
+更新了 add_route 和 handle_request 方法以支持 HTTP 方法。
+```rust
+impl Router {
+    fn new() -> Self {
+        Router {
+            routes: HashMap::new(),
+        }
+    }
+
+    fn add_route<F>(&mut self, method: HttpMethod, path: &str, handler: F)
+    where
+        F: Fn(Request) -> Response + Send + Sync + 'static,
+    {
+        self.routes.insert((method, path.to_string()), Arc::new(handler));
+    }
+
+    fn handle_request(&self, request: Request) -> (String, Response) {
+        match self.routes.get(&(request.method.clone(), request.path.clone())) {
+            Some(handler) => ("HTTP/1.1 200 OK".to_string(), handler(request)),
+            None => ("HTTP/1.1 404 NOT FOUND".to_string(), "404 Not Found".to_string()),
+        }
+    }
+}
+```
+
+添加了 parse_request 函数来解析 HTTP 请求并创建 Request 对象。
+```rust
+fn parse_request(request: &str) -> Request {
+    let lines: Vec<&str> = request.lines().collect();
+    let first_line = lines[0];
+    let parts: Vec<&str> = first_line.split_whitespace().collect();
+    
+    let method = match parts[0] {
+        "GET" => HttpMethod::GET,
+        "POST" => HttpMethod::POST,
+        "PUT" => HttpMethod::PUT,
+        "DELETE" => HttpMethod::DELETE,
+        _ => HttpMethod::GET, // 默认为 GET，实际应用中可能需要更好的错误处理
+    };
+    
+    let path = parts[1].to_string();
+    let body = request.split("\r\n\r\n").nth(1).unwrap_or("").to_string();
+
+    Request { method, path, body }
+}
+```
+
+> **实现更复杂的路由**
+现在我们有了简单的路由能力，让我们更进一步的使我们的路由系统更加灵活。
+首先，我们需要添加一个新的依赖到`Cargo.toml`
+
+```toml
+[dependencies]
+regex = "1.5"
+```
+
+然后, 修改我们的 `main.rs` 文件：
+```rust
+use regex::Regex;
+
+struct Request {
+    method: HttpMethod,
+    path: String,
+    body: String,
+    params: HashMap<String, String>,
+}
+
+struct Route {
+    method: HttpMethod,
+    pattern: Regex,
+    handler: RouteHandler,
+}
+
+struct Router {
+    routes: Vec<Route>,
+}
+
+impl Router {
+    fn new() -> Self {
+        Router {
+            routes: Vec::new(),
+        }
+    }
+
+    fn add_route<F>(&mut self, method: HttpMethod, pattern: &str, handler: F)
+    where
+        F: Fn(Request) -> Response + Send + Sync + 'static,
+    {
+        let pattern = format!("^{}$", pattern.replace(":param", "(?P<$1>[^/]+)"));
+        let regex = Regex::new(&pattern).unwrap();
+        self.routes.push(Route {
+            method,
+            pattern: regex,
+            handler: Arc::new(handler),
+        });
+    }
+
+    fn handle_request(&self, mut request: Request) -> (String, Response) {
+        for route in &self.routes {
+            if route.method == request.method {
+                if let Some(captures) = route.pattern.captures(&request.path) {
+                    for name in route.pattern.capture_names().flatten() {
+                        if let Some(value) = captures.name(name) {
+                            request.params.insert(name.to_string(), value.as_str().to_string());
+                        }
+                    }
+                    return ("HTTP/1.1 200 OK".to_string(), (route.handler)(request));
+                }
+            }
+        }
+        ("HTTP/1.1 404 NOT FOUND".to_string(), "404 Not Found".to_string())
+    }
+}
+
+// handle_connection 函数保持不变
+
+fn parse_request(request: &str) -> Request {
+    let lines: Vec<&str> = request.lines().collect();
+    let first_line = lines[0];
+    let parts: Vec<&str> = first_line.split_whitespace().collect();
+    
+    let method = match parts[0] {
+        "GET" => HttpMethod::GET,
+        "POST" => HttpMethod::POST,
+        "PUT" => HttpMethod::PUT,
+        "DELETE" => HttpMethod::DELETE,
+        _ => HttpMethod::GET,
+    };
+    
+    let path = parts[1].to_string();
+    let body = request.split("\r\n\r\n").nth(1).unwrap_or("").to_string();
+
+    Request { method, path, body, params: HashMap::new() }
+}
+```
+
+> **工程化**
+目前我们的程序已经初具规模，不能再继续拉屎了，我们需要将代码分散到不同的文件中是一个很好的做法，可以提高代码的可读性和可维护性。以下是一个建议的项目结构，适合开发成一个框架:
+
+```
+src/
+├── lib.rs
+├── main.rs
+├── http/
+│   ├── mod.rs
+│   ├── method.rs
+│   ├── request.rs
+│   └── response.rs
+├── router/
+│   ├── mod.rs
+│   └── route.rs
+├── server/
+│   ├── mod.rs
+│   └── connection.rs
+└── handlers/
+    └── mod.rs
+```
+
+每个文件包含什么?
+1. `src/lib.rs`:
+
+```rust
+pub mod http;
+pub mod router;
+pub mod server;
+pub mod handlers;
+
+pub use router::Router;
+pub use http::{Request, Response};
+```
+
+2. `src/main.rs`:
+
+```rust
+use my_webserver_rs::{Router, http::HttpMethod, server};
+use my_webserver_rs::handlers::{hello_world, get_user, create_user, update_user, delete_user};
+
+#[tokio::main]
+async fn main() {
+    env_logger::init();
+    let mut router = Router::new();
+
+    router.add_route(HttpMethod::GET, "/", hello_world);
+    router.add_route(HttpMethod::GET, "/users/:id", get_user);
+    router.add_route(HttpMethod::POST, "/users", create_user);
+    router.add_route(HttpMethod::PUT, "/users/:id", update_user);
+    router.add_route(HttpMethod::DELETE, "/users/:id", delete_user);
+
+    router.add_route(HttpMethod::GET, "/files/*path", |request| {
+        format!("Accessing file: {}", request.params.get("path").unwrap_or(&"unknown".to_string()))
+    });
+
+    server::run(router, "127.0.0.1:7878").await;
+}
+```
+
+3. `src/http/mod.rs`:
+
+```rust
+mod method;
+mod request;
+mod response;
+
+pub use method::HttpMethod;
+pub use request::Request;
+pub use response::Response;
+```
+
+4. `src/http/method.rs`:
+
+```rust
+#[derive(Debug, PartialEq, Eq, Hash, Clone)]
+pub enum HttpMethod {
+    GET,
+    POST,
+    PUT,
+    DELETE,
+}
+```
+
+5. `src/http/request.rs`:
+
+```rust
+use std::collections::HashMap;
+use super::HttpMethod;
+
+pub struct Request {
+    pub method: HttpMethod,
+    pub path: String,
+    pub body: String,
+    pub params: HashMap<String, String>,
+}
+
+pub fn parse_request(request: &str) -> Request {
+    // 实现 parse_request 函数
+    // ...
+}
+```
+
+6. `src/http/response.rs`:
+
+```rust
+pub type Response = String;
+
+pub fn format_response(status_line: &str, body: &str) -> String {
+    format!(
+        "{}\r\nContent-Length: {}\r\n\r\n{}",
+        status_line,
+        body.len(),
+        body
+    )
+}
+```
+
+7. `src/router/mod.rs`:
+
+```rust
+mod route;
+
+use std::sync::Arc;
+use route::Route;
+use crate::http::{HttpMethod, Request, Response};
+
+pub struct Router {
+    routes: Vec<Route>,
+}
+
+impl Router {
+    pub fn new() -> Self {
+        Router {
+            routes: Vec::new(),
+        }
+    }
+
+    pub fn add_route<F>(&mut self, method: HttpMethod, pattern: &str, handler: F)
+    where
+        F: Fn(Request) -> Response + Send + Sync + 'static,
+    {
+        // 实现 add_route 方法
+        // ...
+    }
+
+    pub fn handle_request(&self, mut request: Request) -> (String, Response) {
+        // 实现 handle_request 方法
+        // ...
+    }
+}
+```
+
+8. `src/router/route.rs`
+```rust
+use regex::Regex;
+use std::sync::Arc;
+use crate::http::{HttpMethod, Request, Response};
+
+pub(crate) type RouteHandler = Arc<dyn Fn(Request) -> Response + Send + Sync>;
+
+pub(crate) struct Route {
+    pub method: HttpMethod,
+    pub pattern: Regex,
+    pub handler: RouteHandler,
+}
+```
+
+9. `src/server/mod.rs`
+
+```rust
+mod connection;
+
+use std::sync::Arc;
+use tokio::net::TcpListener;
+use log::{info, error};
+use crate::Router;
+
+pub async fn run(router: Router, addr: &str) {
+    let router = Arc::new(router);
+    let listener = TcpListener::bind(addr).await.unwrap();
+    info!("Listening on {}", addr);
+
+    loop {
+        match listener.accept().await {
+            Ok((stream, _)) => {
+                let router = router.clone();
+                tokio::spawn(async move {
+                    connection::handle_connection(stream, router).await;
+                });
+            }
+            Err(e) => {
+                error!("Error accepting connection: {}", e);
+            }
+        }
+    }
+}
+```
+
+10. `src/server/connection.rs`:
+
+```rust
+use std::sync::Arc;
+use tokio::net::TcpStream;
+use tokio::io::{AsyncReadExt, AsyncWriteExt};
+use log::{info, error};
+use crate::Router;
+use crate::http::{parse_request, format_response};
+
+pub(crate) async fn handle_connection(mut stream: TcpStream, router: Arc<Router>) {
+    let mut buffer = [0; 1024];
+
+    match stream.read(&mut buffer).await {
+        Ok(_) => {
+            let request_str = String::from_utf8_lossy(&buffer[..]);
+            let request = parse_request(&request_str);
+
+            info!("Received request: {:?} {}", request.method, request.path);
+
+            let (status_line, response_body) = router.handle_request(request);
+            let response = format_response(&status_line, &response_body);
+
+            if let Err(e) = stream.write_all(response.as_bytes()).await {
+                error!("Failed to write to stream: {}", e);
+            }
+            if let Err(e) = stream.flush().await {
+                error!("Failed to flush stream: {}", e);
+            }
+        }
+        Err(e) => {
+            error!("Failed to read from stream: {}", e);
+        }
+    }
+}
+```
+
+11. `src/handlers/mod.rs`
+
+```rust
+use crate::http::{Request, Response};
+
+pub fn hello_world(_request: Request) -> Response {
+    "Hello, World!".to_string()
+}
+
+pub fn get_user(request: Request) -> Response {
+    format!("Getting user with ID: {}", request.params.get("id").unwrap_or(&"unknown".to_string()))
+}
+
+pub fn create_user(request: Request) -> Response {
+    format!("Creating user: {}", request.body)
+}
+
+pub fn update_user(request: Request) -> Response {
+    format!("Updating user with ID: {}, new data: {}", 
+        request.params.get("id").unwrap_or(&"unknown".to_string()),
+        request.body)
+}
+
+pub fn delete_user(request: Request) -> Response {
+    format!("Deleting user with ID: {}", request.params.get("id").unwrap_or(&"unknown".to_string()))
+}
+```
+
+这个结构将代码分成了几个主要模块：http、router、server 和 handlers。这样的组织方式使得代码更加模块化，更容易维护和扩展。
+
 TODO 
 
 > **安全性考虑**
