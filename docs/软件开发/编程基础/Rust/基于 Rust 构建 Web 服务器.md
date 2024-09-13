@@ -1,4 +1,4 @@
-# 基于 Rust 构建单线程 Web 服务器
+# 基于 Rust 构建 Web 服务器
 在当今的互联网时代,Web服务器是支撑各种网络应用的基础设施。作为一名开发者,了解Web服务器的工作原理和实现方式非常重要。本文将带领大家使用Rust语言从零开始构建一个简单的单线程Web服务器,深入理解Web服务器的核心概念和基本架构。
 
 > **为什么选择 Rust 语言**
@@ -25,7 +25,6 @@ Rust 是一门系统级编程语言, 具有高性能、内存安全和并发性�
 cargo new my-webserver-rs
 cd my-webserver-rs
 ```
-
 然后在 `src/main.rs` 文件中编写代码:
 
 ```rust
@@ -41,7 +40,6 @@ fn main() {
     }
 }
 ```
-
 这段代码实现了最基本的TCP监听功能:
 1. 使用 `TcpListener::bind()` 在本地地址 `127.0.0.1` 的 `7878` 端口上创建一个 TCP 监听器。
 2. 使用 `for` 循环遍历 `listener.incoming()` 返回的连接流。对于每个连接, 打印一条信息。
@@ -73,7 +71,6 @@ fn handle_connection(mut stream: TcpStream) {
     println!("Request: {}", String::from_utf8_lossy(&buffer[..]));
 }
 ```
-
 这里我们:
 1. 定义了一个handle_connection函数来处理每个连接。
 2. 在函数中创建一个1024字节的缓冲区来存储请求数据。
@@ -122,7 +119,6 @@ fn handle_connection(mut stream: TcpStream) {
     }
 }
 ```
-
 这里我们:
 1. 将缓冲区内容转换为字符串。
 2. 使用lines()方法获取请求的第一行。
@@ -248,7 +244,6 @@ fn handle_connection(mut stream: TcpStream) {
     stream.flush().unwrap();
 }
 ```
-
 这样重构后的代码更加模块化,每个函数都有明确的单一职责,使得代码更易于理解和维护。
 
 > **添加日志功能**
@@ -274,7 +269,6 @@ fn main() {
     // ...
 }
 ```
-
 现在我们可以在代码中添加日志了:
 
 ```rust
@@ -307,3 +301,206 @@ fn handle_connection(mut stream: TcpStream) {
 ```
 
 这样, 我们就可以记录每个请求的信息, 以及可能出现的错误。
+
+**性能考虑**
+> **多线程实现**
+
+1. 首先，我们在文件顶部添加了 use std::thread; 来引入 Rust 的线程模块。
+2. 在 main 函数中，我们修改了处理incoming连接的逻辑：
+    - 使用 match 语句来处理 stream 的 Result，这样我们可以更好地处理可能的错误。
+    - 对于每个成功的连接（Ok(stream)），我们使用 thread::spawn 创建一个新线程。
+    - 新线程执行 handle_connection(stream) 函数。
+    - 如果接受连接时出错，我们会记录错误信息。
+3. `handle_connection` 函数及其他函数保持不变。
+
+这些更改的效果是：
+- 服务器现在可以并发处理多个连接，每个连接在自己的线程中运行。
+- 主线程不会被单个连接阻塞，可以继续接受新的连接。
+- 服务器的响应能力和吞吐量都会提高，特别是在高并发情况下。
+
+```rust
+use std::thread;
+
+fn main() {
+    env_logger::init();
+    let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
+
+    info!("Listening on 127.0.0.1:7878");
+
+    for stream in listener.incoming() {
+        match stream {
+            Ok(stream) => {
+                thread::spawn(|| {
+                    handle_connection(stream);
+                });
+            }
+            Err(e) => {
+                error!("Failed to accept connection: {}", e);
+            }
+        }
+    }
+}
+```
+
+> **添加线程池**
+
+可以限制并发线程的数量，从而更有效地管理系统资源。我们将使用 `threadpool crate` 来实现这一点。
+首先，需要在 `Cargo.toml` 文件中添加 `threadpool` 依赖：
+
+```toml
+[dependencies]
+threadpool = "1.8.1"
+```
+
+然后修改 `src/main.rs` 文件:
+
+```rust
+use threadpool::ThreadPool;
+
+fn main() {
+    env_logger::init();
+    let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
+    let pool = ThreadPool::new(4);
+
+    info!("Listening on 127.0.0.1:7878");
+
+    for stream in listener.incoming() {
+        match stream {
+            Ok(stream) => {
+                pool.execute(|| {
+                    handle_connection(stream);
+                })
+            }
+            Err(e) => {
+                error!("Failed to accept connection: {}", e);
+            }
+        }
+    }
+}
+```
+1. 我们添加了 `use threadpool::ThreadPool;` 来引入 `ThreadPool` 类型。
+2. 在 `main` 函数中，我们创建了一个有 4 个线程的 `ThreadPool`。你可以根据你的系统性能和需求调整这个数字。
+3. 在处理每个连接时，我们不再直接创建新线程，而是使用 `pool.execute()` 来将任务提交到线程池。
+
+这种方法的优点是：
+- 限制了并发线程的最大数量，防止在高负载情况下创建过多线程。
+- 重用线程，避免频繁创建和销毁线程的开销。
+- 通过队列机制管理任务，当所有线程都忙时，新任务会等待直到有线程可用。
+
+如果你想进一步优化，可以考虑：
+1. 让线程池大小可配置，例如通过命令行参数或配置文件设置。
+2. 实现优雅关闭，确保在服务器关闭时所有正在处理的请求都能完成。
+3. 添加一些监控指标，如当前活跃线程数、等待队列长度等。
+
+> **异步 I/O 实现**
+
+首先，更新 Cargo.toml 文件，添加必要的依赖：
+```toml
+[dependencies]
+tokio = { version = "1.28", features = ["full"] }
+log = "0.4"
+env_logger = "0.10"
+```
+
+然后重写 `src/main.rs` 文件:
+```rust
+use tokio::net::{TcpListener, TcpStream};
+use tokio::io::{AsyncReadExt, AsyncWriteExt};
+use std::fs;
+use log::{info, error};
+
+#[tokio::main]
+async fn main() {
+    env_logger::init();
+    let listener = TcpListener::bind("127.0.0.1:7878").await.unwrap();
+
+    info!("Listening on 127.0.0.1:7878");
+
+    loop {
+        match listener.accept().await {
+            Ok((stream, _)) => {
+                tokio::spawn(async move {
+                    handle_connection(stream).await;
+                });
+            }
+            Err(e) => {
+                error!("Error accepting connection: {}", e);
+            }
+        }
+    }
+}
+
+async fn handle_connection(mut stream: TcpStream) {
+    let mut buffer = [0; 1024];
+
+    match stream.read(&mut buffer).await {
+        Ok(_) => {
+            let request = String::from_utf8_lossy(&buffer[..]);
+            let request_line = request.lines().next().unwrap_or("");
+
+            info!("Received request: {}", request_line);
+
+            let (status_line, filename) = handle_request(request_line);
+
+            let contents = match fs::read_to_string(filename) {
+                Ok(contents) => contents,
+                Err(e) => {
+                    error!("Failed to read file: {}", e);
+                    "File not found".to_string()
+                }
+            };
+
+            let response = handle_response(status_line, &contents);
+
+            if let Err(e) = stream.write_all(response.as_bytes()).await {
+                error!("Failed to write to stream: {}", e);
+            }
+            if let Err(e) = stream.flush().await {
+                error!("Failed to flush stream: {}", e);
+            }
+        }
+        Err(e) => {
+            error!("Failed to read from stream: {}", e);
+        }
+    }
+}
+
+// handle_request 和 handle_response 函数保持不变
+// ...
+```
+
+**安全性考虑**
+> **防止目录遍历攻击**
+修改 `src/main.rs` 文件:
+
+```rust
+use std::path::Path;
+
+fn handle_request(request_line: &str) -> (&str, String) {
+    let (status_line, file_path) = match request_line {
+        "GET / HTTP/1.1" => ("HTTP/1.1 200 OK", "src/hello.html"),
+        _ => ("HTTP/1.1 404 NOT FOUND", "src/404.html"),
+    };
+
+    let safe_path = Path::new(file_path).canonicalize().unwrap_or_default();
+    let root_dir = Path::new("src").canonicalize().unwrap_or_default();
+
+    if safe_path.starts_with(&root_dir) {
+        (status_line, safe_path.to_str().unwrap_or("").to_string())
+    } else {
+        ("HTTP/1.1 403 FORBIDDEN", "src/403.html".to_string())
+    }
+}
+```
+TODO 
+
+> **安全性考虑**
+
+虽然我们的Web服务器很简单,但在实际应用中还需要考虑许多安全性问题,例如: 
+
+1. 输入验证: 确保请求路径不包含恶意内容
+2. 资源限制: 限制请求大小, 防止 Dos 攻击
+3. HTTPS支持: 加密传输数据
+4. 访问控制: 实现身份验证和授权机制
+
+这些都是构建生产级 Web 服务器需要考虑的重要方面。
